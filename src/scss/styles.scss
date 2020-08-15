@@ -1,5 +1,23 @@
 //Bootstrap
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
+.dot {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background-color: orange;
+    border-radius: 100%;
+}
 
+.gsap-loader {
+    background-color: black;
+    z-index: 50000;
+    position: absolute;
+    border-radius: 100%;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%); 
+    padding: 0; /* reset */
+    padding-bottom: calc(100% * 3 / 4);
+}
 
