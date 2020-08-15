@@ -3,7 +3,7 @@ import $ from 'jquery';
 window.$ = $;
 window.jQuery = $;
 
-import { TweenLite, TimelineMax, ScrollTrigger, gsap, SplitText } from 'gsap/all';
+import { ScrollTrigger, gsap } from 'gsap/all';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,11 +57,8 @@ fadeOutOnLeaveOnEnter.forEach((fadeOutOnLeaveOnEnterElement, i) => {
     });
 });
 
-$("body").on("click",function(){
-const headerAnimation = gsap.timeline({});
-headerAnimation.from(".gsap-loader", {opacity: 0, height: 0, width: 0, scale: 0})
-.to(".gsap-loader", {opacity: 1, backgroundColor: "orange", height: "100%", width: "100%", scale: 1});
-});
+
+
 // const fadeOutOnLeave = gsap.utils.toArray('.gsap-fadeOutOnLeave');
 // fadeOutOnLeave.forEach((fadeOutOnLeaveElement, i) => {
 //     ScrollTrigger.create({

@@ -1,9 +1,10 @@
 import $ from 'jquery';
 
-import './module/cat';
-import './module/bootstrap';
-import './module/gsap-test';
+import 'bootstrap'
 
+import './module/gsap-test/custom-onscroll-animations';
+import './module/gsap-test/custom-onclick-animations';
 
 window.$ = $;
 window.jQuery = $;
+

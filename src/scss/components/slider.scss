@@ -1,0 +1,66 @@
+.slick-component {
+    .slick-slide {
+        position: relative;
+        .content {
+            display: flex;
+            flex: 1;
+            .container {
+                display: flex;
+                flex-direction: column;
+            }
+            .backgroundImage {
+                position: absolute; 
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .caption {
+                margin: 2.5rem;   
+            }
+        }
+    }
+
+    &.type-fullscreen {
+        .content {
+            display: flex;
+            flex: 1;
+            .container {
+                display: flex;
+                flex-direction: column;
+            }
+        } 
+        .slick-initialized .slick-slide {
+            display: flex;
+            flex: 1;
+        }
+        .slick-slider, .slide, .slick-list, .slick-track {
+            min-height: 100vh;
+        }
+    }
+    &.type-gallery-3 {
+        .caption {
+            margin: 0px;
+            .title {
+                font-size: 1rem;
+            }
+        }
+    }
+    .slick-prev, .slick-next {
+        z-index: 5000;
+    }
+    .slick-prev {
+        left: 45px;
+    }
+    .slick-next {
+        right: 45px;
+    }
+    .slick-dots {
+        bottom: 25px;
+    }
+    .slick-dotted.slick-slider {
+        margin-bottom: 0px;
+    }
+}

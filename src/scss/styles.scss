@@ -1,23 +1,15 @@
 //Bootstrap
-@import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
-.dot {
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    background-color: orange;
-    border-radius: 100%;
-}
+@import "config/custom-variables.scss";
+@import "config/bootstrap-config.scss";
+@import "brand/typography.scss";
+@import "utilities/utilities.scss";
 
-.gsap-loader {
-    background-color: black;
-    z-index: 50000;
-    position: absolute;
-    border-radius: 100%;
-    top: 50%;  /* position the top  edge of the element at the middle of the parent */
-    left: 50%; /* position the left edge of the element at the middle of the parent */
-    transform: translate(-50%, -50%); 
-    padding: 0; /* reset */
-    padding-bottom: calc(100% * 3 / 4);
-}
+@import "components/general-component-config.scss";
+@import "components/navigation-main.scss";
+@import "components/infoblock.scss";
+@import "components/features.scss";
+@import "components/slider.scss";
+@import "components/gsap-test.scss";
 
+@import "pages/master.scss";

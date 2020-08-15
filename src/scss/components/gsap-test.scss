@@ -1,0 +1,19 @@
+.dot {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background-color: orange;
+    border-radius: 100%;
+}
+
+.gsap-loader {
+    background-color: black;
+    z-index: 50000;
+    position: absolute;
+    border-radius: 100%;
+    // padding: 0; /* reset */
+    // padding-bottom: calc(100% * 3 / 4);
+    // margin: auto;
+    // transform: translate(0%, 0%);
+}
+
