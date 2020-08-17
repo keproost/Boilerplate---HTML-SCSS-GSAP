@@ -5,15 +5,45 @@
     background-color: orange;
     border-radius: 100%;
 }
-
-.gsap-loader {
-    background-color: black;
-    z-index: 50000;
-    position: absolute;
-    border-radius: 100%;
-    // padding: 0; /* reset */
-    // padding-bottom: calc(100% * 3 / 4);
-    // margin: auto;
-    // transform: translate(0%, 0%);
+.gsap-active-no-overflow {
+    overflow: hidden;
 }
 
+.gsap-loader-wrapper {
+
+}
+// .gsap-loader {
+//     background-color: black;
+//     z-index: 50000;
+//     position: absolute;
+//     transform-origin: center;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%) !important;
+//     border-radius: 100%;
+//     width: 0%;
+//     // transform: translate(0%, 0%);
+// }
+
+// .gsap-loader:after {
+//     content: "";
+//     display: block;
+//     padding-bottom: 100%;
+//   }
+
+.is-transitioning {
+    pointer-events: none;
+    cursor: progress;
+}
+
+
+.gsap-loader {
+    position: fixed;
+    width: 100vw;
+    height: 200vh;
+    pointer-events: none;
+    background-color: #FFF6ED;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+}

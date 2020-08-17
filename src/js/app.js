@@ -1,10 +1,4 @@
-import $ from 'jquery';
-
-import 'bootstrap'
-
+import 'bootstrap';
 import './module/gsap-test/custom-onscroll-animations';
-import './module/gsap-test/custom-onclick-animations';
-
-window.$ = $;
-window.jQuery = $;
-
+// import './module/gsap-test/custom-onclick-animations';
+import './module/gsap-test/custom-pageload-animations';

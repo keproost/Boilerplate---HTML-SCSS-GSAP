@@ -1,42 +1,40 @@
 import $ from 'jquery';
+import gsap from 'gsap/all';
 
 window.$ = $;
 window.jQuery = $;
 
-import { ScrollTrigger, gsap } from 'gsap/all';
+function onStart() {
+    document.body.classList.add('gsap-active-no-overflow');
+  }
+  
+function onComplete() {
+    document.body.classList.remove('gsap-active-no-overflow');
+}
 
 //Headeranimation
-const headerAnimation = gsap.timeline({paused:true});
+const headerAnimation = gsap.timeline({ paused: true });
 
-headerAnimation.from(".gsap-loader", {
+headerAnimation.from('.gsap-loader', {
     opacity: 0, 
-    height: "20%", 
-    width: "20%", 
-    scale: 0,
-    transformOrigin: "center center",
-})
-.to(".gsap-loader", {
-    opacity: 1, 
-    backgroundColor: "orange", 
-    height: "20%", 
-    width: "20%", 
-    scale: 1,
-    transformOrigin: "center center"
+    })
+    .to('.gsap-loader', {
+        opacity: 1, 
+        backgroundColor: 'orange', 
+        width: '80%',
+        onStart: onStart,
+        onComplete: onComplete
 });
 
 
-$('.gsap-click-trigger').on('click', function(event) {
-    event.preventDefault();
-    headerAnimation.play() ? headerAnimation.reversed() : headerAnimation.reverse();
-});
+// $('body').on('click', function(event) {
+//     event.preventDefault();
+//     headerAnimation.play() ? headerAnimation.reversed() : headerAnimation.reverse();
+// });
 
 // $('.gsap-click-trigger').click(() => {
 
 // });
-
-
-
-
 
 //Example for double click
 // $('.special-button').each( function(){

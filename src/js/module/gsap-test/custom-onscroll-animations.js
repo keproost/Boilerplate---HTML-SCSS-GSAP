@@ -1,9 +1,9 @@
 import $ from 'jquery';
+import { ScrollTrigger, gsap } from 'gsap/all';
 
 window.$ = $;
 window.jQuery = $;
 
-import { ScrollTrigger, gsap } from 'gsap/all';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,7 +40,6 @@ growInOnEnter.forEach((growInOnEnterElement, i) => {
     });
 });
 
-
 const fadeOutOnLeaveOnEnter = gsap.utils.toArray('.gsap-fadeOutOnLeave');
 fadeOutOnLeaveOnEnter.forEach((fadeOutOnLeaveOnEnterElement, i) => {
     const fadeOutOnLeaveOnEnterAnimation = gsap.timeline({});
@@ -56,8 +55,6 @@ fadeOutOnLeaveOnEnter.forEach((fadeOutOnLeaveOnEnterElement, i) => {
         once: false,
     });
 });
-
-
 
 // const fadeOutOnLeave = gsap.utils.toArray('.gsap-fadeOutOnLeave');
 // fadeOutOnLeave.forEach((fadeOutOnLeaveElement, i) => {
