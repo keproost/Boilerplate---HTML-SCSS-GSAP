@@ -1,80 +1,180 @@
 import { gsap, ScrollTrigger } from 'gsap/all';
 import barba from '@barba/core';
-import scrollAnimations from './custom-onscroll-animations';
+import $ from "jquery";
+// import scrollAnimations from './custom-onscroll-animations';
+gsap.registerPlugin(ScrollTrigger);
 
-let pageTransitionDuration = 0.50;
-let pageTransitionStagger = 0.10;
-let pageTransitionEase = "power2.inOut"
+window.$ = $;
+window.jQuery = $;
+
+const pageTransitionDuration = 0.50;
+const pageTransitionStagger = 0.10;
+const pageTransitionEase = 'power2.inOut';
 
 
-//Delay function to waith on barba to initialize scrolltrigger
-function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+function scrollAnimations() {
+  const fadeOutOnLeaveOnEnter = gsap.utils.toArray(".gsap-fadeOutOnLeave");
+  fadeOutOnLeaveOnEnter.forEach((fadeOutOnLeaveOnEnterElement, i) => {
+    const fadeOutOnLeaveOnEnterAnimation = gsap.timeline({});
+    fadeOutOnLeaveOnEnterAnimation
+      .from(fadeOutOnLeaveOnEnterElement, {
+        opacity: 1,
+        ease: "Back.easeInOut",
+      })
+      .to(fadeOutOnLeaveOnEnterElement, { opacity: 0 });
+
+    ScrollTrigger.create({
+      trigger: fadeOutOnLeaveOnEnterElement,
+      animation: fadeOutOnLeaveOnEnterAnimation,
+      start: "top 30%",
+      end: "bottom top",
+      scrub: 1,
+      once: false,
+    });
+  });
+
+  const slideInUpOnEnter = gsap.utils.toArray(".gsap-slideInUpOnEnter");
+  slideInUpOnEnter.forEach((slideInUpOnEnterElement, i) => {
+    const slideInUpOnEnterAnimation = gsap.timeline({});
+    slideInUpOnEnterAnimation
+      .from(slideInUpOnEnterElement, { y: 200, ease: "Back.easeOut" })
+      .to(slideInUpOnEnterElement, { y: 0 });
+
+    ScrollTrigger.create({
+      trigger: slideInUpOnEnterElement,
+      animation: slideInUpOnEnterAnimation,
+      start: "-100px bottom",
+      end: "50% 40%",
+      scrub: 1,
+      once: false,
+    });
+  });
+
+  const growInOnEnter = gsap.utils.toArray(".gsap-growInOnEnter");
+  growInOnEnter.forEach((growInOnEnterElement, i) => {
+    const growInOnEnterAnimation = gsap.timeline({});
+    growInOnEnterAnimation
+      .from(growInOnEnterElement, { scale: 0, ease: "Back.easeOut" })
+      .to(growInOnEnterElement, { scale: 1 });
+
+    ScrollTrigger.create({
+      trigger: growInOnEnterElement,
+      animation: growInOnEnterAnimation,
+      start: "-100px bottom",
+      end: "50% 40%",
+      scrub: 1,
+      once: false,
+    });
+  });
+  // gsap.delayedCall(0.01, ScrollTrigger.refresh);
 }
+
+//Initial execution of scrollanimations when user lands directly on page with scroll animations
+scrollAnimations();
+
+//Execution of scrollanimations when user refreshes the page
+window.addEventListener('load', function(){
+  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.refresh();
+})
+
 
 // Test pageload solution https://codepen.io/keproost/project/editor/ZjLrke
 function leaveAnimation(e) {
-    return new Promise(async resolve => {
-      const elementsFadeUpDown = e.querySelectorAll(".gsap-pageTransition-fadeUpDown");
-      const elementsFadeInOut = e.querySelectorAll(".gsap-pageTransition-fadeInOut");
-      await gsap
-        .to(elementsFadeUpDown, {
-          duration: pageTransitionDuration,
-          y: 100,
-          opacity: 0,
-          ease: pageTransitionEase,
-          stagger: pageTransitionStagger
-        });
-        gsap
-        .to(elementsFadeInOut, {
-          duration: pageTransitionDuration,
-          opacity: 0,
-          ease: pageTransitionEase,
-        })
-        .then();
-      resolve()
-    });
-  }
-  
-  function enterAnimation(e) {
-    return new Promise(resolve => {
-      const elementsFadeUpDown = e.querySelectorAll(".gsap-pageTransition-fadeUpDown");
-      const elementsFadeInOut = e.querySelectorAll(".gsap-pageTransition-fadeInOut");
-      gsap
-        .from(elementsFadeUpDown, {
-          duration: pageTransitionDuration,
-          y: 100,
-          opacity: 0,
-          ease: pageTransitionEase,
-          stagger: pageTransitionStagger
-        });
-      gsap
-        .from(elementsFadeInOut, {
-          duration: pageTransitionDuration,
-          ease: pageTransitionEase,
-          opacity: 0,
-        })
-        .then(resolve());
-    });
-  }
-  
-  barba.init({
-    debug: true,
-    transitions: [
-      {
-        sync: false,
-        leave: ({ current }) => leaveAnimation(current.container.querySelector("main")),
-        once: ({ next }) => enterAnimation(next.container.querySelector("main")),
-        enter: ({ next }) => enterAnimation(next.container.querySelector("main"))
-      }
-    ]
+  return new Promise(async resolve => {
+    const elementsFadeUpDown = e.querySelectorAll('.gsap-pageTransition-fadeUpDown');
+    const elementsFadeInOut = e.querySelectorAll('.gsap-pageTransition-fadeInOut');
+    await gsap
+      .to(elementsFadeUpDown, {
+        duration: pageTransitionDuration,
+        y: 100,
+        opacity: 0,
+        ease: pageTransitionEase,
+        stagger: pageTransitionStagger
+      });
+    gsap
+      .to(elementsFadeInOut, {
+        duration: pageTransitionDuration,
+        opacity: 0,
+        ease: pageTransitionEase,
+      })
+      .then();
+    resolve();
   });
+}
 
-  scrollAnimations.scrollAnimationsCollection.scrollTrigger.kill();
+function enterAnimation(e) {
+  return new Promise(resolve => {
+    const elementsFadeUpDown = e.querySelectorAll('.gsap-pageTransition-fadeUpDown');
+    const elementsFadeInOut = e.querySelectorAll('.gsap-pageTransition-fadeInOut');
+    gsap
+      .from(elementsFadeUpDown, {
+        duration: pageTransitionDuration,
+        y: 100,
+        opacity: 0,
+        ease: pageTransitionEase,
+        stagger: pageTransitionStagger
+      });
+    gsap
+      .from(elementsFadeInOut, {
+        duration: pageTransitionDuration,
+        ease: pageTransitionEase,
+        opacity: 0,
+      })
+      .then(resolve());
+  });
+}
+
+barba.init({
+  debug: true,
+  transitions: [
+    {
+      sync: false,
+      leave: ({ current }) => leaveAnimation(current.container.querySelector('main')),
+      once: ({ next }) => enterAnimation(next.container.querySelector('main')),
+      enter: ({ next }) => enterAnimation(next.container.querySelector('main')),
+      afterEnter: () => {
+        console.log('index:afterEnter');
+        scrollAnimations();
+      }
+    }
+  ]
+});
+
+
+//Delay function to waith on barba to initialize scrolltrigger
+// function delay(ms) {
+//   return new Promise(resolve => setTimeout(resolve, ms));
+// }
+
+// setTimeout(scrollAnimations(), 50);
+
+
+  // barba.init({
+  //   debug: true,
+  //   transitions: [
+  //     {
+  //       sync: false,
+  //       leave ({ current }) {
+  //         leaveAnimation(current.container.querySelector("main"));
+  //       },
+  //       once ({ next }) {
+  //         enterAnimation(next.container.querySelector("main"));
+  //       },
+  //       enter ({ next }) {
+  //         enterAnimation(next.container.querySelector("main"));
+  //       }
+  //     }
+  //   ]
+  // });
+
+
+
+  // scrollAnimations.scrollAnimationsCollection.scrollTrigger.kill();
 
 // //Test solution https://github.com/Ihatetomatoes/page-transitions-tutorial
 // function init(){
-    
+
 //     const loader = document.querySelector('.gsap-loader');
 
 //     // reset position of the loading screen
@@ -144,7 +244,7 @@ function leaveAnimation(e) {
 //         transitions: [{
 //             async leave() {
 //                 await loaderIn();
-        
+
 //             },
 //             enter() {
 //                 loaderAway();
