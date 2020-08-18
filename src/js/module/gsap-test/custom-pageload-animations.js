@@ -1,6 +1,7 @@
 import { gsap, ScrollTrigger } from 'gsap/all';
 import barba from '@barba/core';
 import $ from "jquery";
+import scrollAnimations from './custom-onscroll-animations';
 // import scrollAnimations from './custom-onscroll-animations';
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,7 +13,7 @@ const pageTransitionStagger = 0.10;
 const pageTransitionEase = 'power2.inOut';
 
 //This function was in a sperate file but i get it called here
-function scrollAnimations() {
+function scrollAnimationsWorkingBackup() {
   const fadeOutOnLeaveOnEnter = gsap.utils.toArray(".gsap-fadeOutOnLeave");
   fadeOutOnLeaveOnEnter.forEach((fadeOutOnLeaveOnEnterElement, i) => {
     const fadeOutOnLeaveOnEnterAnimation = gsap.timeline({});
@@ -182,40 +183,40 @@ barba.init({
 
 //     // reset position of the loading screen
 //     gsap.set(loader, {
-//         scaleX: 0, 
-//         rotation: 10, 
+//         scaleX: 0,
+//         rotation: 10,
 //         xPercent: -5,
-//         yPercent: -50, 
-//         transformOrigin: 'left center', 
+//         yPercent: -50,
+//         transformOrigin: 'left center',
 //         autoAlpha: 1
 //     });
 
 //     function loaderIn() {
 //         // GSAP tween to stretch the loading screen across the whole screen
-//         return gsap.fromTo(loader, 
+//         return gsap.fromTo(loader,
 //             {
 //                 rotation: 10,
 //                 scaleX: 0,
 //                 xPercent: -5
 //             },
-//             { 
+//             {
 //                 duration: 0.8,
 //                 xPercent: 0,
-//                 scaleX: 1, 
+//                 scaleX: 1,
 //                 rotation: 0,
-//                 ease: 'Power4.inOut', 
+//                 ease: 'Power4.inOut',
 //                 transformOrigin: 'left center'
 //             });
 //     }
 
 //     function loaderAway() {
 //         // GSAP tween to hide the loading screen
-//         return gsap.to(loader, { 
-//             duration: 0.8, 
+//         return gsap.to(loader, {
+//             duration: 0.8,
 //             scaleX: 0,
-//             xPercent: 5, 
-//             rotation: -10, 
-//             transformOrigin: 'right center', 
+//             xPercent: 5,
+//             rotation: -10,
+//             transformOrigin: 'right center',
 //             ease: 'Power4.inOut'
 //         });
 //     }
