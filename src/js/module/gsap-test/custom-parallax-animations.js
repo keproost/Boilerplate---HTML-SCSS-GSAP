@@ -19,6 +19,8 @@ export default function parallaxAnimations() {
   });
 }
 
+
+
 //Initial execution of scrollanimations when user lands directly on page with scroll animations
 parallaxAnimations();
 
