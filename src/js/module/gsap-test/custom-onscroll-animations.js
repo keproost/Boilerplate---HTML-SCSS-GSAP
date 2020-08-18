@@ -1,4 +1,5 @@
 import { ScrollTrigger, gsap } from 'gsap/all';
+gsap.registerPlugin(ScrollTrigger);
 
 export default function scrollAnimations() {
     const fadeOutOnLeaveOnEnter = gsap.utils.toArray('.gsap-fadeOutOnLeave');
@@ -20,6 +21,7 @@ export default function scrollAnimations() {
             once: false,
         });
     });
+
     const slideInUpOnEnter = gsap.utils.toArray('.gsap-slideInUpOnEnter');
     slideInUpOnEnter.forEach((slideInUpOnEnterElement) => {
         const slideInUpOnEnterAnimation = gsap.timeline({});
@@ -54,6 +56,15 @@ export default function scrollAnimations() {
         });
     });
 }
+
+//Initial execution of scrollanimations when user lands directly on page with scroll animations
+scrollAnimations();
+
+//Execution of scrollanimations when user refreshes the page
+window.addEventListener('load', function(){
+  ScrollTrigger.refresh();
+})
+
 
 // const fadeOutOnLeave = gsap.utils.toArray('.gsap-fadeOutOnLeave');
 // fadeOutOnLeave.forEach((fadeOutOnLeaveElement, i) => {

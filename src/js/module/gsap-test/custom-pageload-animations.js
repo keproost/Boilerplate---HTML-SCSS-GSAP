@@ -1,82 +1,10 @@
-import { gsap, ScrollTrigger } from 'gsap/all';
+import { gsap } from 'gsap/all';
 import barba from '@barba/core';
-import $ from "jquery";
 import scrollAnimations from './custom-onscroll-animations';
-// import scrollAnimations from './custom-onscroll-animations';
-gsap.registerPlugin(ScrollTrigger);
-
-window.$ = $;
-window.jQuery = $;
 
 const pageTransitionDuration = 0.50;
 const pageTransitionStagger = 0.10;
 const pageTransitionEase = 'power2.inOut';
-
-//This function was in a sperate file but i get it called here
-function scrollAnimationsWorkingBackup() {
-  const fadeOutOnLeaveOnEnter = gsap.utils.toArray(".gsap-fadeOutOnLeave");
-  fadeOutOnLeaveOnEnter.forEach((fadeOutOnLeaveOnEnterElement, i) => {
-    const fadeOutOnLeaveOnEnterAnimation = gsap.timeline({});
-    fadeOutOnLeaveOnEnterAnimation
-      .from(fadeOutOnLeaveOnEnterElement, {
-        opacity: 1,
-        ease: "Back.easeInOut",
-      })
-      .to(fadeOutOnLeaveOnEnterElement, { opacity: 0 });
-
-    ScrollTrigger.create({
-      trigger: fadeOutOnLeaveOnEnterElement,
-      animation: fadeOutOnLeaveOnEnterAnimation,
-      start: "top 30%",
-      end: "bottom top",
-      scrub: 1,
-      once: false,
-    });
-  });
-
-  const slideInUpOnEnter = gsap.utils.toArray(".gsap-slideInUpOnEnter");
-  slideInUpOnEnter.forEach((slideInUpOnEnterElement, i) => {
-    const slideInUpOnEnterAnimation = gsap.timeline({});
-    slideInUpOnEnterAnimation
-      .from(slideInUpOnEnterElement, { y: 200, ease: "Back.easeOut" })
-      .to(slideInUpOnEnterElement, { y: 0 });
-
-    ScrollTrigger.create({
-      trigger: slideInUpOnEnterElement,
-      animation: slideInUpOnEnterAnimation,
-      start: "-100px bottom",
-      end: "50% 40%",
-      scrub: 1,
-      once: false,
-    });
-  });
-
-  const growInOnEnter = gsap.utils.toArray(".gsap-growInOnEnter");
-  growInOnEnter.forEach((growInOnEnterElement, i) => {
-    const growInOnEnterAnimation = gsap.timeline({});
-    growInOnEnterAnimation
-      .from(growInOnEnterElement, { scale: 0, ease: "Back.easeOut" })
-      .to(growInOnEnterElement, { scale: 1 });
-
-    ScrollTrigger.create({
-      trigger: growInOnEnterElement,
-      animation: growInOnEnterAnimation,
-      start: "-100px bottom",
-      end: "50% 40%",
-      scrub: 1,
-      once: false,
-    });
-  });
-}
-
-//Initial execution of scrollanimations when user lands directly on page with scroll animations
-scrollAnimations();
-
-//Execution of scrollanimations when user refreshes the page
-window.addEventListener('load', function(){
-  gsap.registerPlugin(ScrollTrigger);
-  ScrollTrigger.refresh();
-})
 
 
 // PAGE transitions using barba.js
@@ -134,8 +62,7 @@ barba.init({
       once: ({ next }) => enterAnimation(next.container.querySelector('main')),
       enter: ({ next }) => enterAnimation(next.container.querySelector('main')),
       afterEnter: () => {
-        console.log('index:afterEnter');
-        scrollAnimations(); //I need to call the function here so the triggers are recalculated after pagetransition ends
+        scrollAnimations();
       }
     }
   ]
