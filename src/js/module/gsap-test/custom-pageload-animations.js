@@ -11,7 +11,7 @@ const pageTransitionDuration = 0.50;
 const pageTransitionStagger = 0.10;
 const pageTransitionEase = 'power2.inOut';
 
-
+//This function was in a sperate file but i get it called here
 function scrollAnimations() {
   const fadeOutOnLeaveOnEnter = gsap.utils.toArray(".gsap-fadeOutOnLeave");
   fadeOutOnLeaveOnEnter.forEach((fadeOutOnLeaveOnEnterElement, i) => {
@@ -66,7 +66,6 @@ function scrollAnimations() {
       once: false,
     });
   });
-  // gsap.delayedCall(0.01, ScrollTrigger.refresh);
 }
 
 //Initial execution of scrollanimations when user lands directly on page with scroll animations
@@ -79,7 +78,7 @@ window.addEventListener('load', function(){
 })
 
 
-// Test pageload solution https://codepen.io/keproost/project/editor/ZjLrke
+// PAGE transitions using barba.js
 function leaveAnimation(e) {
   return new Promise(async resolve => {
     const elementsFadeUpDown = e.querySelectorAll('.gsap-pageTransition-fadeUpDown');
@@ -135,12 +134,16 @@ barba.init({
       enter: ({ next }) => enterAnimation(next.container.querySelector('main')),
       afterEnter: () => {
         console.log('index:afterEnter');
-        scrollAnimations();
+        scrollAnimations(); //I need to call the function here so the triggers are recalculated after pagetransition ends
       }
     }
   ]
 });
 
+
+
+
+//DONT MIND THESE, OLD EXAMPLES AND SAMPLES
 
 //Delay function to waith on barba to initialize scrolltrigger
 // function delay(ms) {
