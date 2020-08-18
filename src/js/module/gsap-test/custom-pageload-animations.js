@@ -1,17 +1,35 @@
-import { gsap } from 'gsap/all';
+import { gsap, ScrollTrigger } from 'gsap/all';
 import barba from '@barba/core';
+import scrollAnimations from './custom-onscroll-animations';
+
+let pageTransitionDuration = 0.50;
+let pageTransitionStagger = 0.10;
+let pageTransitionEase = "power2.inOut"
+
+
+//Delay function to waith on barba to initialize scrolltrigger
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 // Test pageload solution https://codepen.io/keproost/project/editor/ZjLrke
 function leaveAnimation(e) {
     return new Promise(async resolve => {
-      const elements = e.querySelectorAll("img, h1");
+      const elementsFadeUpDown = e.querySelectorAll(".gsap-pageTransition-fadeUpDown");
+      const elementsFadeInOut = e.querySelectorAll(".gsap-pageTransition-fadeInOut");
       await gsap
-        .to(elements, {
-          duration: 1,
+        .to(elementsFadeUpDown, {
+          duration: pageTransitionDuration,
           y: 100,
           opacity: 0,
-          ease: "power2.inOut",
-          stagger: 0.3
+          ease: pageTransitionEase,
+          stagger: pageTransitionStagger
+        });
+        gsap
+        .to(elementsFadeInOut, {
+          duration: pageTransitionDuration,
+          opacity: 0,
+          ease: pageTransitionEase,
         })
         .then();
       resolve()
@@ -20,17 +38,23 @@ function leaveAnimation(e) {
   
   function enterAnimation(e) {
     return new Promise(resolve => {
-      const elements = e.querySelectorAll("img, h1");
+      const elementsFadeUpDown = e.querySelectorAll(".gsap-pageTransition-fadeUpDown");
+      const elementsFadeInOut = e.querySelectorAll(".gsap-pageTransition-fadeInOut");
       gsap
-        .from(elements, {
-          duration: 1,
+        .from(elementsFadeUpDown, {
+          duration: pageTransitionDuration,
           y: 100,
           opacity: 0,
-          ease: "power2.inOut",
-          stagger: 0.3
+          ease: pageTransitionEase,
+          stagger: pageTransitionStagger
+        });
+      gsap
+        .from(elementsFadeInOut, {
+          duration: pageTransitionDuration,
+          ease: pageTransitionEase,
+          opacity: 0,
         })
         .then(resolve());
-  
     });
   }
   
@@ -39,14 +63,14 @@ function leaveAnimation(e) {
     transitions: [
       {
         sync: false,
-        leave: ({ current }) =>
-          leaveAnimation(current.container.querySelector("main")),
+        leave: ({ current }) => leaveAnimation(current.container.querySelector("main")),
         once: ({ next }) => enterAnimation(next.container.querySelector("main")),
         enter: ({ next }) => enterAnimation(next.container.querySelector("main"))
       }
     ]
   });
 
+  scrollAnimations.scrollAnimationsCollection.scrollTrigger.kill();
 
 // //Test solution https://github.com/Ihatetomatoes/page-transitions-tutorial
 // function init(){

@@ -1,60 +1,67 @@
-import $ from 'jquery';
-import { ScrollTrigger, gsap } from 'gsap/all';
+import $ from "jquery";
+import { ScrollTrigger, gsap } from "gsap/all";
 
 window.$ = $;
 window.jQuery = $;
 
-
 gsap.registerPlugin(ScrollTrigger);
 
-
-const slideInUpOnEnter = gsap.utils.toArray('.gsap-slideInUpOnEnter');
-slideInUpOnEnter.forEach((slideInUpOnEnterElement, i) => {
-    const slideInUpOnEnterAnimation = gsap.timeline({});
-    slideInUpOnEnterAnimation.from(slideInUpOnEnterElement, { y: 200, ease: 'Back.easeOut' })
-        .to(slideInUpOnEnterElement, { y: 0 });
-
-    ScrollTrigger.create({
-        trigger: slideInUpOnEnterElement,
-        animation: slideInUpOnEnterAnimation,
-        start: '-100px bottom',
-        end: '50% 40%',
-        scrub: 1,
-        once: false,
-    });
-});
-
-const growInOnEnter = gsap.utils.toArray('.gsap-growInOnEnter');
-growInOnEnter.forEach((growInOnEnterElement, i) => {
-    const growInOnEnterAnimation = gsap.timeline({});
-    growInOnEnterAnimation.from(growInOnEnterElement, { scale: 0, ease: 'Back.easeOut' })
-        .to(growInOnEnterElement, { scale: 1 });
-
-    ScrollTrigger.create({
-        trigger: growInOnEnterElement,
-        animation: growInOnEnterAnimation,
-        start: '-100px bottom',
-        end: '50% 40%',
-        scrub: 1,
-        once: false,
-    });
-});
-
-const fadeOutOnLeaveOnEnter = gsap.utils.toArray('.gsap-fadeOutOnLeave');
-fadeOutOnLeaveOnEnter.forEach((fadeOutOnLeaveOnEnterElement, i) => {
-    const fadeOutOnLeaveOnEnterAnimation = gsap.timeline({});
-    fadeOutOnLeaveOnEnterAnimation.from(fadeOutOnLeaveOnEnterElement, { opacity: 1, ease: 'Back.easeInOut' })
+export default function scrollAnimations() {
+  const scrollAnimationsCollection = () => {
+    const fadeOutOnLeaveOnEnter = gsap.utils.toArray(".gsap-fadeOutOnLeave");
+    fadeOutOnLeaveOnEnter.forEach((fadeOutOnLeaveOnEnterElement, i) => {
+      const fadeOutOnLeaveOnEnterAnimation = gsap.timeline({});
+      fadeOutOnLeaveOnEnterAnimation
+        .from(fadeOutOnLeaveOnEnterElement, {
+          opacity: 1,
+          ease: "Back.easeInOut",
+        })
         .to(fadeOutOnLeaveOnEnterElement, { opacity: 0 });
 
-    ScrollTrigger.create({
+      ScrollTrigger.create({
         trigger: fadeOutOnLeaveOnEnterElement,
         animation: fadeOutOnLeaveOnEnterAnimation,
-        start: 'top 30%',
-        end: 'bottom top',
+        start: "top 30%",
+        end: "bottom top",
         scrub: 1,
         once: false,
+      });
     });
-});
+    const slideInUpOnEnter = gsap.utils.toArray(".gsap-slideInUpOnEnter");
+    slideInUpOnEnter.forEach((slideInUpOnEnterElement, i) => {
+      const slideInUpOnEnterAnimation = gsap.timeline({});
+      slideInUpOnEnterAnimation
+        .from(slideInUpOnEnterElement, { y: 200, ease: "Back.easeOut" })
+        .to(slideInUpOnEnterElement, { y: 0 });
+
+      ScrollTrigger.create({
+        trigger: slideInUpOnEnterElement,
+        animation: slideInUpOnEnterAnimation,
+        start: "-100px bottom",
+        end: "50% 40%",
+        scrub: 1,
+        once: false,
+      });
+    });
+
+    const growInOnEnter = gsap.utils.toArray(".gsap-growInOnEnter");
+    growInOnEnter.forEach((growInOnEnterElement, i) => {
+      const growInOnEnterAnimation = gsap.timeline({});
+      growInOnEnterAnimation
+        .from(growInOnEnterElement, { scale: 0, ease: "Back.easeOut" })
+        .to(growInOnEnterElement, { scale: 1 });
+
+      ScrollTrigger.create({
+        trigger: growInOnEnterElement,
+        animation: growInOnEnterAnimation,
+        start: "-100px bottom",
+        end: "50% 40%",
+        scrub: 1,
+        once: false,
+      });
+    });
+  };
+}
 
 // const fadeOutOnLeave = gsap.utils.toArray('.gsap-fadeOutOnLeave');
 // fadeOutOnLeave.forEach((fadeOutOnLeaveElement, i) => {
