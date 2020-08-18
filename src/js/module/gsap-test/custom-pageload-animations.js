@@ -1,6 +1,7 @@
 import { gsap } from 'gsap/all';
 import barba from '@barba/core';
 import scrollAnimations from './custom-onscroll-animations';
+import parallaxAnimations from './custom-parallax-animations';
 
 const pageTransitionDuration = 0.50;
 const pageTransitionStagger = 0.10;
@@ -63,6 +64,7 @@ barba.init({
       enter: ({ next }) => enterAnimation(next.container.querySelector('main')),
       afterEnter: () => {
         scrollAnimations();
+        parallaxAnimations();
       }
     }
   ]

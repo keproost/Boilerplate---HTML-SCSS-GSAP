@@ -2,27 +2,28 @@ import { ScrollTrigger, gsap } from 'gsap/all';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function scrollAnimations() {
-    const fadeOutOnLeaveOnEnter = gsap.utils.toArray('.gsap-fadeOutOnLeave');
-    fadeOutOnLeaveOnEnter.forEach((fadeOutOnLeaveOnEnterElement) => {
-        const fadeOutOnLeaveOnEnterAnimation = gsap.timeline({});
-        fadeOutOnLeaveOnEnterAnimation
-            .from(fadeOutOnLeaveOnEnterElement, {
+    const fadeOutOnLeave = gsap.utils.toArray('.gsap-scrollAnimation-fadeOutOnLeave');
+    fadeOutOnLeave.forEach((fadeOutOnLeaveElement) => {
+        const fadeOutOnLeaveAnimation = gsap.timeline({});
+        fadeOutOnLeaveAnimation
+            .from(fadeOutOnLeaveElement, {
                 opacity: 1,
                 ease: 'Back.easeInOut',
             })
-            .to(fadeOutOnLeaveOnEnterElement, { opacity: 0 });
+            .to(fadeOutOnLeaveElement, { opacity: 0 });
 
         ScrollTrigger.create({
-            trigger: fadeOutOnLeaveOnEnterElement,
-            animation: fadeOutOnLeaveOnEnterAnimation,
-            start: 'top 30%',
-            end: 'bottom top',
+            trigger: fadeOutOnLeaveElement,
+            animation: fadeOutOnLeaveAnimation,
+            // markers: { startColor: 'blue', endColor: 'pink', fontSize: '12px' },
+            start: 'top 40%',
+            end: 'bottom 10%',
             scrub: 1,
             once: false,
         });
     });
 
-    const slideInUpOnEnter = gsap.utils.toArray('.gsap-slideInUpOnEnter');
+    const slideInUpOnEnter = gsap.utils.toArray('.gsap-scrollAnimation-slideInUpOnEnter');
     slideInUpOnEnter.forEach((slideInUpOnEnterElement) => {
         const slideInUpOnEnterAnimation = gsap.timeline({});
         slideInUpOnEnterAnimation
@@ -39,7 +40,7 @@ export default function scrollAnimations() {
         });
     });
 
-    const growInOnEnter = gsap.utils.toArray('.gsap-growInOnEnter');
+    const growInOnEnter = gsap.utils.toArray('.gsap-scrollAnimation-growInOnEnter');
     growInOnEnter.forEach((growInOnEnterElement) => {
         const growInOnEnterAnimation = gsap.timeline({});
         growInOnEnterAnimation
