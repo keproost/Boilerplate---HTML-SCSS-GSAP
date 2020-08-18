@@ -2,7 +2,7 @@ import { ScrollTrigger, gsap } from 'gsap/all';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function parallaxAnimations() {
-  const tl = gsap.timeline({
+  const parallaxHero = gsap.timeline({
       scrollTrigger: {
           trigger: "#hero",
           start: "top top",
@@ -11,10 +11,11 @@ export default function parallaxAnimations() {
       }
   });
 
-  gsap.utils.toArray(".parallax").forEach(layer => {
+
+  const parallaxItems = gsap.utils.toArray(".parallax").forEach(layer => {
       const depth = layer.dataset.depth;
       const movement = -(layer.offsetHeight * depth)
-      tl.to(layer, {y: movement, ease: "none"}, 0)
+      parallaxHero.to(layer, {y: movement, ease: "none"}, 0)
   });
 }
 
@@ -22,6 +23,9 @@ export default function parallaxAnimations() {
 parallaxAnimations();
 
 //Execution of scrollanimations when user refreshes the page
-window.addEventListener('load', function(){
-  ScrollTrigger.refresh();
-})
+// window.addEventListener('load', function(){
+//   parallaxHero.kill(true);
+//   ScrollTrigger.getById("hero").kill(true);
+//   gsap.set("#hero", {clearProps: true});
+//   ScrollTrigger.refresh();
+// })

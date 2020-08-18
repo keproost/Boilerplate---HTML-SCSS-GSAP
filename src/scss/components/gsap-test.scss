@@ -12,30 +12,10 @@
 .gsap-loader-wrapper {
 
 }
-// .gsap-loader {
-//     background-color: black;
-//     z-index: 50000;
-//     position: absolute;
-//     transform-origin: center;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%) !important;
-//     border-radius: 100%;
-//     width: 0%;
-//     // transform: translate(0%, 0%);
-// }
-
-// .gsap-loader:after {
-//     content: "";
-//     display: block;
-//     padding-bottom: 100%;
-//   }
-
 .is-transitioning {
     pointer-events: none;
     cursor: progress;
 }
-
 
 .gsap-loader {
     position: fixed;
@@ -48,28 +28,28 @@
     opacity: 0;
 }
 
-
 //Parallax test
-$bronze: #130d0a;
-$white: #fff;
 $heroHeight: 800px;
 
-body {
-    padding: 0;
-    margin: 0;
-    background-color: $bronze;
-    font-family: 'Playfair Display', serif;
-    color: $white;
+.parallax-page {
+    background-color: black;
+    #content {
+        background-color: black;
+        margin-top: 50px;
+        color: #ffffff;
+        position: relative;
+        z-index: 5;
+    }
 }
+
 
 #hero {
     height: $heroHeight;
     overflow: hidden;
     position: relative;
+    z-index: 5;
 }
-#content {
-    background-color: $bronze;
-}
+
 .layer {
     background-position: bottom center;
     background-size: auto;
@@ -82,7 +62,8 @@ body {
 
 #hero-mobile {
     display: none;
-    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/full_illustration.png") no-repeat center bottom / cover;
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/full_illustration.png") no-repeat center bottom;
+    background-size: cover;
     height: 320px;
 }
 
@@ -92,15 +73,6 @@ body {
 .text-header {
     font-size: 50px;
     text-align: center;
-}
-h1 {
-    line-height: 120%;
-    margin-bottom: 30px;
-}
-p {
-    color: #ede0d5;
-    font-size: 18px;
-    line-height: 150%;
 }
 
 #hero, .layer {
@@ -136,3 +108,22 @@ p {
         background-position: 35% bottom;
     }
 }
+
+// .gsap-loader {
+//     background-color: black;
+//     z-index: 50000;
+//     position: absolute;
+//     transform-origin: center;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%) !important;
+//     border-radius: 100%;
+//     width: 0%;
+//     // transform: translate(0%, 0%);
+// }
+
+// .gsap-loader:after {
+//     content: "";
+//     display: block;
+//     padding-bottom: 100%;
+//   }
