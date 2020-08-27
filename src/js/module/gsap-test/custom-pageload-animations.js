@@ -61,7 +61,9 @@ barba.init({
       sync: false,
       leave: ({ current }) => leaveAnimation(current.container.querySelector('main')),
       once: ({ next }) => enterAnimation(next.container.querySelector('main')),
-      enter: ({ next }) => enterAnimation(next.container.querySelector('main')),
+      enter: ({ next }) => {
+      	enterAnimation(next.container.querySelector('main'))
+      },
       afterEnter: () => {
         scrollAnimations();
         parallaxAnimations();
