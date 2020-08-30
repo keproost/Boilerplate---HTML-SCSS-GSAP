@@ -1,105 +1,132 @@
-import { ScrollTrigger, gsap } from 'gsap/all';
 import barba from '@barba/core';
+import { ScrollTrigger, gsap } from 'gsap/all';
 import scrollAnimations from './custom-onscroll-animations';
 import parallaxAnimations from './custom-parallax-animations';
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const pageTransitionDuration = 0.25;
-const pageTransitionStagger = 0.10;
+const pageTransitionStagger = 0.1;
 const pageTransitionEase = 'power2.inOut';
 
-
 // PAGE transitions using barba.js
-function leaveAnimation(e) {
-    const elementsFadeUpDown = e.querySelectorAll('.gsap-pageTransition-fadeUpDown');
-    const elementsFadeInOut = e.querySelectorAll('.gsap-pageTransition-fadeInOut');
-    console.log('LEAVE ELEMENTSFADEINOUT', elementsFadeInOut);
-    console.log('LEAVE ELEMENTSFADEUPDOWN', elementsFadeUpDown);
-
-	if ((elementsFadeInOut && elementsFadeInOut.length > 0) && (elementsFadeUpDown && elementsFadeUpDown.length > 0)) {
-		return new Promise(async (resolve) => {
-			await gsap
-				.to(elementsFadeUpDown, {
-					duration: pageTransitionDuration,
-					y: 100,
-					opacity: 0,
-					ease: pageTransitionEase,
-					stagger: pageTransitionStagger
-				});
-			gsap
-				.to(elementsFadeInOut, {
-					duration: pageTransitionDuration,
-					opacity: 0,
-					ease: pageTransitionEase,
-				})
-				.then();
-			resolve();
-		});
-	}
-
-	return new Promise((resolve) => {
-		resolve();
-	});
-}
-
-function enterAnimation(e) {
-    const elementsFadeUpDown = e.querySelectorAll('.gsap-pageTransition-fadeUpDown');
-    const elementsFadeInOut = e.querySelectorAll('.gsap-pageTransition-fadeInOut');
-    console.log('ENTER ELEMENTSFADEINOUT', elementsFadeInOut);
-    console.log('ENTER ELEMENTSFADEUPDOWN', elementsFadeUpDown);
-
-    if ((elementsFadeInOut && elementsFadeInOut.length > 0) && (elementsFadeUpDown && elementsFadeUpDown.length > 0)) {
-	    return new Promise((resolve) => {
-		    gsap
-			    .from(elementsFadeUpDown, {
-				    duration: pageTransitionDuration,
-				    y: 100,
-				    opacity: 0,
-				    ease: pageTransitionEase,
-				    stagger: pageTransitionStagger
-			    });
-		    gsap
-			    .from(elementsFadeInOut, {
-				    duration: pageTransitionDuration,
-				    ease: pageTransitionEase,
-				    opacity: 0,
-			    })
-			    .then(resolve());
-	    });
-    }
-
-    return new Promise((resolve) => {
-	    resolve();
-    });
-}
-
-// barba.hooks.afterEnter((data) => {
-//     console.log('??????????');
+// barba.hooks.afterEnter(() => {
+//     ScrollTrigger.getById('parallaxAnimationID').kill();
 //     scrollAnimations();
 //     parallaxAnimations();
 // });
 
-barba.init({
-    debug: true,
-    transitions: [
-        {
-            sync: false,
-            leave: ({ current }) => leaveAnimation(current.container.querySelector('main')),
-            once: ({ next }) => enterAnimation(next.container.querySelector('main')),
-            enter: ({ next }) => {
-                enterAnimation(next.container.querySelector('main'));
-            },
-            after: () => {
-                // scrollAnimations();
-                // parallaxAnimations();
-            }
-            // afterEnter: () => {
-
-            // }
-        }
-    ]
+barba.hooks.afterEnter(() => {
+    parallaxAnimations();
 });
+
+function enterAnimation(e) {
+    const elementsFadeUpDown = e.querySelectorAll(
+        '.gsap-pageTransition-fadeUpDown'
+    );
+    const elementsFadeInOut = e.querySelectorAll(
+        '.gsap-pageTransition-fadeInOut'
+    );
+    console.log('PAGELOAD - ENTER - ELEMENTSFADEINOUT', elementsFadeInOut);
+    console.log('PAGELOAD - ENTER - ELEMENTSFADEUPDOWN', elementsFadeUpDown);
+
+    if (
+        elementsFadeInOut
+    && elementsFadeInOut.length > 0
+    && elementsFadeUpDown
+    && elementsFadeUpDown.length > 0
+    ) {
+        return new Promise((resolve) => {
+            gsap.from(elementsFadeUpDown, {
+                duration: pageTransitionDuration,
+                y: 100,
+                opacity: 0,
+                ease: pageTransitionEase,
+                stagger: pageTransitionStagger,
+            });
+            gsap
+                .from(elementsFadeInOut, {
+                    duration: pageTransitionDuration,
+                    ease: pageTransitionEase,
+                    opacity: 0,
+                })
+                .then(resolve());
+        });
+    }
+
+    return new Promise((resolve) => {
+        resolve();
+    });
+}
+
+function leaveAnimation(e) {
+    const elementsFadeUpDown = e.querySelectorAll(
+        '.gsap-pageTransition-fadeUpDown'
+    );
+    const elementsFadeInOut = e.querySelectorAll(
+        '.gsap-pageTransition-fadeInOut'
+    );
+    console.log('PAGELOAD - LEAVE - ELEMENTSFADEINOUT', elementsFadeInOut);
+    console.log('PAGELOAD - LEAVE - ELEMENTSFADEUPDOWN', elementsFadeUpDown);
+
+    if (
+        elementsFadeInOut
+    && elementsFadeInOut.length > 0
+    && elementsFadeUpDown
+    && elementsFadeUpDown.length > 0
+    ) {
+        return new Promise(async (resolve) => {
+            await gsap.to(elementsFadeUpDown, {
+                duration: pageTransitionDuration,
+                y: 100,
+                opacity: 0,
+                ease: pageTransitionEase,
+                stagger: pageTransitionStagger,
+            });
+            gsap
+                .to(elementsFadeInOut, {
+                    duration: pageTransitionDuration,
+                    opacity: 0,
+                    ease: pageTransitionEase,
+                })
+                .then();
+            resolve();
+        });
+    }
+
+    return new Promise((resolve) => {
+        resolve();
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    barba.init({
+        debug: true,
+        transitions: [
+            {
+                sync: false,
+                leave: ({ current }) => leaveAnimation(current.container.querySelector('main')),
+                once: ({ next }) => enterAnimation(next.container.querySelector('main')),
+                enter: ({ next }) => {
+                    enterAnimation(next.container.querySelector('main'));
+                    // parallaxAnimations();
+                    // ScrollTrigger.getById('parallaxAnimationID').kill();
+                    // ScrollTrigger.getById('parallaxAnimationID').refresh();
+                },
+                afterEnter: () => {
+                    // ScrollTrigger.kill();
+                    // ScrollTrigger.refresh();
+                }
+            },
+        ],
+    });
+});
+
+
+// barba.hooks.enter(() => {
+//     scrollAnimations();
+//     parallaxAnimations();
+// });
 
 
 // DONT MIND THESE, OLD EXAMPLES AND SAMPLES
@@ -110,7 +137,6 @@ barba.init({
 // }
 
 // setTimeout(scrollAnimations(), 50);
-
 
 // barba.init({
 //   debug: true,
@@ -129,7 +155,6 @@ barba.init({
 //     }
 //   ]
 // });
-
 
 // scrollAnimations.scrollAnimationsCollection.scrollTrigger.kill();
 

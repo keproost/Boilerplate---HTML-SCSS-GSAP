@@ -1,33 +1,53 @@
-// import { ScrollTrigger, gsap } from 'gsap/all';
+import { ScrollTrigger, gsap } from 'gsap/all';
 
-// gsap.registerPlugin(ScrollTrigger);
+export default function parallaxAnimations() {
+    gsap.registerPlugin(ScrollTrigger);
+    const parallaxHero = gsap.timeline({
+        scrollTrigger: {
+            trigger: '#hero',
+            start: 'top top',
+            end: 'bottom top',
+            id: 'parallaxAnimationID',
+            markers: { startColor: 'blue', endColor: 'pink', fontSize: '12px' },
+            scrub: true
+        }
+    });
+
+    const layers = gsap.utils.toArray('.parallax');
+    console.log('MYPARALLAXELEMENTS', layers);
+    if (layers) {
+        layers.forEach((layer) => {
+            const { depth } = layer.dataset;
+            const movement = -(layer.offsetHeight * depth);
+            parallaxHero.to(layer, { y: movement, ease: 'none' }, 0);
+        });
+    }
+
+    // gsap.utils.toArray('.parallax').forEach((layer) => {
+    //     console.log('MYPARALLAXELEMENTS', layer);
+    //     const { depth } = layer.dataset;
+    //     const movement = -(layer.offsetHeight * depth);
+    //     parallaxHero.to(layer, { y: movement, ease: 'none' }, 0);
+    // });
+}
 
 // export default function parallaxAnimations() {
-//     const parallaxHero = gsap.timeline({
-//         scrollTrigger: {
-//             trigger: '#hero',
-//             start: 'top top',
-//             end: 'bottom top',
-//             scrub: true
-//         }
+//     gsap.registerPlugin(ScrollTrigger);
+//     const parallaxSection = gsap.timeline({ y: 0 });
+//     const layers = gsap.utils.toArray('.parallax');
+//     console.log('MYPARALLAXELEMENTS', layers);
+//     ScrollTrigger.create({
+//         trigger: '#hero',
+//         start: 'top top',
+//         end: 'bottom top',
+//         markers: { startColor: 'blue', endColor: 'pink', fontSize: '12px' },
+//         scrub: true
 //     });
-//     if (parallaxHero) {
-//         gsap.utils.toArray('.parallax').forEach((layer) => {
+//     if (layers) {
+//         layers.forEach((layer) => {
 //             const { depth } = layer.dataset;
 //             const movement = -(layer.offsetHeight * depth);
-//             parallaxHero.to(layer, { y: movement, ease: 'none' }, 0);
+//             parallaxSection.to(layer, { y: movement, ease: 'none' });
 //         });
 //     }
 // }
-
-
-// // Initial execution of scrollanimations when user lands directly on page with scroll animations
-// parallaxAnimations();
-
-// // Execution of scrollanimations when user refreshes the page
-// // window.addEventListener('load', function(){
-// //   parallaxHero.kill(true);
-// //   ScrollTrigger.getById("hero").kill(true);
-// //   gsap.set("#hero", {clearProps: true});
-// //   ScrollTrigger.refresh();
-// // })
