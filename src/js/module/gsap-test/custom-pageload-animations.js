@@ -14,54 +14,64 @@ const pageTransitionEase = 'power2.inOut';
 function leaveAnimation(e) {
     const elementsFadeUpDown = e.querySelectorAll('.gsap-pageTransition-fadeUpDown');
     const elementsFadeInOut = e.querySelectorAll('.gsap-pageTransition-fadeInOut');
-    console.log(elementsFadeInOut);
-    console.log(elementsFadeUpDown);
-    if (elementsFadeUpDown.lenght > 0 && elementsFadeInOut.lenght > 0) {
-        return new Promise(async (resolve) => {
-            await gsap
-                .to(elementsFadeUpDown, {
-                    duration: pageTransitionDuration,
-                    y: 100,
-                    opacity: 0,
-                    ease: pageTransitionEase,
-                    stagger: pageTransitionStagger
-                });
-            gsap
-                .to(elementsFadeInOut, {
-                    duration: pageTransitionDuration,
-                    opacity: 0,
-                    ease: pageTransitionEase,
-                })
-                .then();
-            resolve();
-        });
-    }
+    console.log('LEAVE ELEMENTSFADEINOUT', elementsFadeInOut);
+    console.log('LEAVE ELEMENTSFADEUPDOWN', elementsFadeUpDown);
+
+	if ((elementsFadeInOut && elementsFadeInOut.length > 0) && (elementsFadeUpDown && elementsFadeUpDown.length > 0)) {
+		return new Promise(async (resolve) => {
+			await gsap
+				.to(elementsFadeUpDown, {
+					duration: pageTransitionDuration,
+					y: 100,
+					opacity: 0,
+					ease: pageTransitionEase,
+					stagger: pageTransitionStagger
+				});
+			gsap
+				.to(elementsFadeInOut, {
+					duration: pageTransitionDuration,
+					opacity: 0,
+					ease: pageTransitionEase,
+				})
+				.then();
+			resolve();
+		});
+	}
+
+	return new Promise((resolve) => {
+		resolve();
+	});
 }
 
 function enterAnimation(e) {
     const elementsFadeUpDown = e.querySelectorAll('.gsap-pageTransition-fadeUpDown');
     const elementsFadeInOut = e.querySelectorAll('.gsap-pageTransition-fadeInOut');
-    console.log(elementsFadeInOut);
-    console.log(elementsFadeUpDown);
-    if (elementsFadeUpDown.lenght > 0 && elementsFadeInOut.lenght > 0) {
-        return new Promise((resolve) => {
-            gsap
-                .from(elementsFadeUpDown, {
-                    duration: pageTransitionDuration,
-                    y: 100,
-                    opacity: 0,
-                    ease: pageTransitionEase,
-                    stagger: pageTransitionStagger
-                });
-            gsap
-                .from(elementsFadeInOut, {
-                    duration: pageTransitionDuration,
-                    ease: pageTransitionEase,
-                    opacity: 0,
-                })
-                .then(resolve());
-        });
+    console.log('ENTER ELEMENTSFADEINOUT', elementsFadeInOut);
+    console.log('ENTER ELEMENTSFADEUPDOWN', elementsFadeUpDown);
+
+    if ((elementsFadeInOut && elementsFadeInOut.length > 0) && (elementsFadeUpDown && elementsFadeUpDown.length > 0)) {
+	    return new Promise((resolve) => {
+		    gsap
+			    .from(elementsFadeUpDown, {
+				    duration: pageTransitionDuration,
+				    y: 100,
+				    opacity: 0,
+				    ease: pageTransitionEase,
+				    stagger: pageTransitionStagger
+			    });
+		    gsap
+			    .from(elementsFadeInOut, {
+				    duration: pageTransitionDuration,
+				    ease: pageTransitionEase,
+				    opacity: 0,
+			    })
+			    .then(resolve());
+	    });
     }
+
+    return new Promise((resolve) => {
+	    resolve();
+    });
 }
 
 // barba.hooks.afterEnter((data) => {
