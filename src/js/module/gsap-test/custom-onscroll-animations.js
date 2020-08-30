@@ -4,7 +4,7 @@
 
 // export default function scrollAnimations() {
 //     const fadeOutOnLeave = gsap.utils.toArray('.gsap-scrollAnimation-fadeOutOnLeave');
-//     if (fadeOutOnLeave) {
+//     if (fadeOutOnLeave.lenghts) {
 //         fadeOutOnLeave.forEach((fadeOutOnLeaveElement) => {
 //             const fadeOutOnLeaveAnimation = gsap.timeline({});
 //             fadeOutOnLeaveAnimation

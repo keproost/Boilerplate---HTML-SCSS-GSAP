@@ -16,7 +16,7 @@ function leaveAnimation(e) {
     const elementsFadeInOut = e.querySelectorAll('.gsap-pageTransition-fadeInOut');
     console.log(elementsFadeInOut);
     console.log(elementsFadeUpDown);
-    if (elementsFadeUpDown.lenght !== 0 && elementsFadeInOut.lenght !== 0) {
+    if (elementsFadeUpDown.lenght > 0 && elementsFadeInOut.lenght > 0) {
         return new Promise(async (resolve) => {
             await gsap
                 .to(elementsFadeUpDown, {
@@ -41,7 +41,9 @@ function leaveAnimation(e) {
 function enterAnimation(e) {
     const elementsFadeUpDown = e.querySelectorAll('.gsap-pageTransition-fadeUpDown');
     const elementsFadeInOut = e.querySelectorAll('.gsap-pageTransition-fadeInOut');
-    if (elementsFadeUpDown.lenght !== 0 && elementsFadeInOut.lenght !== 0) {
+    console.log(elementsFadeInOut);
+    console.log(elementsFadeUpDown);
+    if (elementsFadeUpDown.lenght > 0 && elementsFadeInOut.lenght > 0) {
         return new Promise((resolve) => {
             gsap
                 .from(elementsFadeUpDown, {
