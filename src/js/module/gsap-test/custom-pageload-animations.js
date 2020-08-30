@@ -1,83 +1,98 @@
-import { gsap } from 'gsap/all';
+import { ScrollTrigger, gsap } from 'gsap/all';
 import barba from '@barba/core';
 import scrollAnimations from './custom-onscroll-animations';
 import parallaxAnimations from './custom-parallax-animations';
 
-const pageTransitionDuration = 0.50;
+gsap.registerPlugin(ScrollTrigger);
+
+const pageTransitionDuration = 0.25;
 const pageTransitionStagger = 0.10;
 const pageTransitionEase = 'power2.inOut';
 
 
 // PAGE transitions using barba.js
 function leaveAnimation(e) {
-  return new Promise(async resolve => {
     const elementsFadeUpDown = e.querySelectorAll('.gsap-pageTransition-fadeUpDown');
     const elementsFadeInOut = e.querySelectorAll('.gsap-pageTransition-fadeInOut');
-    await gsap
-      .to(elementsFadeUpDown, {
-        duration: pageTransitionDuration,
-        y: 100,
-        opacity: 0,
-        ease: pageTransitionEase,
-        stagger: pageTransitionStagger
-      });
-    gsap
-      .to(elementsFadeInOut, {
-        duration: pageTransitionDuration,
-        opacity: 0,
-        ease: pageTransitionEase,
-      })
-      .then();
-    resolve();
-  });
+    console.log(elementsFadeInOut);
+    console.log(elementsFadeUpDown);
+    if (elementsFadeUpDown.lenght !== 0 && elementsFadeInOut.lenght !== 0) {
+        return new Promise(async (resolve) => {
+            await gsap
+                .to(elementsFadeUpDown, {
+                    duration: pageTransitionDuration,
+                    y: 100,
+                    opacity: 0,
+                    ease: pageTransitionEase,
+                    stagger: pageTransitionStagger
+                });
+            gsap
+                .to(elementsFadeInOut, {
+                    duration: pageTransitionDuration,
+                    opacity: 0,
+                    ease: pageTransitionEase,
+                })
+                .then();
+            resolve();
+        });
+    }
 }
 
 function enterAnimation(e) {
-  return new Promise(resolve => {
     const elementsFadeUpDown = e.querySelectorAll('.gsap-pageTransition-fadeUpDown');
     const elementsFadeInOut = e.querySelectorAll('.gsap-pageTransition-fadeInOut');
-    gsap
-      .from(elementsFadeUpDown, {
-        duration: pageTransitionDuration,
-        y: 100,
-        opacity: 0,
-        ease: pageTransitionEase,
-        stagger: pageTransitionStagger
-      });
-    gsap
-      .from(elementsFadeInOut, {
-        duration: pageTransitionDuration,
-        ease: pageTransitionEase,
-        opacity: 0,
-      })
-      .then(resolve());
-  });
+    if (elementsFadeUpDown.lenght !== 0 && elementsFadeInOut.lenght !== 0) {
+        return new Promise((resolve) => {
+            gsap
+                .from(elementsFadeUpDown, {
+                    duration: pageTransitionDuration,
+                    y: 100,
+                    opacity: 0,
+                    ease: pageTransitionEase,
+                    stagger: pageTransitionStagger
+                });
+            gsap
+                .from(elementsFadeInOut, {
+                    duration: pageTransitionDuration,
+                    ease: pageTransitionEase,
+                    opacity: 0,
+                })
+                .then(resolve());
+        });
+    }
 }
 
+// barba.hooks.afterEnter((data) => {
+//     console.log('??????????');
+//     scrollAnimations();
+//     parallaxAnimations();
+// });
+
 barba.init({
-  debug: true,
-  transitions: [
-    {
-      sync: false,
-      leave: ({ current }) => leaveAnimation(current.container.querySelector('main')),
-      once: ({ next }) => enterAnimation(next.container.querySelector('main')),
-      enter: ({ next }) => {
-      	enterAnimation(next.container.querySelector('main'))
-      },
-      afterEnter: () => {
-        scrollAnimations();
-        parallaxAnimations();
-      }
-    }
-  ]
+    debug: true,
+    transitions: [
+        {
+            sync: false,
+            leave: ({ current }) => leaveAnimation(current.container.querySelector('main')),
+            once: ({ next }) => enterAnimation(next.container.querySelector('main')),
+            enter: ({ next }) => {
+                enterAnimation(next.container.querySelector('main'));
+            },
+            after: () => {
+                // scrollAnimations();
+                // parallaxAnimations();
+            }
+            // afterEnter: () => {
+
+            // }
+        }
+    ]
 });
 
 
+// DONT MIND THESE, OLD EXAMPLES AND SAMPLES
 
-
-//DONT MIND THESE, OLD EXAMPLES AND SAMPLES
-
-//Delay function to waith on barba to initialize scrolltrigger
+// Delay function to waith on barba to initialize scrolltrigger
 // function delay(ms) {
 //   return new Promise(resolve => setTimeout(resolve, ms));
 // }
@@ -85,27 +100,26 @@ barba.init({
 // setTimeout(scrollAnimations(), 50);
 
 
-  // barba.init({
-  //   debug: true,
-  //   transitions: [
-  //     {
-  //       sync: false,
-  //       leave ({ current }) {
-  //         leaveAnimation(current.container.querySelector("main"));
-  //       },
-  //       once ({ next }) {
-  //         enterAnimation(next.container.querySelector("main"));
-  //       },
-  //       enter ({ next }) {
-  //         enterAnimation(next.container.querySelector("main"));
-  //       }
-  //     }
-  //   ]
-  // });
+// barba.init({
+//   debug: true,
+//   transitions: [
+//     {
+//       sync: false,
+//       leave ({ current }) {
+//         leaveAnimation(current.container.querySelector("main"));
+//       },
+//       once ({ next }) {
+//         enterAnimation(next.container.querySelector("main"));
+//       },
+//       enter ({ next }) {
+//         enterAnimation(next.container.querySelector("main"));
+//       }
+//     }
+//   ]
+// });
 
 
-
-  // scrollAnimations.scrollAnimationsCollection.scrollTrigger.kill();
+// scrollAnimations.scrollAnimationsCollection.scrollTrigger.kill();
 
 // //Test solution https://github.com/Ihatetomatoes/page-transitions-tutorial
 // function init(){
@@ -191,4 +205,3 @@ barba.init({
 // window.addEventListener('load', function(){
 //     init();
 // });
-

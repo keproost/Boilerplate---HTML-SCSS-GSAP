@@ -1,23 +1,23 @@
 const process = require('process');
-const spawn = require('child_process').spawn;
+const { spawn } = require('child_process');
 const fs = require('fs');
 
 const Util = {
-    getCommand: function () {
-        let cmd = "npm";
+    getCommand() {
+        let cmd = 'npm';
         process.argv.forEach((command) => {
             if (command === '--yarn') {
                 cmd = 'yarn';
             }
         });
-        if (process.platform === "win32") {
+        if (process.platform === 'win32') {
             cmd += '.cmd';
         }
         return cmd;
     },
     getFiles: (dir) => {
-        let files = {};
-        fs.readdirSync(dir).forEach(file => {
+        const files = {};
+        fs.readdirSync(dir).forEach((file) => {
             files[file] = file;
         });
         return files;
@@ -26,22 +26,22 @@ const Util = {
         const splitted = filename.split('.');
         return splitted[1] === 'html';
     }
-}
+};
 
 const Server = {
     process: null,
     files: [],
-    start: function () {
+    start() {
         const cmd = Util.getCommand();
         this.process = spawn(cmd, ['run', 'serve'], { stdio: 'inherit' });
         console.log('WEBPACK STARTED');
     },
-    restart: function () {
+    restart() {
         console.log('WEBPACK RESTART');
         this.process.kill();
         this.start();
     },
-    watch: function (dir) {
+    watch(dir) {
         this.files = Util.getFiles(dir);
         this.start();
         fs.watch(
@@ -61,13 +61,6 @@ const Server = {
             }
         );
     }
-}
+};
 
 Server.watch('./src/html');
-
-
-
-
-
-
-

@@ -13,7 +13,7 @@ const getEntries = () => {
         './src/scss/styles.scss'
     ];
 
-    htmlFileNames.forEach(filename => {
+    htmlFileNames.forEach((filename) => {
         entries.push(`./src/html/${filename}`);
     });
 
@@ -27,7 +27,7 @@ const getPlugins = () => {
             clearConsole: true,
         })
     ];
-    htmlFileNames.forEach(filename => {
+    htmlFileNames.forEach((filename) => {
         const splitted = filename.split('.');
         if (splitted[1] === 'html') {
             plugins.push(
@@ -55,7 +55,7 @@ module.exports = {
         inline: true,
         quiet: true,
         historyApiFallback: true,
-        before: function (app) {
+        before(app) {
             app.use('/assets', express.static('./src/assets'));
             app.use('/img', express.static('./src/assets/img'));
         }
@@ -102,9 +102,7 @@ module.exports = {
                             ident: 'postcss',
                             sourceMap: true,
                             plugins: () => [
-                                require('autoprefixer')({
-                                    browsers: ['ie >= 8', 'last 4 version']
-                                }),
+                                require('autoprefixer')()
                             ]
                         }
                     }, {
