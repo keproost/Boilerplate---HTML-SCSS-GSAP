@@ -2,7 +2,6 @@ import { ScrollTrigger, gsap } from 'gsap/all';
 import barba from '@barba/core';
 import scrollAnimations from './custom-onscroll-animations';
 import parallaxAnimations from './custom-parallax-animations';
-
 gsap.registerPlugin(ScrollTrigger);
 
 const pageTransitionDuration = 0.25;
@@ -16,7 +15,9 @@ function leaveAnimation(e) {
     const elementsFadeInOut = e.querySelectorAll('.gsap-pageTransition-fadeInOut');
     console.log(elementsFadeInOut);
     console.log(elementsFadeUpDown);
-    if (elementsFadeUpDown.lenght > 0 && elementsFadeInOut.lenght > 0) {
+    if ((elementsFadeUpDown && Array.isArray(elementsFadeUpDown)
+	    && elementsFadeUpDown.lenght > 0)
+	    && (elementsFadeInOut && elementsFadeInOut.lenght > 0)) {
         return new Promise(async (resolve) => {
             await gsap
                 .to(elementsFadeUpDown, {
@@ -26,33 +27,58 @@ function leaveAnimation(e) {
                     ease: pageTransitionEase,
                     stagger: pageTransitionStagger
                 });
-            gsap
+
+            await gsap
                 .to(elementsFadeInOut, {
                     duration: pageTransitionDuration,
                     opacity: 0,
                     ease: pageTransitionEase,
                 })
                 .then();
+
             resolve();
         });
     }
+
+    return new Promise((resolve) => {
+        resolve();
+    });
 }
 
 function enterAnimation(e) {
-    const elementsFadeUpDown = e.querySelectorAll('.gsap-pageTransition-fadeUpDown');
-    const elementsFadeInOut = e.querySelectorAll('.gsap-pageTransition-fadeInOut');
-    console.log(elementsFadeInOut);
-    console.log(elementsFadeUpDown);
+	const elementsFadeUpDown = e.querySelectorAll('.gsap-pageTransition-fadeUpDown');
+	const elementsFadeInOut = e.querySelectorAll('.gsap-pageTransition-fadeInOut');
+
+
+		const triggers = [
+			{
+				element: elementsFadeUpDown,
+				config: {
+					duration: pageTransitionDuration,
+					y: 100,
+					opacity: 0,
+					ease: pageTransitionEase,
+					stagger: pageTransitionStagger
+				}
+			},
+			{
+				element: elementsFadeInOut,
+				config: {
+					duration: pageTransitionDuration,
+					ease: pageTransitionEase,
+					opacity: 0,
+				}
+			}
+			];
+
+    console.log('enterAnimation elementsFadeInOut', elementsFadeInOut);
+    console.log('enterAnimation elementsFadeUpDown', elementsFadeUpDown);
+    console.log(elementsFadeInOut.length);
+    console.log(elementsFadeUpDown.length);
     if (elementsFadeUpDown.lenght > 0 && elementsFadeInOut.lenght > 0) {
         return new Promise((resolve) => {
             gsap
-                .from(elementsFadeUpDown, {
-                    duration: pageTransitionDuration,
-                    y: 100,
-                    opacity: 0,
-                    ease: pageTransitionEase,
-                    stagger: pageTransitionStagger
-                });
+                .from(triggers[0].element, triggers[0].config);
             gsap
                 .from(elementsFadeInOut, {
                     duration: pageTransitionDuration,
