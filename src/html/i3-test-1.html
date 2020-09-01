@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title>Barba 2 & GSAP 3 Page Transition</title>
+
+  <!--  Styles  -->
+</head>
+
+<body data-barba="wrapper">
+  <div class="gsap-loader"></div>
+  <include>_header.html</include>
+  <div data-barba="container" data-barba-namespace="one-pager">
+    <main>
+      <section id="sectionID" class="content-dark contentblock infoblock">
+        <div
+          class="backgroundImage  gsap-pageTransition-fadeInOut cover no-repeat center-center"
+          style="
+            background-image: url(/assets/img/bg-test.jpg);
+          "
+        ></div>
+
+        <div
+          class="content align-self-center"
+          style="padding-top: 4rem; padding-bottom: 4rem;"
+        >
+          <div class="container flex-grow">
+            <div class="row">
+              <div class="col-md-7 align-self-center">
+                <div class="content image">
+                  <img
+                    class="img-fluid gsap-pageTransition-fadeUpDown"
+                    src="/assets/img/image-test.jpg"
+                  />
+                </div>
+              </div>
+              <div class="col-md-5 order-md-2 align-self-center pt-2">
+                <div class="title gsap-pageTransition-fadeUpDown">
+                  <h1><strong>This is a header 1</strong></h1>
+                </div>
+                <div class="description gsap-pageTransition-fadeUpDown">
+                  <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec dolor ornare, gravida quam at, imperdiet neque. Donec facilisis nibh ac gravida eleifend.
+                  </p>
+                </div>
+                <div class="cta-wrapper">
+                  <a class="btn btn-lg btn-outline-primary gsap-pageTransition-fadeUpDown" href="#">
+                      Call to action button
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+</body>
+
+</html>
