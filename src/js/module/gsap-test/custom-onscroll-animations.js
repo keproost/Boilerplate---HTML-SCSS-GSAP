@@ -17,7 +17,6 @@ export default function scrollAnimations() {
             ScrollTrigger.create({
                 trigger: fadeOutOnLeaveElement,
                 animation: fadeOutOnLeaveAnimation,
-                // markers: { startColor: 'blue', endColor: 'pink', fontSize: '12px' },
                 start: 'top 40%',
                 end: 'bottom 10%',
                 scrub: 1,
