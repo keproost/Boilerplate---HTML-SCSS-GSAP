@@ -1,8 +1,11 @@
 
 import barba from '@barba/core';
+// import ScrollTrigger from 'gsap/all';
 import scrollAnimations from './gsap/custom-onscroll-animations';
 import pageTransitions from './gsap/custom-page-transitions';
 import parallaxAnimations from './gsap/custom-parallax-animations';
+import fullpageAnimation from './gsap/custom-fullpage-animations';
+// import delayPromise from './utils';
 
 // Barba
 // document.addEventListener('DOMContentLoaded', function () {
@@ -12,9 +15,12 @@ barba.init({
         {
             sync: false,
             leave: ({ current }) => pageTransitions.fadeUpDownLeave(current.container.querySelector('main')),
-            once: ({ next }) => pageTransitions.fadeUpDownEnter(next.container.querySelector('main')),
+            once: ({ next }) => {
+                pageTransitions.fadeUpDownEnter(next.container.querySelector('main'));
+            },
             enter: ({ next }) => {
                 pageTransitions.fadeUpDownEnter(next.container.querySelector('main'));
+                // parallaxAnimations();
                 // ScrollTrigger.getById('parallaxAnimationID').kill();
                 // ScrollTrigger.getById('parallaxAnimationID').refresh();
                 // parallaxAnimations();
@@ -22,6 +28,7 @@ barba.init({
             after: () => {
                 parallaxAnimations();
                 scrollAnimations();
+                fullpageAnimation();
             },
             afterEnter: () => {
                 // ScrollTrigger.kill(delayPromise(5000));
@@ -54,13 +61,6 @@ barba.init({
 
 
 // DONT MIND THESE, OLD EXAMPLES AND SAMPLES
-
-// Delay function to waith on barba to initialize scrolltrigger
-// function delay(ms) {
-//   return new Promise(resolve => setTimeout(resolve, ms));
-// }
-
-// setTimeout(scrollAnimations(), 50);
 
 // barba.init({
 //   debug: true,
