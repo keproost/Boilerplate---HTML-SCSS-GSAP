@@ -13,7 +13,7 @@ const getEntries = () => {
         './src/scss/app.scss'
     ];
 
-    htmlFileNames.forEach(filename => {
+    htmlFileNames.forEach((filename) => {
         entries.push(`./src/html/${filename}`);
     });
 
@@ -23,12 +23,12 @@ const getEntries = () => {
 const getPlugins = () => {
     const plugins = [
         new CleanWebpackPlugin('dist', {
-            root: __dirname + '/../'
+            root: `${__dirname}/../`
         }),
         new CopyWebpackPlugin([
             {
-                from: __dirname + '/../src/assets/',
-                to: __dirname + '/../dist/assets/'
+                from: `${__dirname}/../src/assets/`,
+                to: `${__dirname}/../dist/assets/`
             }
         ]),
         new ExtractTextPlugin({
@@ -36,7 +36,7 @@ const getPlugins = () => {
             allChunks: true
         })
     ];
-    htmlFileNames.forEach(filename => {
+    htmlFileNames.forEach((filename) => {
         if (filename.substr(0, 1) !== '_') {
             const splitted = filename.split('.');
             if (splitted[1] === 'html') {
@@ -80,19 +80,17 @@ module.exports = {
                     fallback: 'style-loader',
                     use: [
                         {
-                            loader: "css-loader",
+                            loader: 'css-loader',
                             options: {
 
                                 url: false
                             }
                         }, {
-                            loader: "postcss-loader",
+                            loader: 'postcss-loader',
                             options: {
                                 ident: 'postcss',
                                 plugins: () => [
-                                    require('autoprefixer')({
-                                        browsers: ['ie >= 8', 'last 4 version']
-                                    }),
+                                    require('autoprefixer')(),
                                     require('cssnano')()
                                 ]
                             }
