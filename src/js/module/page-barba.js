@@ -28,7 +28,6 @@ barba.init({
             after: () => {
                 parallaxAnimations();
                 scrollAnimations();
-                fullpageAnimation();
             },
             afterEnter: () => {
                 // ScrollTrigger.kill(delayPromise(5000));

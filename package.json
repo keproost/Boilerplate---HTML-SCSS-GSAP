@@ -13,12 +13,16 @@
     "repository": "https://github.com/izica/html-sass-babel-webpack-boilerplate.git",
     "author": "izica <artemiztomska@gmail.com>",
     "license": "MIT",
-    "browserslist": ["ie >= 8", "last 4 version"],
+    "browserslist": [
+        "ie >= 8",
+        "last 4 version"
+    ],
     "dependencies": {
         "@barba/core": "^2.9.7",
         "babel-polyfill": "^6.26.0",
         "bootstrap": "^4.5.2",
         "gsap": "^3.4.2",
+        "imagesloaded": "^4.1.4",
         "jquery": "^3.3.1",
         "popper.js": "^1.16.1"
     },
