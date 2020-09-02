@@ -1,0 +1,103 @@
+﻿////                            ////
+//      Styling of Widgets        //
+////                            ////
+
+.widget {
+    margin: 20px;
+    background: $color-white;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    //padding: 30px;
+    box-sizing: border-box;
+
+    &:first-of-type {
+        //margin-top: 0;
+    }
+
+    &.fullpage-widget {
+        padding: 15px;
+
+        &.product-browser {
+            height: calc(100% - 40px);
+        }
+    }
+}
+
+.widget-header {
+    //margin-bottom: 30px;
+    padding: 30px 0;
+}
+
+.widget-section {
+    margin: 30px 0 0;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include for-size(xl) {
+        margin: 0 20px 10px 0;        
+        width: calc(100% / 2.2);
+    }
+}
+
+// Breadcrumbs
+.breadcrumbs {
+    line-height: 1.5em;
+
+    a {
+        color: $color-black;
+        font-weight: 700;
+        font-size: .9em;
+        text-decoration: none;
+        transition: all .2s ease;
+
+        &:hover {
+            color: $color-main;
+        }
+    }
+}
+
+// Dashboard-widget
+.dashboard-widget {
+    padding: 0;
+    width: calc(100% - 20px);
+    height: calc(50vh - 150px);
+    margin: 10px;
+    overflow: hidden;
+
+    .widget-header,
+    .widget-body {
+        padding: 20px 30px;
+    }
+
+    .widget-header {
+        border-bottom: 1px solid $color-grey-light;
+        font-size: .8em;
+    }
+
+    .widget-body {
+        //max-height: calc(100% - 114px);
+        max-height: calc(100% - 126px);
+        width: calc(100% - 60px);
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        .a-link {
+            margin-top: 10px;
+        }
+    }
+
+    @include for-size(xs-min) {
+        width: calc(50% - 20px);
+    }
+
+    @include for-size(s-min) {
+        width: calc(33.33% - 20px);
+    }
+}

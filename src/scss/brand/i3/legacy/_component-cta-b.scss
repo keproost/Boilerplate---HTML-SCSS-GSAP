@@ -1,0 +1,79 @@
+@import "mixins/custom-flex";
+.component-cta-b {
+    position:relative;
+    overflow:hidden;
+	//margin-top: 7.3rem;
+    @include display-flex();
+    flex-direction:column;	
+    .backgroundImage, .backgroundVideo {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        z-index:0;	
+        &:before{
+            position: absolute;
+            content: " ";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            z-index: 0;			           
+        }		
+    }
+    .description{
+            h6{
+                width: 50%;
+            }
+    }
+    .content {		
+        padding-top:5rem;
+        padding-bottom:5rem;
+        .form-control
+		{	
+			border-radius:2rem;			
+			background-position: 95%;
+			padding: 1rem 2rem;
+			background-repeat:no-repeat;
+			border-color:transparent;
+			
+			&.search-icon
+			{
+				background-image:url(../images/Knowledgebase/Search.png);	
+			}
+			&.dropdown-icon
+			{
+				background-image:url(../images/dealer/down-arrow.png);	
+				height: auto;
+				-moz-appearance: none;
+				-webkit-appearance: none;
+			}
+		}
+    }
+  
+}
+@include media-breakpoint-down(md) {
+	.component-cta-b {
+		margin-top:0rem;
+	}
+}
+@include media-breakpoint-down(sm) {
+    .component-cta-b {
+        .section-header
+        {
+            .section-title{
+                text-align:center;
+            }
+        }
+        .description{
+            h6{
+                width: 100%;
+            }
+        }
+        .content {		
+            padding-top:6rem;
+            padding-bottom:6rem;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+﻿////                                                    ////
+//      Compilation of styles, mixins and variables       //
+////                                                    ////
+
+// Imports
+@import "variables.scss";
+@import "mixins.scss";
+
+// Settings
+@import "settings.scss";
+
+// Styles
+@import "overrides.scss";
+//@import "reset.scss";
+@import "general.scss";
+@import "buttons.scss";
+@import "typo.scss";
+@import "navigation.scss";
+@import "footer.scss";
+@import "forms.scss";
+@import "Partner Portal/buttons.scss";
+@import "Partner Portal/form-item.scss";
+/*@import "RTE.scss";*/
+
+// Components
+@import "Components/section.scss";
+@import "Components/homepage.scss";
+@import "Components/banner.scss";
+@import "Components/logo-block.scss";
+@import "Components/testimonial-block.scss";
+@import "Components/banner-block.scss";
+@import "Components/generic-page.scss";
+@import "Components/spotlight-block.scss";
+@import "Components/text-block.scss";
+@import "Components/table-block.scss";
+@import "Components/form-block.scss";
+@import "login-section.scss";
+
+// Partner Portal
+//@import "Partner Portal/styles-partner-portal.scss";
+
+// Switches
+@import "educational-page.scss";
+@import "business-page.scss";
+
+

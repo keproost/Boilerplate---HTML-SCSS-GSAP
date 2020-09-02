@@ -1,0 +1,114 @@
+﻿////                                       ////
+//      Styling of Login Section             //
+////                                       ////
+.login-section {
+    .title {
+        color: $color-grey;
+    }
+}
+
+.block-text {
+    //font-size: .9em;
+    line-height: 1.8em;
+}
+.rte-block {
+    line-height: 1.5em;
+}
+//// Titles
+.h1-title,
+.h2-title,
+.h3-title,
+.h4-title {
+    line-height: 1.4em;
+}
+.subfolder-title {
+    font-size: .6em;
+    color: $color-grey-med;
+    font-weight: 400;
+}
+// H1
+.h1-title {
+    font-size: 2.8em; 
+    
+}
+// H2
+.h2-title {
+    font-size: 1.8em;
+}
+// H3
+.h3-title {
+    font-size: 1.3em;
+}
+// H4
+.h4-title {
+    font-size: 1.1em;
+    font-weight: 700;
+}
+@include for-size(xs-min) {
+    .h2-title {
+        font-size: 2em;
+    }
+}
+.title-link {
+    text-decoration: none;
+    margin-bottom: 5px;
+    display: block;
+    color: $color-black;
+    transition: color .2s ease;
+    line-height: 1.7em;
+
+    &:hover {
+        color: $color-main;
+    }
+
+    &.download-link {
+        color: $color-main;
+
+        &:hover {
+            color: $color-main-dark;
+        }
+    }
+}
+.date {
+    color: $color-grey;
+    font-size: .9em;
+    margin-bottom: 10px;
+}
+
+.summary {
+    font-size: .9em;
+    color: $silver;
+    line-height: 1.7em;
+}
+// Spans
+.bold {
+    font-weight: 700;
+}
+.color-main {
+    color: $color-main;
+}
+.product-desc {
+    font-weight: 200;
+}
+.product-name {
+    font-size: 2.8em;
+    line-height: 1.3em;
+    font-weight: 700;
+}
+
+// Other
+.extra-information {
+    font-size: .9em;
+    color: $color-grey;
+}
+.not-found {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 1.3em;
+}
+
+.grid-section {
+    p, img {
+        margin: 10px 0;
+    }
+}

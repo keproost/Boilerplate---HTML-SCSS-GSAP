@@ -1,0 +1,22 @@
+@mixin display-flex() {
+    display: -moz-box;
+    
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: flex;
+}
+@mixin flex-short($grow, $shrink, $basis){
+    flex-grow: $grow;
+    -webkit-flex-grow: $grow;
+    flex-shrink: $shrink;
+    -webkit-flex-shrink: $shrink;
+    flex-basis: $basis;
+    -webkit-flex-basis: $basis;
+}
+@mixin flex($value){
+    -webkit-flex: $value;
+    -moz-box-flex: $value;
+    -webkit-box-flex: $value;
+    flex: $value;
+    -ms-flex: $value 0 auto;
+}

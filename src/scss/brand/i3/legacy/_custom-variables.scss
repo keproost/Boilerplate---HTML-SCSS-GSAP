@@ -1,0 +1,97 @@
+$zindex-navbar:0 !default;
+
+$h1-font-size: 40px !default;
+$h2-font-size: 32px !default;
+$h3-font-size: 28px !default;
+$h4-font-size: 24px !default;
+$h5-font-size: 20px !default;
+$h6-font-size: 18px !default;
+
+$big1-size: 50px !default;
+$big2-size: 34px !default;
+
+$section-title-size: 26px !default;
+$lead-font-size:18px !default;
+$lead-line-height:26px !default;
+$small-font-size:12px !default;
+$small-line-height:18px !default;
+
+$white:#fff;
+$red:#dc3545;
+$black:#000;
+$gray-100: #333333 !default;
+$gray-200: #8f8f8f  !default;
+$gray-300: #1b1b1b !default;
+$grays: (
+  100: $gray-100,
+  200: $gray-200,
+  300: $gray-300,
+) !default;
+
+
+$pink:    #e83e8c !default;
+$light-blue: #1685bb !default;
+$dark-blue: #073b55 !default;
+
+$ruby: #da0054 !default;
+$conifer-green: #95d456 !default;
+$fun-green: #008739 !default;
+$persian-green:  #00ab99 !default;
+$i3-gray-old:   #868686 !default;
+$warm-gray: #878978 !default;
+$i3-gray-new: #898989 !default;
+$gray:  $i3-gray-new !default;
+$new-orange: #ED6D05 !default;
+$orange: $new-orange !default;
+$new-orange-hover: #d86100 !default;
+
+
+$colors: (
+ 
+  white: $white,
+  gray: $gray-300,
+  light-blue: $light-blue,
+  dark-blue: $dark-blue,
+  ruby: $ruby,
+  conifer-green: $conifer-green,
+  fun-green: $fun-green,
+  persian-green: $persian-green,
+  i3-gray: $gray,
+  warm-gray:$warm-gray,
+  new-orange: $new-orange,
+  new-orange-invert: $white
+) !default;
+
+$theme-colors: (
+  primary: $light-blue,
+  secondary: $dark-blue,
+  tertiary: $orange,
+  quaternary: $ruby,
+  quinary: $conifer-green,
+  senary: $fun-green,
+  septenary: $persian-green,
+  octonary: $gray,
+  nonary: $warm-gray,
+  success: $fun-green,
+  alert: $ruby,
+  warning: $orange,
+  danger: $red,
+  light: $gray-100,
+  dark: $gray-300,
+  white: $white,
+  black: $black,
+  new-orange: $new-orange,
+  new-orange-invert: $white
+) !default;
+
+$headings-color:$gray;
+$lead-font-color:$gray;
+$small-font-color:$gray;
+
+$border-radius:          0rem;
+$border-radius-lg:       0rem;
+$border-radius-sm:       0rem;
+
+
+$carousel-indicator-width:                    80px !default;
+$carousel-indicator-active-bg:                $pink !default;

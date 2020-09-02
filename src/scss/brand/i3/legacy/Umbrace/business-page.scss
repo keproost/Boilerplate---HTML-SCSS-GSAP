@@ -1,0 +1,32 @@
+﻿////                                       ////
+//      Styling of Educational page        //
+////                                       ////
+.business-page {
+    // Banner Block
+    .banner-block {
+        .banner-overlay {
+            background: $color-business;
+        }
+
+        .button-education {
+            background: $color-business;
+            border: $color-business;
+        }
+    }
+    // Logo Block
+    .logo-items {
+        border-bottom: 1px solid $color-grey-light;
+    }
+    // Spotlight
+    .spotlight-item {
+        background: $color-business-light;
+
+        &:hover {
+            background: $color-business-light-hover;
+        }
+    }
+    // Succes Stories
+    .testimonial-block {
+        background: $color-business-light;
+    }
+}

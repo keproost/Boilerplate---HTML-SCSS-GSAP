@@ -1,4 +1,4 @@
-import {getOptions, getCurrentRequest} from 'loader-utils';
+import { getOptions, getCurrentRequest } from 'loader-utils';
 import fs from 'fs';
 import path from 'path';
 
@@ -7,7 +7,7 @@ const insertIncludes = function (self, content, regex) {
     let newContent = content;
     if (includes) {
         includes.forEach((includeFilename) => {
-            if(includeFilename.substr(0, 1) == '_'){
+            if (includeFilename.substr(0, 1) == '_') {
                 const includePath = path.resolve(`./src/html/${includeFilename}`);
                 let includeContent = fs.readFileSync(includePath, 'utf8');
                 includeContent = insertIncludes(self, includeContent, regex);

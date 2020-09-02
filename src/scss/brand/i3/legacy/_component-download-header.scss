@@ -1,0 +1,37 @@
+@import "mixins/custom-flex";
+
+.component-download-header {
+    position:relative;
+    overflow:hidden;
+    .backgroundImage, .backgroundVideo {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        z-index: 0;
+    }
+
+	.section-header	
+	{
+		.section-title{
+			
+			width: 100%;
+			align-items: center;
+			
+			h1
+			{
+				font-weight:100;
+			}
+			i{
+				color:$white;
+				display:none;
+				@include media-breakpoint-down(lg) {
+					display:block;
+				}
+			}
+		}
+	}
+    
+
+}
+

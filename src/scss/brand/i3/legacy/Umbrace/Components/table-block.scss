@@ -1,0 +1,56 @@
+﻿////                                                  ////
+//      Styling of the Testimonial Section              //
+////                                                  ////
+.table-block {
+    padding: 100px 0;
+
+    .section-block-intro {
+        .vip-title {
+            margin-bottom: 0;
+        }
+    }
+}
+// Table
+.benefit-table {
+    width: 100%;
+
+    thead {
+        tr {
+            border: none;
+        }
+    }
+
+    tr {
+        border-top: $color-grey-light 1px solid;
+    }
+
+    td {
+        padding: 7px 0 7px 15px;
+        text-align: center;
+        font-size: .8em;
+        //font-weight: 400;
+
+        &:first-of-type {
+            text-align: left;
+            font-size: 1em;
+            //font-weight: 100;
+        }
+    }
+
+    .row-title {
+        padding: 7px 0 7px 5px;
+        font-size: 1.2em;
+        //font-weight: 700;
+    }
+}
+.benefit-table-badge {
+    --badge-size: 14%;
+    width: var(--badge-size);
+    height: calc(var(--badge-size) - 20px);
+    margin-bottom: 20px;
+    text-align: center;
+
+    img {
+        width: 70%;
+    }
+}

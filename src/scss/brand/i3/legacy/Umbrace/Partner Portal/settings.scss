@@ -1,0 +1,67 @@
+﻿////                                           ////
+//      Global settings of the site              //
+////
+
+.partners {
+    // Top Navigation
+    .top-navigation {
+        .navigation-item a {
+            color: $color-white;
+
+            &:hover,
+            &.selected {
+                color: $color-main;
+            }
+        }
+        .mobile-toggle {
+            color: $color-white;
+
+            &:hover {
+                color: $color-main;
+            }
+        }
+        .account-links {
+            .navigation-button {
+                color: $color-white;
+
+                &:hover,
+                .isActive {
+                    color: $color-main;
+                }
+            }
+        }
+    }
+    // Product Search
+    .product-search {
+        .title {
+            color: $color-white;
+        }
+    }
+
+    .filter-section {
+        color: $color-white;
+
+        .filter-dropdown {
+            color: $color-white;
+
+            option {
+                color: $color-black;
+            }
+        }
+    }
+}
+
+// Golden Circle Partners
+.golden-cirlce-partner {
+    background-color: $color-black-bg;
+}
+
+// Premium Partners
+.premium-partner {
+    background: rgb(0,167,225); /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(0,167,225,1) 0%, rgba(13,62,89,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(0,167,225,1) 0%,rgba(13,62,89,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, rgba(0,167,225,1) 0%,rgba(13,62,89,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a7e1', endColorstr='#0d3e59',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+

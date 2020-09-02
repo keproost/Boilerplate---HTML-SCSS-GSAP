@@ -1,0 +1,43 @@
+﻿.partner-portal-survey-embed {
+    height: calc(100vh - 10px);
+
+    iframe {
+        height: calc(100vh - 149px);
+        width: 456px;
+    }
+}
+
+.partner-portal-survey-link {
+    overflow: hidden;
+
+    img {
+        height: calc(50vh - 150px - 8em);
+    }
+
+    .widget-body {
+        text-align: center;
+        height: calc(100% - 143px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+.survey-link {
+    $buttonSize: 80px;
+
+    display: flex;
+    width: $buttonSize;
+    height: $buttonSize;
+    transition: opacity .3s ease;
+
+    img {
+        height: 100%;
+        width: 100%;
+    }
+
+    &:hover {
+        opacity: .8;
+    }
+}

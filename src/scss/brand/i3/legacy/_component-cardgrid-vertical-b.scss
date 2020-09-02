@@ -1,0 +1,87 @@
+@import "mixins/custom-flex";
+.component-cardgrid-vertical-b {
+    position:relative;
+    overflow:hidden;
+    // @include display-flex();
+    // flex-direction:column;
+    .backgroundImage, .backgroundVideo {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        z-index:-1;
+    }
+    a.cardLink {
+        /*height: 100%;*/
+        cursor: pointer;
+        &:hover {
+            text-decoration: none;
+            .caption {
+                p {
+                    text-decoration: none;
+                }
+            }
+        }
+    } 
+
+    .card {
+        flex: 0 0 30%;
+        margin-bottom: 30px;
+        @include media-breakpoint-down(md) {
+            margin-bottom: 30px;
+            flex: 0 0 calc(50% - 30px);
+        }
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 30px;
+            flex: 0 0 100%;
+        }		
+        &:hover{
+            .card-block {
+                border-top: 0.7rem solid $orange;
+            }		
+        }
+    }
+
+    .content {
+        &.image {
+            display: table;
+        }
+        &.caption {
+            h4 {
+                color:$gray;
+            }
+            p {
+                color:$gray;
+            }
+        }
+        .cta-button {
+            .btn {
+                padding: 0.8rem 1.2rem;
+            }
+        }
+    }
+    .card-block {
+        .content {
+            margin-left: auto;
+            margin-right: auto;
+            display: table; 
+            height: 50px;
+            p {
+                display: table-cell; 
+                vertical-align: middle; 
+                text-align: center;
+            }
+        }
+        // @include display-flex();
+        border-top: 0.7rem solid $gray;
+        -webkit-transition : border 250ms ease-out;
+        -moz-transition : border 250ms ease-out;
+        -o-transition : border 250ms ease-out;
+        transition : border 250ms ease-out;		
+    }
+    .card-footer {
+        background-color:$white;
+        border:0;
+    }
+}
+

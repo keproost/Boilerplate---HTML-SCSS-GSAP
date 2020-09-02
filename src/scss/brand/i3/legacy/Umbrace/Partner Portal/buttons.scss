@@ -1,0 +1,107 @@
+﻿////                                              ////
+//      Styling of Button and Link elements         //
+////                                              ////
+.button-group {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto;
+    justify-content: center;
+
+    .button-portal {
+        margin: 0 10px;
+    }
+}
+.button-portal {
+    border: none;
+    border-bottom: $color-main-dark 3px solid;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -o-border-radius: 2px;
+    padding: 10px 60px;
+    cursor: pointer;
+    outline: none !important;
+    color: $color-white;
+    font-size: 1em;
+    font-weight: 400;
+    transition: all ease .2s;
+    text-decoration: none !important;
+
+    &:hover {
+        color: $color-white;
+    }
+
+    &:active {
+        border-bottom-width: 1px;
+        margin-top: 2px;
+    }
+    // Button Portal General
+    &.button-portal-general {
+        $button-color: $color-main;
+
+        background-color: $color-main;
+        background-color: $button-color;
+        border-bottom-color: shade($button-color, 20%);
+
+        &:hover {
+            background-color: shade($button-color, 30%);
+            border-color: shade($button-color, 60%);
+        }
+    }
+    // Button Portal logout
+    &.button-portal-logout {
+        $button-color: $color-main-2;
+
+        background-color: $button-color;
+        border-bottom-color: shade($button-color, 40%);
+
+        &:hover {
+            background-color: shade($button-color, 40%);
+            border-color: shade($button-color, 80%);
+        }
+    }
+}
+
+.a-link {
+    text-decoration: none;
+    color: $color-main;
+    transition: color .2s ease;
+    display: block;
+    line-height: 1.2em;
+    font-weight: 600;
+
+    &:hover {
+        color: $color-main-dark;
+    }
+
+    &.contact-link {
+        font-size: .9em;
+    }
+}
+
+// Acrobat Button
+.acrobat-button {
+    display: inline-block;
+    width: 150px;
+    transition: opacity .2s ease;
+    margin-top: 20px;
+
+    img {
+        max-width: 100%;
+    }
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+// Logout button
+.logout-button {
+    border: none;
+    background: none;
+    text-align: right;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

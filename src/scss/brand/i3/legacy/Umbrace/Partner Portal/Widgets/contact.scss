@@ -1,0 +1,47 @@
+﻿////                                         ////
+//      Styling of the Contacts Widget         //
+////                                         ////
+.contact-item {
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    align-items:center;
+}
+.contact-image {
+    $imageSize: 60px;
+    width: $imageSize;
+    height: $imageSize;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin-right: 20px;
+
+    img {
+        width: 110%;
+    }
+}
+.contact-links {
+    margin: 5px 0;
+
+    .contact-link {
+        margin: 10px 0;
+        color: $color-black;
+
+        &:hover {
+            color: $color-main;
+        }
+    }
+
+    .icon-span {
+        width: 15px;
+        color: $color-main;
+    }
+}
+.contact-info {
+    width: calc(100% - 70px);
+}

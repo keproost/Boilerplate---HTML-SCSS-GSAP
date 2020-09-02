@@ -1,0 +1,297 @@
+﻿////                                         ////
+//      Styling of the Marketing Tools         //
+////                                         ////
+
+.marketing-tools {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 10px;
+    min-height: 100%;
+
+    .widget {
+        margin: 10px;
+    }
+
+    @include for-size(s-min) {
+        height: calc(100% - 20px);
+    }
+}
+// Filter Section
+.widget.filter-section {
+    width: calc(70%);
+    margin-left: calc(30% - 10px);
+    padding: 0;
+    background: none;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+.filter-param {
+    margin: 0 10px;
+
+    &:first-of-type {
+        margin-left: 20px;
+    }
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
+.filter-dropdown {
+    border: none;
+    background: none;
+    transition: .2s ease all;
+    color: $color-grey;
+
+    &:hover {
+        cursor: pointer;
+        color: $color-black;
+    }
+}
+
+//// Dropdown Tree
+/*.dropdown-tree {
+    li {
+        overflow: hidden;
+        line-height: 1.4em;
+        padding: 5px;
+
+        ul {
+            height: 0;
+        }        
+    }
+}*/
+.dropdown-tree {
+
+}
+.tree-item {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+
+    .tree-item-wrapper {
+        overflow: hidden;
+
+        &.active {
+            .tree-link a {
+                color: $color-main;
+            }
+        }
+    }
+
+    .sub-tree {
+        //height: 0;
+        //overflow: hidden;
+        margin-left: 20px;
+    }
+}
+.tree-link {
+    display: inline-block;
+
+    a {
+        padding: 8px 0;
+        text-decoration: none !important;
+        color: $color-black;
+        font-weight: 400;
+        transition: all .2s ease;
+        display: inline-block;
+
+        &:hover, 
+        &.selected {
+            color: $color-main;
+        }
+
+        &.selected {
+            font-weight: 700; 
+        }
+    }
+}
+.tree-button {
+    background: none;
+    border: none;
+    outline: none;
+    color: $color-grey-med;
+    transition: all .2s ease;
+
+    &:hover {
+        cursor: pointer;
+        color: $color-main;
+    }
+}
+
+
+// Tool Browser
+.widget.tool-browser {
+    width: calc(100%);
+    height: calc(40% - 40px) !important;
+    min-height: 250px;
+    overflow: hidden;
+    order: -1;
+    //display: none;
+    //height: initial;
+    .widget-body {
+        //max-height: calc(100% - 106px);
+        height: calc(100% - 124px);
+        //width: 100%;
+        //max-height: calc(100% - 100px);
+        //overflow-y: auto;
+    }
+
+    @include for-size(m-min) {
+        width: calc(30% - 40px);
+        height: calc(100% - 40px) !important;
+        order: 0;
+    }
+}
+
+// Tool List
+.widget.tool-list-section {
+    margin: 10px;
+    padding: 0;
+    /*width: calc(100% - 40px);*/
+    width: 100%;
+    height: calc(100% - 265px);
+    overflow-y: auto;
+    background: none;
+    position: relative;
+    //height: calc(100% - 65px);
+    @include for-size(s-min) {
+        height: calc(100% - 265px);
+    }
+
+    @include for-size(m-min) {
+        width: 70% /*calc(70% - 40px)*/;
+        height: calc(100% - 40px);
+    }
+}
+.list-overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 85%;
+    bottom: 0;
+   
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#e6ffffff',GradientType=0 ); /* IE6-9 */
+}
+.tool-list {
+
+}
+
+.list-item {
+    background: $color-white;
+    padding: 30px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    min-height: calc(20vh - 97px);
+
+    a {
+        text-decoration: none !important;
+        transition: all .2s ease;
+
+        &:hover,
+        &.selected {
+            color: $color-main;
+        }
+        &.selected {
+            font-weight: 700;
+        }
+
+    }
+
+    &:nth-child(even) {
+        background: #f3f3f3;
+    }
+
+    @include for-size(xs-min) {
+        flex-direction: row;
+    }
+}
+.list-item-icon {
+    font-size: 3em;
+
+    @include for-size(xs-min) {
+        width: 60px;
+    }
+}
+.file-word {
+    color: $color-microsoft-word;
+}
+.file-pdf {
+    color: $color-pdf;
+}
+.file-excel {
+    color: $color-excel;
+}
+.file-other {
+    color: $color-grey-med;
+}
+
+.list-item-info {
+    width: 100%;
+    margin: 40px 0;
+    text-align: center;
+    max-width: 300px;
+
+    .summary {
+        margin: 15px 0;
+        color: $color-grey;
+    }
+
+    @include for-size(xs-min) {
+        width: calc(65% - 50px);
+        margin: 0;
+        text-align: left;
+        max-width: initial;
+    }
+}
+.list-item-button {
+    width: 100%;
+    margin-left: auto;
+    justify-content: center;
+    display: flex;
+
+    .button-portal {
+        padding: 10px 30px;
+    }
+
+    @include for-size(xs-min) {
+        min-width: calc(35% - 50px);
+        justify-content: flex-end;
+        width: initial;
+    }
+}
+
+
+.marketing-tools.full-width-list {
+    .tool-browser {
+        width: 100%;
+
+        .widget-body {
+            padding: 0;
+            width: 100%;
+            max-height: calc(100% - 67px);
+
+            .tool-list {
+                .list-item {
+                    min-height: calc(25vh - 163px);
+                }
+            }
+        }
+    }
+}
+
+// Message wrapper
+
+.message-wrapper {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

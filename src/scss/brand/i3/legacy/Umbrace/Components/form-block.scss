@@ -1,0 +1,49 @@
+﻿////                                                  ////
+//      Styling of the Testimonial Section              //
+////                                                  ////
+
+.form-block {
+    margin: 100px 0;
+
+    .title-bigger {
+        text-align: center;
+
+        @include for-size(s-min) {
+            text-align: right;
+        }
+    }
+}
+
+.bottom-links {
+    //font-size: .9rem;
+    margin-top: 20px;
+
+    a {
+        color: $color-black;
+
+        &:hover {
+            color: $color-main;
+        }
+    }
+}
+
+.big-link {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.rte-link {
+    color: $color-grey;
+
+    a {
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    a, p {
+        color: $color-grey;
+    }
+}

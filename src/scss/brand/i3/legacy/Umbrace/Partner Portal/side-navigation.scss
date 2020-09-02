@@ -1,0 +1,137 @@
+﻿////                                         ////
+//      Styling of Side Navigation             //
+////                                         ////
+.side-navigation {
+    background-color: $color-white;
+    padding: 30px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    position: absolute;
+    overflow: hidden;
+    left: -100%;
+    z-index: 500;
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-box-shadow: 10px 0px 63px -11px rgba(0,0,0,0.34);
+    -moz-box-shadow: 10px 0px 63px -11px rgba(0,0,0,0.34);
+    box-shadow: 10px 0px 63px -11px rgba(0,0,0,0.34);
+    transition: left .5s ease;
+
+    @include for-size(s-min) {
+        left: 0;
+
+        position: relative;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        position: relative;
+    }
+}
+.section-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.section-body {
+    z-index: 10;
+}
+.site-logo {
+    display: block;
+    max-width: 150px;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.top-navigation {
+    .site-logo {
+        max-width: 80px;
+
+        @include for-size(s-min) {
+            max-width: 150px;
+        }
+    }
+}
+
+// Navigation Items
+.navigation-items {
+    //padding: 20px 0;
+}
+.navigation-item {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 0;
+    font-size: 16px;
+    color: $color-grey;
+    transition: color .2s ease;
+
+    .icon-span {
+        width: 30px;
+        margin-right: 15px;
+    }
+
+    a {
+        text-decoration: none;
+        color: $color-grey;
+        transition: color .2s ease;
+    }
+
+    &:hover,
+    &:hover a, 
+    &.selected, 
+    &.selected a {
+        color: $color-main;
+    }
+
+}
+
+.navigation-text {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.bg-icon {
+    position: absolute;
+    max-width: 120%;
+    bottom: -190px;
+    left: -53px;
+    z-index: 5;
+}
+
+// Site Overlay
+.site-overlay {
+    background: rgba(0, 0, 0, 0.85);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    //right: 0;
+    z-index: 200;
+    width: 100%;
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+
+// Classes
+.showDropdown {
+    display: block;
+}
+
+.isActive {
+    color: $color-main;
+}
+
+.showMobileDropdown {
+    left: 0 !important;
+    transition: all .5s ease;
+}
+.showOverlay {
+    left: 0;
+    opacity: 1 !important;
+    transition: opacity .5s ease;
+}

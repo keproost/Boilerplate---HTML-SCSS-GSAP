@@ -1,0 +1,96 @@
+@import "mixins/custom-flex";
+
+.infoblock-c {
+
+    position: relative;
+    overflow: hidden;
+
+    .backgroundImage, .backgroundVideo {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        z-index: 0;
+
+        &.cta-bg-white {
+            opacity: 0.23;
+
+            &:before {
+                position: absolute;
+                content: " ";
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: block;
+                z-index: 0;
+                background-color: rgba(213, 213, 213, 0.08);
+            }
+        }
+    }
+
+    @include display-flex();
+    // flex-direction:column;
+    .content {
+        .content.image img {
+            margin: auto;
+            display: block;
+        }
+        .content.video video {
+            margin: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .row {
+            flex-direction: row-reverse;
+        }
+
+        &.py-8 {
+            padding: 8rem 0;
+        }
+
+        .title {
+            text-align: left;
+        }
+
+        .description {
+            text-align: left;
+        }
+
+        .cta-button {
+            text-align: left;
+
+            .btn {
+                border-radius: 50px;
+                text-transform: none;         
+                margin: 0px 18px 0px 0px;
+                padding: 0.65rem 1.25rem;
+              }
+        }
+    }
+}
+
+//media-queries	
+@include media-breakpoint-down(md) {
+	.infoblock-c
+	{
+		.content
+		{		
+			.title
+			{
+				text-align:left;
+			}
+			.description
+			{
+				text-align:left;
+			}
+			.cta-button
+			{
+				text-align:left;			
+			}
+		}
+	}
+}
+

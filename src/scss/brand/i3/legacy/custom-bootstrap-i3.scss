@@ -1,0 +1,202 @@
+@import "bootstrap.scss";
+
+//general
+header{z-index: 5000;}
+.wrapper{
+    flex:1 0 auto;
+    min-height: 100%;
+}
+header,footer{flex-shrink: 0;}
+.minh-100{height: 100vh !important; }
+.bg-translucentblack-80{opacity: 0.8;}
+.no-repeat {background-repeat:no-repeat;}
+.cover {background-size:cover;}
+.center-center{background-position:center center !important;}
+
+//hide
+.hide{display:none !important;}
+
+//border
+.border-translucentwhite {
+ 	border-color:rgba(255,255,255,0.3) !important;
+}
+
+.newsgrid-container,.infopage-container
+{
+    display:flex;
+    position: relative;
+    overflow:hidden;
+	
+	@include media-breakpoint-down(md) {
+        display:block;
+    }
+}
+
+.border-2{
+	border-width:2px !important;
+}
+.mejs__video  
+{
+  overflow:hidden !important;
+}
+//media-queries	
+
+.btn-outline-gold{color:#b2966d; border:1px solid #b2966d;background-color:transparent;}
+.btn-outline-silver{color:#a2a2a2; border:1px solid #a2a2a2;background-color:transparent;}
+.btn-pink{color:$white;background-color:$pink;}
+.btn-pink:hover{color:$white;background-color:darken($pink, 15%);}
+
+
+
+@include media-breakpoint-down(sm) {
+	FOOTER ul:nth-child(1){border:0px !important;margin:0 !important;}
+	.d-xs-block{display:block !important;}
+}
+
+
+//Section styling
+section > .content {
+	position: relative;
+	z-index: 5;
+	width: 100%;
+}
+
+//Video poster styling
+video {
+	background-size: cover; 
+	object-fit: inherit;
+}
+
+//Code below is from _i3.scss file
+
+/*Ecerium custom code*/
+
+/*html body {
+    background-color: orange !important;
+}*/
+
+/*.wrapper > section.component-carousel-header:first-child {
+   margin-top: -8.5rem;
+    @include media-breakpoint-down(md) { 
+        margin-top: -15px;
+    }
+    @include media-breakpoint-down(sm) { 
+        margin-top: -15px;
+    }
+}
+
+.wrapper > section.component-hero:first-child {
+   margin-top: -8.5rem;
+    @include media-breakpoint-down(md) { 
+        margin-top: 4.5rem;
+    }
+    @include media-breakpoint-down(sm) { 
+        margin-top: 4.5rem;
+    }
+}*/
+
+
+.wrapper > section:first-child:not(.component-carousel-header) {
+    margin-top: 8rem;
+    @media (max-width: 1068px){
+        margin-top: 3rem;
+    }
+    /*@include media-breakpoint-down(md) { 
+        margin-top: 3rem;
+    }*/
+    @include media-breakpoint-down(sm) { 
+        margin-top: 3rem;
+    }
+}
+
+
+.wrapper > section.component-carousel-header:first-child {
+    /*margin-top: -28px;*/
+    @include media-breakpoint-down(lg) { 
+        margin-top: 0px;
+    }
+    @include media-breakpoint-down(md) { 
+        margin-top: -60px;
+    }
+    @include media-breakpoint-down(sm) { 
+        margin-top: -60px;
+    }
+}
+
+/*nice*/
+.toolBar {
+    a.liveChatBtn {
+        background-color: $orange;
+        color: white;
+        border-radius: 200px;
+        position: fixed; 
+        right: 10px;
+        bottom: 70px;
+        z-index: 5000;
+        width: 50px;
+        height: 50px;
+        display: table;
+        text-align: center;
+        font-size: 25px;
+        &:hover, &:active, &:focus {
+            text-decoration: none;
+        }
+        i {
+            display: table-cell; 
+            vertical-align: middle;
+        }
+        @include media-breakpoint-down(lg) {
+            width: 40px;
+            height: 40px; 
+            right: 10px; 
+            bottom: 55px;
+            font-size: 18px;       
+        }
+        @include media-breakpoint-down(sm) {
+            width: 40px;
+            height: 40px; 
+            right: 10px; 
+            bottom: 55px;
+            font-size: 18px;       
+        }
+    }
+}
+
+div {
+    .chat.widget:nth-child(2) {
+        display: none !important;
+    }
+}
+
+/*Video Js play overlay icon fix*/
+.vjs-icon-placeholder, .vjs-play-progress.vjs-slider-bar {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.video-js .vjs-play-progress:before {
+    top: -0.65em;
+}
+
+/*Mouse pointer fixes*/
+button, .btn, a, .cta-button {
+    cursor: pointer;
+}
+
+/*Infoblock double cta margin fix*/
+.infoblock-a, .infoblock-b, .infoblock-c {
+    .content {
+       .cta-button {
+           .btn {
+               margin-bottom: 15px;
+           }
+       }
+    }
+}
+
+/*Infoblock H1 title bold line-height fix*/
+.infoblock-a, .infoblock-b, .infoblock-c {
+    h1 b, h1 strong {
+        line-height: 4.5rem;
+    }
+}

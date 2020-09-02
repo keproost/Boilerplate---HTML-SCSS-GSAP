@@ -1,0 +1,45 @@
+@import "mixins/custom-flex";
+
+.component-dealer-info
+{
+background-color: #f9f9f9;
+position:relative;
+overflow:hidden;
+.backgroundImage, .backgroundVideo {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		margin: auto;
+		z-index:0;
+  } 
+	@include display-flex();
+	// flex-direction:column;
+	.content
+	{
+		.row{
+			flex-direction:row;
+			@include media-breakpoint-down(lg) {
+				flex-direction: column-reverse;
+			}
+					
+		}
+		.cta-button
+		{
+			.btn
+			{
+				padding: 0.8rem 1.2rem;
+			}
+		}
+		iframe{
+			border:2px solid $gray;
+		}
+		strong{
+			color:$persian-green;
+			font-weight:600;
+		}
+		b,h2{
+			color:$gray;
+			font-weight:600;
+		}
+	}
+}

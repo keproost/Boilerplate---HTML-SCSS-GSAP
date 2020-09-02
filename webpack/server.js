@@ -63,4 +63,4 @@ const Server = {
     }
 };
 
-Server.watch('./src/html');
+Server.watch('./src/html/');

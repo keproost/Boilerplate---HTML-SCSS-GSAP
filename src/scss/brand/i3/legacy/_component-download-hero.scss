@@ -1,0 +1,79 @@
+@import "mixins/custom-flex";
+
+.component-download-hero {
+	flex:1 0 69%;
+    position:relative;	
+	height:370px;
+	@include media-breakpoint-down(lg) {
+	    height:420px;
+	}	
+	@include media-breakpoint-down(sm) {
+	    height:260px;
+	}	
+	overflow:hidden;
+	width: 100%;
+	background: $black;
+	.backgroundImage, .backgroundVideo {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		margin: auto;
+		z-index:0;		
+	} 	
+	.parallaxbg {
+		
+		height: 100%;
+		width: 100%;
+		margin: auto;
+		z-index:0;			
+		// display:table;
+	}
+	.content {
+		position:static;
+		#hero-title {	
+			position:absolute;
+			bottom:1rem;
+			left:1.5rem;	
+			right: 1.5rem;
+			h5{	
+				color:#4e4e57;
+				align-self:center;
+			}
+			.content-filter{
+				.grid,.list,.grid-active,.list-active{
+					cursor:pointer;	
+				}				
+			}			
+			@include media-breakpoint-down(lg) {
+				bottom:2rem;
+				left:2rem;
+			}	
+			@include media-breakpoint-down(sm) {
+				bottom:1rem;
+				left: 1rem;
+			}			
+			h1{
+				text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.4);
+				margin-bottom: 0px;
+				b {
+					background-color: transparent;
+					font-weight: 800;
+					padding: 0px;
+					line-height: inherit;
+				}
+				@include media-breakpoint-down(lg) {
+				    font-size: 27px;
+				    line-height: 1.5;
+				}	
+				@include media-breakpoint-down(sm) {
+				    font-size: 20px;
+				    line-height: 1.5;
+				}					
+			}
+		}
+	}	
+}
+
+
+
+

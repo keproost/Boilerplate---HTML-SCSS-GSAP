@@ -1,0 +1,81 @@
+
+//content color
+
+.content-light{
+    h1,h2,h3,h4,h5,h6,p,small,.lead,span,.content-color 
+    {
+        color:$white;
+    }
+    .card {
+        h1,h2,h3,h4,h5,h6,p,small,.lead,span {
+            color: inherit;
+        }
+    }
+    .slick-slide.usecase  {
+        border-color: $white;
+    }
+    h1 b, h1 strong {
+        color: $white;
+    }
+    button.btn-outline-white, button.btn-outline-black, a.btn-outline-white, a.btn-outline-black {
+        border-color: $white;
+        color: $white;
+        &:hover, &:active, &:focus {
+            border-color: darken($white, 15%);
+            color: darken($white, 15%);
+        }		
+    }	
+}
+
+
+.content-dark{
+    h1,h2,h3,h4,h5,h6,p,small,.lead,span,.content-color
+    {
+        color:$gray-100;
+    }
+    .card, form {
+        h1,h2,h3,h4,h5,h6,p,small,.lead,span {
+            color: inherit;
+        }
+    }
+    .slick-slide.usecase  {
+        border-color: $gray-100;
+    }
+    h1 b, h1 strong {
+        color: $white;
+    }	
+    button.btn-outline-white, button.btn-outline-black, a.btn-outline-white, a.btn-outline-black {
+        border-color: $gray-100;
+        color: $gray-100;
+        &:hover, &:active, &:focus {
+            border-color: lighten($gray-100, 15%);
+            color: lighten($gray-100, 15%);
+        }
+    }
+}
+
+.content-gray{
+    h1,h2,h3,h4,h5,h6,p,small,.lead,span,.content-color
+    {
+        color:$gray;
+    }
+    .card, form {
+        h1,h2,h3,h4,h5,h6,p,small,.lead,span {
+            color: inherit;
+        }
+    }
+    .slick-slide.usecase  {
+        border-color: $gray;
+    }
+    h1 b, h1 strong {
+        color: $white;
+    }		
+    button.btn-outline-white, button.btn-outline-black, a.btn-outline-white, a.btn-outline-black {
+        border-color: $gray;
+            color: $gray;
+        &:hover, &:active, &:focus {
+            border-color: lighten($gray, 15%);
+            color: lighten($gray, 15%);
+        }		
+    }
+}

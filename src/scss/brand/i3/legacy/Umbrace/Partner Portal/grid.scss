@@ -1,0 +1,45 @@
+﻿////                                              ////
+//      Styling of the Grid Elements        //
+////                                              ////
+
+
+* {
+    //display: none;
+}
+#partner-portal {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px calc(100vh - 100px);
+}
+.side-navigation {
+    
+}
+
+.portal-content {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.top-navigation {
+    grid-column-start: 1;
+    grid-row-start: 1
+}
+
+@include for-size(s-min) {
+    #partner-portal {
+        grid-template-columns: 300px 1fr;
+    }
+
+    .side-navigation {
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .portal-content {
+        grid-column-start: 2;
+    }
+
+    .top-navigation {
+        grid-column-start: 2;
+    }
+}

@@ -1,0 +1,56 @@
+﻿////                                                    ////
+//      Compilation of styles, mixins and variables       //
+////                                                    ////
+
+// Imports
+@import "../variables.scss";
+@import "../mixins.scss";
+@import "../settings.scss";
+
+// Basic
+@import "reset.scss";
+
+// Partner Portal
+@import "overrides.scss";
+@import "buttons.scss";
+@import "../typo.scss";
+@import "typo.scss";
+@import "grid.scss"; 
+@import "form-item.scss";
+//@import "login-section.scss";
+@import "content-block.scss";
+@import "top-navigation.scss";
+@import "side-navigation.scss";
+@import "widget.scss";
+@import "portal.scss";
+@import "product.scss";
+@import "tiles.scss";
+@import "tables.scss";
+
+
+// Menu Items (Product)
+@import "Menu Items/specifications.scss";
+
+// Dashboard
+@import "Widgets/dashboard.scss";
+@import "Widgets/highlighted.scss";
+@import "Widgets/company.scss";
+@import "Widgets/g-inspired.scss";
+@import "Widgets/new-files.scss";
+@import "Widgets/contact.scss";
+@import "Widgets/news.scss";
+@import "Widgets/article.scss";
+@import "Widgets/survey.scss";
+
+// Marketing Tools
+@import "marketing-tools.scss";
+
+
+// Settings
+@import "settings.scss";
+
+// Umbraco forms
+@import "umbraco-forms.scss";
+
+// Components
+@import "simple-tables.scss";
