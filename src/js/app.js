@@ -5,5 +5,6 @@ import './module/gsap/custom-onscroll-animations';
 // import './module/gsap/custom-onclick-animations';
 import './module/gsap/custom-page-transitions';
 import './module/gsap/custom-parallax-animations';
+import './module/gsap/custom-parallax-3d';
 import './module/gsap/custom-fullpage-animations-2';
 import './module/page-barba';

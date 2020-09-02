@@ -5,6 +5,7 @@ import { gsap, ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 import scrollAnimations from './gsap/custom-onscroll-animations';
 import pageTransitions from './gsap/custom-page-transitions';
 import parallaxAnimations from './gsap/custom-parallax-animations';
+import parallax3d from './gsap/custom-parallax-3d';
 // import goToSection from './gsap/custom-fullpage-animations-2';
 // import fullpageAnimation from './gsap/custom-fullpage-animations';
 // import delayPromise from './utils';
@@ -21,7 +22,14 @@ barba.init({
         after: () => {
             // goToSection();
         }
-    }],
+    },
+    {
+        namespace: 'parallax-3d',
+        after: () => {
+            parallax3d();
+        }
+    }
+    ],
     transitions: [
         {
             sync: false,
