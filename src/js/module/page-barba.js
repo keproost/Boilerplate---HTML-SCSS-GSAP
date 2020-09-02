@@ -1,16 +1,27 @@
 
 import barba from '@barba/core';
+import { gsap, ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 // import ScrollTrigger from 'gsap/all';
 import scrollAnimations from './gsap/custom-onscroll-animations';
 import pageTransitions from './gsap/custom-page-transitions';
 import parallaxAnimations from './gsap/custom-parallax-animations';
-import fullpageAnimation from './gsap/custom-fullpage-animations';
+// import goToSection from './gsap/custom-fullpage-animations-2';
+// import fullpageAnimation from './gsap/custom-fullpage-animations';
 // import delayPromise from './utils';
 
 // Barba
 // document.addEventListener('DOMContentLoaded', function () {
+gsap.registerPlugin(ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger);
+
 barba.init({
     debug: true,
+    views: [{
+        namespace: 'panel-fullscreen',
+        after: () => {
+            // goToSection();
+        }
+    }],
     transitions: [
         {
             sync: false,
@@ -39,10 +50,10 @@ barba.init({
 // });
 
 // barba.hooks.afterEnter(() => {
-//     scrollAnimations();
-//     ScrollTrigger.refresh(delayPromise(5000));
-//     parallaxAnimations();
-//     ScrollTrigger.refresh();
+//     // scrollAnimations();
+//     // ScrollTrigger.refresh(delayPromise(5000));
+//     // parallaxAnimations();
+//     // ScrollTrigger.refresh();
 // });
 
 

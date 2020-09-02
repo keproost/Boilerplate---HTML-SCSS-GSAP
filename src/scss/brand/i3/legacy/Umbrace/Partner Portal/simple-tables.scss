@@ -1,0 +1,24 @@
+﻿.simple-table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    &.center {
+        margin: 0 auto;
+    }
+
+    thead th {
+        background-color: $color-main-hover;
+        border: solid 1px $color-main-hover;
+        color: $color-white;
+        padding: 10px;
+        text-align: left;
+    }
+
+    tbody td {
+        border: solid 1px $color-main-hover;
+        color: $color-black;
+        padding: 10px;
+        text-shadow: 1px 1px 1px #fff;
+    }
+}

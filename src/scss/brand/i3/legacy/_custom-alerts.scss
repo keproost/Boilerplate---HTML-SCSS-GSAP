@@ -1,0 +1,97 @@
+// Custom alerts
+@import "mixins/custom-flex";
+
+.alert-warning {
+  background-color: $orange;
+  @include display-flex();
+  .alert-text {
+    color: $white;
+    font-size: 12px;
+    align-self: center;
+    display: table;
+    margin: 0px;
+    padding: 0px;
+    &:before {
+      content: "\f06a";
+      font-family: FontAwesome;
+      display: table-cell;
+      padding-right: 15px; 
+      vertical-align: middle;
+      color: $white; 
+      font-size: 12px;
+    }
+  }
+}
+
+.alert-danger {
+  background-color: $ruby;
+  @include display-flex();
+  .alert-text {
+    color: $white;
+    font-size: 12px;
+    align-self: center;
+    display: table;
+    margin: 0px;
+    padding: 0px;
+    &:before {
+      content: "\f071";
+      font-family: FontAwesome;
+      display: table-cell;
+      padding-right: 15px; 
+      vertical-align: middle;
+      color: $white; 
+      font-size: 12px;
+    }
+  }
+}
+
+.alert-success {
+  background-color: $fun-green;
+  @include display-flex();
+  .alert-text {
+    color: $white;
+    font-size: 12px;
+    align-self: center;
+    display: table;
+    margin: 0px;
+    padding: 0px;
+    &:before {
+      content: "\f05d";
+      font-family: FontAwesome;
+      display: table-cell;
+      padding-right: 15px; 
+      vertical-align: middle;
+      color: $white; 
+      font-size: 12px;
+    }
+  }
+}
+
+.alert-info {
+  background-color: $light-blue;
+  @include display-flex();
+  .alert-text {
+    color: $white;
+    font-size: 12px;
+    align-self: center;
+    display: table;
+    margin: 0px;
+    padding: 0px;
+    &:before {
+      content: "\f05a";
+      font-family: FontAwesome;
+      display: table-cell;
+      padding-right: 15px; 
+      vertical-align: middle;
+      color: $white; 
+      font-size: 12px;
+    }
+  }
+}
+
+
+
+
+
+
+

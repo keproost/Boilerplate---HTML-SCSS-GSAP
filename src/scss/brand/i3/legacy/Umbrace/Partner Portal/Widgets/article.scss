@@ -1,0 +1,35 @@
+﻿////
+//      Styling of the News Article
+////
+.news-article {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+
+    .widget-body {
+        min-height: calc(100% - 40px);
+    }
+}
+
+.article-content {
+    max-width: 750px;
+    margin: 0 auto;
+
+    .article-head {
+        margin-bottom: 50px;
+    }
+
+    .date {
+        margin: 10px 0;
+    }
+
+    .grid-text {
+        font-size: 1.2em;
+
+        .text-block-content{
+            margin-bottom:8px;
+            p {
+                color: $color-black;
+            }
+        }
+    }
+}

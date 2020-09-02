@@ -1,0 +1,41 @@
+﻿////                                           ////
+//      Styling of the Logo Section              //
+////                                           ////
+.logo-section {
+  padding: 35px 0;
+
+  .logo-label {
+    font-family: "Josefin Sans", sans-serif;
+  }
+  .logo-items {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+    img {
+      max-height: 70%;
+      //height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .logo-item {
+    display: flex;
+    /* align-content: center; */
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 120px;
+    text-align: center;
+
+    &:hover {
+      filter: grayscale(0);
+    }
+
+    @include for-size(xs-min) {
+      width: 16.666%;
+    }
+  }
+}

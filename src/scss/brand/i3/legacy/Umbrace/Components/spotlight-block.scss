@@ -1,0 +1,74 @@
+﻿////                                           ////
+//      Styling of the Spotlight Block              //
+////
+
+
+.spotlight-block {
+    padding: 70px 0;
+}
+
+.spotlight-item {
+    padding: 30px;
+    //background: $main-color;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 100%;
+    text-decoration: none !important;
+    transition: .5s ease all;
+    margin-top: 20px;
+
+    &:hover {
+        //background: var(--main-color-hover);
+    }
+
+    @include for-size(s-min) {
+        margin-top: 0; 
+    }  
+}
+.spotlight-item-info {
+    text-align: center;
+    width: 100%;
+
+    .spotlight-item-title {
+        margin-bottom: 20px;
+    }
+}
+ 
+.spotlight-item-picture {
+    //width: 60%;
+    //width: 50%;
+    max-width: 50%;
+
+    img {
+        width: 100%;
+    }
+
+    @include for-size(s-min) {
+        //margin-left: 20px;
+        width: 40%;
+    }
+}
+
+// Spotlight Item Big
+.spotlight-item-big {
+    margin-top: 0;
+
+    @include for-size(s-min) {
+        flex-flow: row nowrap;
+
+        .spotlight-item-info {
+            width: 60%;
+        }
+    }
+
+    .spotlight-item-picture {
+        //width: 50%;
+
+        @include for-size(s-min) {
+            margin-left: 20px;
+        }
+    }
+}
+
+

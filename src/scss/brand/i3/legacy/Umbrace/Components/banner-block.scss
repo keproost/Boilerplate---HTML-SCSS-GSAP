@@ -1,0 +1,67 @@
+﻿////                                           ////
+//      Styling of the Banner Block              //
+////                                           ////
+.banner-block {
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+
+    @include for-size(xs-min) {
+        height: auto;
+        min-height: 40vh;
+        //min-height: 500px;
+    }
+
+    @include for-size(s-min) {
+        height: 50vh;
+    }
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: .5;
+}
+
+.banner-block-wrapper {
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+
+    @include for-size(s-min) {
+        margin-left: 50px;
+        padding: 100px 0;
+        width: 45%;
+    }
+}
+.banner-block-content {
+    color: $color-white;
+
+    .h1-title {
+        margin-bottom: 30px;
+    }
+    .intro-text {
+        margin-bottom: 35px;
+    }
+}
+
+.other-page {
+    .banner-overlay {
+        opacity: .8;
+        //* Permalink - use to edit and share this gradient: http: //colorzilla.com/gradient-editor/#00a7e1+0,0d3e59+100 */
+        //background: rgb(0,167,225); /* Old browsers */
+        background: -moz-radial-gradient(bottom left, ellipse cover, rgba(0,167,225,1) 0%, rgba(13,62,89,1) 100%); /* FF3.6-15 */
+        background: -webkit-radial-gradient(bottom left, ellipse cover, rgba(0,167,225,1) 0%,rgba(13,62,89,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: radial-gradient(ellipse at bottom left, rgba(0,167,225,1) 0%,rgba(13,62,89,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a7e1', endColorstr='#0d3e59',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+}

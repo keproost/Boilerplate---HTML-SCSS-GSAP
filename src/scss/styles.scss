@@ -1,17 +1,41 @@
+
+//i3 THEME2020
+@import "brand/i3/i3-styles";
 //Bootstrap
-
-@import "config/custom-variables.scss";
 @import "config/bootstrap-config.scss";
-@import "brand/typography.scss";
-@import "utilities/utilities.scss";
 
+// I3 LEGACY
+// @import "brand/i3/legacy/custom-variables";
+// @import "brand/i3/legacy/custom-variables";
+// @import "brand/i3/legacy/Umbrace/umbrace.scss";
+// @import "brand/i3/legacy/type";
+// @import "brand/i3/legacy/i3_typography";
+// @import "brand/i3/legacy/buttons";
+// @import "brand/i3/legacy/custom-buttons";
+////i3 NAVBAR
+@import "brand/i3/legacy/navbar";
+@import "brand/i3/legacy/custom-navbar";
+@import "brand/i3/legacy/component-topmenu";
+////i3 COMPONENTS
+@import "brand/i3/legacy/component-hero";
+// @import "brand/i3/legacy/component-mainmenu";
+
+
+
+
+// POC
+// @import "config/custom-variables.scss";
+// @import "config/bootstrap-config.scss";
+// @import "brand/typography.scss";
+// @import "brand/custom.scss";
+@import "utilities/utilities.scss";
 @import "components/general-component-config.scss";
 @import "components/navigation-main.scss";
 @import "components/infoblock.scss";
-@import "components/features.scss";
-@import "components/slick-slider.scss";
+// @import "components/features.scss";
+// @import "components/slick-slider.scss";
 @import "components/slider-fullscreen-gsap.scss";
 @import "components/gsap-test.scss";
-@import "components/i3-test.scss";
+// @import "components/i3-test.scss";
 
 @import "pages/master.scss";

@@ -1,0 +1,24 @@
+﻿////                                       ////
+//      Styling of Educational page        //
+////                                       ////
+
+.educational-page {
+    // Banner Block
+    .banner-block {
+        .banner-overlay {
+            background: $color-main;
+        }
+    }
+    // Spotlight
+    .spotlight-item {
+        background: $color-educational-light;
+
+        &:hover {
+            background: $color-educational-light-hover;
+        }
+    }
+    // Succes Stories
+    .testimonial-block {
+        background: $color-educational-light;
+    }
+}

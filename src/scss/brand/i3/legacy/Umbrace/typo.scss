@@ -1,0 +1,160 @@
+﻿////                                           ////
+//      Styling of typographic components        //
+////                                           ////
+
+body {
+    font-family: $font-main;
+    font-size: $font-size;
+}
+strong {
+    font-weight: 700;
+}
+.h1-title {
+    color: $color-black;
+    font-weight: 700;
+    line-height: 1.3em;
+
+    &.big-title {
+        font-size: 2.5em;
+    }
+
+    &.vip-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1em;
+    }
+
+    &.vip-title,
+    .color-span {
+        font-size: 40px;
+
+        @include for-size(s-min) {
+            font-size: 75px;
+        }
+    }
+}
+// VIIIP typo
+.color-span {
+    margin-bottom: 20px;
+
+    &.yellow-letter {
+        color: $color-educational;
+    }
+
+    &.orange-letter {
+        color: $color-main;
+    }
+
+    &.brown-letter {
+        color: $color-main-dark;
+    }
+
+    @include for-size(s-min) {
+        margin-bottom: 30px;
+    }
+}
+// End VIIIP typo
+
+.h2-title {
+    font-weight: 700;
+    color: $color-black;
+    font-size: 1.8em;
+    line-height: 1.1em;
+
+    &.title-bigger {
+        font-size: 3em;
+        line-height: 1em;
+
+        @include for-size(s-min) {
+            font-size: 4em;
+        }
+    }
+}
+.h3-title {
+    font-weight: 700;
+    color: $color-black;
+    font-size: 1.15em;
+    a {
+        &:hover {
+            text-decoration: none;
+        }
+        p { 
+            color: $color-black;
+        }
+    } 
+}
+// Banner Titles
+.banner-block {
+    .h1-title,
+    .h2-title, 
+    .h2-title {
+        color: $color-white;
+    }
+}
+
+.summary,
+.summary p,
+.text-block-content p {
+    font-size: .85em;
+    color: $color-silver;
+    line-height: 1.5em;
+}
+.subtitle {
+    color: white;
+    font-size: .8em;
+    line-height: 1.7em;
+}
+
+span.bold {
+    font-weight: 700;
+}
+
+.upper-title {
+    margin: 0;
+}
+
+.spotlight-item-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: $color-black;
+}
+
+.sub-title {
+    font-size: .8em;
+    color: $color-black;
+    line-height: 1.5em;
+
+    &.big-title {
+        font-size: 1em;
+        color: $color-grey-med;
+
+        @include for-size(s-min) {
+            font-size: 1.2em;
+        }
+    }
+}
+
+.row-title {
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+// RTE
+/**umb_name:H2 Title*/
+.h2-title {
+    font-weight: 700;
+    font-size: 1.8em;
+    line-height: 1.1em;
+}
+
+/**umb_name:Big Link*/
+.BigLink {
+    font-weight: 600;
+    font-size: 1.4em;
+    line-height: 1.3em;
+}
+
+.version-list {
+    font-size: .7em;
+}

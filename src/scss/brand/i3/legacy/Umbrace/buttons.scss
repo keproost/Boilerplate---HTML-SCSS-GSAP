@@ -1,0 +1,115 @@
+﻿////                                       ////
+//      Styling of links and buttons         //
+////                                       ////
+.button {
+    padding: 10px 15px;
+    color: white;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: .8em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all .2s ease;
+    // Smaller nav variant
+    &.nav-button {
+        padding: 5px 13px !important;
+        //font-size: .8em;
+        display: block;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+// Button General
+.button-general {
+    $buttoncolor: $color-main;
+
+    background-color: $buttoncolor;
+    border: 1px $buttoncolor solid;
+
+    &:hover {
+        background-color: $color-main-dark;
+        color: white !important;
+        border-color: $color-main-dark;
+    }
+}
+
+// Button Education
+.button-education {
+    $buttoncolor: $color-educational;
+
+    background-color: $buttoncolor;
+    border: 1px $buttoncolor solid;
+
+    &:hover {
+        background-color: $color-educational-dark;
+        color: white !important;
+        border-color: $color-educational-dark;
+    }
+}
+
+// Button Busniess
+.button-business {
+    $buttoncolor: $color-business;
+
+    background-color: $buttoncolor;
+    border: 1px $buttoncolor solid;
+
+    &:hover {
+        background-color: $color-business-dark;
+        color: white !important;
+        border-color: $color-business-dark;
+    }
+}
+
+// Button Border
+.button-border {
+    $buttoncolor: $color-main;
+     
+    background-color: transparent;
+    border: 1px $buttoncolor solid;
+    color: $buttoncolor;
+
+    &:hover {
+        //background-color: $buttoncolor;
+        border-color: $color-main-dark !important;
+        color: $color-main-dark !important;
+    }
+}
+
+// Link-button
+.link-button {
+    font-weight: 700;
+    font-size: .9em;
+    color: $color-black;
+
+    &:hover {
+        text-decoration: none;
+        color: $color-main;
+    }
+
+    &.download-link {
+        margin: 5px 0;
+        flex-direction: row !important;
+        align-items: center;
+        font-weight: 400;
+        transition: all .3s ease !important;
+
+        .icon-span {
+            margin-left: 10px;
+            font-size: .8em;
+            transition: all .2s ease !important;
+        }
+
+        &:hover {
+            border-color: $color-main !important;
+            color: $color-main !important;
+
+            .icon-span {
+                color: $color-main;
+            }
+        }
+    }
+}
+

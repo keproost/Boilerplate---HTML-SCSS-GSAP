@@ -1,0 +1,43 @@
+@import "mixins/custom-flex";
+.component-cardgrid-vertical-a {
+	position:relative;
+	overflow:hidden;
+	@include display-flex();
+	flex-direction:column;
+	.backgroundImage, .backgroundVideo {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		margin: auto;
+		z-index:0;
+ 	 } 
+ 	.card {
+		@include media-breakpoint-down(md) {
+			margin-bottom: 30px;
+		}
+ 	}
+	.content {
+		.caption {
+			h4 {
+				color:$gray;
+			}
+			p {
+				color:$gray;
+			}
+		}
+		.cta-button {
+			.btn
+			{
+				padding: 0.8rem 1.2rem;
+			}
+		}
+	}
+	.card-block {
+		@include display-flex();
+		flex:1 0 auto;
+	}
+	.card-footer {
+		background-color:$white;
+		border:0;
+	}
+}

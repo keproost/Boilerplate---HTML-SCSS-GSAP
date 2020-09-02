@@ -1,0 +1,155 @@
+﻿////                                           ////
+//      Styling of the navigation items          //
+////                                           ////
+
+.navbar-white .navbar-nav .nav-item .nav-link {
+    transition: color 0.2s, border-color 0.2s;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    .dropdown-menu {
+        border-bottom: 1px solid $color-main-3 !important;
+        color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+.navbar-white .navbar-nav .active .nav-link {
+    border-bottom: 1px solid $color-main-3 !important;
+}
+
+.navbar-white.top-nav .navbar-nav .nav-link:hover {
+    border-bottom: none !important;
+}
+.top-nav {
+    .navbar-nav {
+        .dropdown-menu {
+            margin: 0;
+        }
+    }
+}
+.navbar-white {
+    .dropdown-arrow:before {
+        border-bottom: none !important;
+    }
+
+    .dropdown-submenu > a.active:after {
+        border-left-color: $color-main-3;
+        color: $color-main-3;
+    }
+
+    .navbar-nav {
+        .nav-item {
+        }
+
+        .nav-item {
+            margin: 0;
+            padding: 0;
+
+            .nav-link {
+                padding: 20px 15px;
+                margin: 0;
+            }
+        }
+    }
+
+    .nav-link.active {
+        border-bottom: 1px solid $color-main-3;
+    }
+
+    .dropdown-submenu:hover > a:after,
+    .dropdown-submenu:focus > a:after,
+    .dropdown-submenu:active > a:after {
+        border-left-color: $color-main-3;
+        color: $color-main-3;
+    }
+
+    .dropdown-item:focus,
+    .dropdown-item:hover {
+        color: $color-main-3;
+    }
+
+
+
+    .dropdown-menu {
+        left: 0;
+        width: 100%;
+        top: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.navctawrapper {
+    .button {
+        margin: 0 5px;
+    }
+}
+
+.navigation-header {
+    position: fixed;
+    width: 100%;
+    // nav fix
+    background: white;
+    box-shadow: 0 0 50px 0px rgba(0, 0, 0, 0.25);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.navigation-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navigation-logo {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.navbar-brand {
+    width: 55%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.navigation-links {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-right: 4%;
+    padding: 10px 0px;
+}
+
+.navbar-fixed-top-2{
+    margin-right: 7px;
+}
+
+.navbar-fixed-top-2,
+.navbar-fixed-top-1 {
+    position: relative;
+    top: 0;
+}
+
+.navbar-white {
+    box-shadow: none;
+}
+@media (max-width: 1490px){
+    .navigation-links {
+        margin-right: 0;
+        width: 88%;
+    }
+    .navigation-logo {
+        width: 12%;
+        .navbar-brand{
+            width: 80%;
+        }
+    }
+    .navbar-fixed-top-2{
+        margin-right: 0px;
+    }
+}

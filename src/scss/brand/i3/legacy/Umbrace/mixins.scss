@@ -1,0 +1,126 @@
+﻿////                      ////
+//      SASS Mixins         //
+////                      ////
+
+
+// Mixins
+// mixin media queries
+@mixin for-size($range) {
+    $xxs: 330px;
+    $xs: 768px;
+    $s: 992px;
+    $m: 1200px;
+    $l: 1500px;
+    $xl : 1921px;
+
+    // XXS
+    @if $range == xxs {
+        @media (max-width: #{$xxs - 1}) {
+            @content;
+        }
+    }
+
+    @if $range == xxs-min {
+        @media (min-width: #{$xxs - 1}) {
+            @content;
+        }
+    }
+    // XS
+    @if $range == xs {
+        @media (max-width: #{$xs - 1}) {
+            @content;
+        }
+    }
+
+    @if $range == xs-min {
+        @media (min-width: #{$xs - 1}) {
+            @content;
+        }
+    }
+    // S
+    @else if $range == s {
+        @media (max-width: $s) {
+            @content;
+        }
+    }
+    @else if $range == s-min {
+        @media (min-width: $s) {
+            @content;
+        }
+    }
+    // M
+    @else if $range == m {
+        @media (max-width: $m) {
+            @content;
+        }
+    }
+    @else if $range == m-min {
+        @media (min-width: $m) {
+            @content;
+        }
+    }
+    // L
+    @else if $range == l {
+        @media (max-width: $l) {
+            @content;
+        }
+    }
+    // L
+    @else if $range == l-min {
+        @media (min-width: $l) {
+            @content;
+        }
+    }
+    // XL
+    @else if $range == xl {
+        @media (min-width: $xl) {
+            @content;
+        }
+    }
+    // max
+    @else if $range == max {
+        @media (min-width: $max) {
+            @content;
+        }
+    }
+    @else if $range == max-max {
+        @media (max-width: $max) {
+            @content;
+        }
+    }
+}
+
+// Aspect Ratio Mixin
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    > .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+
+/// Slightly lighten a color
+/// @access public
+/// Use vb: color: tint($name-color, 20%)
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// Use vb: color: shade($name-color, 20%)
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}

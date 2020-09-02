@@ -1,0 +1,55 @@
+.filter-deck-b {
+    .filter-button,.sub-filter-button {
+        background-color: $white;
+        border-right:1px solid #dcdcdc;
+		width: 9.4rem;
+        padding: 0.5rem;
+        font-size: 17px;
+        color: $gray;
+        border-collapse: collapse;
+        background-clip: padding-box;        
+        & + .filter-button, & + .sub-filter-button {
+            margin-left: -5px;
+        }
+        
+        &:last-child {
+            border:0px;
+        }
+        &:hover {
+            background-color:#f9f9f9;
+        }
+        &.active {
+            background-color:$persian-green;
+            color:#fff;
+       }
+       @include media-breakpoint-down(lg) {
+           width:8rem;
+           font-size: 14px;
+        }
+    }
+	
+   .filter-mobile {
+        width: 100%;
+        .filter-button, .sub-filter-button {
+            width: 100%;
+            padding: 1.2rem;
+            border-right: 0px;
+            &.dropdown-toggle {
+                border:1px solid #dcdcdc;
+            }            
+        }
+   }    
+}
+
+.dropdown-menu.show.mob-transform{
+    transform: translate3d(0px, 0px, 0px)!important;
+    margin-top: 3.4rem;
+    width: 100%;
+}
+.filter-deck .dropdown-menu button{
+    color:#000;
+}
+
+
+
+

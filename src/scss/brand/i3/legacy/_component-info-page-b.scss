@@ -1,0 +1,157 @@
+.component-info-page-b
+{
+    flex:1 0 69%;
+    position:relative;
+    overflow:hidden;
+    background-color: #f9f9f9;
+	@include media-breakpoint-down(lg) {
+        flex:1 0 30%;
+    }
+    .backgroundImage, .backgroundVideo {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        z-index:0;
+    } 
+    .content
+    {		
+        .container
+        {
+            padding:3rem;
+            @include media-breakpoint-down(md) {
+                max-width:100%;				
+                padding: 3rem 1rem 0;
+                margin: auto;
+            }
+            @include media-breakpoint-down(md) {
+                max-width:100%;				
+                padding: 1rem 1rem 0;
+                margin: auto;
+            }
+        }
+        .info-page {
+            background-color: $white; 
+            border:1px solid #b5b5b5;
+            @include media-breakpoint-down(md) {
+                margin-bottom: 2rem;
+            }
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 2rem;
+            }
+            .description{
+                padding: 3rem;
+                @include media-breakpoint-down(lg) {
+                    padding: 3rem 5rem;
+                }
+                @include media-breakpoint-down(md) {
+                    padding: 2rem;
+                }
+                @include media-breakpoint-down(sm) {
+                    padding: 1rem 2rem;
+                }
+
+                h2{
+                    padding-top:2rem;
+                    color:$gray;
+                    text-transform: uppercase;
+                }
+                ol
+                {					
+                    &.number{
+                        list-style:none;
+                        padding-left:0;
+                        li{
+                            counter-increment: item;
+                            color:$gray;
+                            margin:2rem auto;
+                            &:before{
+                                margin-right: 10px;
+                                content: counter(item);
+                                background: #00ab99;
+                                color: $white;
+                                padding: 5px 10px;
+                                text-align: center;
+                                display: inline-block;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+                ul
+                {
+                    &.circle{
+                        list-style:none;
+                        padding-left:0;
+                        padding: 0.8rem 2rem 0 0;
+                        li{							
+                            color:$gray;							
+                            margin:1rem auto;
+                            &:before{								
+                                content:"o";
+                                margin-right: 0px;															
+                                color: #00ab99;								
+                                border-radius:100%;
+                                padding: 5px 10px 5px 0;
+                                text-align: center;
+                                display: inline-block;
+                                font-weight: 600;
+                                font-size:1.5rem;
+                            }
+                        }
+                    }
+                }
+                h3{
+                    padding-top:3rem;
+                    color:$gray;
+                    text-transform: uppercase;
+                    @include media-breakpoint-down(sm) {
+                        padding-top:1rem;
+                    }
+                    display:inline;
+                }
+                h4{
+                    padding-top:3rem;
+                    color:$gray;
+                    text-transform: uppercase;
+                    @include media-breakpoint-down(sm) {
+                        padding-top:1rem;
+                    }
+                    display:inline;
+                }
+                h5{
+                    padding-top:3rem;
+                    padding-bottom:2rem;
+                    color:$gray;
+                    text-transform: uppercase;
+                    @include media-breakpoint-down(sm) {
+                        padding-top:1rem;
+                    }
+                    display:inline;
+                }				
+                p{					
+                    a
+                    {
+                        color:#00ab99;   
+                    }
+                }
+
+            }
+
+        }
+    }
+
+}
+
+.component-info-page-b .content.description img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+
+
+
+
+
+
+

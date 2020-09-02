@@ -48,7 +48,7 @@ module.exports = {
         filename: 'bundle.js',
     },
     devServer: {
-        contentBase: './src/html',
+        contentBase: './src/html/',
         watchContentBase: true,
         hot: true,
         open: true,

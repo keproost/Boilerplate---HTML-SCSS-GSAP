@@ -1,0 +1,38 @@
+
+@import "i3-variables.scss";
+
+//Typography
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;600;700&family=Karla:wght@400;700&display=swap');
+
+
+//i3 Spacing
+
+body {
+    font-family: 'Karla', sans-serif;
+}
+
+
+// Utilities
+.no-repeat {background-repeat:no-repeat;}
+.cover {background-size:cover;}
+.center-center{background-position:center center !important;}
+
+
+// Buttons
+.btn {
+    &.btn-primary, 
+    &.btn-outline-primary,
+    &.btn-secondary, 
+    &.btn-outline-secondary,
+    &.btn-tertiary, 
+    &.btn-outline-tertiary {
+        border-radius: 100px;
+        padding: 12px 24px;
+        line-height: 1.25;
+        min-width: 120px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+
+    }
+}

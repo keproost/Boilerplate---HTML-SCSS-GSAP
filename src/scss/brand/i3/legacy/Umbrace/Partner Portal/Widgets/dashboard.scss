@@ -1,0 +1,55 @@
+﻿////                                   ////
+//      Styling of the Dashboard         //
+////                                   ////
+
+.dashboard {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px;
+    max-height: calc(100% - 20px) !important;
+    overflow-x: auto;
+
+    .widget {
+    }
+
+    .simplebar-content {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: start;
+        align-content: start;
+    }
+}
+
+.widget-row {
+    margin: 10px;
+    width: calc(100% - 20px);
+
+    .widget {
+        margin: 0;
+        width: 100%;
+    }
+
+    @include for-size(xs-min) {
+        .widget {
+            width: calc(50% - 10px);
+        }
+    }
+
+    @include for-size(s-min) {
+        .widget {
+            width: calc(33.33% - 15px);
+        }
+    }
+}
+
+.widget-group {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    //padding: 10px;
+    overflow-x: auto;
+
+    @include for-size(s-min) {
+        max-height: calc(100vh - 260px);
+    }
+}

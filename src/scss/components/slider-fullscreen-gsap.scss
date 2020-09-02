@@ -1,108 +1,182 @@
 
-.slider-fullscreen-gsap {
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 100;
+html, body { height: auto; }
+.panel-fullscreen {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-align: center;
+    color: white;
+    box-sizing: border-box;
+    padding: 10px;
+    justify-content: center;
+    h1 {
+        font-size: 1.8em;
+        color: white;
+        font-weight: 300;
+        margin: 0 auto;
+        max-width: 800px;
     }
-    
-    nav ul {
-        list-style: none;
-        text-align: center;
-        margin-top: 30px;
+    p {
+        color: black;
+        font-weight: 400;
+        text-align: left;
+        font-size: 0.8em;
+        line-height: 1.5em;
+        margin: 0.3em 0 1em 0;
     }
-    
-    nav ul li {
-        display: inline-block;
-        margin-right: 20px;
-    }
-    
-    nav ul li:last-child {
-        margin-right: 0;
-    }
-    
-    #back-to-tutorial {
-        margin-left: 100px;
-    }
-    
-    nav a {
-        position: relative;
-        top: 0;
-        padding: 10px 20px;
-        font-weight: normal;
-        font-size: 20px;
-        text-align: center;
-        border-radius: 4px;
-        background-color: #FFFFFF;
-        color: #83C78E;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
-    }
-    
-    nav a.active {
-        top: -4px;
-        background-color: #69C773;
-        color: #FFFFFF;
-        -webkit-box-shadow: 0 4px 0 0 #51a65f;
-        -moz-box-shadow: 0 4px 0 0 #51a65f;
-        box-shadow: 0 4px 0 0 #51a65f;
-    }
-    
-    .slides-container {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        z-index: 10;
-    }
-    
-    .slide {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-    
-    .slide .centered {
-        width: 60%;
-        margin: 200px auto 0;
-    }
-    
-    .slide .centered h1 {
+    &.description {
+        padding-bottom: 60px;
         text-align: center;
     }
-    
-    .slide .centered p {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 20px;
+    &.red {
+        background-color: red;
     }
-    
-    #slide-1 {
-        background-color: #FFFFFF;
+    &.orange {
+        background-color: orange;
     }
-    
-    #slide-2 {
-        background-color: #45959b;
+    &.blue {
+        background-color: blue;
     }
-    
-    #slide-3 {
-        background-color: #778899;
+    &.purple {
+        background-color: purple;
     }
-    
-    #slide-4 {
-        color: #FFFFFF;
-        background-color: #291F37;
-    }
-    
-    .go-prev, .go-next {
-        cursor: pointer;
-        font-weight: bold;
-        text-decoration: underline;
+    &.green {
+        background-color: green;
     }
 }
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    color: black;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 16px;
+    overflow: visible;
+    .arrow {
+        position: relative;
+        top: -4px;
+        margin: 0 auto;
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KPHBhdGggZmlsbD0iYmxhY2siIGQ9Ik00ODMuMiwxOTIuMmMtMjAuNS0yMC41LTUzLjUtMjAuOC03My43LTAuNkwyNTcsMzQ0LjFMMTA0LjUsMTkxLjZjLTIwLjItMjAuMi01My4yLTE5LjktNzMuNywwLjYKCWMtMjAuNSwyMC41LTIwLjgsNTMuNS0wLjYsNzMuN2wxOTAsMTkwYzEwLjEsMTAuMSwyMy40LDE1LjEsMzYuOCwxNWMxMy4zLDAuMSwyNi43LTQuOSwzNi44LTE1bDE5MC0xOTAKCUM1MDMuOSwyNDUuNyw1MDMuNywyMTIuNyw0ODMuMiwxOTIuMnoiLz4KPC9zdmc+);
+    }
+}
+
+
+
+// .slider-fullscreen-gsap {
+//     nav {
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         z-index: 100;
+//     }
+    
+//     nav ul {
+//         list-style: none;
+//         text-align: center;
+//         margin-top: 30px;
+//     }
+    
+//     nav ul li {
+//         display: inline-block;
+//         margin-right: 20px;
+//     }
+    
+//     nav ul li:last-child {
+//         margin-right: 0;
+//     }
+    
+//     #back-to-tutorial {
+//         margin-left: 100px;
+//     }
+    
+//     nav a {
+//         position: relative;
+//         top: 0;
+//         padding: 10px 20px;
+//         font-weight: normal;
+//         font-size: 20px;
+//         text-align: center;
+//         border-radius: 4px;
+//         background-color: #FFFFFF;
+//         color: #83C78E;
+//         -webkit-box-shadow: none;
+//         -moz-box-shadow: none;
+//         box-shadow: none;
+//     }
+    
+//     nav a.active {
+//         top: -4px;
+//         background-color: #69C773;
+//         color: #FFFFFF;
+//         -webkit-box-shadow: 0 4px 0 0 #51a65f;
+//         -moz-box-shadow: 0 4px 0 0 #51a65f;
+//         box-shadow: 0 4px 0 0 #51a65f;
+//     }
+    
+//     .slides-container {
+//         position: absolute;
+//         left: 0;
+//         top: 0;
+//         width: 100%;
+//         height: 100%;
+//         overflow: hidden;
+//         z-index: 10;
+//     }
+    
+//     .slide {
+//         position: relative;
+//         width: 100%;
+//         height: 100%;
+//         overflow: hidden;
+//     }
+    
+//     .slide .centered {
+//         width: 60%;
+//         margin: 200px auto 0;
+//     }
+    
+//     .slide .centered h1 {
+//         text-align: center;
+//     }
+    
+//     .slide .centered p {
+//         text-align: center;
+//         margin-top: 20px;
+//         font-size: 20px;
+//     }
+    
+//     #slide-1 {
+//         background-color: #FFFFFF;
+//     }
+    
+//     #slide-2 {
+//         background-color: #45959b;
+//     }
+    
+//     #slide-3 {
+//         background-color: #778899;
+//     }
+    
+//     #slide-4 {
+//         color: #FFFFFF;
+//         background-color: #291F37;
+//     }
+    
+//     .go-prev, .go-next {
+//         cursor: pointer;
+//         font-weight: bold;
+//         text-decoration: underline;
+//     }
+// }

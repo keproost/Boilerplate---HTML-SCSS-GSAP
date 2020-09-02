@@ -1,0 +1,28 @@
+@import "mixins/custom-flex";
+.component-usp
+{
+position:relative;
+overflow:hidden;
+.backgroundImage, .backgroundVideo {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		margin: auto;
+		z-index:0;
+  } 
+		@include display-flex();
+		flex-direction:column;
+	.content
+	{
+		.card-text {
+            line-height: 26px;
+		}
+		.cta-button
+		{
+			.btn
+			{
+				padding: 0.8rem 1.2rem;
+			}
+		}
+	}
+}

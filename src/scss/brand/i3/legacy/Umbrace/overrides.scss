@@ -1,0 +1,33 @@
+﻿////                                 ////
+//      Overrides of frameworks        //
+////                                 ////
+.text-row {
+    align-items: center;
+    margin: 30px 0;
+
+    &:last-of-type {
+        margin: 30px 0;
+    }
+
+    @include for-size(s-min) {
+        margin: 30px 0 120px;
+    }
+}
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+
+.component-download .content .cta-button .btn.btn-outline-black {
+    width: 100%;
+}
+
+.component-download .content .cta-button .btn {
+    width: auto;
+}
+
+
+// CArd Icons
+.component-featurelist .card-deck.horizontal .card .card-img-bg {
+    width: 15%;
+}

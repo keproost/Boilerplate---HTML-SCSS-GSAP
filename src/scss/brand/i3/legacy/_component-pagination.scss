@@ -1,0 +1,48 @@
+.component-pagination
+{
+    .page-item {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        display: flex;
+        align-items: center;
+
+        .page-link {
+            padding: 0.3rem 0.55rem;
+            line-height: 1;
+            color: #fff;
+            background-color: #bfbfbf;
+            border: 1px solid #bfbfbf;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 14px;
+            &.next,&.prev
+            {
+                color:#bfbfbf;
+                background-color: transparent;
+                border:0;
+            }
+            &.next:hover,&.next:focus,&.prev:hover,&.prev:focus
+            {
+                color:#bfbfbf;
+                background-color: transparent;
+            }
+            &:hover,&:focus
+                {
+                color: #fff;
+                text-decoration: none;
+                border-color: #8f8f8f;
+                background-color: #8f8f8f;
+            }
+        }
+        &.active .page-link {
+            color: #fff;
+            background-color: #00ab99;
+            border-color: #00ab99;
+            padding: 0.6rem 0.85rem;
+            font-size: 16px;
+        }
+        &.disabled .page-link{
+            opacity:0.5;
+        }
+    }
+}

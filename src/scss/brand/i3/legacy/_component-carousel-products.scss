@@ -1,0 +1,131 @@
+@import "mixins/custom-flex";
+.component-carousel-products {
+    position:relative;
+    overflow:hidden;
+    @include display-flex();
+    flex-direction:column;
+    .backgroundImage, .backgroundVideo {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        z-index:-1;
+    } 
+     a.cardLink {
+        /*height: 100%;*/
+        cursor: pointer;
+        outline: none;
+        &:active, &:focus {
+            outline: none;
+        }
+        &:hover {
+            text-decoration: none;
+            .caption {
+                p {
+                    text-decoration: none;
+                }
+            }
+        }
+     }     
+    .slider{
+        margin: 0 auto;			
+        position: relative;
+        .slick-slide {
+            padding: 0px;
+            margin-bottom: 30px;
+        }
+        .slick-list
+        {
+            padding:2% 0% !important;
+        }
+        .slick-dots li			
+        {
+            margin:auto;
+            button::before 
+            {
+                font-size:10px;
+            }
+            &.slick-active button:before
+                {
+                color:#ffa300;
+            }
+        }
+
+        .card {
+            .card-img-top {
+                max-width: 350px;
+                height: auto;
+                @include media-breakpoint-down(sm) {
+                    max-width: 290px;
+                    height: auto;
+                }
+            }
+            transform: scale(0.85);			
+            transition: .3s ease-in-out all;
+            &:hover{
+                .card-block {
+                    border-top: 0.7rem solid $orange;
+                }		
+            }
+            &.slick-current
+            {
+                &.card-block 
+                {
+
+                }
+            }
+            &.slick-center {
+                opacity: 1;
+                outline:none;
+                transform: scale(1.08);
+            }		
+        }
+    }
+    .content {
+        .caption {
+            h4 {
+                color:$gray;
+            }
+            p {
+                color:$gray;
+            }
+        }
+        .cta-button {
+            .btn
+            {
+                padding: 0.8rem 1.2rem;
+            }
+        }
+    }
+    .card-block {
+        .content {
+            margin-left: auto;
+            margin-right: auto;
+            display: table; 
+            height: 50px;
+            p {
+                display: table-cell; 
+                vertical-align: middle; 
+                text-align: center;
+            }
+        }
+        // @include display-flex();
+        border-top: 0.7rem solid $gray;
+      -webkit-transition : border 250ms ease-out;
+      -moz-transition : border 250ms ease-out;
+      -o-transition : border 250ms ease-out;
+      transition : border 250ms ease-out;       
+    }
+    .card-footer {
+        background-color:$white;
+        border:0;
+    }
+    .slick-current
+    {
+        .card-block {
+            border-top: 0.7rem solid #ffa300;
+        }
+    }  
+    
+}
+

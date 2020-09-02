@@ -1,0 +1,12 @@
+﻿////                                     ////
+//      Overrides of Plugins etc...        //
+////                                     ////
+
+// SimpleBar
+.simplebar-track {
+    .simplebar-scrollbar {
+        &:before {
+            background: $color-grey !important;
+        }
+    }
+}

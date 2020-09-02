@@ -1,0 +1,96 @@
+.component-info-page
+{
+    position:relative;
+    overflow:hidden;
+    margin-top:7.3rem;
+    .backgroundImage, .backgroundVideo {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        z-index:0;
+    } 
+    .content
+    {
+
+        .info-page {
+            background-color: $white; 
+            border:1px solid #b5b5b5;
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 2rem;
+            }
+            .title{
+                border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+                @include media-breakpoint-down(sm) {
+                     padding-top: 0.5rem;
+                     padding-bottom: 0.5rem;
+                }
+                @include media-breakpoint-down(sm) {
+                     padding-top: 1rem;
+                     padding-bottom: 1rem;
+                }
+                h1{
+                    
+                    text-align:center;
+                }
+            }
+
+            .description{
+                padding: 3rem 8rem;
+                @include media-breakpoint-down(lg) {
+                    padding: 3rem 5rem;
+                }
+                @include media-breakpoint-down(md) {
+                    padding: 2rem;
+                }
+                    @include media-breakpoint-down(sm) {
+                    padding: 1rem 2rem;
+                }
+                
+                h2{
+                    color:$gray;
+                    text-transform: uppercase;
+                }
+                ol
+                {
+                    list-style:none;
+                    padding-left:0;
+                    li{
+                        counter-increment: item;
+                        color:$gray;
+                        margin:2rem auto 2rem;
+                        &:before{
+                            margin-right: 10px;
+                            content: counter(item);
+                            background: #00ab99;
+                            color: $white;
+                            padding: 5px 10px;
+                            text-align: center;
+                            display: inline-block;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                h3{
+                    padding-top:3rem;
+                    color:$gray;
+                    text-transform: uppercase;
+                    @include media-breakpoint-down(sm) {
+                        padding-top:1rem;
+                    }
+                }
+                p{
+                    u
+                    {
+                        color:#00ab99;   
+                    }
+                }
+            
+            }
+
+        }
+    }
+
+}
