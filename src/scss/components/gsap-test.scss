@@ -8,9 +8,7 @@ body {
     left:0;
     width: 100%;
     height:100%;
-    -moz-transform: perspective(1000px);
-    -moz-transform-style: preserve-3d;
-    -webkit-perspective: 1000px;
+    transform: perspective(1000px);
 }
 
 #container {
@@ -25,7 +23,7 @@ body {
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    background: url('http://zadesigns.com/tron/background.jpg') no-repeat;
+    background: url('../../assets/img/background.jpg') no-repeat;
     transform: translateZ(0px);
     -moz-transform: translateZ(0px);
     -webkit-transform: translateZ(0px);
@@ -35,7 +33,7 @@ body {
 outline: 1px solid transparent;
 width: 142px;
 height: 483px;
-background: url('http://zadesigns.com/tron/tron.png') no-repeat;
+background: url('../../assets/img/tron.png') no-repeat;
 position: absolute;
 transform: translateZ(120px);
 -moz-transform: translateZ(120px);
@@ -49,7 +47,7 @@ margin-left: -71px;
 outline: 1px solid transparent;
 width: 396px;
 height: 128px;
-background: url('http://zadesigns.com/tron/GSAP.png') no-repeat;
+background: url('../../assets/img/GSAP.png') no-repeat;
 position: absolute;
 transform: translateZ(60px);
 -moz-transform: translateZ(60px);

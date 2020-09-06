@@ -1,5 +1,6 @@
 
 import barba from '@barba/core';
+
 import { gsap, ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 // import ScrollTrigger from 'gsap/all';
 import scrollAnimations from './gsap/custom-onscroll-animations';
