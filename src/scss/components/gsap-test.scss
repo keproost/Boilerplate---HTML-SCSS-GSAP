@@ -1,86 +1,79 @@
-
 //3dparallax test
-body {
+.parallax-3d-container {
     overflow: hidden;
-    background-color:darkgray;
+    background-color: darkgray;
     position: absolute;
     top: 0;
-    left:0;
+    left: 0;
     width: 100%;
-    height:100%;
+    height: 100%;
     transform: perspective(1000px);
+    .content {
+        outline: 1px solid transparent;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -250px;
+        margin-top: -265px;
+        height: 537px;
+        width: 500px;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        background: url("../../assets/img/background.jpg") no-repeat;
+        transform: translateZ(0px);
+        -moz-transform: translateZ(0px);
+        -webkit-transform: translateZ(0px);
+        .figure {
+            outline: 1px solid transparent;
+            width: 142px;
+            height: 483px;
+            background: url("../../assets/img/tron.png") no-repeat;
+            position: absolute;
+            transform: translateZ(120px);
+            -moz-transform: translateZ(120px);
+            -webkit-transform: translateZ(120px);
+            bottom: 0px;
+            left: 50%;
+            margin-left: -71px;
+        }
+
+        .text {
+            outline: 1px solid transparent;
+            width: 396px;
+            height: 128px;
+            background: url("../../assets/img/GSAP.png") no-repeat;
+            position: absolute;
+            transform: translateZ(60px);
+            -moz-transform: translateZ(60px);
+            -webkit-transform: translateZ(60px);
+            top: 30px;
+            left: 50%;
+            margin-left: -198px;
+        }
+        .tagline {
+            width: 500px;
+            outline: 1px solid transparent;
+            position: absolute;
+            transform: translateZ(80px);
+            -moz-transform: translateZ(80px);
+            -webkit-transform: translateZ(80px);
+            bottom: 0px;
+            left: 50%;
+            margin-left: -280px;
+            padding-left: 30px;
+            padding-right: 30px;
+            background: rgba(0, 0, 0, 0.6);
+            font-family: Arial, Helvetica, "Helvetica-Neue", san-serif;
+            color: #fff;
+            font-size: 30px;
+            line-height: 60px;
+            text-align: center;
+            color: #f9e48b;
+            text-transform: uppercase;
+        }
+    }
 }
-
-#container {
-    outline: 1px solid transparent;
-    position: absolute;
-    left:50%;
-    top:50%;
-    margin-left: -250px;
-    margin-top: -265px;
-    height: 537px;
-    width: 500px;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    background: url('../../assets/img/background.jpg') no-repeat;
-    transform: translateZ(0px);
-    -moz-transform: translateZ(0px);
-    -webkit-transform: translateZ(0px);
-}
-
-.figure{
-outline: 1px solid transparent;
-width: 142px;
-height: 483px;
-background: url('../../assets/img/tron.png') no-repeat;
-position: absolute;
-transform: translateZ(120px);
--moz-transform: translateZ(120px);
--webkit-transform: translateZ(120px);
-bottom: 0px;
-left: 50%;
-margin-left: -71px;
-}
-
-.gsap {
-outline: 1px solid transparent;
-width: 396px;
-height: 128px;
-background: url('../../assets/img/GSAP.png') no-repeat;
-position: absolute;
-transform: translateZ(60px);
--moz-transform: translateZ(60px);
--webkit-transform: translateZ(60px);
-top: 30px;
-left: 50%;
-margin-left: -198px;
-}
-.tagline {
-  width:500px;
-  outline: 1px solid transparent;
-  position: absolute;
-  transform: translateZ(80px);
-  -moz-transform: translateZ(80px);
-  -webkit-transform: translateZ(80px);
-  bottom: 0px;
-  left:50%;
-  margin-left:-280px;
-  padding-left: 30px;
-  padding-right: 30px;
-  background: rgba(0,0,0,0.6);
-  font-family: Arial, Helvetica, "Helvetica-Neue", san-serif;
-  color: #FFF;
-  font-size: 30px;
-  line-height: 60px;
-  text-align:center;
-  color: #F9E48B;
-  text-transform: uppercase;
-
-}
-
-
-
 
 .dot {
     width: 30px;
@@ -103,7 +96,7 @@ margin-left: -198px;
     width: 100vw;
     height: 200vh;
     pointer-events: none;
-    background-color: #FFF6ED;
+    background-color: #fff6ed;
     z-index: 1;
     visibility: hidden;
     opacity: 0;
@@ -122,7 +115,6 @@ $heroHeight: 800px;
         z-index: 5;
     }
 }
-
 
 #hero {
     height: $heroHeight;
@@ -156,29 +148,30 @@ $heroHeight: 800px;
     text-align: center;
 }
 
-#hero, .layer {
+#hero,
+.layer {
     min-height: 800px;
 }
 
 .layer-bg {
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_bg.jpg');
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_bg.jpg");
 }
 .layer-1 {
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_03.png');
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_03.png");
     background-position: left bottom;
 }
 .layer-2 {
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_02.png');
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_02.png");
 }
 .layer-3 {
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_man.png');
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_man.png");
     background-position: right bottom;
 }
 .layer-4 {
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_01.png');
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_01.png");
 }
 .layer-overlay {
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_overlay.png');
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_overlay.png");
 }
 
 @media only screen and (max-width: 768px) {

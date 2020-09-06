@@ -1,6 +1,6 @@
 
 import barba from '@barba/core';
-
+// import $ from 'jquery';
 import { gsap, ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 // import ScrollTrigger from 'gsap/all';
 import scrollAnimations from './gsap/custom-onscroll-animations';
@@ -19,15 +19,21 @@ gsap.registerPlugin(ScrollTrigger);
 barba.init({
     debug: true,
     views: [{
-        namespace: 'panel-fullscreen',
-        after: () => {
+        namespace: 'poc-panel-fullscreen',
+        afterEnter: () => {
             // goToSection();
         }
     },
     {
-        namespace: 'parallax-3d',
-        after: () => {
-            parallax3d();
+        namespace: 'poc-parallax-3d',
+        afterEnter: () => {
+            setTimeout(function () { parallax3d(); }, 250);
+        }
+    },
+    {
+        namespace: 'poc-parallax-scroll',
+        afterEnter: () => {
+            parallaxAnimations();
         }
     }
     ],
@@ -46,7 +52,6 @@ barba.init({
                 // parallaxAnimations();
             },
             after: () => {
-                parallaxAnimations();
                 scrollAnimations();
             },
             afterEnter: () => {
