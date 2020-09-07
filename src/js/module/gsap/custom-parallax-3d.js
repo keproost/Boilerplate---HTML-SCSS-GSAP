@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { Power2, TweenLite, ScrollTrigger } from 'gsap/all';
+import { Power2, TweenLite } from 'gsap/all';
 
 window.$ = $;
 window.jQuery = $;
@@ -54,6 +54,57 @@ export default function parallax3d() {
         });
     }
 }
+
+// export default function parallax3d() {
+//     gsap.registerPlugin(ScrollTrigger);
+//     const parallax3dBlocks = gsap.utils.toArray('.parallaxblock');
+//     if (parallax3dBlocks) {
+//         parallax3dBlocks.forEach((parallax3dBlock) => {
+//             const parallax3dAnimation = gsap.timeline({});
+//             let request = null;
+//             const mouse = { x: 0, y: 0 };
+//             let parallax3dBlockWidth = $(parallax3dBlock).innerWidth() / parallax3dStrenght;
+//             let parallax3dBlockHeight = $(parallax3dBlock).innerHeight() / parallax3dStrenght;
+//             function update() {
+//                 const dx = mouse.x - parallax3dBlockWidth;
+//                 const dy = mouse.y - parallax3dBlockHeight;
+//                 const tiltx = (dy / parallax3dBlockHeight);
+//                 const tilty = -(dx / parallax3dBlockWidth);
+//                 const radius = Math.sqrt((tiltx ** 2) + (tilty ** 2));
+//                 const degree = (radius * 20);
+//                 parallax3dAnimation
+//                     .to('.parallax-3d-container > .content', 1, {
+//                         transform: `rotate3d(${tiltx}, ${tilty}, 0, ${degree}deg)`, ease: Power2.easeOut
+//                     });
+//             }
+//             $(parallax3dBlock).on('mousemove', (function (event) {
+//                 mouse.x = event.pageX - this.offsetLeft;
+//                 mouse.y = event.pageY - this.offsetTop;
+//                 request = requestAnimationFrame(update);
+//             }));
+//             $(parallax3dBlock).on('mouseleave', (function () {
+//                 console.log('mouseleave');
+//                 cancelAnimationFrame(request);
+//                 TweenLite.to('.parallax-3d-container > .content', 1, {
+//                     transform: 'rotate3d(0, 0, 0, 0deg)', ease: Power2.easeOut
+//                 });
+//             }));
+
+//             ScrollTrigger.create({
+//                 trigger: parallax3dBlock,
+//                 // onEnter: parallaxOnEnter(),
+//                 // onLeave: parallaxOnLeave()
+//             });
+
+//             $(window).resize(function () {
+//                 parallax3dBlockWidth = $(parallax3dBlock).innerWidth() / parallax3dStrenght;
+//                 parallax3dBlockHeight = $(parallax3dBlock).innerHeight() / parallax3dStrenght;
+//                 console.log('PARALLAX3D-ELEMENT-CANVASHEIGHT', parallax3dBlockHeight);
+//                 console.log('PARALLAX3D-ELEMENT-CANVASWIDTH', parallax3dBlockWidth);
+//             });
+//         });
+//     }
+// }
 
 
 // export default function parallax3d() {

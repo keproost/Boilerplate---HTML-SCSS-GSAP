@@ -1,0 +1,40 @@
+//fullscreen-slider
+
+.fullscreen-slider {
+  display: flex;
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  flex-direction: column;
+  .slide {
+    height: 100vh;
+    display: flex;
+    flex: 1;
+    padding: 1rem;
+    position: relative;
+    .backgroundImage {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .content {
+      display: flex;
+      flex: 1;
+      z-index: 50;
+      align-items: center;
+      .title {
+        font-size: 100px;
+        max-width: 600px;
+      }
+      .description {}
+    }
+    .cta-wrapper{
+      
+    }
+  }
+}
