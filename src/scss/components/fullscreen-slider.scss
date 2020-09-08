@@ -30,6 +30,18 @@
       .title {
         font-size: 100px;
         max-width: 600px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 700;
+        line-height: 1;
+      }
+      .cta-wrapper {
+        position: absolute;
+        bottom: 0;
+      }
+      &.flow-left-to-right {
+        .cta-wrapper {
+          right: 0;
+        }
       }
       .description {}
     }

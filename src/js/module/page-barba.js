@@ -5,6 +5,7 @@ import { gsap, ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 // import ScrollTrigger from 'gsap/all';
 import scrollAnimations from './gsap/custom-onscroll-animations';
 import pageTransitions from './gsap/custom-page-transitions';
+import pageLoaders from './gsap/custom-page-loaders';
 import parallaxAnimations from './gsap/custom-parallax-animations';
 import parallax3d from './gsap/custom-parallax-3d';
 // import goToSection from './gsap/custom-fullpage-animations-2';
@@ -28,6 +29,13 @@ barba.init({
         namespace: 'poc-parallax-3d',
         afterEnter: () => {
             setTimeout(function () { parallax3d(); }, 250);
+        }
+    },
+    {
+        namespace: 'i3-home',
+        beforeOnce: () => {
+            setTimeout(function () { pageLoaders.zoomIntoDot(); }, 250);
+            // pageLoaders.zoomIntoDot();
         }
     },
     {
