@@ -3,15 +3,12 @@ body {
     padding: 0px;
     overflow-x: hidden;
 }
-
-header {
-
-}
 .container {
     &.container-edge-to-edge {
         padding: 0px;
         width: 100%;
         max-width: unset;
+
         &.row {
             margin: 0px;
         }
@@ -19,34 +16,41 @@ header {
 }
 
 //Show hide navbar on scroll 
-.smart-scroll{
+.smart-scroll {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 1030;
-  }
-.scrolled-down{
-    transform:translateY(-100%); transition: all 0.3s ease-in-out;
 }
-.scrolled-up{
-    transform:translateY(0); transition: all 0.3s ease-in-out;
+
+.scrolled-down {
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.scrolled-up {
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
 }
 
 
 .grid-flexrow {
     display: flex;
+
     .row {
         display: flex;
         flex: 1;
         width: 100%;
+
         [class|="col"] {
             display: flex;
             padding: 0px;
-            > div {
-                display: flex; 
-                flex: 1;  
-                flex-direction: column;  
+
+            >div {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
                 width: 100%;
             }
         }

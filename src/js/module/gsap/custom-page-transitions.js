@@ -82,6 +82,18 @@ const pageTransitions = {
         return new Promise((resolve) => {
             resolve();
         });
+    },
+    fadeOutLeave() {
+        gsap.to('main', {
+            duration: pageTransitionDuration,
+            y: 0,
+            opacity: 0,
+            ease: pageTransitionEase,
+        });
+
+        return new Promise((resolve) => {
+            resolve();
+        });
     }
 };
 

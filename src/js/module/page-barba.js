@@ -6,8 +6,11 @@ import { gsap, ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 import scrollAnimations from './gsap/custom-onscroll-animations';
 import pageTransitions from './gsap/custom-page-transitions';
 import pageLoaders from './gsap/custom-page-loaders';
+import textEffects from './gsap/custom-text-effects';
 import parallaxAnimations from './gsap/custom-parallax-animations';
 import parallax3d from './gsap/custom-parallax-3d';
+
+
 // import goToSection from './gsap/custom-fullpage-animations-2';
 // import fullpageAnimation from './gsap/custom-fullpage-animations';
 // import delayPromise from './utils';
@@ -34,8 +37,18 @@ barba.init({
     {
         namespace: 'i3-home',
         beforeOnce: () => {
-            setTimeout(function () { pageLoaders.zoomIntoDot(); }, 250);
+            // setTimeout(function () { pageLoaders.zoomIntoDot(); }, 250);
             // pageLoaders.zoomIntoDot();
+        },
+        afterEnter: () => {
+            pageLoaders.beforeOnceMaskFadeIn();
+            scrollAnimations.driftUp();
+            scrollAnimations.growInOnEnter();
+            scrollAnimations.fadeOutOnLeave();
+            scrollAnimations.slideInUpOnEnter();
+            textEffects.textEffect1();
+            textEffects.textEffect2();
+            textEffects.textEffect3();
         }
     },
     {
@@ -59,12 +72,15 @@ barba.init({
                 // ScrollTrigger.getById('parallaxAnimationID').refresh();
                 // parallaxAnimations();
             },
-            after: () => {
-                scrollAnimations();
+            beforeEnter: () => {
+                pageTransitions.fadeOutLeave();
             },
             afterEnter: () => {
+                pageLoaders.beforeOnceMaskFadeIn();
                 // ScrollTrigger.kill(delayPromise(5000));
                 // ScrollTrigger.refresh(delayPromise(5000));
+            },
+            beforeOnce: () => {
             }
         },
     ],

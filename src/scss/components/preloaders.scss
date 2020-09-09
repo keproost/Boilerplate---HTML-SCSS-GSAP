@@ -1,0 +1,33 @@
+//Loader styles
+
+
+//Remove scrollbar jump
+html {
+    width:100vw;
+    overflow-x:hidden;
+}
+
+.loader {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 99999;
+    main {
+        opacity: 0;
+    }
+}
+
+.page-loader-mask {
+    // mask-image: url(../../assets/img/Masks.png);
+    // mask-type: luminance;
+    // mask-repeat: no-repeat;
+    // mask-position: center center;
+    // mask-size: 100%;
+    mask-image: radial-gradient(ellipse closest-side,
+    rgba(0,0,0,1), rgba(0,0,0,0));
+}
