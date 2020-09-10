@@ -106,7 +106,9 @@ const textEffects = {
                 duration: 0.8,
                 delay: 1.5,
                 opacity: 0,
-                y: 10,
+                scaleX: 0,
+                y: 20,
+                transformOrigin: 'center center',
                 stagger: { amount: 0.8 },
                 ease: 'back.out(1)',
                 overwrite: 'auto'
