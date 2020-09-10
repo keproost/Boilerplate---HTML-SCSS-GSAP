@@ -56,7 +56,7 @@ barba.init({
         // },
         afterEnter: () => {
             // pageLoaders.beforeOnceMaskFadeIn();
-            pageLoaders.i3logoReveal();
+            // pageLoaders.i3logoReveal();
             filterEffects.filterEffect1();
             textEffects.scrollTextEffect1();
             textEffects.scrollTextEffect2();
@@ -67,7 +67,7 @@ barba.init({
             scrollAnimations.growInOnEnter();
             scrollAnimations.fadeOutOnLeave();
             scrollAnimations.slideInUpOnEnter();
-            scrollAnimations.stickySection();
+            // scrollAnimations.stickySection();
         }
     },
     {
