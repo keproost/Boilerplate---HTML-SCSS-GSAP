@@ -28,3 +28,7 @@
     top: 0;
     width: 100%;
 }
+.filterEffects {
+    filter: url(#svgFilters);
+    // will-change: filter;
+}

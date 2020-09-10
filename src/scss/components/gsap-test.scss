@@ -76,11 +76,12 @@
 }
 
 .dot {
-    width: 30px;
-    height: 30px;
+    // width: 30px;
+    // height: 30px;
     display: inline-block;
-    background-color: orange;
-    border-radius: 100%;
+    color: orange;
+    font-size: 150px;
+    line-height: 0.85;
 }
 .gsap-active-no-overflow {
     overflow: hidden;

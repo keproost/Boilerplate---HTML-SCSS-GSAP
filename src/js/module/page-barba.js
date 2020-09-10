@@ -7,6 +7,8 @@ import scrollAnimations from './gsap/custom-onscroll-animations';
 import pageTransitions from './gsap/custom-page-transitions';
 import pageLoaders from './gsap/custom-page-loaders';
 import textEffects from './gsap/custom-text-effects';
+import filterEffects from './gsap/custom-filter-effects';
+// import smoothScrolling from './gsap/custom-smooth-scrolling';
 import parallaxAnimations from './gsap/custom-parallax-animations';
 import parallax3d from './gsap/custom-parallax-3d';
 
@@ -18,6 +20,7 @@ import parallax3d from './gsap/custom-parallax-3d';
 // Barba
 // document.addEventListener('DOMContentLoaded', function () {
 gsap.registerPlugin(ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollTrigger);
 
 barba.init({
@@ -40,15 +43,31 @@ barba.init({
             // setTimeout(function () { pageLoaders.zoomIntoDot(); }, 250);
             // pageLoaders.zoomIntoDot();
         },
+        // before: () => {
+        //     // setTimeout(function () { pageLoaders.zoomIntoDot(); }, 250);
+        //     // pageLoaders.zoomIntoDot();
+        //     // pageLoaders.logoReveal();
+        //     pageLoaders.logoReveal();
+        // },
+        // after: () => {
+        //     // setTimeout(function () { pageLoaders.zoomIntoDot(); }, 250);
+        //     // pageLoaders.zoomIntoDot();
+        //     // pageLoaders.logoReveal();
+        // },
         afterEnter: () => {
-            pageLoaders.beforeOnceMaskFadeIn();
+            // pageLoaders.beforeOnceMaskFadeIn();
+            pageLoaders.i3logoReveal();
+            filterEffects.filterEffect1();
+            textEffects.scrollTextEffect1();
+            textEffects.scrollTextEffect2();
+            textEffects.scrollTextEffect3();
+            textEffects.scrollTextEffect4();
+            textEffects.textEffect1();
             scrollAnimations.driftUp();
             scrollAnimations.growInOnEnter();
             scrollAnimations.fadeOutOnLeave();
             scrollAnimations.slideInUpOnEnter();
-            textEffects.textEffect1();
-            textEffects.textEffect2();
-            textEffects.textEffect3();
+            scrollAnimations.stickySection();
         }
     },
     {
@@ -67,6 +86,7 @@ barba.init({
             },
             enter: ({ next }) => {
                 pageTransitions.fadeUpDownEnter(next.container.querySelector('main'));
+                // smoothScrolling.ahrefSmoothScroll();
                 // parallaxAnimations();
                 // ScrollTrigger.getById('parallaxAnimationID').kill();
                 // ScrollTrigger.getById('parallaxAnimationID').refresh();

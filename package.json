@@ -21,7 +21,7 @@
         "@barba/core": "^2.9.7",
         "babel-polyfill": "^6.26.0",
         "bootstrap": "^4.5.2",
-        "gsap": "^3.4.2",
+        "gsap": "file:src/js/vendor/gsap-business-green/npm-install-this/gsap-bonus.tgz",
         "jquery": "^3.3.1",
         "popper.js": "^1.16.1"
     },

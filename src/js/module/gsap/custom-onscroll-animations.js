@@ -92,6 +92,20 @@ const scrollAnimations = {
                 });
             });
         }
+    },
+    stickySection() {
+        const sections = gsap.utils.toArray('.stickysection');
+        gsap.to(sections, {
+            xPercent: -100 * (sections.length - 1),
+            ease: 'none',
+            scrollTrigger: {
+                start: 0,
+                end: st => ScrollTrigger.maxScroll(st.scroller),
+                scrub: 1,
+                snap: 1 / (sections.length - 1),
+            // base vertical scrolling on how wide the container is so it feels more natural.
+            }
+        });
     }
 };
 
