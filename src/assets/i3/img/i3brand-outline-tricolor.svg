@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="i3SymbolLayer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 273.44 273.45" style="enable-background:new 0 0 273.44 273.45;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#ED6D05;}
+	.st1{fill:#F49800;}
+	.st2{fill:#FFBF00;}
+</style>
+<g id="i3Symbol_1_">
+	<g id="i-primary_1_">
+		<g id="stripe-primary_1_">
+			<path class="st0" d="M91.26,154.63l78.58,78.58l-33.16,33.16L58.1,187.79L91.26,154.63 M91.26,147.56l-40.23,40.23l85.65,85.65
+				l40.23-40.23L91.26,147.56L91.26,147.56z"/>
+		</g>
+		<g id="dot-primary_1_">
+			<path class="st0" d="M40.23,103.6l35.75,35.76l-33.16,33.17L7.07,136.77L40.23,103.6 M40.23,96.53L0,136.77l42.83,42.83
+				l40.22-40.24L40.23,96.53L40.23,96.53z"/>
+		</g>
+	</g>
+	<g id="i-secondary_1_">
+		<g id="stripeSecondary_1_">
+			<path class="st1" d="M139.53,106.37l78.58,78.58l-33.16,33.16l-78.58-78.58L139.53,106.37 M139.53,99.3L99.3,139.53l85.65,85.65
+				l40.23-40.23L139.53,99.3L139.53,99.3z"/>
+		</g>
+		<g id="dotSecondary_1_">
+			<path class="st1" d="M88.49,55.34l35.76,35.75l-33.16,33.16L55.34,88.5L88.49,55.34 M88.49,48.27L48.27,88.5l42.82,42.83
+				l40.23-40.23L88.49,48.27L88.49,48.27z"/>
+		</g>
+	</g>
+	<g id="i-tertiary_1_">
+		<g id="stripeTertiary_1_">
+			<path class="st2" d="M187.79,58.11l78.58,78.58l-33.16,33.16l-78.58-78.58L187.79,58.11 M187.79,51.03l-40.23,40.23l85.65,85.65
+				l40.23-40.23L187.79,51.03L187.79,51.03z"/>
+		</g>
+		<g id="dotTertiary_1_">
+			<path class="st2" d="M136.76,7.07l35.75,35.75l-33.16,33.17L103.6,40.24L136.76,7.07 M136.76,0L96.53,40.24l42.83,42.82
+				l40.22-40.24L136.76,0L136.76,0z"/>
+		</g>
+	</g>
+</g>
+</svg>

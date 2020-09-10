@@ -1,16 +1,14 @@
-//fullscreen-slider
-
 .fullscreen-slider {
   display: flex;
   position: relative;
   flex: 1;
   overflow: hidden;
   flex-direction: column;
+
   .slide {
     height: 100vh;
     display: flex;
     flex: 1;
-    padding: 1rem;
     position: relative;
     .backgroundImage {
       position: absolute;
@@ -27,20 +25,41 @@
       flex: 1;
       z-index: 50;
       align-items: center;
-      .title {
-        font-size: 100px;
-        max-width: 600px;
-        font-family: 'Josefin Sans', sans-serif;
-        font-weight: 700;
-        line-height: 1;
+      padding: 5rem;
+      position: relative;
+      .caption {
+        display: flex; 
+        flex-direction: column; 
+        flex: 1;
+        .title {
+          font-size: 100px;
+          font-family: 'Josefin Sans', sans-serif;
+          font-weight: 700;
+          line-height: 1;
+          max-width: 600px;
+        }
+        .description {
+          max-width: 600px;
+        }
+      }
+      .image {
+        display: flex; 
+        flex: 1;
       }
       .cta-wrapper {
         position: absolute;
-        bottom: 0;
+        bottom: 48px;
       }
       &.flow-left-to-right {
         .cta-wrapper {
-          right: 0;
+          left: initial;
+          right: 48px;
+        }
+      }
+      &.flow-right-to-left {
+        .cta-wrapper {
+          right: initial;
+          left: 48px;
         }
       }
       .description {}

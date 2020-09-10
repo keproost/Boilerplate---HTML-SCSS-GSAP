@@ -4,7 +4,6 @@ const pageTransitionDuration = 0.50;
 const pageTransitionStagger = 0.1;
 const pageTransitionEase = 'power2.inOut';
 
-
 const pageTransitions = {
     fadeUpDownEnter(e) {
         const elementsFadeUpDown = e.querySelectorAll(
@@ -94,7 +93,7 @@ const pageTransitions = {
         return new Promise((resolve) => {
             resolve();
         });
-    }
+    },
 };
 
 export default pageTransitions;
