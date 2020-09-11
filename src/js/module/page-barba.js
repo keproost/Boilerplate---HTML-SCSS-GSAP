@@ -8,7 +8,7 @@ import pageTransitions from './gsap/custom-page-transitions';
 import pageLoaders from './gsap/custom-page-loaders';
 import textEffects from './gsap/custom-text-effects';
 import filterEffects from './gsap/custom-filter-effects';
-// import smoothScrolling from './gsap/custom-smooth-scrolling';
+import smoothScrolling from './gsap/custom-smooth-scrolling';
 import parallaxAnimations from './gsap/custom-parallax-animations';
 import parallax3d from './gsap/custom-parallax-3d';
 
@@ -115,7 +115,6 @@ barba.init({
             },
             enter: ({ next }) => {
                 pageTransitions.fadeUpDownEnter(next.container.querySelector('main'));
-                // smoothScrolling.ahrefSmoothScroll();
                 // parallaxAnimations();
                 // ScrollTrigger.getById('parallaxAnimationID').kill();
                 // ScrollTrigger.getById('parallaxAnimationID').refresh();
@@ -127,6 +126,7 @@ barba.init({
             afterEnter: () => {
                 pageLoaders.beforeOnceMaskFadeIn();
                 textEffects.imageStackAnimation();
+                smoothScrolling.smoothAnchorScroller();
                 // ScrollTrigger.kill(delayPromise(5000));
                 // ScrollTrigger.refresh(delayPromise(5000));
             },

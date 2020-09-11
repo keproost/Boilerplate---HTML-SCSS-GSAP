@@ -17,10 +17,10 @@ const textEffects = {
 
             const splitTitle = new SplitText(scrollTextEffect1Element);
             splitTimeline.from(splitTitle.chars, {
-                duration: 1.5,
+                duration: 1,
                 opacity: 0,
                 y: 100,
-                stagger: { amount: 0.5 },
+                stagger: { amount: 0.2 },
                 ease: 'back.out(1)',
                 overwrite: 'auto'
             });
@@ -159,25 +159,26 @@ const textEffects = {
             imageStackAnimation.from(imageStackContainer, {
                 duration: 1,
                 rotateY: 60,
+                force3D: true,
                 ease: 'easeIn.out(2)',
             },);
         });
-        gsap.utils.toArray('.imageStackAnimation > .layers').forEach(function (layer) {
-            console.log('layers', layer);
-            const layerAnimation = gsap.timeline({ scrollTrigger: {
-                trigger: imageStackContainer,
-                start: 'top bottom',
-                end: 'bottom 80%',
-                scrub: true,
-                // markers: true
-            }
-            });
-            layerAnimation.from(imageStackContainer, {
-                duration: 1,
-                opacity: 0,
-                ease: 'easeIn.out(1)',
-            },);
-        });
+        // gsap.utils.toArray('.imageStackAnimation > .layers').forEach(function (layer) {
+        //     console.log('layers', layer);
+        //     const layerAnimation = gsap.timeline({ scrollTrigger: {
+        //         trigger: imageStackContainer,
+        //         start: 'top bottom',
+        //         end: 'bottom 80%',
+        //         scrub: true,
+        //         // markers: true
+        //     }
+        //     });
+        //     layerAnimation.from(imageStackContainer, {
+        //         duration: 1,
+        //         opacity: 0,
+        //         ease: 'easeIn.out(1)',
+        //     },);
+        // });
     },
 };
 

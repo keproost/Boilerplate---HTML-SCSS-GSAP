@@ -163,7 +163,7 @@ const scrollAnimations = {
             driftUp.forEach((driftUpElement) => {
                 const driftUpAnimation = gsap.timeline({});
                 driftUpAnimation
-                    .from(driftUpElement, { y: 0, ease: 'Circ.easeInOut' })
+                    .from(driftUpElement, { y: 0, ease: 'Circ.easeInOut', duration: 1.5 })
                     .to(driftUpElement, { y: 200 });
 
                 ScrollTrigger.create({
