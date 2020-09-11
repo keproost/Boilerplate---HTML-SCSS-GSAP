@@ -116,6 +116,11 @@ const textEffects = {
         });
     },
     scrollTextEffectWipeFromLeft() {
+        window.$ = $;
+        window.jQuery = $;
+        // function showOverlay() {
+        //     $('scrollTextEffectWipeFromLeftElement').toggleClass('no-overflow');
+        // }
         gsap.utils.toArray('.scrollTextEffectWipeFromLeft').forEach(function (scrollTextEffectWipeFromLeftElement) {
             const splitTimeline = gsap.timeline({ scrollTrigger: {
                 trigger: scrollTextEffectWipeFromLeftElement,
@@ -137,6 +142,8 @@ const textEffects = {
         });
     },
     imageStackAnimation() {
+        window.$ = $;
+        window.jQuery = $;
         const imageStackContainer = document.querySelector('.imageStackAnimation');
         gsap.utils.toArray('.imageStackAnimation').forEach(function (imageStackElement) {
             console.log('imageStackAnimations', imageStackElement);
@@ -150,26 +157,26 @@ const textEffects = {
             });
             imageStackAnimation.from(imageStackContainer, {
                 duration: 1,
-                rotateY: 50,
+                rotateY: 90,
                 ease: 'easeIn.out(1)',
             },);
         });
-        gsap.utils.toArray('.imageStackAnimation > .layers').forEach(function (layer) {
-            console.log('layers', layer);
-            const layerAnimation = gsap.timeline({ scrollTrigger: {
-                trigger: imageStackContainer,
-                start: 'top bottom',
-                end: 'bottom 80%',
-                scrub: true,
-                // markers: true
-            }
-            });
-            layerAnimation.from(imageStackContainer, {
-                duration: 1,
-                opacity: 0,
-                ease: 'easeIn.out(1)',
-            },);
-        });
+        // gsap.utils.toArray('.imageStackAnimation > .layers').forEach(function (layer) {
+        //     console.log('layers', layer);
+        //     const layerAnimation = gsap.timeline({ scrollTrigger: {
+        //         trigger: imageStackContainer,
+        //         start: 'top bottom',
+        //         end: 'bottom 80%',
+        //         scrub: true,
+        //         // markers: true
+        //     }
+        //     });
+        //     layerAnimation.from(imageStackContainer, {
+        //         duration: 1,
+        //         opacity: 0,
+        //         ease: 'easeIn.out(1)',
+        //     },);
+        // });
     },
 };
 

@@ -39,7 +39,7 @@ barba.init({
     {
         namespace: 'business',
         afterEnter: () => {
-            textEffects.imageStackAnimation();
+            // textEffects.imageStackAnimation();
             textEffects.scrollTextEffectWipeFromLeft();
             // filterEffects.filterEffect1();
             textEffects.scrollTextEffect1();
@@ -111,13 +111,17 @@ barba.init({
             },
             beforeEnter: () => {
                 pageTransitions.fadeOutLeave();
+
+
             },
             afterEnter: () => {
                 pageLoaders.beforeOnceMaskFadeIn();
+                textEffects.imageStackAnimation();
                 // ScrollTrigger.kill(delayPromise(5000));
                 // ScrollTrigger.refresh(delayPromise(5000));
             },
             beforeOnce: () => {
+                textEffects.imageStackAnimation();
             }
         },
     ],
