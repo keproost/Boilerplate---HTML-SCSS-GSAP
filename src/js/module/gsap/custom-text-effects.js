@@ -10,7 +10,7 @@ const textEffects = {
                 start: 'top bottom',
                 end: '',
                 // onToggle: self => gsap.to(scrollTextEffect1Element, { opacity: self.isActive ? 1 : 0 }),
-                toggleActions: 'restart pause',
+                toggleActions: 'restart none none none',
                 // markers: true
             }
             });
@@ -152,31 +152,32 @@ const textEffects = {
                 start: 'top bottom',
                 end: 'bottom 80%',
                 scrub: true,
+                toggleActions: 'restart none none none',
                 // markers: true
             }
             });
             imageStackAnimation.from(imageStackContainer, {
                 duration: 1,
-                rotateY: 90,
+                rotateY: 60,
+                ease: 'easeIn.out(2)',
+            },);
+        });
+        gsap.utils.toArray('.imageStackAnimation > .layers').forEach(function (layer) {
+            console.log('layers', layer);
+            const layerAnimation = gsap.timeline({ scrollTrigger: {
+                trigger: imageStackContainer,
+                start: 'top bottom',
+                end: 'bottom 80%',
+                scrub: true,
+                // markers: true
+            }
+            });
+            layerAnimation.from(imageStackContainer, {
+                duration: 1,
+                opacity: 0,
                 ease: 'easeIn.out(1)',
             },);
         });
-        // gsap.utils.toArray('.imageStackAnimation > .layers').forEach(function (layer) {
-        //     console.log('layers', layer);
-        //     const layerAnimation = gsap.timeline({ scrollTrigger: {
-        //         trigger: imageStackContainer,
-        //         start: 'top bottom',
-        //         end: 'bottom 80%',
-        //         scrub: true,
-        //         // markers: true
-        //     }
-        //     });
-        //     layerAnimation.from(imageStackContainer, {
-        //         duration: 1,
-        //         opacity: 0,
-        //         ease: 'easeIn.out(1)',
-        //     },);
-        // });
     },
 };
 

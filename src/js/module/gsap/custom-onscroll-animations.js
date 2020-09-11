@@ -4,7 +4,7 @@ import { ScrollTrigger, gsap } from 'gsap/all';
 const scrollAnimations = {
     fadeOutOnLeave() {
         gsap.registerPlugin(ScrollTrigger);
-        const fadeOutOnLeave = gsap.utils.toArray('.gsap-scrollAnimation-fadeOutOnLeave');
+        const fadeOutOnLeave = gsap.utils.toArray('.fadeOutOnLeave');
         console.log('SCROLLANIMATION - FADEOUTONLEAVEELEMENTS', fadeOutOnLeave);
         if (fadeOutOnLeave) {
             fadeOutOnLeave.forEach((fadeOutOnLeaveElement) => {
@@ -20,7 +20,7 @@ const scrollAnimations = {
                     trigger: fadeOutOnLeaveElement,
                     animation: fadeOutOnLeaveAnimation,
                     start: 'top 40%',
-                    end: 'bottom 10%',
+                    end: 'bottom 20%',
                     scrub: 1,
                     once: false,
                 });
@@ -29,7 +29,7 @@ const scrollAnimations = {
     },
 
     slideInUpOnEnter() {
-        const slideInUpOnEnter = gsap.utils.toArray('.gsap-scrollAnimation-slideInUpOnEnter');
+        const slideInUpOnEnter = gsap.utils.toArray('.slideInUpOnEnter');
         console.log('SCROLLANIMATION - SLIDEINUPONTERELEMENTS', slideInUpOnEnter);
         if (slideInUpOnEnter) {
             slideInUpOnEnter.forEach((slideInUpOnEnterElement) => {
@@ -49,22 +49,21 @@ const scrollAnimations = {
             });
         }
     },
-
-    growInOnEnter() {
-        const growInOnEnter = gsap.utils.toArray('.gsap-scrollAnimation-growInOnEnter');
-        console.log('SCROLLANIMATION - GROWINONENTERELEMENTS', growInOnEnter);
-        if (growInOnEnter) {
-            growInOnEnter.forEach((growInOnEnterElement) => {
-                const growInOnEnterAnimation = gsap.timeline({});
-                growInOnEnterAnimation
-                    .from(growInOnEnterElement, { scale: 0, ease: 'Back.easeOut', duration: 2 })
-                    .to(growInOnEnterElement, { scale: 1 });
+    fadeInOnEnter() {
+        const fadeInOnEnter = gsap.utils.toArray('.fadeInOnEnter');
+        console.log('SCROLLANIMATION - FADEINONENTER', fadeInOnEnter);
+        if (fadeInOnEnter) {
+            fadeInOnEnter.forEach((fadeInOnEnterElement) => {
+                const fadeInOnEnterAnimation = gsap.timeline({});
+                fadeInOnEnterAnimation
+                    .from(fadeInOnEnterElement, { opacity: 0, ease: 'Back.easeOut', duration: 2.5 })
+                    .to(fadeInOnEnterElement, { opacity: 1 });
 
                 ScrollTrigger.create({
-                    trigger: growInOnEnterElement,
-                    animation: growInOnEnterAnimation,
+                    trigger: fadeInOnEnterElement,
+                    animation: fadeInOnEnterAnimation,
                     start: 'top 80%',
-                    end: 'top 40%',
+                    end: 'top 50%',
                     scrub: 1,
                     once: false,
                 });
@@ -72,21 +71,148 @@ const scrollAnimations = {
         }
     },
 
-    driftUp() {
-        const driftUp = gsap.utils.toArray('.driftUp');
+    growInOnEnter() {
+        const growInOnEnter = gsap.utils.toArray('.growInOnEnter');
+        console.log('SCROLLANIMATION - GROWINONENTERELEMENTS', growInOnEnter);
+        if (growInOnEnter) {
+            growInOnEnter.forEach((growInOnEnterElement) => {
+                const growInOnEnterAnimation = gsap.timeline({});
+                growInOnEnterAnimation
+                    .from(growInOnEnterElement, { scale: 0, ease: 'Back.easeOut', duration: 2.5 })
+                    .to(growInOnEnterElement, { scale: 1 });
+
+                ScrollTrigger.create({
+                    trigger: growInOnEnterElement,
+                    animation: growInOnEnterAnimation,
+                    start: 'top 80%',
+                    end: 'top 50%',
+                    scrub: 1,
+                    once: false,
+                });
+            });
+        }
+    },
+
+    driftUp1() {
+        const driftUp = gsap.utils.toArray('.driftUp1');
+        console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
+        if (driftUp) {
+            driftUp.forEach((driftUpElement) => {
+                const driftUpAnimation = gsap.timeline({});
+                driftUpAnimation
+                    .from(driftUpElement, { y: 0 })
+                    .to(driftUpElement, { y: -200, ease: 'easeInOut' });
+
+                ScrollTrigger.create({
+                    trigger: driftUpElement,
+                    animation: driftUpAnimation,
+                    start: '20% 50%',
+                    end: '-20% -50%',
+                    scrub: 0,
+                    once: false,
+                });
+            });
+        }
+    },
+    driftUp2() {
+        const driftUp = gsap.utils.toArray('.driftUp2');
         console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
         if (driftUp) {
             driftUp.forEach((driftUpElement) => {
                 const driftUpAnimation = gsap.timeline({});
                 driftUpAnimation
                     .from(driftUpElement, { y: 0, ease: 'Back.easeOut' })
-                    .to(driftUpElement, { y: -100 });
+                    .to(driftUpElement, { y: -200 });
 
                 ScrollTrigger.create({
                     trigger: driftUpElement,
                     animation: driftUpAnimation,
-                    start: '-100px bottom',
-                    end: '50% 40%',
+                    start: 'top 50%',
+                    end: 'end top',
+                    scrub: 1,
+                    once: false,
+                });
+            });
+        }
+    },
+    driftUp3() {
+        const driftUp = gsap.utils.toArray('.driftUp3');
+        console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
+        if (driftUp) {
+            driftUp.forEach((driftUpElement) => {
+                const driftUpAnimation = gsap.timeline({});
+                driftUpAnimation
+                    .from(driftUpElement, { y: 0, ease: 'Back.easeOut' })
+                    .to(driftUpElement, { y: -400 });
+
+                ScrollTrigger.create({
+                    trigger: driftUpElement,
+                    animation: driftUpAnimation,
+                    start: 'top 50%',
+                    end: 'end top',
+                    scrub: 1,
+                    once: false,
+                });
+            });
+        }
+    },
+    driftDown1() {
+        const driftUp = gsap.utils.toArray('.driftDown1');
+        console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
+        if (driftUp) {
+            driftUp.forEach((driftUpElement) => {
+                const driftUpAnimation = gsap.timeline({});
+                driftUpAnimation
+                    .from(driftUpElement, { y: 0, ease: 'Circ.easeInOut' })
+                    .to(driftUpElement, { y: 200 });
+
+                ScrollTrigger.create({
+                    trigger: driftUpElement,
+                    animation: driftUpAnimation,
+                    start: 'top 50%',
+                    end: 'end top',
+                    scrub: 1,
+                    once: false,
+                });
+            });
+        }
+    },
+    driftDown2() {
+        const driftUp = gsap.utils.toArray('.driftDown2');
+        console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
+        if (driftUp) {
+            driftUp.forEach((driftUpElement) => {
+                const driftUpAnimation = gsap.timeline({});
+                driftUpAnimation
+                    .from(driftUpElement, { y: 0, ease: 'Circ.easeInOut' })
+                    .to(driftUpElement, { y: 300 });
+
+                ScrollTrigger.create({
+                    trigger: driftUpElement,
+                    animation: driftUpAnimation,
+                    start: 'top 50%',
+                    end: 'end top',
+                    scrub: 1,
+                    once: false,
+                });
+            });
+        }
+    },
+    driftDown3() {
+        const driftUp = gsap.utils.toArray('.driftDown3');
+        console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
+        if (driftUp) {
+            driftUp.forEach((driftUpElement) => {
+                const driftUpAnimation = gsap.timeline({});
+                driftUpAnimation
+                    .from(driftUpElement, { y: 0, ease: 'Back.easeOut' })
+                    .to(driftUpElement, { y: 400 });
+
+                ScrollTrigger.create({
+                    trigger: driftUpElement,
+                    animation: driftUpAnimation,
+                    start: 'top 50%',
+                    end: 'end top',
                     scrub: 1,
                     once: false,
                 });

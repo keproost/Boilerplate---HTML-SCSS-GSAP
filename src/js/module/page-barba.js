@@ -47,8 +47,14 @@ barba.init({
             textEffects.scrollTextEffect3();
             textEffects.scrollTextEffect4();
             // textEffects.textEffect1();
-            scrollAnimations.driftUp();
+            scrollAnimations.driftUp1();
+            scrollAnimations.driftUp2();
+            scrollAnimations.driftUp3();
+            scrollAnimations.driftDown1();
+            scrollAnimations.driftDown1();
+            scrollAnimations.driftDown1();
             scrollAnimations.growInOnEnter();
+            scrollAnimations.fadeInOnEnter();
             scrollAnimations.fadeOutOnLeave();
             // scrollAnimations.slideInUpOnEnter();
         }
@@ -80,8 +86,14 @@ barba.init({
             textEffects.scrollTextEffect4();
             textEffects.textEffectWipeFromLeft();
             textEffects.textEffect1();
-            scrollAnimations.driftUp();
+            scrollAnimations.driftUp1();
+            scrollAnimations.driftUp2();
+            scrollAnimations.driftUp3();
+            scrollAnimations.driftDown1();
+            scrollAnimations.driftDown1();
+            scrollAnimations.driftDown1();
             scrollAnimations.growInOnEnter();
+            scrollAnimations.fadeInOnEnter();
             scrollAnimations.fadeOutOnLeave();
             scrollAnimations.slideInUpOnEnter();
             // scrollAnimations.stickySection();
@@ -111,8 +123,6 @@ barba.init({
             },
             beforeEnter: () => {
                 pageTransitions.fadeOutLeave();
-
-
             },
             afterEnter: () => {
                 pageLoaders.beforeOnceMaskFadeIn();

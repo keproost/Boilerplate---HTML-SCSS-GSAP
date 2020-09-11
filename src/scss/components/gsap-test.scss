@@ -75,14 +75,30 @@
     }
 }
 
-.dot {
-    // width: 30px;
-    // height: 30px;
-    display: inline-block;
-    color: orange;
-    font-size: 150px;
-    line-height: 0.85;
-}
+// .dot {
+//     // width: 30px;
+//     // height: 30px;
+//     display: inline-block;
+//     color:#ed6d05;
+//     font-size: 150px;
+//     // line-height: 0.85;
+//     display: none;
+// }
+
+
+
+
+
+// .display-title-1 {
+// &:after {
+//     content: '.';
+//     display: inline-block;
+//     color:#ed6d05;
+//     font-size: 150px;
+// }    
+// }
+
+
 .gsap-active-no-overflow {
     overflow: hidden;
 }

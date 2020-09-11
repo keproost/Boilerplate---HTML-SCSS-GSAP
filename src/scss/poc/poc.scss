@@ -48,9 +48,26 @@
     }
   }
 
+  .btn {
+    transition: inherit !important;
+  }
 
-  .infoblock {
-    overflow: visible !important;
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
+
+  // .infoblock {
+  //   overflow: visible !important;
+  //   transform-style: preserve-3d;
+  //   -webkit-transform-style: preserve-3d;
+  // }
+
+
+  .animatedTexti3Dot {
+    div:last-child {
+      > div:last-child {
+        > div:last-child{
+          display: inline-block;
+          color:#ed6d05;
+          font-size: 150px;
+        }
+      }
+    }
   }
