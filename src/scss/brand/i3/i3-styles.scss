@@ -20,6 +20,22 @@ body {
     font-family: 'Karla', sans-serif;
 }
 
+.display-title-1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 120px;
+    line-height: 1; 
+    margin-bottom: 0px !important;
+}
+
+.display-title-2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 1; 
+    margin-bottom: 0px;
+}
+
 h1 {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 700;
@@ -59,7 +75,34 @@ h3 {
         min-width: 120px;
         font-family: 'Josefin Sans', sans-serif;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 16px;
 
     }
+}
+
+
+.btn-secondary, .btn-tertiary {
+    color: white !important;
+}
+
+.btn-link {
+    color: #242424 !important;
+    font-weight: bold !important;
+}
+
+
+.btn-outline-primary {
+    &:hover, &:focus, &:active {
+        background-color: #FDF0E5 !important;
+        border-color: #FDF0E5 !important;
+        color: $primary !important;
+    }
+}
+
+.btn-primary-muted {
+    &:hover, &:focus, &:active {
+        background-color: $primary !important;
+        border-color: $primary !important;
+        color: #ffffff !important;
+    } 
 }

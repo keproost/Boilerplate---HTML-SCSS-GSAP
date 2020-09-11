@@ -21,7 +21,6 @@ import parallax3d from './gsap/custom-parallax-3d';
 // document.addEventListener('DOMContentLoaded', function () {
 gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(ScrollTrigger);
 
 barba.init({
     debug: true,
@@ -35,6 +34,23 @@ barba.init({
         namespace: 'poc-parallax-3d',
         afterEnter: () => {
             setTimeout(function () { parallax3d(); }, 250);
+        }
+    },
+    {
+        namespace: 'business',
+        afterEnter: () => {
+            textEffects.imageStackAnimation();
+            textEffects.scrollTextEffectWipeFromLeft();
+            // filterEffects.filterEffect1();
+            textEffects.scrollTextEffect1();
+            textEffects.scrollTextEffect2();
+            textEffects.scrollTextEffect3();
+            textEffects.scrollTextEffect4();
+            // textEffects.textEffect1();
+            scrollAnimations.driftUp();
+            scrollAnimations.growInOnEnter();
+            scrollAnimations.fadeOutOnLeave();
+            // scrollAnimations.slideInUpOnEnter();
         }
     },
     {
@@ -62,6 +78,7 @@ barba.init({
             textEffects.scrollTextEffect2();
             textEffects.scrollTextEffect3();
             textEffects.scrollTextEffect4();
+            textEffects.textEffectWipeFromLeft();
             textEffects.textEffect1();
             scrollAnimations.driftUp();
             scrollAnimations.growInOnEnter();

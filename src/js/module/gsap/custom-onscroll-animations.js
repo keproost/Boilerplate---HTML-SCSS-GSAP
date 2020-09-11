@@ -57,14 +57,14 @@ const scrollAnimations = {
             growInOnEnter.forEach((growInOnEnterElement) => {
                 const growInOnEnterAnimation = gsap.timeline({});
                 growInOnEnterAnimation
-                    .from(growInOnEnterElement, { scale: 0, ease: 'Back.easeOut' })
+                    .from(growInOnEnterElement, { scale: 0, ease: 'Back.easeOut', duration: 2 })
                     .to(growInOnEnterElement, { scale: 1 });
 
                 ScrollTrigger.create({
                     trigger: growInOnEnterElement,
                     animation: growInOnEnterAnimation,
-                    start: '-100px bottom',
-                    end: '50% 40%',
+                    start: 'top 80%',
+                    end: 'top 40%',
                     scrub: 1,
                     once: false,
                 });

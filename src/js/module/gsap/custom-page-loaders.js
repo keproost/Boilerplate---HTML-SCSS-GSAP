@@ -1,4 +1,4 @@
-import { gsap, TimelineLite, Elastic, Bounce, Power1 } from 'gsap/all';
+import { gsap, TimelineLite, Elastic, Power1 } from 'gsap/all';
 
 import drawSVG from 'gsap/DrawSVGPlugin';
 import $ from 'jquery';
@@ -127,7 +127,7 @@ const pageLoaders = {
         // const start = Math.random() * 100;
         // const end = Math.random() * 100;
         const animationEasing1 = Elastic.easeInOut.config(1, 1);
-        const animationEasing2 = Bounce.easeInOut;
+        // const animationEasing2 = Bounce.easeInOut;
         const animationEasing3 = Power1.easeInOut;
 
         $('body').toggleClass('loader');

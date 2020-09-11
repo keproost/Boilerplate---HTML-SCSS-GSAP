@@ -1,0 +1,48 @@
+
+
+//Mouse follow effect used in custom mouse effects, based on https://codepen.io/osublake/pen/dce29f9c14192035dbf55a32181f0bdc
+.ball {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: 3px solid dodgerblue;
+    border-radius: 50%;
+  }
+
+
+  .scrollTextEffectWipeFromLeft {
+    overflow: hidden;
+  }
+
+  .imageStackAnimation  {
+    transform: perspective(500px);
+    height: 100%;
+    min-height: 600px;
+    position: relative;
+    display: flex;
+    flex: 1;
+    position: relative;
+    transform-style: preserve-3d;
+    .layer {
+      position: absolute; 
+      bottom: 0;
+      margin: auto;
+      background-size: contain; 
+      background-position: center center;
+      width: 100%;
+    }
+    &.touchscreens {
+      .touchscreens-i3sixty {
+        transform: translateZ(1000px);
+      }
+      .touchscreens-pattern {
+        transform: translateZ(-2000px);
+      }
+      .touchscreens-ex {
+        transform: translateZ(-500px);
+      }
+
+    }
+  }

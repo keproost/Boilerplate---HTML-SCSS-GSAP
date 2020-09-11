@@ -7,10 +7,10 @@ const textEffects = {
         gsap.utils.toArray('.scrollTextEffect1').forEach(function (scrollTextEffect1Element) {
             const splitTimeline = gsap.timeline({ scrollTrigger: {
                 trigger: scrollTextEffect1Element,
-                start: 'top 80%',
-                end: 'bottom 50%',
-                onToggle: self => gsap.to(scrollTextEffect1Element, { opacity: self.isActive ? 1 : 0 }),
-                toggleActions: 'restart pause restart none',
+                start: 'top bottom',
+                end: '',
+                // onToggle: self => gsap.to(scrollTextEffect1Element, { opacity: self.isActive ? 1 : 0 }),
+                toggleActions: 'restart pause',
                 // markers: true
             }
             });
@@ -113,6 +113,62 @@ const textEffects = {
                 ease: 'back.out(1)',
                 overwrite: 'auto'
             });
+        });
+    },
+    scrollTextEffectWipeFromLeft() {
+        gsap.utils.toArray('.scrollTextEffectWipeFromLeft').forEach(function (scrollTextEffectWipeFromLeftElement) {
+            const splitTimeline = gsap.timeline({ scrollTrigger: {
+                trigger: scrollTextEffectWipeFromLeftElement,
+                start: 'top bottom',
+                end: '+=500',
+                scrub: true,
+                // markers: true
+            }
+            });
+
+            const splitTitle = new SplitText(scrollTextEffectWipeFromLeftElement);
+            splitTimeline.from(splitTitle.chars, {
+                duration: 3,
+                opacity: 0,
+                stagger: 0.25,
+                x: -1000,
+                ease: 'easeIn.out(1)',
+            });
+        });
+    },
+    imageStackAnimation() {
+        const imageStackContainer = document.querySelector('.imageStackAnimation');
+        gsap.utils.toArray('.imageStackAnimation').forEach(function (imageStackElement) {
+            console.log('imageStackAnimations', imageStackElement);
+            const imageStackAnimation = gsap.timeline({ scrollTrigger: {
+                trigger: imageStackContainer,
+                start: 'top bottom',
+                end: 'bottom 80%',
+                scrub: true,
+                // markers: true
+            }
+            });
+            imageStackAnimation.from(imageStackContainer, {
+                duration: 1,
+                rotateY: 50,
+                ease: 'easeIn.out(1)',
+            },);
+        });
+        gsap.utils.toArray('.imageStackAnimation > .layers').forEach(function (layer) {
+            console.log('layers', layer);
+            const layerAnimation = gsap.timeline({ scrollTrigger: {
+                trigger: imageStackContainer,
+                start: 'top bottom',
+                end: 'bottom 80%',
+                scrub: true,
+                // markers: true
+            }
+            });
+            layerAnimation.from(imageStackContainer, {
+                duration: 1,
+                opacity: 0,
+                ease: 'easeIn.out(1)',
+            },);
         });
     },
 };
