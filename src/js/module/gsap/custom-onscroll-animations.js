@@ -13,6 +13,7 @@ const scrollAnimations = {
                     .from(fadeOutOnLeaveElement, {
                         opacity: 1,
                         ease: 'Back.easeInOut',
+
                     })
                     .to(fadeOutOnLeaveElement, { opacity: 0 });
 
@@ -20,8 +21,8 @@ const scrollAnimations = {
                     trigger: fadeOutOnLeaveElement,
                     animation: fadeOutOnLeaveAnimation,
                     start: 'top 40%',
-                    end: 'bottom 20%',
-                    scrub: 1,
+                    end: 'bottom 10%',
+                    scrub: 0,
                     once: false,
                 });
             });

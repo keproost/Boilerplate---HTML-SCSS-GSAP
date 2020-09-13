@@ -11,5 +11,6 @@ import './module/gsap/custom-text-effects';
 // import './module/gsap/custom-smooth-scrolling';
 import './module/gsap/custom-filter-effects';
 import './module/gsap/custom-parallax-3d';
+import './module/gsap/custom-video-animations';
 // import './module/gsap/custom-fullpage-animations-2';
 import './module/page-barba';

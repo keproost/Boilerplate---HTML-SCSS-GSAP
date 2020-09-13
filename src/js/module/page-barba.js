@@ -11,6 +11,7 @@ import filterEffects from './gsap/custom-filter-effects';
 import smoothScrolling from './gsap/custom-smooth-scrolling';
 import parallaxAnimations from './gsap/custom-parallax-animations';
 import parallax3d from './gsap/custom-parallax-3d';
+import videoAnimations from './gsap/custom-video-animations';
 
 
 // import goToSection from './gsap/custom-fullpage-animations-2';
@@ -40,6 +41,8 @@ barba.init({
         namespace: 'business',
         afterEnter: () => {
             // textEffects.imageStackAnimation();
+            videoAnimations.videoStartOnEnterRewindOnLeave();
+            videoAnimations.videoScrollScrub();
             textEffects.scrollTextEffectWipeFromLeft();
             // filterEffects.filterEffect1();
             textEffects.scrollTextEffect1();
