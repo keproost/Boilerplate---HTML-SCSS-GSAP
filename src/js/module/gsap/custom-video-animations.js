@@ -26,6 +26,62 @@ const videoAnimations = {
             });
         }
     },
+    // videoScrollScrub() {
+    //     const elements = gsap.utils.toArray('.videoScrollScrub');
+    //     function goVideo() {
+    //         elements.forEach((element) => {
+    //             element.onloadedmetadata = function () {
+    //                 const frameNumber = 0; // start video at frame 0
+    //                 // lower numbers = faster playback
+    //                 const playbackConst = 500;
+    //                 // get page height from video duration
+    //                 const setHeight = document.getElementById('set-height');
+    //                 // select video element
+    //                 // var vid = $('#v0')[0]; // jquery option
+
+    //                 // dynamically set the page height according to video length
+    //                 setHeight.style.height = `${Math.floor(element.duration) * playbackConst}px`;
+
+    //                 function playVideo() {
+    //                     element.play();
+    //                     console.log('playing video');
+    //                 }
+    //                 function rewindVideo() {
+    //                     element.pause();
+    //                     element.currentTime = 0;
+    //                     console.log('pause and rewind video');
+    //                 }
+
+    //                 // Use requestAnimationFrame for smooth playback
+    //                 function scrollPlay() {
+    //                     const frameNumber = element.pageYOffset / playbackConst;
+    //                     element.currentTime = frameNumber;
+    //                     window.requestAnimationFrame(scrollPlay);
+    //                 }
+
+
+    //                 const myAnimation = gsap.timeline({});
+    //                 myAnimation
+    //                     .to(element, 1, { currentTime: element.duration });
+
+    //                 ScrollTrigger.create({
+    //                     trigger: element,
+    //                     animation: myAnimation,
+    //                     start: 'top 90%',
+    //                     end: 'bottom 100%',
+    //                     scrub: 1,
+    //                     force3D: true,
+    //                     onToggle: self => (self.isActive ? window.requestAnimationFrame(scrollPlay) : rewindVideo()),
+    //                     once: false,
+    //                 });
+    //             };
+    //         });
+    //     }
+    //     if (elements) {
+    //         gsap.ticker.add(goVideo);
+    //         goVideo();
+    //     }
+    // }
     videoScrollScrub() {
         const elements = gsap.utils.toArray('.videoScrollScrub');
         function goVideo() {
@@ -41,26 +97,19 @@ const videoAnimations = {
                         .to(element, 1, { currentTime: element.duration });
 
 
-                    // const myAnimation = gsap.timeline({});
                     // myAnimation
                     //     .from(element, {
-                    //         opacity: 0,
-                    //         ease: 'Linear.easeNone',
-
-
-                    //     })
+                    //     }, 1, { currentTime: 0 })
                     //     .to(element, {
-                    //         opacity: 1,
-                    //         // duration: { currentTime: element.duration }
-                    //     });
+                    //     }, 1, { currentTime: element.duration });
 
                     ScrollTrigger.create({
                         trigger: element,
                         animation: myAnimation,
-                        start: 'top 80%',
-                        end: 'bottom 50%',
-                        scrub: 0,
-                        // pin: element,
+                        start: 'top 90%',
+                        end: 'bottom -100%',
+                        scrub: 1,
+                        force3D: true,
                         once: false,
                     });
                 };
@@ -74,6 +123,32 @@ const videoAnimations = {
 };
 
 export default videoAnimations;
+
+
+// const frameNumber = 0; // start video at frame 0
+// // lower numbers = faster playback
+// const playbackConst = 500;
+// // get page height from video duration
+// const setHeight = document.getElementById('set-height');
+// // select video element
+// const vid = document.getElementById('v0');
+// // var vid = $('#v0')[0]; // jquery option
+
+// // dynamically set the page height according to video length
+// vid.addEventListener('loadedmetadata', function () {
+//     setHeight.style.height = `${Math.floor(vid.duration) * playbackConst}px`;
+// });
+
+
+// // Use requestAnimationFrame for smooth playback
+// function scrollPlay() {
+//     const frameNumber = window.pageYOffset / playbackConst;
+//     vid.currentTime = frameNumber;
+//     window.requestAnimationFrame(scrollPlay);
+// }
+
+// window.requestAnimationFrame(scrollPlay);
+
 
 // element.onloadeddata = function () {
 //     element.pause();

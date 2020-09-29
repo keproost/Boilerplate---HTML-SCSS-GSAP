@@ -56,3 +56,91 @@ body {
         }
     }
 }
+
+#bookademo {
+    background-color: #F9F9F9;
+    // min-height: 100vh;
+    // position: absolute;
+    // left: 0;
+    // right: 0;
+    // top: 0;
+    // bottom: 0;
+    // justify-content: center;
+}
+
+.custom-control {
+    &.custom-checkbox-i3-boxed {
+        &.active {
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        background-color: #ffffff;
+        border-radius: 10px;
+        border-color: #EEEEEE;
+        border-width: 1px;
+        border-style: solid;
+        padding: 12px;
+        .custom-control-label {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            &:before, &:after, .custom-control-input {
+                // position: relative;
+                // margin-left: 6px;
+                // margin-right: 12px;
+                // top: auto; 
+                // left: auto;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                left: 12px;
+                transform: scale(1.25);
+            }
+            .stacked-label { 
+                display: flex; 
+                flex-direction: column;
+                margin-left: 48px;
+                font-weight: bold;
+            }
+            .description {
+                color:black;
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: 100;
+            }
+        }
+    }
+}
+
+/* Style the form */
+  
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid {
+    background-color: #ffdddd;
+  }
+  
+  /* Hide all steps by default: */
+  .tab {
+    display: none;
+  }
+  
+  /* Make circles that indicate the steps of the form: */
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  /* Mark the active step: */
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: #4CAF50;
+  }

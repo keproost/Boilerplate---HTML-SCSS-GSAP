@@ -1,9 +1,10 @@
 
 //i3 THEME2020
-@import "brand/i3/i3-styles";
+
 //Bootstrap
 @import "config/bootstrap-config.scss";
-
+@import "brand/i3/i3-variables";
+@import "brand/i3/i3-styles";
 // I3 LEGACY
 // @import "brand/i3/legacy/custom-variables";
 // @import "brand/i3/legacy/custom-variables";
@@ -39,6 +40,5 @@
 @import "components/slider-fullscreen-gsap.scss";
 @import "components/gsap-test.scss";
 @import "components/i3-test.scss";
-
 @import "pages/master.scss";
 @import "poc/poc.scss";

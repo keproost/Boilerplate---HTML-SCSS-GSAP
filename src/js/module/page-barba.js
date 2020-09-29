@@ -12,6 +12,7 @@ import smoothScrolling from './gsap/custom-smooth-scrolling';
 import parallaxAnimations from './gsap/custom-parallax-animations';
 import parallax3d from './gsap/custom-parallax-3d';
 import videoAnimations from './gsap/custom-video-animations';
+import customFormScripts from './page/custom-formscripts';
 
 
 // import goToSection from './gsap/custom-fullpage-animations-2';
@@ -63,17 +64,25 @@ barba.init({
         }
     },
     {
+        namespace: 'bookademo',
+        beforeEnter: () => {
+            // customFormScripts.formValidator();
+            customFormScripts.formCheckboxHighlight();
+            customFormScripts.stepFormWizard();
+        }
+    },
+    {
         namespace: 'i3-home',
         beforeOnce: () => {
             // setTimeout(function () { pageLoaders.zoomIntoDot(); }, 250);
             // pageLoaders.zoomIntoDot();
         },
-        // before: () => {
-        //     // setTimeout(function () { pageLoaders.zoomIntoDot(); }, 250);
-        //     // pageLoaders.zoomIntoDot();
-        //     // pageLoaders.logoReveal();
-        //     pageLoaders.logoReveal();
-        // },
+        before: () => {
+            // setTimeout(function () { pageLoaders.zoomIntoDot(); }, 250);
+            // pageLoaders.zoomIntoDot();
+            // pageLoaders.logoReveal();
+            pageLoaders.logoReveal();
+        },
         // after: () => {
         //     // setTimeout(function () { pageLoaders.zoomIntoDot(); }, 250);
         //     // pageLoaders.zoomIntoDot();
