@@ -1,0 +1,153 @@
+<head><link href="./assets/css/styles.css" rel="stylesheet"></head><!-- <header class="navigation-header" id="HEADER"> -->
+  <div class="container-fluid p-0 navigation-wrapper">
+    <div class="navigation-logo">
+      <a class="navbar-brand my-auto" href="/nl/"><img src="assets/i3/img/rgb-new-logo-100.jpg" alt="Logo"></a>
+    </div>
+    <div class="navigation-links">
+      <nav class="navbar navbar-expand-xl navbar-fixed-top-1 navbar-white top-nav d-none">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse flex-md-row" id="subnavbarCollapse">
+            <ul class="navbar-nav ml-auto small">
+              <li class="nav-item dropdown">
+                <a class="dropdown-item nav-link dropdown-toggle mr-2" href="#" id="navbarDropdownMenuLink"
+                  data-toggle="dropdown">BECOME A PARTNER</a>
+                <ul class="dropdown-menu rounded-0 bg-dark">
+                  <li>
+                    <a class="dropdown-item small" href="#">Alliance-partner</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item small" href="#">Channel-partner</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="dropdown-item nav-link dropdown-toggle mr-2" href="#" id="navbarDropdownMenuLink"
+                  data-toggle="dropdown">LOGIN</a>
+                <ul class="dropdown-menu rounded-0 bg-dark">
+                  <li class="nav-item"><a class="dropdown-item small" href="#"><i
+                        class="fa fa-user">&nbsp;&nbsp;</i>LOGIN</a></li>
+                  <li class="nav-item"><a class="dropdown-item small" href="#">VRAAG EEN LOGIN AAN</a></li>
+                </ul>
+              </li>
+
+
+              <li class="nav-item dropdown">
+                <a class="dropdown-item dropdown-toggle mr-2 nav-link" id="navbarDropdownMenuLink" data-toggle="">NL</a>
+                <ul class="dropdown-menu rounded-0 bg-dark">
+                  <li>
+                    <a class="dropdown-item small" onclick="setLang('en')" href="#">EN</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item small" onclick="setLang('es')" href="#">ES</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item small" onclick="setLang('fr')" href="#">FR</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item small" onclick="setLang('de')" href="#">DE</a>
+                  </li>
+                </ul>
+
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar navbar-expand-xl navbar-fixed-top-2 navbar-white">
+        <div class="container-fluid">
+          <div class="mobile-top-nav-container">
+            <div class="mobile-navigation-logo">
+              <a class="navbar-brand my-auto" href="/nl/"><img src="/assets/i3/img/rgb-new-logo-100.jpg" alt="Logo"></a>
+            </div>
+            <button class="navbar-toggler p-0 collapsed" type="button" data-toggle="collapse"
+              data-target="#navbarCollapse" aria-controls="nav-content" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <!-- Links -->
+          <div class="collapse navbar-collapse flex-md-column" id="navbarCollapse">
+            <ul class="navbar-nav d-flex justify-content-end w-100">
+              <li class="nav-item dropdown nav-link">
+                <a class="nav-link" href="#" target="_self">
+                  EDUCATION
+                </a>
+
+              </li>
+              <li class="nav-item dropdown nav-link">
+                <a class="nav-link active" href="#" target="_self">
+                  BUSINESS
+                </a>
+
+              </li>
+              <li class="nav-item dropdown nav-link">
+                <a class="nav-link active" href="#" target="_self">
+                  POC
+                </a>
+
+              </li>              
+              <li class="navctawrapper-container">
+                <div class="navctawrapper">
+
+                  <div class="nav-item"><a class="nav-button button button-border" href="/nl/dealer-locator/">WAAR TE
+                      KOOP?</a></div>
+                  <div class="nav-item"><a class="nav-button button button-general" href="/nl/demo-aanvragen/"
+                      style="border-bottom-color: transparent;">DEMO AANVRAGEN</a></div>
+                </div>
+              </li>
+            </ul>
+            <!-- For the top menu collapsed -->
+            <div>
+              <ul class="navbar-nav ml-auto d-none d-xs-block d-sm-block d-md-block d-lg-block d-xl-none">
+                <li class="nav-item dropdown partner-dropdown">
+                  <a class="dropdown-item nav-link mr-2" href="#" id="navbarDropdownMenuLink"
+                    data-toggle="dropdown">BECOME A PARTNER</a>
+                  <ul class="dropdown-menu rounded-0">
+                    <a class="dropdown-item small" href="/nl/word-een-partner/alliance-partner/">Alliance-partner</a>
+                    <a class="dropdown-item small" href="/nl/word-een-partner/channel-partner/">Channel-partner</a>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown login-dropdown">
+                  <a class="dropdown-item nav-link mr-2" href="#" id="navbarDropdownMenuLink"
+                    data-toggle="dropdown">LOGIN</a>
+                  <ul class="dropdown-menu rounded-0">
+                    <li class="nav-item"><a class="dropdown-item small" href="/nl/login-portal/"><i
+                          class="fa fa-user">&nbsp;&nbsp;</i>LOGIN</a></li>
+                    <li class="nav-item"><a class="dropdown-item small" href="#">VRAAG EEN LOGIN AAN</a></li>
+                  </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="dropdown-item mr-2" id="navbarDropdownMenuLink" data-toggle="">NL</a>
+                  <ul class="dropdown-menu rounded-0">
+                    <li>
+                      <a class="dropdown-item small" onclick="setLang('en')"
+                        href="/en/product-overview-business/">EN</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item small" onclick="setLang('es')"
+                        href="/es/product-overview-business/">ES</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item small" onclick="setLang('fr')"
+                        href="/fr/product-overview-business/">FR</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item small" onclick="setLang('de')"
+                        href="/de/product-overview-business/">DE</a>
+                    </li>
+                  </ul>
+
+                </li>
+
+              </ul>
+            </div>
+            <!-- End for the top menu collapsed -->
+          </div>
+        </div>
+      </nav>
+    </div>
+
+  </div>
+<!-- </header> --><script type="text/javascript" src="./assets/js/bundle.js"></script>

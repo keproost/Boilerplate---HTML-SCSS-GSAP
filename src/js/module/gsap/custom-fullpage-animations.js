@@ -118,7 +118,7 @@ function onMouseWheel(event) {
 }
 
 // When user resize it's browser we need to know the new height, so we can properly align the current slide
-function onResize(event) {
+function onResize() {
     // This will give us the new height of the window
     const newPageHeight = $window.innerHeight();
 

@@ -1,4 +1,4 @@
-import { ScrollTrigger, gsap } from 'gsap/all';
+import { gsap } from 'gsap/all';
 
 
 const mouseEffects = {

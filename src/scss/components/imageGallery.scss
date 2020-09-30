@@ -1,0 +1,255 @@
+﻿.videocontent {
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+
+    @include media-breakpoint-down(md) {
+        width: 80%;
+    }
+}
+
+.fancybox-slide > div {
+    padding: 0;
+    overflow: hidden;
+}
+
+.vjs-remaining-time-display {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.component-media-gallery {
+    position: relative;
+    overflow: hidden;
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
+
+    .content {
+        margin: 0;
+        padding: 0;
+
+        .gallery-item {
+            padding: 12px;
+            background-color: white;
+            border-radius: 12px;
+            transition-property: all;
+            transition-timing-function: ease-in;
+            transition-duration: 0.4s;
+
+            &:hover {
+                transform: translateY(-10px);
+
+                .play-icon {
+                    &:before {
+                        background-color: $accenta;
+                        color: white;
+                    }
+                }
+
+                .gallery-item-content {
+                    .backgroundImage, backgroundVideo {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .gallery-item-content {
+                overflow: hidden;
+                margin: 6px;
+                background-color: white;
+                border-radius: 12px;
+                box-shadow: 0 12px 15px rgba(191, 208, 232, 1);
+
+                .backgroundImage, .backgroundVideo {
+                    height: 100%;
+                    min-height: 150px;
+                    transition-property: all;
+                    transition-timing-function: ease-in;
+                    transition-duration: 0.4s;
+                    opacity: 0.85;
+                }
+
+                .backgroundImage {
+                    background-size: cover;
+                }
+            }
+        }
+
+
+        .gallery-item {
+            position: relative;
+
+            a {
+                outline: none;
+
+                &:focus, &:active {
+                    outline: none;
+                }
+            }
+        }
+
+        .play-icon {
+            &:before {
+                content: $lh-icon-os-play;
+                width: 60px;
+                height: 60px;
+                background-color: #ffffff;
+                border-radius: 100px;
+                box-shadow: 0 0 15px rgba(0,0,0,0.20);
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                font-size: 40px;
+                color: $secondary;
+                font-family: "lhicon" !important;
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 50;
+                transition: all 0.25s ease-in-out;
+            }
+
+            &:hover {
+                &:before {
+                    background-color: $accenta;
+                    color: white;
+                }
+            }
+        }
+
+        .slick-list {
+            margin: 0 auto;
+        }
+
+        .slider {
+            width: 100%;
+            margin: 0px auto;
+        }
+
+        .slick-slide {
+            margin: 0 auto;
+            transition: all ease-in-out .3s;
+            opacity: 1;
+            padding: 15px 0;
+            outline: none;
+
+            &:active, &:focus {
+                outline: none;
+            }
+
+            img {
+                margin: auto;
+            }
+        }
+
+        .slick-prev {
+            //background-image: url(../images/Usecase/left-arrow.png);
+            background-repeat: no-repeat;
+            height: 36px;
+            width: 20px;
+            top: 50%;
+            z-index: 1;
+            left: 2%;
+
+            @include media-breakpoint-down(sm) {
+                left: 5%;
+            }
+
+            &:before {
+                color: transparent;
+            }
+
+            &:hover {
+                //background-image: url(../images/Usecase/left-arrow.png);
+                background-repeat: no-repeat;
+                height: 36px;
+                width: 20px;
+                top: 50%;
+                z-index: 1;
+
+                @include media-breakpoint-down(md) {
+                    left: 5%;
+                }
+            }
+        }
+
+        .slick-next {
+            //background-image: url(../images/Usecase/right-arrow.png);
+            background-repeat: no-repeat;
+            height: 36px;
+            width: 20px;
+            z-index: 1;
+            top: 50%;
+            right: 2%;
+
+            @include media-breakpoint-down(sm) {
+                right: 5%;
+            }
+
+            &:before {
+                color: transparent;
+            }
+
+            &:hover {
+                //background-image: url(../images/Usecase/right-arrow.png);
+                background-repeat: no-repeat;
+                height: 36px;
+                width: 20px;
+                z-index: 1;
+                top: 50%;
+
+                @include media-breakpoint-down(md) {
+                    right: 5%;
+                }
+            }
+        }
+
+        .slick-dots {
+            bottom: auto;
+            margin: 20px auto;
+            width: 100%;
+
+            li {
+                button:before {
+                    opacity: 1;
+                    background-color: $quinary;
+                    border-radius: 100px;
+                    font-size: 0px;
+                    width: 15px;
+                    height: 15px;
+                    border: none;
+                }
+
+                &.slick-active {
+                    button:before {
+                        opacity: 1;
+                        color: white;
+                        background-color: $secondary !important;
+                    }
+                }
+            }
+
+            .slick-slider {
+                margin-bottom: 0px;
+            }
+        }
+
+        .slick-active {
+            opacity: 1;
+        }
+
+        .slick-current {
+            opacity: 1;
+        }
+    }
+}

@@ -58,7 +58,7 @@ body {
 }
 
 #bookademo {
-    background-color: #F9F9F9;
+    background-color: $gray-white;
     // min-height: 100vh;
     // position: absolute;
     // left: 0;
@@ -68,10 +68,24 @@ body {
     // justify-content: center;
 }
 
+
+
+
+//Transform scale on buttons gives issues with borders not rendering well
+.btn {
+    transform-style: preserve-3d;
+}
+
+//Custom i3 form controls
 .custom-control {
+    //i3 CHECKBOX BOXED
     &.custom-checkbox-i3-boxed {
+        &:hover {
+            box-shadow: 0 0 15px rgba(0,0,0,0.07);
+        }
         &.active {
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            background-color: red;
         }
         background-color: #ffffff;
         border-radius: 10px;
@@ -79,16 +93,12 @@ body {
         border-width: 1px;
         border-style: solid;
         padding: 12px;
+        transition: box-shadow 0.4s ease-in-out;
         .custom-control-label {
             display: flex;
             flex-direction: row;
             align-items: center;
             &:before, &:after, .custom-control-input {
-                // position: relative;
-                // margin-left: 6px;
-                // margin-right: 12px;
-                // top: auto; 
-                // left: auto;
                 top: 0;
                 bottom: 0;
                 margin: auto;
@@ -111,11 +121,14 @@ body {
     }
 }
 
+
+
+
 /* Style the form */
   
   /* Mark input boxes that gets an error on validation: */
   input.invalid {
-    background-color: #ffdddd;
+    background-color: $warning;
   }
   
   /* Hide all steps by default: */

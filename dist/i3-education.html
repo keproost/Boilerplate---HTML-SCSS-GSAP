@@ -1,0 +1,328 @@
+<html lang="ru">
+  <head>
+    <title>Boilerplate</title>
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <link href="./assets/css/styles.css" rel="stylesheet"></head>
+
+  <body data-barba="wrapper">
+    <div class="gsap-loader"></div>
+    <nav class="navbar navbar-light navbar-expand-sm navbar-light">
+  <a class="navbar-brand" href="#">Boilerplate</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="./index.html">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          i3
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="i3-index.html">Home</a>
+          <a class="dropdown-item" href="i3-business.html">Business</a>
+          <a class="dropdown-item" href="i3-education.html">Education</a>
+          <a class="dropdown-item" href="i3-bookademo.html">Bookademo</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Poc
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="poc-index.html">Home</a>
+          <a class="dropdown-item" href="poc-pageload-test-1.html">Pageload-test-1</a>
+          <a class="dropdown-item" href="poc-pageload-test-2.html">Pageload-test-2</a>
+          <a class="dropdown-item" href="poc-parallax-scroll.html">Parallax scroll</a>
+          <a class="dropdown-item" href="poc-parallax-3d.html">Parallax 3d</a>
+          <a class="dropdown-item" href="poc-panel-fullscreen.html">Panel-fullscreen</a>
+          <a class="dropdown-item" href="poc-slider.html">Slider</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+    <div data-barba="container" data-barba-namespace="education">
+      <main>
+        <section id="hero" class="content-dark contentblock infoblock">
+          <div
+            class="backgroundImage gsap-pageTransition-fadeInOut cover no-repeat center-center layer parallax"
+            style="background-image: url(assets/img/bg-test.jpg)"
+            data-depth="0.50"
+          ></div>
+
+          <div
+            class="content align-self-center"
+            style="padding-top: 4rem; padding-bottom: 4rem"
+          >
+            <div class="container flex-grow">
+              <div class="row">
+                <div class="col-md-7 align-self-center">
+                  <div class="content image">
+                    <img
+                      class="img-fluid gsap-pageTransition-fadeUpDown"
+                      src="assets/img/image-test.jpg"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-5 order-md-2 align-self-center pt-2">
+                  <div class="title gsap-pageTransition-fadeUpDown">
+                    <h1><strong>This is a header 1</strong></h1>
+                  </div>
+                  <div class="description gsap-pageTransition-fadeUpDown">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Curabitur nec dolor ornare, gravida quam at, imperdiet
+                      neque. Donec facilisis nibh ac gravida eleifend.
+                    </p>
+                  </div>
+                  <div class="cta-wrapper">
+                    <a
+                      class="btn btn-lg btn-outline-primary gsap-pageTransition-fadeUpDown"
+                      href="i3-business.html"
+                    >
+                      Business
+                    </a>
+                    <a class="btn btn-lg btn-new-orange" href="i3-index.html"
+                    target="">
+                    Home
+                  </a>                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div id="touchscreens" class="contentblock infoblock">
+          <div class="backgroundImage"></div>
+          <div class="content align-items-center">
+            <div class="container">
+              <div class="row flow-right-to-left valign-center">
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6">
+                  <div class="image p-xs-5 p-sm-3 p-lg-5 ">
+                    <img class="img-fluid" src="assets/i3/img/product-overview-edu-img.jpg" alt="">
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
+                  <div class="caption">
+                    <div class="caption-content p-xs-5 p-sm-3 p-lg-5">
+                      <h2 class="title">
+                        <strong>Premium touch screens<br>for education</strong>
+                      </h2>
+                      <div class="description">
+                        Displays that deliver a stunning performance with a responsive and accurate touch experience that allow you to bring any content to life in your classrooms.
+
+                        Available in various size ranges to fit any room size. Your students can now enjoy interactive learning at a very affordable price.
+                      </div>
+                      <div class="cta-wrapper">
+                        <a class="btn btn-primary" href="#">Link</a>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div id="interactivewhiteboards" class="contentblock infoblock">
+          <div class="backgroundImage cover no-repeat center-center"
+            style="background-image: url(assets/i3/img/background_whiteboards.jpg)">
+          </div>
+          <div class="content align-items-center">
+            <div class="container">
+              <div class="row flow-left-to-right valign-center">
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6">
+                  <div class="image p-xs-5 p-sm-3 p-lg-5 ">
+                    <img class="img-fluid" src="assets/i3/img/i3board_all_sizes.png">
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
+                  <div class="caption">
+                    <div class="caption-content p-xs-5 p-sm-3 p-lg-5">
+                      <h2 class="title">
+                        <strong>Interactive whiteboards</strong>
+                      </h2>
+                      <div class="description">
+                        With a display of up to 135” our interactive whiteboards are built to display large images and make your classroom a lot more digital and interactive.
+
+                        When combined with our ultra-short throw projectors, your lessons are now brighter and sharper than ever before and can be more easily grasped by your students.
+                      </div>
+                      <div class="cta-wrapper">
+                        <a class="btn btn-primary" href="i3-education.html">Education</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>          
+        <div id="softwareforeducation" class="contentblock infoblock">
+          <div class="backgroundImage cover no-repeat center-center" style="background-image: url()"></div>
+          <div class="content align-items-center">
+            <div class="container">
+              <div class="row flow-right-to-left valign-center">
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6">
+                  <div class="image p-xs-5 p-sm-3 p-lg-5 ">
+                    <img class="img-fluid" src="assets/i3/img/i3learnhub-packshot-imo-ar-lifeliqe-small.png">
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
+                  <div class="caption">
+                    <div class="caption-content p-xs-5 p-sm-3 p-lg-5">
+                      <h2 class="title">
+                        <strong>Software for education</strong>
+                      </h2>
+                      <div class="description">
+                        Our easy to use software allows teachers to easily prepare and deliver lessons to their students effectively, and turn classrooms into collaborative workspaces.
+                      </div>
+                      <div class="cta-wrapper">
+                        <a class="btn btn-primary" href="#">Link</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+        <div id="wirelesspresenting" class="contentblock infoblock">
+          <div class="backgroundImage cover no-repeat center-center"
+            style="background-image: url(assets/i3/img/i3allsync-touch-background.png)">
+          </div>
+          <div class="content align-items-center">
+            <div class="container">
+              <div class="row flow-left-to-right valign-center">
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6">
+                  <div class="image p-xs-5 p-sm-3 p-lg-5 ">
+                    <img class="img-fluid" src="" alt="">
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
+                  <div class="caption">
+                    <div class="caption-content p-xs-5 p-sm-3 p-lg-5">
+                      <h2 class="title">
+                        <strong>Wireless presenting</strong>
+                      </h2>
+                      <div class="description">
+                        Simply share a presentation on your laptop or mobile device, to a presentation screen with a single click with our wireless presenting solutions.
+                      </div>
+                      <div class="cta-wrapper">
+                        <a class="btn btn-primary" href="#">Link</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>        
+        <div id="wirelesspresenting" class="contentblock infoblock">
+          <div class="backgroundImage cover no-repeat center-center"
+            style="background-image: url(assets/i3/img/product-card-photo_imostapel.png)">
+          </div>
+          <div class="content align-items-center">
+            <div class="container">
+              <div class="row flow-left-to-right valign-center">
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6">
+                  <div class="image p-xs-5 p-sm-3 p-lg-5 ">
+                    <img class="img-fluid" src="" alt="">
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
+                  <div class="caption">
+                    <div class="caption-content p-xs-5 p-sm-3 p-lg-5">
+                      <h2 class="title">
+                        <strong>iMO-LEARN</strong>
+                      </h2>
+                      <div class="description">
+                        With our ground breaking solution, we have effectively tackled your problem of boring lessons. iMO-LEARN can be used in an analog or digital way to stimulate the brains of your children and have a positive impact on their learning process. Their energy levels and attention spans are kept longer and the barrier of boring lessons are broken.
+                      </div>
+                      <div class="cta-wrapper">
+                        <a class="btn btn-primary" href="#">Link</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>              
+        <div id="touchscreenpcs" class="contentblock infoblock">
+          <div class="backgroundImage cover no-repeat center-center" style="background-image: url()"></div>
+          <div class="content align-items-center">
+            <div class="container">
+              <div class="row flow-right-to-left valign-center">
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6">
+                  <div class="image p-xs-5 p-sm-3 p-lg-5 ">
+                    <img class="img-fluid" src="assets/i3/img/co-lab-suite-overview.png">
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
+                  <div class="caption">
+                    <div class="caption-content p-xs-5 p-sm-3 p-lg-5">
+                      <h2 class="title">
+                        <strong>Touch screen PCs</strong>
+                      </h2>
+                      <div class="description">
+                        Our touch screen PCs are available in a convenient slide-in OPS format, so you can seamlessly integrate them into your touch screen. 
+                      </div>
+                      <div class="cta-wrapper">
+                        <a class="btn btn-primary" href="#">Link</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>   
+        <div id="accessoires" class="contentblock infoblock">
+          <div class="backgroundImage cover no-repeat center-center" style="background-image: url()"></div>
+          <div class="content align-items-center">
+            <div class="container">
+              <div class="row flow-left-to-right valign-center">
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6">
+                  <div class="image p-xs-5 p-sm-3 p-lg-5 ">
+                    <img class="img-fluid" src="assets/i3/img/tip-touch-stand-on-wheels-electrical.jpg">
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
+                  <div class="caption">
+                    <div class="caption-content p-xs-5 p-sm-3 p-lg-5">
+                      <h2 class="title">
+                        <strong>Accessories</strong>
+                      </h2>
+                      <div class="description">
+                        A wide range of accessories that complement our hardware and software, and
+                        provide you with the full, complete solution you need.
+                      </div>
+                      <div class="cta-wrapper">
+                        <a class="btn btn-primary" href="#">Link</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </main>
+    </div>
+
+    <!-- <footer class="page-footer font-small d-none">
+
+
+    <div class="footer-copyright text-center py-3 bg-dark text-light">
+        © 2020 Copyright
+    </div>
+
+  
+  </footer> -->
+  <script type="text/javascript" src="./assets/js/bundle.js"></script></body>
+</html>

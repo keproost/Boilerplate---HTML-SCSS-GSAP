@@ -1,31 +1,48 @@
-//Infoblock
+ //Infoblock
 .infoblock {
-    .caption {
-      text-align: left;
-      &.card {
-        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  .image {
+      @include media-breakpoint-down(lg) {
+          margin-bottom: 24px;
       }
-      .title {
-        margin-bottom: 24px;
-      }
-      .description {
-        margin-bottom: 48px;
-      }
-      .cta-wrapper {
-        & > .btn {
-          margin-right: 12px;
-          margin-bottom: 12px;
-        } 
-        &:last-child {
-          margin-right: 0px;
-          margin-bottom: 0px;
-        }
-      }
-    }
-    &.infoblock-a {}
-    &.infoblock-b {}
-    &.infoblock-c {}
   }
-  
-  
-  
+
+  .caption {
+      &.card {
+          box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+      }
+
+      .title {
+          margin-bottom: 12px;
+      }
+
+      .description {
+          margin-bottom: 36px;
+          font-size: 18px;
+
+          @include media-breakpoint-down(md) {
+              font-size: 16px;
+          }
+      }
+
+      .cta-wrapper {
+          & > .btn {
+              margin-right: 12px;
+              margin-bottom: 12px;
+          }
+
+          &:last-child {
+              margin-right: 0px;
+              margin-bottom: 0px;
+          }
+      }
+  }
+
+  &.infoblock-a {
+  }
+
+  &.infoblock-b {
+  }
+
+  &.infoblock-c {
+  }
+}

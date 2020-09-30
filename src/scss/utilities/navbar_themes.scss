@@ -1,0 +1,78 @@
+//navbar-theme 
+@mixin navbar-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color !important;
+  }
+  a#{$parent} {
+    @include hover-focus {
+      background-color: darken($color, 10%) !important;
+    }
+  }
+}
+@each $color, $value in $theme-colors {
+  @include navbar-variant('.navbar-#{$color}', $value);
+}
+@each $color, $value in $theme-colors {
+
+// White links against a dark background
+.navbar-#{$color} {
+  .navbar-brand {
+    color: $navbar-dark-active-color;
+    width: 55%;
+
+    @include hover-focus {
+      color: $navbar-dark-active-color;
+    }
+  }
+
+    .navbar-brand img {
+        max-width: 204px;
+        height: auto;
+    }
+
+    .navbar {
+        display: flex;
+    }
+  .navbar-nav {
+    display: flex;
+    .nav-link {
+      color: $navbar-dark-color;
+	  border-bottom: 1px solid transparent;
+      font-weight: normal;
+      @include hover-focus {
+        color: $navbar-dark-hover-color;
+		border-bottom: 1px solid $navbar-dark-hover-color;
+
+      }
+
+      &.disabled {
+        color: $navbar-dark-disabled-color;		
+      }
+    }
+
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: $navbar-dark-active-color;
+	  border-bottom: 1px solid $teal;
+	  
+    }
+  }
+
+  .navbar-toggler {
+    color: $navbar-dark-color;
+    border-color: $navbar-dark-toggler-border-color;
+  }
+
+  .collapsed .navbar-toggler-icon {
+    background-image: $navbar-dark-toggler-icon-bg;
+  }
+
+  .navbar-text {
+    color: $navbar-dark-color;
+  }
+}
+
+}
+

@@ -1,0 +1,623 @@
+﻿/* Old hero compatibility */
+
+.component-hero {
+    position: relative;
+    height: 600px;
+
+    .content:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 40%;
+        z-index: 0;
+        opacity: 0.8;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,1+100 */
+        background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient( to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100% ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#000000', GradientType=0); /* IE6-9 */
+    }
+
+    @include media-breakpoint-down(lg) {
+        height: 420px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        height: 260px;
+    }
+
+    overflow: hidden;
+    width: 100%;
+
+    .backgroundImage,
+    .backgroundVideo {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        z-index: 0;
+    }
+
+    .content {
+        position: static;
+        z-index: 60;
+
+        .title {
+            position: absolute;
+            bottom: 3rem;
+            left: 3rem;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.4);
+            @include media-breakpoint-down(lg) {
+                bottom: 2rem;
+                left: 2rem;
+                right: 2rem;
+            }
+
+            @include media-breakpoint-down(sm) {
+                bottom: 1rem;
+                left: 1rem;
+                right: 1rem;
+            }
+
+            h1 {
+                margin-bottom: 0px;
+
+                b {
+                    background-color: transparent;
+                    font-weight: 800;
+                    padding: 0px;
+                    line-height: inherit;
+                }
+
+                @include media-breakpoint-down(lg) {
+                    font-size: 27px;
+                    line-height: 1.5;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    font-size: 20px;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+}
+
+/* New hero */
+
+.component-hero.type-a {
+    height: auto;
+    min-height: 650px;
+    display: flex;
+    flex: 1;
+
+    @include media-breakpoint-down(sm) {
+        min-height: inherit;
+    }
+
+    &:after {
+        content: "";
+        background-color: $quinary;
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1920px;
+        top: 260px;
+        z-index: -1;
+    }
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    padding-bottom: 36px;
+    padding-top: 36px;
+
+    .content {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        flex: 1;
+        padding-bottom: 0px;
+
+        @include media-breakpoint-down(sm) {
+            justify-content: flex-start;
+        }
+
+        .image {
+            display: flex;
+            flex: 1;
+
+            @include media-breakpoint-down(sm) {
+                flex: 0;
+            }
+
+            img {
+                align-self: center;
+                max-width: 100%;
+                max-height: 300px;
+                margin-bottom: 36px;
+
+                @include media-breakpoint-down(sm) {
+                    align-self: center;
+                    max-width: 100%;
+                    max-height: 230px;
+                    max-height: 35vh;
+                    margin-bottom: 12px;
+                }
+            }
+        }
+
+        .caption {
+            display: flex;
+            //flex: 1;
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 24px;
+            max-width: 1100px;
+
+            @include media-breakpoint-down(sm) {
+                padding: 12px;
+            }
+
+            .title {
+                text-shadow: none;
+                position: relative;
+                left: auto;
+                right: auto;
+                top: auto;
+                bottom: auto;
+                color: $primary;
+
+                > * {
+                    margin-bottom: 12px;
+                    line-height: 1.1;
+
+                    @include media-breakpoint-down(lg) {
+                        font-size: 30px;
+                        margin-bottom: 12px;
+                    }
+
+                    @include media-breakpoint-down(md) {
+                        font-size: 30px;
+                        margin-bottom: 12px;
+                    }
+
+                    @include media-breakpoint-down(sm) {
+                        font-size: 28px;
+                        margin-bottom: 6px;
+                    }
+                }
+            }
+
+            .description {
+                max-width: 600px;
+                font-size: 22px;
+                color: $primary;
+                margin-left: auto;
+                margin-right: auto;
+                @media (max-width: 1367px) {
+                    font-size: 18px;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &:before {
+            content: none;
+        }
+    }
+
+    .cta-wrapper {
+        margin-top: 36px;
+
+        > * {
+            margin-right: 24px;
+        }
+
+        .btn:last-child {
+            margin-right: 0px;
+        }
+    }
+}
+
+
+.component-hero.type-b {
+    @include media-breakpoint-down(sm) {
+        height: 485px;
+    }
+
+    @include media-breakpoint-down(xxs) {
+        height: 500px;
+    }
+
+    .backgroundImage {
+        background-position: center center;
+        /*-webkit-mask: -webkit-linear-gradient(black, transparent 30%, black);
+        -webkit-mask: linear-gradient(black, transparent 30%, black);
+        -webkit-filter: blur(3px);
+        mask: url('#mask-linear');
+        filter: url('#filtre2');*/
+    }
+
+    .content {
+        font-family: "Josefin Sans";
+
+        &:after {
+            content: "";
+            z-index: 0;
+            background-color: black;
+            opacity: 0.35;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+
+            @include media-breakpoint-down(lg) {
+                opacity: 0.40;
+            }
+
+            @include media-breakpoint-down(sm) {
+                opacity: 0.45;
+            }
+        }
+
+        .caption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+            padding: 24px;
+
+            .title {
+                position: relative;
+                left: auto;
+                right: auto;
+                top: auto;
+                bottom: auto;
+                text-transform: inherit;
+                text-align: center;
+
+                > * {
+                    color: white;
+                    font-size: 50px;
+                    line-height: 1.1;
+                    font-weight: bold;
+                    margin-bottom: 12px;
+                    max-width: 85%;
+                    margin-left: auto; 
+                    margin-right: auto;
+                    @include media-breakpoint-down(lg) {
+                        font-size: 42px;
+                        margin-bottom: 12px;
+                    }
+
+                    @include media-breakpoint-down(sm) {
+                        font-size: 36px;
+                        margin-bottom: 12px;
+                    }
+                }
+            }
+
+            .description {
+                max-width: 600px;
+                text-align: center;
+                font-family: Karla;
+                font-size: 18px;
+            }
+        }
+
+        &:before {
+            background: none;
+            filter: none;
+        }
+
+        &.darker-bg:before {
+            background: rgba(0, 0, 0, 0.3);
+            height: 100%;
+
+            @include media-breakpoint-down(sm) {
+                background: rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .title {
+            text-transform: uppercase;
+            top: 5.5rem;
+            left: 4rem;
+
+            @include media-breakpoint-down(lg) {
+                top: 3.75rem;
+                left: 3rem;
+            }
+
+            @media (max-width: 1024px) {
+                //ipadpro
+                top: 3.25rem;
+            }
+
+            @include media-breakpoint-down(sm) {
+                top: 3.75rem;
+                left: 1.5rem;
+            }
+
+            @include media-breakpoint-down(xxs) {
+                left: 1rem;
+                top: 2.75rem;
+            }
+
+            h1,
+            p {
+                font-size: 14px;
+                line-height: 18px;
+                font-weight: bold;
+
+                @include media-breakpoint-down(sm) {
+                    font-size: 10px;
+                    line-height: 13px;
+                }
+            }
+        }
+
+        .content {
+            position: absolute;
+            top: 7rem;
+            left: 4rem;
+
+            @include media-breakpoint-down(lg) {
+                top: 5.25rem;
+                left: 3rem;
+            }
+
+            @media (max-width: 1024px) {
+                //ipadpro
+                top: 4.25rem;
+            }
+
+            @include media-breakpoint-down(sm) {
+                top: 5.25rem;
+                left: 1.5rem;
+            }
+
+            @include media-breakpoint-down(xxs) {
+                top: 4.25rem;
+                left: 1rem;
+            }
+
+            .caption {
+                max-width: 655px;
+                max-height: 365px;
+                min-height: 365px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                font-size: 16px;
+                line-height: 23px;
+
+                p {
+                    font-family: 'Karla', sans-serif;
+                }
+
+                h1,
+                h2 {
+                    font-size: 60px;
+                    line-height: 72px;
+                    font-weight: 300;
+                }
+
+                h3 {
+                    font-size: 48px;
+                    line-height: 58px;
+                    font-weight: 300;
+                }
+
+                @include media-breakpoint-down(lg) {
+                    max-width: 580px;
+                    max-height: 245px;
+                    min-height: 225px;
+
+                    h1,
+                    h2 {
+                        font-size: 40px;
+                        line-height: 50px;
+                    }
+
+                    h3 {
+                        font-size: 32px;
+                        line-height: 40px;
+                        font-weight: 300;
+                    }
+                }
+
+                @include media-breakpoint-down(sm) {
+                    font-size: 14px;
+                    line-height: 20px;
+                    max-width: 100%;
+                    padding-right: 25px;
+                    max-height: 315px;
+                    min-height: 315px;
+
+                    h1,
+                    h2 {
+                        font-size: 30px;
+                        line-height: 37px;
+                    }
+
+                    h3 {
+                        font-size: 25px;
+                        line-height: 32px;
+                        font-weight: 300;
+                    }
+                }
+
+                @include media-breakpoint-down(xxs) {
+                    max-height: 350px;
+                    min-height: 350px;
+                }
+            }
+
+            .cta-wrapper {
+                @include media-breakpoint-down(lg) {
+                    margin-top: 1.25rem;
+                }
+
+                @include media-breakpoint-down(xxs) {
+                    margin-top: 0.75rem;
+                }
+
+                .btn {
+                    border-radius: 50px;
+                    text-transform: none;
+                    line-height: 16px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin: 0px 18px 0px 0px;
+                    padding: 0.65rem 1.25rem;
+                    text-align: center;
+                    transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+
+                    @include media-breakpoint-down(sm) {
+                        line-height: 12px;
+                        font-size: 12px;
+                    }
+
+                    &.btn-new-orange {
+                        &:hover {
+                            border-color: $primary;
+                            background-color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.component-hero.type-c {
+    display: flex;
+    flex: 1;
+    min-height: calc(100vh - 122px);
+    height: auto;
+    background-color: #F5F9FC;
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 36px;
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            padding: 24px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+            padding: 12px;
+            justify-content: center;
+        }
+
+        &:before {
+            content: none;
+        }
+        /*        &:after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30%;
+             permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+100 
+            background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);  ff3.6-15 
+            background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);  chrome10-25,safari5.1-6 
+            background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);  w3c, ie10+, ff16+, chrome26+, opera12+, safari7+ 
+            filter: progid:dximagetransform.microsoft.gradient( startcolorstr='#00ffffff', endcolorstr='#ffffff',gradienttype=0 );  ie6-9 
+            content: '';
+            display: block;
+            z-index: -1;
+        }*/
+        .image {
+            max-width: 45vw;
+
+            @include media-breakpoint-down(lg) {
+                max-width: 75vw;
+            }
+
+            @include media-breakpoint-down(sm) {
+                max-width: 60vw;
+            }
+        }
+
+        .caption {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            padding-left: 24px;
+
+            @include media-breakpoint-down(lg) {
+                max-width: 400px;
+            }
+
+            @include media-breakpoint-down(md) {
+                max-width: 500px;
+            }
+
+            .title {
+                position: relative;
+                text-shadow: none;
+                bottom: auto;
+                left: auto;
+                right: auto;
+                top: auto;
+                color: $primary;
+                margin-bottom: 24px;
+
+                @include media-breakpoint-down(lg) {
+                    margin-bottom: 12px;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    margin-bottom: 6px;
+                }
+
+                > * {
+                    @include media-breakpoint-down(lg) {
+                        font-size: 36px;
+                    }
+
+                    @include media-breakpoint-down(sm) {
+                        font-size: 24px;
+                    }
+                }
+            }
+
+            .description {
+                color: $primary;
+                font-size: 20px;
+                margin-bottom: 36px;
+
+                @include media-breakpoint-down(lg) {
+                    font-size: 20px;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    font-size: 16px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title>Barba 2 & GSAP 3 Page Transition</title>
+
+  <!--  Styles  -->
+<link href="./assets/css/styles.css" rel="stylesheet"></head>
+
+<body data-barba="wrapper">
+    <div class="gsap-loader"></div>
+    <nav class="navbar navbar-light navbar-expand-sm navbar-light">
+  <a class="navbar-brand" href="#">Boilerplate</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="./index.html">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          i3
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="i3-index.html">Home</a>
+          <a class="dropdown-item" href="i3-business.html">Business</a>
+          <a class="dropdown-item" href="i3-education.html">Education</a>
+          <a class="dropdown-item" href="i3-bookademo.html">Bookademo</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Poc
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="poc-index.html">Home</a>
+          <a class="dropdown-item" href="poc-pageload-test-1.html">Pageload-test-1</a>
+          <a class="dropdown-item" href="poc-pageload-test-2.html">Pageload-test-2</a>
+          <a class="dropdown-item" href="poc-parallax-scroll.html">Parallax scroll</a>
+          <a class="dropdown-item" href="poc-parallax-3d.html">Parallax 3d</a>
+          <a class="dropdown-item" href="poc-panel-fullscreen.html">Panel-fullscreen</a>
+          <a class="dropdown-item" href="poc-slider.html">Slider</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <div data-barba="container" data-barba-namespace="poc-slider">
+      <main>
+        <div class="slider-fullscreen-gsap">
+          <nav>
+            <ul>
+              <li><a href="#slide-1">Slide 1</a></li>
+              <li><a href="#slide-2">Slide 2</a></li>
+              <li><a href="#slide-3">Slide 3</a></li>
+              <li><a href="#slide-4">Slide 4</a></li>
+            </ul>
+          </nav>
+          <div class="slides-container">
+              <div class="slide" id="slide-1">
+                  <div class="centered">
+                      <h1>Fullscreen slides with GSAP</h1>
+                      <p>Let's go to the <span class="go-next">next slide</span>.</p>
+                  </div>
+              </div>
+              <div class="slide" id="slide-2">
+                  <div class="centered">
+                      <h1>It is so easy to navigate through slides</h1>
+                      <p>You can go back to <span class="go-prev">previous slide</span> or go to the <span class="go-next">next slide</span>.</p>
+                  </div>
+              </div>
+              <div class="slide" id="slide-3">
+                  <div class="centered">
+                      <h1>Use mouse wheel</h1>
+          
+                      <p>No, really. Try to scroll up and down with the mouse wheel to switch between slides.</p>
+                  </div>
+              </div>
+              <div class="slide" id="slide-4">
+                  <div class="centered">
+                      <h1>... Or use keyboard arrows</h1>
+                      <p>You go to previous and next slide, using up and down keyboard arrows.</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </main>
+    </div>
+<script type="text/javascript" src="./assets/js/bundle.js"></script></body>
+
+</html>

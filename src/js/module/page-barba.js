@@ -13,7 +13,7 @@ import parallaxAnimations from './gsap/custom-parallax-animations';
 import parallax3d from './gsap/custom-parallax-3d';
 import videoAnimations from './gsap/custom-video-animations';
 import customFormScripts from './page/custom-formscripts';
-
+import navbarFullscreen from './page/custom-navbar-fullscreen';
 
 // import goToSection from './gsap/custom-fullpage-animations-2';
 // import fullpageAnimation from './gsap/custom-fullpage-animations';
@@ -67,7 +67,7 @@ barba.init({
         namespace: 'bookademo',
         beforeEnter: () => {
             // customFormScripts.formValidator();
-            customFormScripts.formCheckboxHighlight();
+            // customFormScripts.formCheckboxHighlight();
             customFormScripts.stepFormWizard();
         }
     },
@@ -96,7 +96,7 @@ barba.init({
             textEffects.scrollTextEffect2();
             textEffects.scrollTextEffect3();
             textEffects.scrollTextEffect4();
-            textEffects.textEffectWipeFromLeft();
+            // textEffects.textEffectWipeFromLeft();
             textEffects.textEffect1();
             scrollAnimations.driftUp1();
             scrollAnimations.driftUp2();
@@ -148,6 +148,14 @@ barba.init({
         },
     ],
 });
+
+barba.hooks.afterEnter(() => {
+    navbarFullscreen.navbarFullscreenInit();
+});
+barba.hooks.beforeEnter(() => {
+    navbarFullscreen.navbarFullscreenInit();
+});
+
 // });
 
 // barba.hooks.afterEnter(() => {
