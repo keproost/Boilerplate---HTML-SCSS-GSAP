@@ -1,7 +1,7 @@
 
 import barba from '@barba/core';
 // import $ from 'jquery';
-import { gsap, ScrollToPlugin, ScrollTrigger } from 'gsap/all';
+import { gsap, ScrollToPlugin, ScrollTrigger, TimelineLite } from 'gsap/all';
 // import ScrollTrigger from 'gsap/all';
 import scrollAnimations from './gsap/custom-onscroll-animations';
 import pageTransitions from './gsap/custom-page-transitions';
@@ -15,14 +15,22 @@ import videoAnimations from './gsap/custom-video-animations';
 import customFormScripts from './page/custom-formscripts';
 import navbarFullscreen from './page/custom-navbar-fullscreen';
 
-// import goToSection from './gsap/custom-fullpage-animations-2';
-// import fullpageAnimation from './gsap/custom-fullpage-animations';
-// import delayPromise from './utils';
-
 // Barba
 // document.addEventListener('DOMContentLoaded', function () {
 gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(ScrollTrigger);
+
+// Fade in content set
+function init() {
+    const initAnimation = new TimelineLite({ repeat: 0 });
+    initAnimation
+        .from('body', { ease: 'linear', autoAlpha: 0 })
+        .to('body', { ease: 'linear', autoAlpha: 1 });
+}
+
+window.addEventListener('load', function () {
+    init();
+});
 
 barba.init({
     debug: true,
@@ -73,30 +81,22 @@ barba.init({
     },
     {
         namespace: 'i3-home',
-        beforeOnce: () => {
-            // setTimeout(function () { pageLoaders.zoomIntoDot(); }, 250);
-            // pageLoaders.zoomIntoDot();
-        },
-        before: () => {
-            // setTimeout(function () { pageLoaders.zoomIntoDot(); }, 250);
-            // pageLoaders.zoomIntoDot();
-            // pageLoaders.logoReveal();
-            pageLoaders.logoReveal();
-        },
-        // after: () => {
-        //     // setTimeout(function () { pageLoaders.zoomIntoDot(); }, 250);
-        //     // pageLoaders.zoomIntoDot();
-        //     // pageLoaders.logoReveal();
+        // beforeOnce: () => {
+        //     // pageLoaders.i3logoReveal();
+        //     window.addEventListener('load', function () {
+        //         pageLoaders.i3logoReveal();
+        //     });
         // },
-        afterEnter: () => {
-            // pageLoaders.beforeOnceMaskFadeIn();
+        beforeOnce: () => {
             // pageLoaders.i3logoReveal();
+            pageLoaders.i3logoReveal();
+        },
+        afterEnter: () => {
             filterEffects.filterEffect1();
             textEffects.scrollTextEffect1();
             textEffects.scrollTextEffect2();
             textEffects.scrollTextEffect3();
             textEffects.scrollTextEffect4();
-            // textEffects.textEffectWipeFromLeft();
             textEffects.textEffect1();
             scrollAnimations.driftUp1();
             scrollAnimations.driftUp2();
@@ -108,7 +108,6 @@ barba.init({
             scrollAnimations.fadeInOnEnter();
             scrollAnimations.fadeOutOnLeave();
             scrollAnimations.slideInUpOnEnter();
-            // scrollAnimations.stickySection();
         }
     },
     {
@@ -127,34 +126,45 @@ barba.init({
             },
             enter: ({ next }) => {
                 pageTransitions.fadeUpDownEnter(next.container.querySelector('main'));
-                // parallaxAnimations();
-                // ScrollTrigger.getById('parallaxAnimationID').kill();
-                // ScrollTrigger.getById('parallaxAnimationID').refresh();
-                // parallaxAnimations();
             },
-            beforeEnter: () => {
-                pageTransitions.fadeOutLeave();
-            },
-            afterEnter: () => {
-                pageLoaders.beforeOnceMaskFadeIn();
-                textEffects.imageStackAnimation();
-                smoothScrolling.smoothAnchorScroller();
-                // ScrollTrigger.kill(delayPromise(5000));
-                // ScrollTrigger.refresh(delayPromise(5000));
-            },
+            // beforeOnce: () => {
+
+            // },
             beforeOnce: () => {
+            },
+            // beforeEnter: () => {
+            //     pageTransitions.fadeOutLeave();
+            // },
+            afterEnter: () => {
                 textEffects.imageStackAnimation();
-            }
+            },
+            // beforeOnce: () => {
+            //     // textEffects.imageStackAnimation();
+            // }
         },
     ],
 });
 
 barba.hooks.afterEnter(() => {
+    // pageLoaders.beforeOnceMaskFadeIn();
     navbarFullscreen.navbarFullscreenInit();
+    smoothScrolling.smoothAnchorScroller();
 });
-barba.hooks.beforeEnter(() => {
-    navbarFullscreen.navbarFullscreenInit();
+// barba.hooks.beforeEnter(() => {
+//     navbarFullscreen.navbarFullscreenInit();
+// });
+// barba.hooks.beforeOnce(() => {
+//     navbarFullscreen.navbarFullscreenInit();
+// });
+barba.hooks.beforeOnce(() => {
+    // Fade in content upon content loaded
+    // window.addEventListener('load', function () {
+    //     init();
+    // });
+    // navbarFullscreen.navbarFullscreenInit();
+    // pageLoaders.i3logoReveal();
 });
+// barba.hooks.once(() => {
 
 // });
 

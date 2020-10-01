@@ -1,3 +1,14 @@
+/*DEBUG GSAP*/
+.gs-dev-tools {
+    z-index: 50000;
+}
+
+/*HIDE CONTENT BEFORE LOAD*/
+body {
+    visibility: hidden;
+}
+
+
 body {
     margin: 0px;
     padding: 0px;

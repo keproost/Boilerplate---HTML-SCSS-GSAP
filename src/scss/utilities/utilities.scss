@@ -139,3 +139,12 @@
 .vh-Height-25 {
   min-height: 25vh;
 }
+
+.no-overflow {
+  overflow: hidden !important;
+}
+
+.invisible {
+  opacity: 0;
+  visibility: hidden;
+}

@@ -10,6 +10,7 @@ const navbarFullscreen = {
             $('.navbar-fullscreen').toggleClass('navbar-open');
             $('body').toggleClass('navbar-open');
             $('#hamburger-fullscreen').toggleClass('active');
+            $('html').addClass('no-overflow');
         });
 
         $('#hamburger-fullscreen').click(function () {
@@ -17,6 +18,7 @@ const navbarFullscreen = {
             $('#topnav').toggleClass('navbar-open');
             $('.navbar-fullscreen').toggleClass('navbar-open');
             $('body').toggleClass('navbar-open');
+            $('html').removeClass('no-overflow');
             $('#hamburger').toggleClass('active');
         });
 
@@ -31,10 +33,10 @@ const navbarFullscreen = {
         });
 
 
-        if ($('body').hasClass('bg-home')) {
-            $('#topnav').addClass('bg-transparent');
-            $('#topnav').removeClass('bg-secondary');
-        }
+        // if ($('body').hasClass('bg-home')) {
+        //     $('#topnav').addClass('bg-transparent');
+        //     $('#topnav').removeClass('bg-secondary');
+        // }
     }
 };
 

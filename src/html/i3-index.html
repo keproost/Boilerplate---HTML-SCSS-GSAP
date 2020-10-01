@@ -1,20 +1,30 @@
-<html lang="ru">
+<html lang="pt">
 
 <head>
-  <title>Boilerplate</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Touch Screens for Education & Businesses - i3-Technologies</title>
+  <meta name="description" content="We offer user-friendly hardware & software products to enable creation & collaboration in schools & workspaces. Our range includes interactive touch displays & an online learning platform.">
+
+  <meta name="description" content="As a leading manufacturer of interactive technologies for the classroom, i3-Technologies brings you a wide array of hard- and software solutions for Education.">
+  <meta property="og:image" content="https://www.i3-technologies.com/pt/assets/i3/img/social/i3tech-og-facebook-bus.jpg">
+  <meta property="og:url" content="https://www.i3-technologies.com/pt/i3-business.html">
+
   <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon" />
-  <!-- <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText3.min.js"></script> -->
 </head>
 
-
-<body data-barba="wrapper">
-  <include>_i3headerNew.html</include>
-  <!-- <div class="logoreveal light">
+<body data-barba="wrapper">  
+  <div class="logoreveal invisible light">
     <div class="logoreveal-content">
-      <div class="progress"><div id="progress" class="progress progress-bar"></div></div>
-      <div class="i3-brand-wrapper">
-        <div class="logo">
+      <div class="progress">
+        <div class="revealprogress progress progress-bar"></div>
+      </div>
+      <div class="brand-wrapper">
+        <div class="brand-symbol">
           <div class="svg-wrapper">
             <svg version="1.1" id="i3-symbol-layer" x="0px" y="0px" viewBox="0 0 280 280
             " class="svg-content">
@@ -103,101 +113,103 @@
             </svg>
           </div>   
         </div>
-        <div class="i3-brand">
-          <div class="brand-wordmark textEffect1">
+        <div class="brand-wordmark-wrapper">
+          <div class="brand-wordmark">
             i3-Technologies
           </div>  
         </div> 
       </div>
     </div>
-  </div> -->
+  </div>
   <div data-barba="container" data-barba-namespace="i3-home">
     <main>
-      <!-- SVG filters-->
-      <svg class="d-none">
-        <filter id="svgFilters" x="-20%" y="-20%" width="150%" height="150%">
-          <!-- <feGaussianBlur stdDeviation="2" result="blur" /> -->
-          <feGaussianBlur id="feBlur" in="SourceGraphic" stdDeviation="50"></feGaussianBlur>
-          <!-- <feTurbulence id="feTurbulence" baseFreaquency="1 0.03" result="NOISE" numOctaves="1"></feTurbulence> -->
-          <!-- <feDisplacementMap in="SourceGraphic" in2="NOISE" scale="100"><</feDisplacementMap> -->
-        </filter>
-      </svg>
-      <!-- <div class="page-loader"></div> -->
-      <!-- <div class="page-loader-mask"></div> -->
-      <div class="fullscreen-slider">
-        <div id="slide1" class="slide">
-          <div class="content flow-right-to-left">
-            <div class="caption scrollTextEffect1">
-              <div class="title">Change the way you work<span class="dot">.</span></div>
-              <div class="description"></div>
-            </div>
-            <div class="image">
-              <img class="img-fluid " src="assets/i3/img/i3learnhub-packshot-imo-ar-lifeliqe-small.png">
-            </div>
-            <div class="cta-wrapper">
-              <a href="#slide4" class="btn btn-outline-primary">Find out more</a>
-            </div>
-          </div>
-        </div>
-        <div id="slide2" class="slide gsap-scrollAnimation-fadeOutOnLeave">
-          <div class="content  flow-left-to-right">
-            <div class="caption driftUp scrollTextEffect2">
-              <div class="title">Be it in the classroom<span class="dot">.</span></div>
-              <div class="description"></div>
-            </div>
-            <div class="image gsap-scrollAnimation-slideInUpOnEnter">
-              <img class="img-fluid filterEffect1" src="assets/i3/img/i3learnhub-packshot-imo-ar-lifeliqe-small.png">
-            </div>
-            <div class="cta-wrapper">
-              <div class="btn btn-outline-primary">Find out more</div>
-            </div>
-          </div>
-        </div>
-        <div id="slide3" class="slide gsap-scrollAnimation-fadeOutOnLeave">
-          <div class="backgroundImage" style="background-image: url('assets/i3/img/bg-business.png');"></div>
-          <div class="content flow-right-to-left">
-            <div class="caption textEffect3">
-              <div class="title">Or on the workfloor<span class="dot">.</span></div>
-              <div class="description"></div>
-            </div>
-            <div class="cta-wrapper">
-              <div class="btn btn-outline-primary">Find out more</div>
-            </div>
-          </div>
-        </div>
-        <div id="slide4" class="slide gsap-scrollAnimation-fadeOutOnLeave">
-          <div class="backgroundImage" style="background-image: url('assets/i3/img/bg-manage.png');"></div>
-          <div class="content flow-right-to-left">
-            <div class="caption scrollTextEffect3">
-              <div class="title">Manage things better<span class="dot">.</span></div>
-              <div class="description"></div>
-            </div>
-            <div class="cta-wrapper">
-              <a href="#slide1" class="btn btn-outline-primary">Find out more</a>
-            </div>
-          </div>
-        </div>
-        <div id="slide5" class="slide gsap-scrollAnimation-fadeOutOnLeave">
-          <div class="backgroundImage" style="background-image: url('assets/i3/img/bg-i3.png');"></div>
-          <div class="content flow-left-to-right">
-            <div class="caption">
-              <div class="title scrollTextEffect4">Acchieve more with us<span class="dot">.</span></div>
-              <div class="description textEffect3">
-                <h2>So who are we ?</h2>
-                <p>
-                  i3TECHNOLOGIES has been helping companies and schools level up since 1968. With more than 90 locations
-                  globally, we're happy to help you anywhere.
-                </p>
+    <include>_i3headerNew.html</include>
+    <div class="main-content">
+            <!-- SVG filters-->
+            <svg class="d-none">
+              <filter id="svgFilters" x="-20%" y="-20%" width="150%" height="150%">
+                <!-- <feGaussianBlur stdDeviation="2" result="blur" /> -->
+                <feGaussianBlur id="feBlur" in="SourceGraphic" stdDeviation="50"></feGaussianBlur>
+                <!-- <feTurbulence id="feTurbulence" baseFreaquency="1 0.03" result="NOISE" numOctaves="1"></feTurbulence> -->
+                <!-- <feDisplacementMap in="SourceGraphic" in2="NOISE" scale="100"><</feDisplacementMap> -->
+              </filter>
+            </svg>
+            <!-- <div class="page-loader"></div> -->
+            <!-- <div class="page-loader-mask"></div> -->
+            <div class="fullscreen-slider">
+              <div id="slide1" class="slide">
+                <div class="content flow-right-to-left">
+                  <div class="caption scrollTextEffect1">
+                    <div class="title">Change the way you work<span class="dot">.</span></div>
+                    <div class="description"></div>
+                  </div>
+                  <div class="image">
+                    <img class="img-fluid " src="assets/i3/img/i3learnhub-packshot-imo-ar-lifeliqe-small.png">
+                  </div>
+                  <div class="cta-wrapper">
+                    <a href="#slide4" class="btn btn-outline-primary">Find out more</a>
+                  </div>
+                </div>
+              </div>
+              <div id="slide2" class="slide gsap-scrollAnimation-fadeOutOnLeave">
+                <div class="content  flow-left-to-right">
+                  <div class="caption driftUp scrollTextEffect2">
+                    <div class="title">Be it in the classroom<span class="dot">.</span></div>
+                    <div class="description"></div>
+                  </div>
+                  <div class="image gsap-scrollAnimation-slideInUpOnEnter">
+                    <img class="img-fluid filterEffect1" src="assets/i3/img/i3learnhub-packshot-imo-ar-lifeliqe-small.png">
+                  </div>
+                  <div class="cta-wrapper">
+                    <div class="btn btn-outline-primary">Find out more</div>
+                  </div>
+                </div>
+              </div>
+              <div id="slide3" class="slide gsap-scrollAnimation-fadeOutOnLeave">
+                <div class="backgroundImage" style="background-image: url('assets/i3/img/bg-business.png');"></div>
+                <div class="content flow-right-to-left">
+                  <div class="caption textEffect3">
+                    <div class="title">Or on the workfloor<span class="dot">.</span></div>
+                    <div class="description"></div>
+                  </div>
+                  <div class="cta-wrapper">
+                    <div class="btn btn-outline-primary">Find out more</div>
+                  </div>
+                </div>
+              </div>
+              <div id="slide4" class="slide gsap-scrollAnimation-fadeOutOnLeave">
+                <div class="backgroundImage" style="background-image: url('assets/i3/img/bg-manage.png');"></div>
+                <div class="content flow-right-to-left">
+                  <div class="caption scrollTextEffect3">
+                    <div class="title">Manage things better<span class="dot">.</span></div>
+                    <div class="description"></div>
+                  </div>
+                  <div class="cta-wrapper">
+                    <a href="#slide1" class="btn btn-outline-primary">Find out more</a>
+                  </div>
+                </div>
+              </div>
+              <div id="slide5" class="slide gsap-scrollAnimation-fadeOutOnLeave">
+                <div class="backgroundImage" style="background-image: url('assets/i3/img/bg-i3.png');"></div>
+                <div class="content flow-left-to-right">
+                  <div class="caption">
+                    <div class="title scrollTextEffect4">Acchieve more with us<span class="dot">.</span></div>
+                    <div class="description textEffect3">
+                      <h2>So who are we ?</h2>
+                      <p>
+                        i3TECHNOLOGIES has been helping companies and schools level up since 1968. With more than 90 locations
+                        globally, we're happy to help you anywhere.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="cta-wrapper">
+                    <div class="btn btn-outline-primary">Find out more</div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="cta-wrapper">
-              <div class="btn btn-outline-primary">Find out more</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
   </div>
-
   </main>
   </div>
   <include>_footer.html</include>
