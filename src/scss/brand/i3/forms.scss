@@ -1,0 +1,133 @@
+.form-control {
+    border-color: $gray-lighter;
+    color: $gray;
+    border-radius: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.form-control, .custom-select {
+    &:focus, &:active {
+        border-color: rgba(244,152,0,.2) !important;
+        box-shadow: 0 0 10px 0 rgba(244,152,0,.2) !important;
+    }
+}
+
+//Placeholder 
+$placeholder-color: $gray-lighter;
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $gray-lighter; opacity: 1; /* Firefox */
+  }
+::-webkit-input-placeholder {color: $placeholder-color !important;}
+:-moz-placeholder {color: $placeholder-color !important; opacity: 1;}
+::-moz-placeholder {color: $placeholder-color !important; opacity: 1;}
+:-ms-input-placeholder {color: $placeholder-color !important;}
+// input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: $placeholder-color !important;}
+// input:-moz-placeholder, textarea:-moz-placeholder {color: $placeholder-color !important;}  
+:placeholder-shown {color: $placeholder-color!important;}
+
+.custom-select, .custom-select-lg {
+    border-radius: 10px;
+    border-color: $gray-lighter;
+   }
+select:invalid { color: $placeholder-color; }
+
+
+//Transform scale on buttons gives issues with borders not rendering well
+// .btn {
+//     transform-style: preserve-3d;
+// }
+
+//Custom i3 form controls
+.custom-control {
+    //i3 CHECKBOX BOXED
+    &.custom-checkbox-i3-boxed {
+        &:hover {
+            box-shadow: 0 0 15px rgba(0,0,0,0.07);
+        }
+        &.active {
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        background-color: #ffffff;
+        border-radius: 10px;
+        border-color: #EEEEEE;
+        border-width: 1px;
+        border-style: solid;
+        padding: 12px;
+        transition: box-shadow 0.4s ease-in-out;
+        .custom-control-label {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            &:before, &:after, .custom-control-input {
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                left: 12px;
+                transform: scale(1.25);
+            }
+            .stacked-label { 
+                display: flex; 
+                flex-direction: column;
+                margin-left: 48px;
+                font-weight: bold;
+            }
+            .description {
+                color:black;
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: 100;
+            }
+        }
+    }
+}
+
+/* Style the form */
+  
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid {
+    background-color: $warning;
+  }
+  
+  /* Hide all steps by default: */
+  .tab {
+    display: none;
+  }
+
+
+  .form-navigation {
+      margin-top: 12px;
+    .steps {
+        display: block; 
+        margin: auto;
+        text-align: center;
+        margin-top: 24px;
+      .step {
+          height: 12px;
+          width: 12px;
+          margin: 0 2px;
+          background-color: $gray-lighter;
+          border: none;
+          border-radius: 50%;
+          display: inline-block;
+          opacity: 0.5;
+        }
+    }
+    .cta-wrapper {
+        text-align: center;
+    }
+  }
+  
+  
+  /* Mark the active step: */
+  .step.active {
+    opacity: 1;
+    background-color: $gray-light;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: $success;
+  }

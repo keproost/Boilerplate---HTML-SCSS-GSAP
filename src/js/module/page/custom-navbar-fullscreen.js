@@ -28,9 +28,9 @@ const navbarFullscreen = {
             $('#hamburger').toggleClass('active');
         });
 
-        $(document).ready(function () {
-            $('body').toggleClass('loaded');
-        });
+        // $(document).ready(function () {
+        //     $('body').toggleClass('loaded');
+        // });
 
 
         // if ($('body').hasClass('bg-home')) {

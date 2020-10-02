@@ -1,0 +1,27 @@
+
+.page-productOverview {
+    .main-content {
+        #touchscreens {
+            min-height: 100vh;
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+    } 
+}
+
+.page-bookademo {
+    .main-content {
+        background-color: $gray-white;
+    }
+    footer {
+        display: none;
+    }
+}
+
+.page-home {
+
+}
+

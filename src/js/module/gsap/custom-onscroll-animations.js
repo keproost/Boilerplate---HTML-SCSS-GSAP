@@ -5,7 +5,7 @@ const scrollAnimations = {
     fadeOutOnLeave() {
         gsap.registerPlugin(ScrollTrigger);
         const fadeOutOnLeave = gsap.utils.toArray('.fadeOutOnLeave');
-        console.log('SCROLLANIMATION - FADEOUTONLEAVEELEMENTS', fadeOutOnLeave);
+        // console.log('SCROLLANIMATION - FADEOUTONLEAVEELEMENTS', fadeOutOnLeave);
         if (fadeOutOnLeave) {
             fadeOutOnLeave.forEach((fadeOutOnLeaveElement) => {
                 const fadeOutOnLeaveAnimation = gsap.timeline({});
@@ -20,8 +20,8 @@ const scrollAnimations = {
                 ScrollTrigger.create({
                     trigger: fadeOutOnLeaveElement,
                     animation: fadeOutOnLeaveAnimation,
-                    start: 'top 40%',
-                    end: 'bottom 10%',
+                    start: 'top 15%',
+                    end: 'bottom 5%',
                     scrub: 0,
                     once: false,
                 });
@@ -31,7 +31,7 @@ const scrollAnimations = {
 
     slideInUpOnEnter() {
         const slideInUpOnEnter = gsap.utils.toArray('.slideInUpOnEnter');
-        console.log('SCROLLANIMATION - SLIDEINUPONTERELEMENTS', slideInUpOnEnter);
+        // console.log('SCROLLANIMATION - SLIDEINUPONTERELEMENTS', slideInUpOnEnter);
         if (slideInUpOnEnter) {
             slideInUpOnEnter.forEach((slideInUpOnEnterElement) => {
                 const slideInUpOnEnterAnimation = gsap.timeline({});
@@ -50,9 +50,30 @@ const scrollAnimations = {
             });
         }
     },
+    slideInRightOnEnter() {
+        const slideInRightOnEnter = gsap.utils.toArray('.slideInRightOnEnter');
+        // console.log('SCROLLANIMATION - SLIDEINUPONTERELEMENTS', slideInRightOnEnter);
+        if (slideInRightOnEnter) {
+            slideInRightOnEnter.forEach((slideInRightOnEnterElement) => {
+                const slideInRightOnEnterAnimation = gsap.timeline({});
+                slideInRightOnEnterAnimation
+                    .from(slideInRightOnEnterElement, { x: -2000, ease: 'power1' })
+                    .to(slideInRightOnEnterElement, { x: 0 });
+
+                ScrollTrigger.create({
+                    trigger: slideInRightOnEnterElement,
+                    animation: slideInRightOnEnterAnimation,
+                    start: '-100px bottom',
+                    end: '50% 40%',
+                    scrub: 1,
+                    once: false,
+                });
+            });
+        }
+    },
     fadeInOnEnter() {
         const fadeInOnEnter = gsap.utils.toArray('.fadeInOnEnter');
-        console.log('SCROLLANIMATION - FADEINONENTER', fadeInOnEnter);
+        // console.log('SCROLLANIMATION - FADEINONENTER', fadeInOnEnter);
         if (fadeInOnEnter) {
             fadeInOnEnter.forEach((fadeInOnEnterElement) => {
                 const fadeInOnEnterAnimation = gsap.timeline({});
@@ -74,7 +95,7 @@ const scrollAnimations = {
 
     growInOnEnter() {
         const growInOnEnter = gsap.utils.toArray('.growInOnEnter');
-        console.log('SCROLLANIMATION - GROWINONENTERELEMENTS', growInOnEnter);
+        // console.log('SCROLLANIMATION - GROWINONENTERELEMENTS', growInOnEnter);
         if (growInOnEnter) {
             growInOnEnter.forEach((growInOnEnterElement) => {
                 const growInOnEnterAnimation = gsap.timeline({});
@@ -96,7 +117,7 @@ const scrollAnimations = {
 
     driftUp1() {
         const driftUp = gsap.utils.toArray('.driftUp1');
-        console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
+        // console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
         if (driftUp) {
             driftUp.forEach((driftUpElement) => {
                 const driftUpAnimation = gsap.timeline({});
@@ -117,7 +138,7 @@ const scrollAnimations = {
     },
     driftUp2() {
         const driftUp = gsap.utils.toArray('.driftUp2');
-        console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
+        // console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
         if (driftUp) {
             driftUp.forEach((driftUpElement) => {
                 const driftUpAnimation = gsap.timeline({});
@@ -138,7 +159,7 @@ const scrollAnimations = {
     },
     driftUp3() {
         const driftUp = gsap.utils.toArray('.driftUp3');
-        console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
+        // console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
         if (driftUp) {
             driftUp.forEach((driftUpElement) => {
                 const driftUpAnimation = gsap.timeline({});
@@ -159,7 +180,7 @@ const scrollAnimations = {
     },
     driftDown1() {
         const driftUp = gsap.utils.toArray('.driftDown1');
-        console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
+        // console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
         if (driftUp) {
             driftUp.forEach((driftUpElement) => {
                 const driftUpAnimation = gsap.timeline({});
@@ -180,7 +201,7 @@ const scrollAnimations = {
     },
     driftDown2() {
         const driftUp = gsap.utils.toArray('.driftDown2');
-        console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
+        // console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
         if (driftUp) {
             driftUp.forEach((driftUpElement) => {
                 const driftUpAnimation = gsap.timeline({});
@@ -201,7 +222,7 @@ const scrollAnimations = {
     },
     driftDown3() {
         const driftUp = gsap.utils.toArray('.driftDown3');
-        console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
+        // console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
         if (driftUp) {
             driftUp.forEach((driftUpElement) => {
                 const driftUpAnimation = gsap.timeline({});

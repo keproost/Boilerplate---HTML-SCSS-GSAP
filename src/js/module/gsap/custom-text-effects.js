@@ -149,8 +149,8 @@ const textEffects = {
         window.$ = $;
         window.jQuery = $;
         const imageStackContainer = document.querySelector('.imageStackAnimation');
-        gsap.utils.toArray('.imageStackAnimation').forEach(function (imageStackElement) {
-            console.log('imageStackAnimations', imageStackElement);
+        gsap.utils.toArray('.imageStackAnimation').forEach(function () {
+            // console.log('imageStackAnimations', imageStackElement);
             const imageStackAnimation = gsap.timeline({ scrollTrigger: {
                 trigger: imageStackContainer,
                 start: 'top bottom',

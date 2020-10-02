@@ -83,7 +83,7 @@ const pageTransitions = {
         });
     },
     fadeOutLeave() {
-        gsap.to('main', {
+        gsap.to('#app', {
             duration: pageTransitionDuration,
             y: 0,
             opacity: 0,

@@ -137,14 +137,16 @@ const pageLoaders = {
             const progressOutAnimation = new TimelineLite({ repeat: 0 });
 
             function enterLoader() {
-                $('body').addClass('loader');
+                // $('body').addClass('loader');
+                $('#app-content').addClass('loading');
                 $('.logoreveal').toggleClass('invisible');
                 console.log('logoreveal animation starting');
             }
 
             function leaveLoader() {
-                $('body').removeClass('loader');
+                $('#app-content').removeClass('loading');
                 $('.logoreveal').addClass('d-none');
+                // $('#app-content').addClass('d-flex');
                 console.log('logoreveal animation ended');
             }
             // Init master timesline

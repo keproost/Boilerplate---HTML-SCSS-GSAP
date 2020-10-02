@@ -1,6 +1,6 @@
 //Typography
 
-
+//Brand fonts
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;600;700&family=Karla:wght@400;700&display=swap');
 
 
@@ -16,8 +16,6 @@
     font-style: normal;
 
 }
-
-
 
 
 @font-face {
@@ -61,7 +59,7 @@ body {
 }
 
 h1 {
-    font-family: 'karmillaregular', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: 700;
     font-size: 30px;
     line-height: 1;

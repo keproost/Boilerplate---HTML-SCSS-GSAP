@@ -1,7 +1,7 @@
 //Color 
 $white:         #fff !default;
 $gray-100:      #F9F9FB !default;
-$gray-200:      #E4EBF2 !default;
+$gray-200:      #F1F5F9 !default;
 $gray-300:      #C7D0D9 !default;
 $gray-400:      #A4B2BF !default;
 $gray-500:      #848E99 !default;
@@ -155,7 +155,7 @@ $grid-breakpoints: (
 
 $container-max-widths: (
   sm: 540px,
-  md: 720px,
+  md: 800px,
   lg: 960px,
   xl: 1340px,
   xxl: 1400px

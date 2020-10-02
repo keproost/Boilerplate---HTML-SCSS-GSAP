@@ -1,19 +1,90 @@
+/*MAIN APP CONFIG*/
+
+html {
+    //Remove scrollbar jump
+    width: 100vw;
+    overflow-x: hidden;
+    // overflow: hidden;
+    // scroll-behavior: smooth;
+    // overflow: hidden;
+    body {
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+        // visibility: hidden;
+        display: flex;
+        &.initial-load-style {
+            // visibility: hidden;
+            overflow: hidden;
+        }
+        &.loaded {
+            overflow-y: visible;
+        }
+        &.navbar-open {
+            overflow: hidden;
+        }
+        #barba-container {
+            display: flex; 
+            flex: 1;
+            flex-direction: column;
+            #app {
+                display: flex; 
+                flex: 1;
+                #loaders {
+                    z-index: 9999;
+                    .loader {
+                        overflow: hidden;
+                        height: 100vh;
+                        width: 100vw;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        z-index: 99999;
+                    }
+                }
+                #app-content {
+                    &.loading {
+                        visibility: hidden;
+                        height: 0;
+                    }
+                    display: flex; 
+                    flex-direction: column;
+                    flex: 1;
+                    height: auto;
+                    header {
+                        z-index: 1000;
+                        position: relative;
+                    }
+                    main {
+                        display: flex; 
+                        flex: 1;
+                        flex-direction: column;
+                        .main-content {
+                            padding-top: 36px;
+                            display: flex; 
+                            flex: 1;
+                            flex-direction: column;
+                            // justify-content: center;
+                        }
+                    }
+                    footer {
+    
+                    }
+                }  
+            } 
+        }
+     
+    }
+}
+
+
 /*DEBUG GSAP*/
 .gs-dev-tools {
     z-index: 50000;
 }
 
-/*HIDE CONTENT BEFORE LOAD*/
-body {
-    visibility: hidden;
-}
-
-
-body {
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
-}
 .container {
     &.container-edge-to-edge {
         padding: 0px;
@@ -25,26 +96,6 @@ body {
         }
     }
 }
-
-//Show hide navbar on scroll 
-.smart-scroll {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-}
-
-.scrolled-down {
-    transform: translateY(-100%);
-    transition: all 0.3s ease-in-out;
-}
-
-.scrolled-up {
-    transform: translateY(0);
-    transition: all 0.3s ease-in-out;
-}
-
 
 .grid-flexrow {
     display: flex;
@@ -68,103 +119,3 @@ body {
     }
 }
 
-#bookademo {
-    background-color: $gray-white;
-    // min-height: 100vh;
-    // position: absolute;
-    // left: 0;
-    // right: 0;
-    // top: 0;
-    // bottom: 0;
-    // justify-content: center;
-}
-
-
-
-
-//Transform scale on buttons gives issues with borders not rendering well
-.btn {
-    transform-style: preserve-3d;
-}
-
-//Custom i3 form controls
-.custom-control {
-    //i3 CHECKBOX BOXED
-    &.custom-checkbox-i3-boxed {
-        &:hover {
-            box-shadow: 0 0 15px rgba(0,0,0,0.07);
-        }
-        &.active {
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            background-color: red;
-        }
-        background-color: #ffffff;
-        border-radius: 10px;
-        border-color: #EEEEEE;
-        border-width: 1px;
-        border-style: solid;
-        padding: 12px;
-        transition: box-shadow 0.4s ease-in-out;
-        .custom-control-label {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            &:before, &:after, .custom-control-input {
-                top: 0;
-                bottom: 0;
-                margin: auto;
-                left: 12px;
-                transform: scale(1.25);
-            }
-            .stacked-label { 
-                display: flex; 
-                flex-direction: column;
-                margin-left: 48px;
-                font-weight: bold;
-            }
-            .description {
-                color:black;
-                text-transform: uppercase;
-                font-size: 12px;
-                font-weight: 100;
-            }
-        }
-    }
-}
-
-
-
-
-/* Style the form */
-  
-  /* Mark input boxes that gets an error on validation: */
-  input.invalid {
-    background-color: $warning;
-  }
-  
-  /* Hide all steps by default: */
-  .tab {
-    display: none;
-  }
-  
-  /* Make circles that indicate the steps of the form: */
-  .step {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbbbbb;
-    border: none;
-    border-radius: 50%;
-    display: inline-block;
-    opacity: 0.5;
-  }
-  
-  /* Mark the active step: */
-  .step.active {
-    opacity: 1;
-  }
-  
-  /* Mark the steps that are finished and valid: */
-  .step.finish {
-    background-color: #4CAF50;
-  }

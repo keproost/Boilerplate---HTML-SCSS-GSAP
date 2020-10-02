@@ -1,486 +1,894 @@
-<html lang="ru">
+<html lang="pt">
 
 <head>
-  <title>Boilerplate</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a demo at i3</title>
   <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 <link href="./assets/css/styles.css" rel="stylesheet"></head>
 
 <body data-barba="wrapper">
-  <div class="gsap-loader"></div>
-  <nav class="navbar navbar-light navbar-expand-sm navbar-light">
-  <a class="navbar-brand" href="#">Boilerplate</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="./index.html">Home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          i3
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="i3-index.html">Home</a>
-          <a class="dropdown-item" href="i3-business.html">Business</a>
-          <a class="dropdown-item" href="i3-education.html">Education</a>
-          <a class="dropdown-item" href="i3-bookademo.html">Bookademo</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Poc
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="poc-index.html">Home</a>
-          <a class="dropdown-item" href="poc-pageload-test-1.html">Pageload-test-1</a>
-          <a class="dropdown-item" href="poc-pageload-test-2.html">Pageload-test-2</a>
-          <a class="dropdown-item" href="poc-parallax-scroll.html">Parallax scroll</a>
-          <a class="dropdown-item" href="poc-parallax-3d.html">Parallax 3d</a>
-          <a class="dropdown-item" href="poc-panel-fullscreen.html">Panel-fullscreen</a>
-          <a class="dropdown-item" href="poc-slider.html">Slider</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-  <div data-barba="container" data-barba-namespace="bookademo">
-    <main>
-      <div class="main-content">
-        <section id="bookademo">
-          <div class="content align-items-center">
-            <div class="container">
-              <div class="row valign-center">
-                <div class="col-md-12">
-                  <h1>Book a demo<span class="dot">.</span></h1>
-                  <form id="bookademoform" class="needs-validation" novalidate>
-
-
-                    <div class="tab">
-                      <h4>Who can we make coffee for ? </h4>
-                      <div class="form-row">
-                        <div class="col-sm-12 col-md-6 mb-3">
-                          <label for="validationCustom01">First name</label>
-                          <input type="text" class="form-control form-control-lg" id="validationCustom01"
-                            placeholder="First name" value="Lars" required>
-
-                        </div>
-                        <div class="col-sm-12 col-md-6 mb-3">
-                          <label for="validationCustom02">Last name</label>
-                          <input type="text" class="form-control form-control-lg" id="validationCustom02"
-                            placeholder="Last name" value="Sweef" required>
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="col-sm-12 col-md-6 mb-3">
-                          <label for="validationCustom03">Job title</label>
-                          <input type="text" class="form-control form-control-lg" id="validationCustom03"
-                            placeholder="Job title" value="Director" required>
-                        </div>
-                        <div class="col-sm-12 col-md-6 mb-3">
-                          <label for="validationCustom04">Company name</label>
-                          <input type="text" class="form-control form-control-lg" id="validationCustom04"
-                            placeholder="Your companyname" value="i3-Technologies" required>
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="col-md-12 mb-3">
-                          <label for="validationCustom03">Email</label>
-                          <input type="text" class="form-control form-control-lg" id="validationCustom03"
-                            placeholder="Email" value="lars.vansweevelt@i3-technologies.com" required>
-                          <div class="invalid-feedback">
-                            Please provide an email
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="col-sm-12 col-md-6 mb-3">
-                          <label for="validationCustom03">Your country</label>
-                          <div class="form-group">
-                            <select id="country" class="custom-select custom-select-lg" required>
-                              <option value="Afghanistan">Afghanistan</option>
-                              <option value="Åland Islands">Åland Islands</option>
-                              <option value="Albania">Albania</option>
-                              <option value="Algeria">Algeria</option>
-                              <option value="American Samoa">American Samoa</option>
-                              <option value="Andorra">Andorra</option>
-                              <option value="Angola">Angola</option>
-                              <option value="Anguilla">Anguilla</option>
-                              <option value="Antarctica">Antarctica</option>
-                              <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                              <option value="Argentina">Argentina</option>
-                              <option value="Armenia">Armenia</option>
-                              <option value="Aruba">Aruba</option>
-                              <option value="Australia">Australia</option>
-                              <option value="Austria">Austria</option>
-                              <option value="Azerbaijan">Azerbaijan</option>
-                              <option value="Bahamas">Bahamas</option>
-                              <option value="Bahrain">Bahrain</option>
-                              <option value="Bangladesh">Bangladesh</option>
-                              <option value="Barbados">Barbados</option>
-                              <option value="Belarus">Belarus</option>
-                              <option value="Belgium">Belgium</option>
-                              <option value="Belize">Belize</option>
-                              <option value="Benin">Benin</option>
-                              <option value="Bermuda">Bermuda</option>
-                              <option value="Bhutan">Bhutan</option>
-                              <option value="Bolivia">Bolivia</option>
-                              <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
-                              <option value="Botswana">Botswana</option>
-                              <option value="Bouvet Island">Bouvet Island</option>
-                              <option value="Brazil" selected="selected">Brazil</option>
-                              <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
-                              <option value="Brunei Darussalam">Brunei Darussalam</option>
-                              <option value="Bulgaria">Bulgaria</option>
-                              <option value="Burkina Faso">Burkina Faso</option>
-                              <option value="Burundi">Burundi</option>
-                              <option value="Cambodia">Cambodia</option>
-                              <option value="Cameroon">Cameroon</option>
-                              <option value="Canada">Canada</option>
-                              <option value="Cape Verde">Cape Verde</option>
-                              <option value="Cayman Islands">Cayman Islands</option>
-                              <option value="Central African Republic">Central African Republic</option>
-                              <option value="Chad">Chad</option>
-                              <option value="Chile">Chile</option>
-                              <option value="China">China</option>
-                              <option value="Christmas Island">Christmas Island</option>
-                              <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
-                              <option value="Colombia">Colombia</option>
-                              <option value="Comoros">Comoros</option>
-                              <option value="Congo">Congo</option>
-                              <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of
-                                The</option>
-                              <option value="Cook Islands">Cook Islands</option>
-                              <option value="Costa Rica">Costa Rica</option>
-                              <option value="Cote D'ivoire">Cote D'ivoire</option>
-                              <option value="Croatia">Croatia</option>
-                              <option value="Cuba">Cuba</option>
-                              <option value="Cyprus">Cyprus</option>
-                              <option value="Czech Republic">Czech Republic</option>
-                              <option value="Denmark">Denmark</option>
-                              <option value="Djibouti">Djibouti</option>
-                              <option value="Dominica">Dominica</option>
-                              <option value="Dominican Republic">Dominican Republic</option>
-                              <option value="Ecuador">Ecuador</option>
-                              <option value="Egypt">Egypt</option>
-                              <option value="El Salvador">El Salvador</option>
-                              <option value="Equatorial Guinea">Equatorial Guinea</option>
-                              <option value="Eritrea">Eritrea</option>
-                              <option value="Estonia">Estonia</option>
-                              <option value="Ethiopia">Ethiopia</option>
-                              <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
-                              <option value="Faroe Islands">Faroe Islands</option>
-                              <option value="Fiji">Fiji</option>
-                              <option value="Finland">Finland</option>
-                              <option value="France">France</option>
-                              <option value="French Guiana">French Guiana</option>
-                              <option value="French Polynesia">French Polynesia</option>
-                              <option value="French Southern Territories">French Southern Territories</option>
-                              <option value="Gabon">Gabon</option>
-                              <option value="Gambia">Gambia</option>
-                              <option value="Georgia">Georgia</option>
-                              <option value="Germany">Germany</option>
-                              <option value="Ghana">Ghana</option>
-                              <option value="Gibraltar">Gibraltar</option>
-                              <option value="Greece">Greece</option>
-                              <option value="Greenland">Greenland</option>
-                              <option value="Grenada">Grenada</option>
-                              <option value="Guadeloupe">Guadeloupe</option>
-                              <option value="Guam">Guam</option>
-                              <option value="Guatemala">Guatemala</option>
-                              <option value="Guernsey">Guernsey</option>
-                              <option value="Guinea">Guinea</option>
-                              <option value="Guinea-bissau">Guinea-bissau</option>
-                              <option value="Guyana">Guyana</option>
-                              <option value="Haiti">Haiti</option>
-                              <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands
-                              </option>
-                              <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
-                              <option value="Honduras">Honduras</option>
-                              <option value="Hong Kong">Hong Kong</option>
-                              <option value="Hungary">Hungary</option>
-                              <option value="Iceland">Iceland</option>
-                              <option value="India">India</option>
-                              <option value="Indonesia">Indonesia</option>
-                              <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
-                              <option value="Iraq">Iraq</option>
-                              <option value="Ireland">Ireland</option>
-                              <option value="Isle of Man">Isle of Man</option>
-                              <option value="Israel">Israel</option>
-                              <option value="Italy">Italy</option>
-                              <option value="Jamaica">Jamaica</option>
-                              <option value="Japan">Japan</option>
-                              <option value="Jersey">Jersey</option>
-                              <option value="Jordan">Jordan</option>
-                              <option value="Kazakhstan">Kazakhstan</option>
-                              <option value="Kenya">Kenya</option>
-                              <option value="Kiribati">Kiribati</option>
-                              <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic
-                                of</option>
-                              <option value="Korea, Republic of">Korea, Republic of</option>
-                              <option value="Kuwait">Kuwait</option>
-                              <option value="Kyrgyzstan">Kyrgyzstan</option>
-                              <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
-                              <option value="Latvia">Latvia</option>
-                              <option value="Lebanon">Lebanon</option>
-                              <option value="Lesotho">Lesotho</option>
-                              <option value="Liberia">Liberia</option>
-                              <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
-                              <option value="Liechtenstein">Liechtenstein</option>
-                              <option value="Lithuania">Lithuania</option>
-                              <option value="Luxembourg">Luxembourg</option>
-                              <option value="Macao">Macao</option>
-                              <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav
-                                Republic of</option>
-                              <option value="Madagascar">Madagascar</option>
-                              <option value="Malawi">Malawi</option>
-                              <option value="Malaysia">Malaysia</option>
-                              <option value="Maldives">Maldives</option>
-                              <option value="Mali">Mali</option>
-                              <option value="Malta">Malta</option>
-                              <option value="Marshall Islands">Marshall Islands</option>
-                              <option value="Martinique">Martinique</option>
-                              <option value="Mauritania">Mauritania</option>
-                              <option value="Mauritius">Mauritius</option>
-                              <option value="Mayotte">Mayotte</option>
-                              <option value="Mexico">Mexico</option>
-                              <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
-                              <option value="Moldova, Republic of">Moldova, Republic of</option>
-                              <option value="Monaco">Monaco</option>
-                              <option value="Mongolia">Mongolia</option>
-                              <option value="Montenegro">Montenegro</option>
-                              <option value="Montserrat">Montserrat</option>
-                              <option value="Morocco">Morocco</option>
-                              <option value="Mozambique">Mozambique</option>
-                              <option value="Myanmar">Myanmar</option>
-                              <option value="Namibia">Namibia</option>
-                              <option value="Nauru">Nauru</option>
-                              <option value="Nepal">Nepal</option>
-                              <option value="Netherlands">Netherlands</option>
-                              <option value="Netherlands Antilles">Netherlands Antilles</option>
-                              <option value="New Caledonia">New Caledonia</option>
-                              <option value="New Zealand">New Zealand</option>
-                              <option value="Nicaragua">Nicaragua</option>
-                              <option value="Niger">Niger</option>
-                              <option value="Nigeria">Nigeria</option>
-                              <option value="Niue">Niue</option>
-                              <option value="Norfolk Island">Norfolk Island</option>
-                              <option value="Northern Mariana Islands">Northern Mariana Islands</option>
-                              <option value="Norway">Norway</option>
-                              <option value="Oman">Oman</option>
-                              <option value="Pakistan">Pakistan</option>
-                              <option value="Palau">Palau</option>
-                              <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
-                              <option value="Panama">Panama</option>
-                              <option value="Papua New Guinea">Papua New Guinea</option>
-                              <option value="Paraguay">Paraguay</option>
-                              <option value="Peru">Peru</option>
-                              <option value="Philippines">Philippines</option>
-                              <option value="Pitcairn">Pitcairn</option>
-                              <option value="Poland">Poland</option>
-                              <option value="Portugal">Portugal</option>
-                              <option value="Puerto Rico">Puerto Rico</option>
-                              <option value="Qatar">Qatar</option>
-                              <option value="Reunion">Reunion</option>
-                              <option value="Romania">Romania</option>
-                              <option value="Russian Federation">Russian Federation</option>
-                              <option value="Rwanda">Rwanda</option>
-                              <option value="Saint Helena">Saint Helena</option>
-                              <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-                              <option value="Saint Lucia">Saint Lucia</option>
-                              <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
-                              <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
-                              <option value="Samoa">Samoa</option>
-                              <option value="San Marino">San Marino</option>
-                              <option value="Sao Tome and Principe">Sao Tome and Principe</option>
-                              <option value="Saudi Arabia">Saudi Arabia</option>
-                              <option value="Senegal">Senegal</option>
-                              <option value="Serbia">Serbia</option>
-                              <option value="Seychelles">Seychelles</option>
-                              <option value="Sierra Leone">Sierra Leone</option>
-                              <option value="Singapore">Singapore</option>
-                              <option value="Slovakia">Slovakia</option>
-                              <option value="Slovenia">Slovenia</option>
-                              <option value="Solomon Islands">Solomon Islands</option>
-                              <option value="Somalia">Somalia</option>
-                              <option value="South Africa">South Africa</option>
-                              <option value="South Georgia and The South Sandwich Islands">South Georgia and The South
-                                Sandwich Islands</option>
-                              <option value="Spain">Spain</option>
-                              <option value="Sri Lanka">Sri Lanka</option>
-                              <option value="Sudan">Sudan</option>
-                              <option value="Suriname">Suriname</option>
-                              <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
-                              <option value="Swaziland">Swaziland</option>
-                              <option value="Sweden">Sweden</option>
-                              <option value="Switzerland">Switzerland</option>
-                              <option value="Syrian Arab Republic">Syrian Arab Republic</option>
-                              <option value="Taiwan, Province of China">Taiwan, Province of China</option>
-                              <option value="Tajikistan">Tajikistan</option>
-                              <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
-                              <option value="Thailand">Thailand</option>
-                              <option value="Timor-leste">Timor-leste</option>
-                              <option value="Togo">Togo</option>
-                              <option value="Tokelau">Tokelau</option>
-                              <option value="Tonga">Tonga</option>
-                              <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-                              <option value="Tunisia">Tunisia</option>
-                              <option value="Turkey">Turkey</option>
-                              <option value="Turkmenistan">Turkmenistan</option>
-                              <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
-                              <option value="Tuvalu">Tuvalu</option>
-                              <option value="Uganda">Uganda</option>
-                              <option value="Ukraine">Ukraine</option>
-                              <option value="United Arab Emirates">United Arab Emirates</option>
-                              <option value="United Kingdom">United Kingdom</option>
-                              <option value="United States">United States</option>
-                              <option value="United States Minor Outlying Islands">United States Minor Outlying Islands
-                              </option>
-                              <option value="Uruguay">Uruguay</option>
-                              <option value="Uzbekistan">Uzbekistan</option>
-                              <option value="Vanuatu">Vanuatu</option>
-                              <option value="Venezuela">Venezuela</option>
-                              <option value="Viet Nam">Viet Nam</option>
-                              <option value="Virgin Islands, British">Virgin Islands, British</option>
-                              <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
-                              <option value="Wallis and Futuna">Wallis and Futuna</option>
-                              <option value="Western Sahara">Western Sahara</option>
-                              <option value="Yemen">Yemen</option>
-                              <option value="Zambia">Zambia</option>
-                              <option value="Zimbabwe">Zimbabwe</option>
-                            </select>
-                            <div class="invalid-feedback">Please select a country</div>
-                          </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 mb-3">
-                          <label for="validationCustom03">Your sector</label>
-                          <div class="form-group">
-                            <select class="custom-select custom-select-lg" required>
-                              <option value="">Choose a sector</option>
-                              <option value="Education">Education</option>
-                              <option value="Corporate">Corporate</option>
-                              <option value="Government">Government</option>
-                            </select>
-                            <div class="invalid-feedback">Example invalid custom select feedback</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="tab">
-                      <h4>Which products would you like to see ? </h4>
-                      <div class="form-row">
-                        <div class="col-md-4 mb-3">
-                          <div class="custom-control custom-checkbox custom-checkbox-i3-boxed mb-3">
-                            <input type="checkbox" class="custom-control-input" id="i3board">
-                            <label class="custom-control-label" for="i3board">
-                              <div class="stacked-label">i3BOARD<span class="description">Interactive whiteboards</span>
-                              </div>
-                            </label>
-                          </div>
-                          <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
-                            <input type="checkbox" class="custom-control-input" id="i3cair">
-                            <label class="custom-control-label" for="i3cair">
-                              <div class="stacked-label">i3CAIR<span class="description">Air quality sensor</span></div>
-                            </label>
-                          </div>
-                          <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
-                            <input type="checkbox" class="custom-control-input" id="i3huddle">
-                            <label class="custom-control-label" for="i3huddle">
-                              <div class="stacked-label">i3HUDDLE<span class="description">Meeting room
-                                  touchscreens</span></div>
-                            </label>
-                          </div>
-                          <div class="custom-control custom-checkbox custom-checkbox-i3-boxed mb-3">
-                            <input type="checkbox" class="custom-control-input" id="imolearn">
-                            <label class="custom-control-label" for="imolearn">
-                              <div class="stacked-label">iMO-LEARN<span class="description">Active sitting cube</span>
-                              </div>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                          <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
-                            <input type="checkbox" class="custom-control-input" id="i3learnhub">
-                            <label class="custom-control-label" for="i3learnhub">
-                              <div class="stacked-label">i3LEARNHUB<span class="description">Learning platform</span>
-                              </div>
-                            </label>
-                          </div>
-                          <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
-                            <input type="checkbox" class="custom-control-input" id="i3sixty">
-                            <label class="custom-control-label" for="i3sixty">
-                              <div class="stacked-label">i3SIXTY<span class="description">Digital flipchart</span></div>
-                            </label>
-                          </div>
-                          <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
-                            <input type="checkbox" class="custom-control-input" id="i3projector">
-                            <label class="custom-control-label" for="i3projector">
-                              <div class="stacked-label">i3PROJECTOR<span class="description">Projector</span></div>
-                            </label>
-                          </div>
-                          <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
-                            <input type="checkbox" class="custom-control-input" id="i3rdm">
-                            <label class="custom-control-label" for="i3rdm">
-                              <div class="stacked-label">i3RDM<span class="description">Remote device management</span>
-                              </div>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                          <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
-                            <input type="checkbox" class="custom-control-input" id="i3sync">
-                            <label class="custom-control-label" for="i3sync">
-                              <div class="stacked-label">i3SYNC<span class="description">Wireless screen sharing</span>
-                              </div>
-                            </label>
-                          </div>
-                          <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
-                            <input type="checkbox" class="custom-control-input" id="i3touch">
-                            <label class="custom-control-label" for="i3touch">
-                              <div class="stacked-label">i3TOUCH<span class="description">Interactive touch
-                                  screens</span></div>
-                            </label>
-                          </div>
-                          <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
-                            <input type="checkbox" class="custom-control-input" id="zoomroomops">
-                            <label class="custom-control-label" for="zoomroomops">
-                              <div class="stacked-label">Zoom room OPS<span class="description">OPS Computer</span>
-                              </div>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <button class="btn btn-primary" type="submit">Submit form</button>
-                    </div>
-
-
-                    <div style="overflow:auto;">
-                      <div style="float:right;">
-                        <button type="button" id="prevBtn">Previous</button>
-                        <button type="button" id="nextBtn">Next</button>
-                      </div>
-                    </div>
-
-                    <div style="text-align:center;margin-top:40px;">
-                      <span class="step"></span>
-                      <span class="step"></span>
-                      <span class="step"></span>
-                      <span class="step"></span>
-                    </div>
-
-                  </form>
+  <div id="barba-container" data-barba="container" data-barba-namespace="bookademo">
+    <div id="app" class="page-bookademo">
+      <div id="loaders">
+        <div class="loader logoreveal invisible light">
+          <div class="logoreveal-content">
+            <div class="progress">
+              <div class="revealprogress progress progress-bar"></div>
+            </div>
+            <div class="brand-wrapper">
+              <div class="brand-symbol">
+                <div class="svg-wrapper">
+                  <svg version="1.1" id="i3-symbol-layer" x="0px" y="0px" viewBox="0 0 280 280
+                  " class="svg-content">
+                    <g id="i3-symbol-fill">
+                      <g id="i-primary-fill">
+                        <g>
+  
+                          <path id="stripe-primary-fill" fill="#ED6D05" d="
+                            M91.97,148.27L51.74,188.5l85.65,85.65l40.23-40.23L91.97,148.27L91.97,148.27z" />
+                        </g>
+                        <g>
+  
+                          <path id="dot-primary-fill" fill="#ED6D05" d="
+                            M40.94,97.23L0.71,137.47l42.83,42.83l40.22-40.24L40.94,97.23L40.94,97.23z" />
+                        </g>
+                      </g>
+                      <g id="i-secondary-fill">
+                        <g>
+  
+                          <path id="stripe-secondary-fill" fill="#F49800" d="
+                            M140.24,100.01L100,140.24l85.65,85.65l40.23-40.23L140.24,100.01L140.24,100.01z" />
+                        </g>
+                        <g>
+  
+                          <path id="dot-secondary-fill" fill="#F49800" d="
+                            M89.2,48.98L48.98,89.2l42.82,42.83l40.23-40.23L89.2,48.98L89.2,48.98z" />
+                        </g>
+                      </g>
+                      <g id="i-tertiary-fill">
+                        <g>
+  
+                          <path id="stripe-tertiary-fill" fill="#FFBF00" d="
+                            M188.5,51.74l-40.23,40.23l85.65,85.65l40.23-40.23L188.5,51.74L188.5,51.74z" />
+                        </g>
+                        <g>
+  
+                          <path id="dot-tertiary-fill" fill="#FFBF00" d="
+                            M137.47,0.71L97.23,40.95l42.83,42.82l40.22-40.24L137.47,0.71L137.47,0.71z" />
+                        </g>
+                      </g>
+                    </g>
+                    <g id="i3-symbol-stroke">
+                      <g id="i-primary-stroke">
+                        <g>
+  
+                          <path id="stripe-primary-stroke" fill="none" stroke="#ED6D05" stroke-width="4"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1" d="
+                            M91.97,148.27L51.74,188.5l85.65,85.65l40.23-40.23L91.97,148.27L91.97,148.27z" />
+                        </g>
+                        <g>
+  
+                          <path id="dot-primary-stroke" fill="none" stroke="#ED6D05" stroke-width="4"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1" d="
+                            M40.94,97.23L0.71,137.47l42.83,42.83l40.22-40.24L40.94,97.23L40.94,97.23z" />
+                        </g>
+                      </g>
+                      <g id="i-secondary-stroke">
+                        <g>
+  
+                          <path id="stripe-secondary-stroke" fill="none" stroke="#F49800" stroke-width="4"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1" d="
+                            M140.24,100.01L100,140.24l85.65,85.65l40.23-40.23L140.24,100.01L140.24,100.01z" />
+                        </g>
+                        <g>
+  
+                          <path id="dot-secondary-stroke" fill="none" stroke="#F49800" stroke-width="4"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1" d="
+                            M89.2,48.98L48.98,89.2l42.82,42.83l40.23-40.23L89.2,48.98L89.2,48.98z" />
+                        </g>
+                      </g>
+                      <g id="i-tertiary-stroke">
+                        <g>
+  
+                          <path id="stripe-tertiary-stroke" fill="none" stroke="#FFBF00" stroke-width="4"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1" d="
+                            M188.5,51.74l-40.23,40.23l85.65,85.65l40.23-40.23L188.5,51.74L188.5,51.74z" />
+                        </g>
+                        <g>
+  
+                          <path id="dot-tertiary-stroke" fill="none" stroke="#FFBF00" stroke-width="4"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1" d="
+                            M137.47,0.71L97.23,40.95l42.83,42.82l40.22-40.24L137.47,0.71L137.47,0.71z" />
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+              <div class="brand-wordmark-wrapper">
+                <div class="brand-wordmark">
+                  i3-Technologies
                 </div>
               </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>      
+      <div id="app-content">
+        <header>  
+  <nav id="topnav" class="navbar navbar-i3 navbar-expand-lg gsap-pageTransition-fadeInOut">
 
+    <!--<a class="navbar-brand" href="@home.Url">@home.SiteName</a>-->
+     <a class="brandlogo-dark" href="index.html"><img class="brand brand-dark" src="assets/i3/img/brand/brand-dark.svg"
+         alt="" /></a>
+     <a class="brandlogo-light" href="index.html"><img class="brand brand-light" src="assets/i3/img/brand/brand-light.svg"
+         alt="" /></a>
+     <ul class="navbar-nav ml-auto d-none d-lg-flex">
+       <li class="nav-item">
+         <a class="nav-link" href="i3-business.html">Business</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="i3-education.html">Education</a>
+       </li>
+     </ul>
+   
+     <div class="cta-wrapper d-none d-lg-flex">
+       <a class="btn btn-outline-gray-lighter">WHERE TO BUY</a>
+       <a class="btn btn-primary" href="i3-bookademo.html">BOOK A DEMO</a>
+       <!--<div class="btn btn-outline-accenta">Registreren</div>-->
+     </div>
+     <a id="hamburger" href="#"><span></span></a>
+   </nav>
+   <div class="navbar navbar-i3 navbar-fullscreen">
+     <div class="content">
+       <div class="navbar-head">
+         <div class="content">
+           <a class="brandlogo-dark" href="index.html"><img class="brand brand-dark" src="assets/i3/img/brand/brand-dark.svg"
+             alt="" /></a>
+           <!-- <a class="brandlogo-light" href="index.html">
+             <img class="brand brand-light" src="assets/i3/img/brand/brand-light.svg" alt="" />
+           </a> -->
+           <div class="links">
+             <!-- <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                 <a class="nav-link" href="i3-business.html">Business</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="i3-education.html">Education</a>
+               </li>
+             </ul> -->
+             <div class="cta-wrapper d-none d-md-block d-lg-block">
+               <a class="btn btn-outline-gray">Where to buy</a>
+               <a class="btn btn-primary">Book a demo</a>
+             </div>
+           </div>
+           <a id="hamburger-fullscreen" class="hamburger" href="#"><span></span></a>
+         </div>
+       </div>
+       <div class="navbar-body">
+         <div class="container container-fluid">
+           <div class="row">
+             <div class="column col-xs-12 col-sm-12 col-md-12 col-lg-8">
+               <div class="navbarcol navbarcol-links">
+                 <div class="title">
+                   Are you looking for ?
+                 </div>
+                 <div class="navbarcol-content">
+                   <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                       <a class="nav-link" href="i3-business.html">Business solutions</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" href="i3-education.html">Education solutions</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" href="i3-business.html">Wireless presenting</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" href="i3-education.html">Touch displays</a>
+                     </li>  
+                     <li class="nav-item">
+                       <a class="nav-link" href="i3-education.html">Software</a>
+                     </li>       
+                     <li class="nav-item">
+                       <a class="nav-link" href="i3-education.html">Accessoires</a>
+                     </li>     
+                     <li class="nav-item">
+                       <a class="nav-link" href="i3-education.html">Support</a>
+                     </li>     
+                     <li class="nav-item">
+                       <a class="nav-link" href="i3-education.html">Blog</a>
+                     </li>    
+                     <li class="nav-item">
+                       <a class="nav-link" href="i3-education.html">Become a partner</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" href="i3-education.html">Login</a>
+                     </li>                                                                                                                                       
+                   </ul>
+                   <!-- <div id="accordion">
+                     <div class="card">
+                       <div class="card-header" id="headingOne">
+                         <h5 class="mb-0">
+                           <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                             Collapsible Group Item #1
+                           </button>
+                         </h5>
+                       </div>
+                   
+                       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                         <div class="card-body">
+                           Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                         </div>
+                       </div>
+                     </div>
+                     <div class="card">
+                       <div class="card-header" id="headingTwo">
+                         <h5 class="mb-0">
+                           <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                             Collapsible Group Item #2
+                           </button>
+                         </h5>
+                       </div>
+                       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                         <div class="card-body">
+                           Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                         </div>
+                       </div>
+                     </div>
+                     <div class="card">
+                       <div class="card-header" id="headingThree">
+                         <h5 class="mb-0">
+                           <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                             Collapsible Group Item #3
+                           </button>
+                         </h5>
+                       </div>
+                       <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                         <div class="card-body">
+                           Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                         </div>
+                       </div>
+                     </div>
+                   </div> -->
+   
+                 </div>
+               </div>
+             </div>
+             <div class="column col-xs-12 col-sm-12 col-md-12 col-lg-4">
+               <div class="navbarcol navbarcol-highlightedproducts">
+                 <div class="title">
+                   Highlighted products
+                 </div>
+                 <div class="navbarcol-content">
+                   <div class="featured-item">
+                     <a href="#" class="featured-item-link">
+                       <div class="featured-content">
+                         <div class="image">
+                           <img src="assets/i3/img/i3board_all_sizes.png" alt="Alternate Text" />
+                         </div>
+                         <div class="featured-caption">
+                           <div class="title">Never worry about homeschool or another sentence that's way too long...</div>
+                           <div class="description">Lorem ipsum dolor sit amet, consetetur and some more text which you
+                             don't like and makes things unevensadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                             labore et dolore magna</div>
+                           <div class="link">Read more</div>
+                         </div>
+                       </div>
+                     </a>
+                   </div>
+                   <div class="featured-item">
+                     <a href="#" class="featured-item-link">
+                       <div class="featured-content">
+                         <div class="image">
+                           <div class="eventdate">
+                             <div class="day">27</div>
+                             <div class="month">JUN</div>
+                           </div>
+                           <img src="assets/i3/img/i3board_all_sizes.png" alt="Alternate Text" />
+                         </div>
+                         <div class="featured-caption">
+                           <div class="title">Never worry about homeschool...</div>
+                           <div class="description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                             nonumy eirmod tempor invidunt ut labore et dolore magna</div>
+                           <div class="link">Participate</div>
+                         </div>
+                       </div>
+                     </a>
+                   </div>
+                   <div class="featured-item">
+                     <a href="#" class="featured-item-link">
+                       <div class="featured-content">
+                         <div class="image">
+                           <div class="eventdate">
+                             <div class="day">27</div>
+                             <div class="month">JUN</div>
+                           </div>
+                           <img src="assets/i3/img/i3board_all_sizes.png" alt="Alternate Text" />
+                         </div>
+                         <div class="featured-caption">
+                           <div class="title">Never worry about homeschool...</div>
+                           <div class="description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, and some more
+                             text which you don't like and makes things uneve sed diam nonumy eirmod tempor invidunt ut
+                             labore et dolore magna</div>
+                           <div class="link">Participate</div>
+                         </div>
+                       </div>
+                     </a>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="navbar-footer">
+         <div class="btn-group dropup languageselector">
+           <button type="button" class="btn btn-outline-quinary dropdown-toggle" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+             Language
+           </button>
+           <div class="dropdown-menu">
+             <li class="dropdown-item">
+               <a href="#">PT</a>
+             </li>
+           </div>
+         </div>
+         <div class="more-info">
+           <a href="#" class="btn btn-text">More info about i3GROUP</a>
+         </div>
+       </div>
+     </div>
+   </div>
+</header>
 
+        <main>
+          <div class="main-content">
+            <section id="bookademo">
+              <div class="content align-items-center">
+                <div class="container">
+                  <div class="row valign-center">
+                    <div class="col-md-12">
+                      <h1>Book a demo<span class="dot">.</span></h1>
+                      <form id="bookademoform" class="needs-validation" novalidate>
+  
+                        <div class="tab">
+                          <h4>Who can we make coffee for ? </h4>
+                          <div class="form-row">
+                            <div class="col-sm-12 col-md-6 mb-3">
+                              <label for="validationCustom01">First name</label>
+                              <input type="text" class="form-control form-control-lg" id="validationCustom01"
+                                placeholder="First name" value="" required>
+  
+                            </div>
+                            <div class="col-sm-12 col-md-6 mb-3">
+                              <label for="validationCustom02">Last name</label>
+                              <input type="text" class="form-control form-control-lg" id="validationCustom02"
+                                placeholder="Last name" value="" required>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col-sm-12 col-md-6 mb-3">
+                              <label for="validationCustom03">Job title</label>
+                              <input type="text" class="form-control form-control-lg" id="validationCustom03"
+                                placeholder="Job title" value="" required>
+                            </div>
+                            <div class="col-sm-12 col-md-6 mb-3">
+                              <label for="validationCustom04">Company name</label>
+                              <input type="text" class="form-control form-control-lg" id="validationCustom04"
+                                placeholder="Your companyname" value="" required>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                              <label for="validationCustom03">Email</label>
+                              <input type="text" class="form-control form-control-lg" id="validationCustom03"
+                                placeholder="Email" value="" required>
+                              <div class="invalid-feedback">
+                                Please provide an email
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col-sm-12 col-md-6 mb-3">
+                              <label for="country">Your country</label>
+                              <div class="form-group">
+                                <select id="country" class="custom-select custom-select-lg" required>
+                                  <option value="" disabled selected>Choose a country</option>
+                                  <option value="Afghanistan">Afghanistan</option>
+                                  <option value="Åland Islands">Åland Islands</option>
+                                  <option value="Albania">Albania</option>
+                                  <option value="Algeria">Algeria</option>
+                                  <option value="American Samoa">American Samoa</option>
+                                  <option value="Andorra">Andorra</option>
+                                  <option value="Angola">Angola</option>
+                                  <option value="Anguilla">Anguilla</option>
+                                  <option value="Antarctica">Antarctica</option>
+                                  <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                  <option value="Argentina">Argentina</option>
+                                  <option value="Armenia">Armenia</option>
+                                  <option value="Aruba">Aruba</option>
+                                  <option value="Australia">Australia</option>
+                                  <option value="Austria">Austria</option>
+                                  <option value="Azerbaijan">Azerbaijan</option>
+                                  <option value="Bahamas">Bahamas</option>
+                                  <option value="Bahrain">Bahrain</option>
+                                  <option value="Bangladesh">Bangladesh</option>
+                                  <option value="Barbados">Barbados</option>
+                                  <option value="Belarus">Belarus</option>
+                                  <option value="Belgium">Belgium</option>
+                                  <option value="Belize">Belize</option>
+                                  <option value="Benin">Benin</option>
+                                  <option value="Bermuda">Bermuda</option>
+                                  <option value="Bhutan">Bhutan</option>
+                                  <option value="Bolivia">Bolivia</option>
+                                  <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                                  <option value="Botswana">Botswana</option>
+                                  <option value="Bouvet Island">Bouvet Island</option>
+                                  <option value="Brazil">Brazil</option>
+                                  <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                                  <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                  <option value="Bulgaria">Bulgaria</option>
+                                  <option value="Burkina Faso">Burkina Faso</option>
+                                  <option value="Burundi">Burundi</option>
+                                  <option value="Cambodia">Cambodia</option>
+                                  <option value="Cameroon">Cameroon</option>
+                                  <option value="Canada">Canada</option>
+                                  <option value="Cape Verde">Cape Verde</option>
+                                  <option value="Cayman Islands">Cayman Islands</option>
+                                  <option value="Central African Republic">Central African Republic</option>
+                                  <option value="Chad">Chad</option>
+                                  <option value="Chile">Chile</option>
+                                  <option value="China">China</option>
+                                  <option value="Christmas Island">Christmas Island</option>
+                                  <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                                  <option value="Colombia">Colombia</option>
+                                  <option value="Comoros">Comoros</option>
+                                  <option value="Congo">Congo</option>
+                                  <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of
+                                    The</option>
+                                  <option value="Cook Islands">Cook Islands</option>
+                                  <option value="Costa Rica">Costa Rica</option>
+                                  <option value="Cote D'ivoire">Cote D'ivoire</option>
+                                  <option value="Croatia">Croatia</option>
+                                  <option value="Cuba">Cuba</option>
+                                  <option value="Cyprus">Cyprus</option>
+                                  <option value="Czech Republic">Czech Republic</option>
+                                  <option value="Denmark">Denmark</option>
+                                  <option value="Djibouti">Djibouti</option>
+                                  <option value="Dominica">Dominica</option>
+                                  <option value="Dominican Republic">Dominican Republic</option>
+                                  <option value="Ecuador">Ecuador</option>
+                                  <option value="Egypt">Egypt</option>
+                                  <option value="El Salvador">El Salvador</option>
+                                  <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                  <option value="Eritrea">Eritrea</option>
+                                  <option value="Estonia">Estonia</option>
+                                  <option value="Ethiopia">Ethiopia</option>
+                                  <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                                  <option value="Faroe Islands">Faroe Islands</option>
+                                  <option value="Fiji">Fiji</option>
+                                  <option value="Finland">Finland</option>
+                                  <option value="France">France</option>
+                                  <option value="French Guiana">French Guiana</option>
+                                  <option value="French Polynesia">French Polynesia</option>
+                                  <option value="French Southern Territories">French Southern Territories</option>
+                                  <option value="Gabon">Gabon</option>
+                                  <option value="Gambia">Gambia</option>
+                                  <option value="Georgia">Georgia</option>
+                                  <option value="Germany">Germany</option>
+                                  <option value="Ghana">Ghana</option>
+                                  <option value="Gibraltar">Gibraltar</option>
+                                  <option value="Greece">Greece</option>
+                                  <option value="Greenland">Greenland</option>
+                                  <option value="Grenada">Grenada</option>
+                                  <option value="Guadeloupe">Guadeloupe</option>
+                                  <option value="Guam">Guam</option>
+                                  <option value="Guatemala">Guatemala</option>
+                                  <option value="Guernsey">Guernsey</option>
+                                  <option value="Guinea">Guinea</option>
+                                  <option value="Guinea-bissau">Guinea-bissau</option>
+                                  <option value="Guyana">Guyana</option>
+                                  <option value="Haiti">Haiti</option>
+                                  <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands
+                                  </option>
+                                  <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                                  <option value="Honduras">Honduras</option>
+                                  <option value="Hong Kong">Hong Kong</option>
+                                  <option value="Hungary">Hungary</option>
+                                  <option value="Iceland">Iceland</option>
+                                  <option value="India">India</option>
+                                  <option value="Indonesia">Indonesia</option>
+                                  <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+                                  <option value="Iraq">Iraq</option>
+                                  <option value="Ireland">Ireland</option>
+                                  <option value="Isle of Man">Isle of Man</option>
+                                  <option value="Israel">Israel</option>
+                                  <option value="Italy">Italy</option>
+                                  <option value="Jamaica">Jamaica</option>
+                                  <option value="Japan">Japan</option>
+                                  <option value="Jersey">Jersey</option>
+                                  <option value="Jordan">Jordan</option>
+                                  <option value="Kazakhstan">Kazakhstan</option>
+                                  <option value="Kenya">Kenya</option>
+                                  <option value="Kiribati">Kiribati</option>
+                                  <option value="Korea, Democratic People's Republic of">Korea, Democratic People's
+                                    Republic
+                                    of</option>
+                                  <option value="Korea, Republic of">Korea, Republic of</option>
+                                  <option value="Kuwait">Kuwait</option>
+                                  <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                  <option value="Lao People's Democratic Republic">Lao People's Democratic Republic
+                                  </option>
+                                  <option value="Latvia">Latvia</option>
+                                  <option value="Lebanon">Lebanon</option>
+                                  <option value="Lesotho">Lesotho</option>
+                                  <option value="Liberia">Liberia</option>
+                                  <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                                  <option value="Liechtenstein">Liechtenstein</option>
+                                  <option value="Lithuania">Lithuania</option>
+                                  <option value="Luxembourg">Luxembourg</option>
+                                  <option value="Macao">Macao</option>
+                                  <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former
+                                    Yugoslav
+                                    Republic of</option>
+                                  <option value="Madagascar">Madagascar</option>
+                                  <option value="Malawi">Malawi</option>
+                                  <option value="Malaysia">Malaysia</option>
+                                  <option value="Maldives">Maldives</option>
+                                  <option value="Mali">Mali</option>
+                                  <option value="Malta">Malta</option>
+                                  <option value="Marshall Islands">Marshall Islands</option>
+                                  <option value="Martinique">Martinique</option>
+                                  <option value="Mauritania">Mauritania</option>
+                                  <option value="Mauritius">Mauritius</option>
+                                  <option value="Mayotte">Mayotte</option>
+                                  <option value="Mexico">Mexico</option>
+                                  <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+                                  <option value="Moldova, Republic of">Moldova, Republic of</option>
+                                  <option value="Monaco">Monaco</option>
+                                  <option value="Mongolia">Mongolia</option>
+                                  <option value="Montenegro">Montenegro</option>
+                                  <option value="Montserrat">Montserrat</option>
+                                  <option value="Morocco">Morocco</option>
+                                  <option value="Mozambique">Mozambique</option>
+                                  <option value="Myanmar">Myanmar</option>
+                                  <option value="Namibia">Namibia</option>
+                                  <option value="Nauru">Nauru</option>
+                                  <option value="Nepal">Nepal</option>
+                                  <option value="Netherlands">Netherlands</option>
+                                  <option value="Netherlands Antilles">Netherlands Antilles</option>
+                                  <option value="New Caledonia">New Caledonia</option>
+                                  <option value="New Zealand">New Zealand</option>
+                                  <option value="Nicaragua">Nicaragua</option>
+                                  <option value="Niger">Niger</option>
+                                  <option value="Nigeria">Nigeria</option>
+                                  <option value="Niue">Niue</option>
+                                  <option value="Norfolk Island">Norfolk Island</option>
+                                  <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                                  <option value="Norway">Norway</option>
+                                  <option value="Oman">Oman</option>
+                                  <option value="Pakistan">Pakistan</option>
+                                  <option value="Palau">Palau</option>
+                                  <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+                                  <option value="Panama">Panama</option>
+                                  <option value="Papua New Guinea">Papua New Guinea</option>
+                                  <option value="Paraguay">Paraguay</option>
+                                  <option value="Peru">Peru</option>
+                                  <option value="Philippines">Philippines</option>
+                                  <option value="Pitcairn">Pitcairn</option>
+                                  <option value="Poland">Poland</option>
+                                  <option value="Portugal">Portugal</option>
+                                  <option value="Puerto Rico">Puerto Rico</option>
+                                  <option value="Qatar">Qatar</option>
+                                  <option value="Reunion">Reunion</option>
+                                  <option value="Romania">Romania</option>
+                                  <option value="Russian Federation">Russian Federation</option>
+                                  <option value="Rwanda">Rwanda</option>
+                                  <option value="Saint Helena">Saint Helena</option>
+                                  <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                  <option value="Saint Lucia">Saint Lucia</option>
+                                  <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                                  <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines
+                                  </option>
+                                  <option value="Samoa">Samoa</option>
+                                  <option value="San Marino">San Marino</option>
+                                  <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                  <option value="Saudi Arabia">Saudi Arabia</option>
+                                  <option value="Senegal">Senegal</option>
+                                  <option value="Serbia">Serbia</option>
+                                  <option value="Seychelles">Seychelles</option>
+                                  <option value="Sierra Leone">Sierra Leone</option>
+                                  <option value="Singapore">Singapore</option>
+                                  <option value="Slovakia">Slovakia</option>
+                                  <option value="Slovenia">Slovenia</option>
+                                  <option value="Solomon Islands">Solomon Islands</option>
+                                  <option value="Somalia">Somalia</option>
+                                  <option value="South Africa">South Africa</option>
+                                  <option value="South Georgia and The South Sandwich Islands">South Georgia and The South
+                                    Sandwich Islands</option>
+                                  <option value="Spain">Spain</option>
+                                  <option value="Sri Lanka">Sri Lanka</option>
+                                  <option value="Sudan">Sudan</option>
+                                  <option value="Suriname">Suriname</option>
+                                  <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+                                  <option value="Swaziland">Swaziland</option>
+                                  <option value="Sweden">Sweden</option>
+                                  <option value="Switzerland">Switzerland</option>
+                                  <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                                  <option value="Taiwan, Province of China">Taiwan, Province of China</option>
+                                  <option value="Tajikistan">Tajikistan</option>
+                                  <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                                  <option value="Thailand">Thailand</option>
+                                  <option value="Timor-leste">Timor-leste</option>
+                                  <option value="Togo">Togo</option>
+                                  <option value="Tokelau">Tokelau</option>
+                                  <option value="Tonga">Tonga</option>
+                                  <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                                  <option value="Tunisia">Tunisia</option>
+                                  <option value="Turkey">Turkey</option>
+                                  <option value="Turkmenistan">Turkmenistan</option>
+                                  <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                                  <option value="Tuvalu">Tuvalu</option>
+                                  <option value="Uganda">Uganda</option>
+                                  <option value="Ukraine">Ukraine</option>
+                                  <option value="United Arab Emirates">United Arab Emirates</option>
+                                  <option value="United Kingdom">United Kingdom</option>
+                                  <option value="United States">United States</option>
+                                  <option value="United States Minor Outlying Islands">United States Minor Outlying
+                                    Islands
+                                  </option>
+                                  <option value="Uruguay">Uruguay</option>
+                                  <option value="Uzbekistan">Uzbekistan</option>
+                                  <option value="Vanuatu">Vanuatu</option>
+                                  <option value="Venezuela">Venezuela</option>
+                                  <option value="Viet Nam">Viet Nam</option>
+                                  <option value="Virgin Islands, British">Virgin Islands, British</option>
+                                  <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                                  <option value="Wallis and Futuna">Wallis and Futuna</option>
+                                  <option value="Western Sahara">Western Sahara</option>
+                                  <option value="Yemen">Yemen</option>
+                                  <option value="Zambia">Zambia</option>
+                                  <option value="Zimbabwe">Zimbabwe</option>
+                                </select>
+                                <div class="invalid-feedback">Please select a country</div>
+                              </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 mb-3">
+                              <label for="sector">Your sector</label>
+                              <div class="form-group">
+                                <select class="custom-select custom-select-lg" required>
+                                  <option value="" disabled selected>Choose a sector</option>
+                                  <option value="Education">Education</option>
+                                  <option value="Corporate">Corporate</option>
+                                  <option value="Government">Government</option>
+                                </select>
+                                <div class="invalid-feedback">Example invalid custom select feedback</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+  
+                        <div class="tab">
+                          <h4>Which products would you like to see ? </h4>
+                          <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                              <div class="custom-control custom-checkbox custom-checkbox-i3-boxed mb-3">
+                                <input type="checkbox" class="custom-control-input" id="i3board">
+                                <label class="custom-control-label" for="i3board">
+                                  <div class="stacked-label">i3BOARD<span class="description">Interactive
+                                      whiteboards</span>
+                                  </div>
+                                </label>
+                              </div>
+                              <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
+                                <input type="checkbox" class="custom-control-input" id="i3cair">
+                                <label class="custom-control-label" for="i3cair">
+                                  <div class="stacked-label">i3CAIR<span class="description">Air quality sensor</span>
+                                  </div>
+                                </label>
+                              </div>
+                              <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
+                                <input type="checkbox" class="custom-control-input" id="i3huddle">
+                                <label class="custom-control-label" for="i3huddle">
+                                  <div class="stacked-label">i3HUDDLE<span class="description">Meeting room
+                                      touchscreens</span></div>
+                                </label>
+                              </div>
+                              <div class="custom-control custom-checkbox custom-checkbox-i3-boxed mb-3">
+                                <input type="checkbox" class="custom-control-input" id="imolearn">
+                                <label class="custom-control-label" for="imolearn">
+                                  <div class="stacked-label">iMO-LEARN<span class="description">Active sitting cube</span>
+                                  </div>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                              <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
+                                <input type="checkbox" class="custom-control-input" id="i3learnhub">
+                                <label class="custom-control-label" for="i3learnhub">
+                                  <div class="stacked-label">i3LEARNHUB<span class="description">Learning platform</span>
+                                  </div>
+                                </label>
+                              </div>
+                              <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
+                                <input type="checkbox" class="custom-control-input" id="i3sixty">
+                                <label class="custom-control-label" for="i3sixty">
+                                  <div class="stacked-label">i3SIXTY<span class="description">Digital flipchart</span>
+                                  </div>
+                                </label>
+                              </div>
+                              <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
+                                <input type="checkbox" class="custom-control-input" id="i3projector">
+                                <label class="custom-control-label" for="i3projector">
+                                  <div class="stacked-label">i3PROJECTOR<span class="description">Projector</span></div>
+                                </label>
+                              </div>
+                              <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
+                                <input type="checkbox" class="custom-control-input" id="i3rdm">
+                                <label class="custom-control-label" for="i3rdm">
+                                  <div class="stacked-label">i3RDM<span class="description">Remote device
+                                      management</span>
+                                  </div>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                              <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
+                                <input type="checkbox" class="custom-control-input" id="i3sync">
+                                <label class="custom-control-label" for="i3sync">
+                                  <div class="stacked-label">i3SYNC<span class="description">Wireless screen
+                                      sharing</span>
+                                  </div>
+                                </label>
+                              </div>
+                              <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
+                                <input type="checkbox" class="custom-control-input" id="i3touch">
+                                <label class="custom-control-label" for="i3touch">
+                                  <div class="stacked-label">i3TOUCH<span class="description">Interactive touch
+                                      screens</span></div>
+                                </label>
+                              </div>
+                              <div class="custom-control custom-checkbox custom-checkbox-i3-boxed  mb-3">
+                                <input type="checkbox" class="custom-control-input" id="zoomroomops">
+                                <label class="custom-control-label" for="zoomroomops">
+                                  <div class="stacked-label">Zoom room OPS<span class="description">OPS Computer</span>
+                                  </div>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+  
+                        <div class="form-navigation">
+                          <div class="cta-wrapper">
+                            <button type="button" class="btn btn-outline-gray-light" id="prevBtn">Previous</button>
+                            <button type="button" class="btn btn-outline-gray-light" id="nextBtn">Next</button>
+                          </div>
+                          <div class="steps">
+                            <span class="step"></span>
+                            <span class="step"></span>
+                          </div>
+                        </div>
+  
+                      </form>
+                    </div>
+                  </div>
+                </div>
+            </section>
+          </div>
+        </main>
+        <footer class="bg-white">
+    <!--New Footer-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-sm-6 footer-spacing">
+                <div class="footer-content">
+                    <div class="footer-content-wrap">
+                        <h4>Education Solutions</h4>
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-item"><a href="/en/product-overview-education/touchscreens/"
+                                    class="nav-link">Touch Screens</a></li>
+                            <li class="nav-item"><a href="/en/product-overview-education/interactive-whiteboards/"
+                                    class="nav-link">Interactive Whiteboards</a></li>
+                            <li class="nav-item"><a href="/en/product-overview-education/wireless-presenting/"
+                                    class="nav-link">Wireless Presenting</a></li>
+                            <li class="nav-item"><a href="/en/product-overview-education/education-software/"
+                                    class="nav-link">Software for Education</a></li>
+                            <li class="nav-item"><a href="/en/product-overview-education/success-stories/"
+                                    class="nav-link">Education Case Studies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-sm-6 footer-spacing">
+                <div class="footer-content">
+                    <div class="footer-content-wrap">
+                        <h4>Business Solutions</h4>
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-item"><a href="/en/product-overview-business/touchscreens/"
+                                    class="nav-link">Touch Screens</a></li>
+                            <li class="nav-item"><a href="/en/product-overview-business/interactive-whiteboards/"
+                                    class="nav-link">Interactive Whiteboards</a></li>
+                            <li class="nav-item"><a href="/en/product-overview-business/wireless-presenting/"
+                                    class="nav-link">Wireless Presenting</a></li>
+                            <li class="nav-item"><a href="/en/product-overview-business/business-software/"
+                                    class="nav-link">Software for Business</a></li>
+                            <li class="nav-item"><a href="/en/product-overview-business/success-stories/"
+                                    class="nav-link">Business Case Studies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-sm-6 footer-spacing">
+                <div class="footer-content">
+                    <div class="footer-content-wrap">
+                        <h4>Resources</h4>
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-item"><a href="/en/resources/partner-portal/" class="nav-link">Partner
+                                    Portal</a></li>
+                            <li class="nav-item"><a href="/en/resources/i3-academy/" class="nav-link">i3 Academy</a>
+                            </li>
+                            <li class="nav-item"><a href="/en/faq/" class="nav-link">FAQ</a></li>
+                            <li class="nav-item"><a href="/en/brand-assets/" class="nav-link">Brand Assets</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-sm-6 footer-spacing">
+                <div class="footer-content">
+                    <div class="footer-content-wrap">
+                        <h4>Useful links</h4>
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-item"><a href="/en/about-us/" class="nav-link">About us</a></li>
+                            <li class="nav-item"><a href="/en/contact/" class="nav-link">Contact us</a></li>
+                            <li class="nav-item"><a href="/en/jobs/" class="nav-link">Jobs</a></li>
+                            <li class="nav-item"><a href="/en/get-support/" class="nav-link">Get support</a></li>
+                            <li class="nav-item"><a href="/en/get-support/warranty/" class="nav-link">Warranty</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-sm-6 footer-spacing">
+                <div class="footer-content">
+                    <div class="footer-social-container">
+                        <ul class="nav">
+                            <li class="nav-item btn-social"><a href="https://www.facebook.com/iii.technologies/"
+                                    target="_blank" class="nav-link"><i class="fab fa-facebook-f fa-lg"></i></a></li>
+                            <li class="nav-item btn-social"><a href="https://www.linkedin.com/company/3336340/"
+                                    target="_blank" class="nav-link"><i class="fab fa-linkedin-in fa-lg"></i></a></li>
+                            <li class="nav-item btn-social"><a href="https://twitter.com/i3_Technologies"
+                                    target="_blank" class="nav-link"><i class="fab fa-twitter fa-lg"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sub-footer" class="bg-white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 py-2">
+                    <small>
+                        <span>i3 Technologies © 2020</span>
+                        <a href="/en/policies/terms-and-conditions/">TERMS &amp; CONDITIONS</a>
+                        <a href="/en/policies/privacy-policy/">PRIVACY POLICY</a>
+                        <a href="/en/policies/cookie-policy/">COOKIES POLICY</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
       </div>
-    </main>
+    </div>
   </div>
   <script>
     // Form validation
@@ -599,15 +1007,6 @@
       // console.log('test', 'testing click');
     };
   </script>
-  <!-- <footer class="page-footer font-small d-none">
-
-
-    <div class="footer-copyright text-center py-3 bg-dark text-light">
-        © 2020 Copyright
-    </div>
-
-  
-  </footer> -->
 <script type="text/javascript" src="./assets/js/bundle.js"></script></body>
 
 </html>
