@@ -56,13 +56,22 @@ html {
                     header {
                         z-index: 1000;
                         position: relative;
+                        position: fixed;
+                        left: 0;
+                        right: 0;
                     }
                     main {
                         display: flex; 
                         flex: 1;
                         flex-direction: column;
                         .main-content {
-                            padding-top: 36px;
+                            padding-top: calc(#{$navbarheight});
+                            @include media-breakpoint-down(md) {
+                                padding-top: calc(#{$navbarheightmd});
+                            }
+                            @include media-breakpoint-down(md) {
+                                padding-top: calc(#{$navbarheightsm});
+                            }
                             display: flex; 
                             flex: 1;
                             flex-direction: column;
@@ -78,44 +87,3 @@ html {
      
     }
 }
-
-
-/*DEBUG GSAP*/
-.gs-dev-tools {
-    z-index: 50000;
-}
-
-.container {
-    &.container-edge-to-edge {
-        padding: 0px;
-        width: 100%;
-        max-width: unset;
-
-        &.row {
-            margin: 0px;
-        }
-    }
-}
-
-.grid-flexrow {
-    display: flex;
-
-    .row {
-        display: flex;
-        flex: 1;
-        width: 100%;
-
-        [class|="col"] {
-            display: flex;
-            padding: 0px;
-
-            >div {
-                display: flex;
-                flex: 1;
-                flex-direction: column;
-                width: 100%;
-            }
-        }
-    }
-}
-

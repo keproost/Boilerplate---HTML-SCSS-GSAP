@@ -15,7 +15,6 @@ import videoAnimations from './gsap/custom-video-animations';
 import customFormScripts from './page/custom-formscripts';
 import customSliders from './page/custom-slider';
 import navbarFullscreen from './page/custom-navbar-fullscreen';
-
 // Barba
 // document.addEventListener('DOMContentLoaded', function () {
 gsap.registerPlugin(ScrollToPlugin);
@@ -42,6 +41,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('DOMContentLoaded', function () {
     // init();
+    // window.addEventListener('scroll', function () {
+
+    // });
     barba.init({
         debug: true,
         views: [{
@@ -126,10 +128,11 @@ window.addEventListener('DOMContentLoaded', function () {
     });
     barba.hooks.after(() => {
         navbarFullscreen.navbarFullscreenInit();
-        setTimeout(function () { customSliders.slickSliderHero(); }, 250);
+        // setTimeout(function () { customSliders.slickSliderHero(); }, 250);
     });
     barba.hooks.afterEnter(() => {
-        setTimeout(function () { customSliders.slickSliderHero(); }, 250);
+        customSliders.slickSliderHero();
+        // setTimeout(function () { customSliders.slickSliderHero(); }, 250);
 
         videoAnimations.videoStartOnEnterRewindOnLeave();
         textEffects.textEffect1();

@@ -14,6 +14,7 @@
 
 .page-bookademo {
     .main-content {
+        padding-top: calc(#{$navbarheight} + 48px);
         background-color: $gray-white;
     }
     footer {
@@ -23,5 +24,119 @@
 
 .page-home {
 
+}
+
+
+
+
+.btn-text {
+    &:focus {
+    box-shadow: none;    
+    }
+}
+
+
+
+//DROPDOWN STYLING
+button, .btn {
+    &.dropdown-toggle {
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+.dropdown-menu {
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    background-color: rgba(255,255,255,0.75);
+    -webkit-backdrop-filter: saturate(180%) blur(15px);
+    backdrop-filter: saturate(180%) blur(15px);
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.18), 0 12px 12px rgba(0,0,0,0.10);
+
+    a {
+        display: block;
+        width: 100%;
+    }
+
+    .dropdown-item{
+        text-transform: uppercase;
+        font-size: 14px;
+        color: $gray-light;        
+        padding: 0.50rem 1.5rem;
+        transition: all cubic-bezier(0.165, 0.84, 0.44, 1);
+        &.active, &:active {
+            background-color: $gray-lighter;
+            font-weight: 600;
+            color: $gray-dark;
+            &:hover, &:focus {
+            background-color: $gray-lighter;  
+            }
+        }
+        &:hover, &:focus {
+            background-color: $gray-lightest;
+            color: $gray;
+            font-weight: 600;
+        }
+    }
+}
+
+.dropup {
+    .dropdown-menu {
+        margin-bottom: 1.125rem;
+    }
+}
+
+
+
+/*DEBUG GSAP*/
+.gs-dev-tools {
+    z-index: 50000;
+}
+
+.container {
+    &.container-edge-to-edge {
+        padding: 0px;
+        width: 100%;
+        max-width: unset;
+
+        &.row {
+            margin: 0px;
+        }
+    }
+}
+
+.grid-flexrow {
+    display: flex;
+
+    .row {
+        display: flex;
+        flex: 1;
+        width: 100%;
+
+        [class|="col"] {
+            display: flex;
+            padding: 0px;
+
+            >div {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.btn-link {
+    color: $gray-light;
+    font-weight: regular;
+    font-family: 'karmillaregular', sans-serif;
+    &:hover {
+        text-decoration: none;
+        color: $gray-darker;
+    }
 }
 

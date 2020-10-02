@@ -12,6 +12,7 @@ import './module/gsap/custom-parallax-3d';
 import './module/gsap/custom-video-animations';
 import './module/page/custom-formscripts';
 import './module/page/custom-navbar-fullscreen';
+import './module/page/custom-navbar-search';
 import './module/page/custom-slider';
 // import './module/gsap/custom-onclick-animations';
 // import './module/gsap/custom-popover-animations';

@@ -28,6 +28,20 @@ const navbarFullscreen = {
             $('#hamburger').toggleClass('active');
         });
 
+        let prevScrollPos = window.pageYOffset;
+        window.onscroll = function () {
+            const menuArea = document.getElementById('topnav');
+            const currentScrollPos = window.pageYOffset;
+            if (prevScrollPos > currentScrollPos) {
+                menuArea.classList.remove('navbar-scrolled');
+                menuArea.classList.add('navbar-scrollstyling');
+            } else {
+                menuArea.classList.add('navbar-scrolled');
+                menuArea.classList.remove('navbar-scrollstyling');
+            }
+            prevScrollPos = currentScrollPos;
+        };
+
         // $(document).ready(function () {
         //     $('body').toggleClass('loaded');
         // });

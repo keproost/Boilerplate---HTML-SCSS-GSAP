@@ -112,11 +112,12 @@ const customSliders = {
                 // autoplaySpeed: 2000,
                 pauseOnFocus: true,
                 arrows: true,
-                infinite: true,
+                infinite: false,
                 speed: 500,
                 slidesToShow: 1,
                 touchMove: true,
                 slidesToScroll: 1,
+                waitForAnimate: false,
                 draggable: true,
                 responsive: [{
                     breakpoint: 500,
@@ -129,9 +130,9 @@ const customSliders = {
                     }
                 }]
             })
-                // .on('init', function () {
-                //     sliderMasterTimeline.play();
-                // })
+                .on('init', function () {
+                    sliderMasterTimeline.pause();
+                })
                 .on('afterChange', function () {
                     sliderMasterTimeline.play();
                 })

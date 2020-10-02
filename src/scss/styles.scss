@@ -5,6 +5,7 @@
 @import "vendor/bootstrap/bootstrap-config.scss";
 @import "vendor/slickslider/slick.scss";
 @import "vendor/slickslider/slick-theme.scss";
+@import "vendor/flag-icon-css/flag-icon.scss";
 
 //i3 Branding
 
@@ -12,6 +13,7 @@
 @import "brand/i3/iconography";
 @import "brand/i3/forms";
 @import "brand/i3/styles";
+
 
 
 // I3 LEGACY
@@ -34,26 +36,28 @@
 
 
 // POC
-// @import "config/custom-variables.scss";
-// @import "config/bootstrap-config.scss";
-// @import "brand/typography.scss";
-// @import "brand/custom.scss";
 @import "utilities/utilities.scss";
 @import "components/general-component-config.scss";
-// @import "components/navigation-main.scss";
 @import "components/infoblock.scss";
 @import "components/page-loaders.scss";
 @import "components/sliderHero.scss";
 @import "components/fullscreen-slider.scss";
 @import "components/navbar-fullscreen.scss";
-// @import "components/i3-mainmenu.scss";
-// @import "components/features.scss";
-// @import "components/slick-slider.scss";
-
-@import "components/gsap-test.scss";
 @import "components/footer.scss";
-@import "components/i3-test.scss";
-@import "components/slider-fullscreen-gsap.scss";
+
 @import "pages/master.scss";
 @import "pages/pages.scss";
 @import "poc/poc.scss";
+// @import "components/navigation-main.scss";
+// @import "config/custom-variables.scss";
+// @import "config/bootstrap-config.scss";
+// @import "brand/typography.scss";
+// @import "brand/custom.scss";
+// @import "components/i3-mainmenu.scss";
+// @import "components/features.scss";
+// @import "components/slick-slider.scss";
+// @import "components/gsap-test.scss";
+
+// @import "components/i3-test.scss";
+// @import "components/slider-fullscreen-gsap.scss";
+
