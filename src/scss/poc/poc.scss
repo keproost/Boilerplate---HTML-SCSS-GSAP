@@ -16,42 +16,6 @@
     overflow: hidden;
   }
 
-  .imageStackAnimation  {
-    transform: perspective(500px);
-    height: 600px;
-    width: 600px;
-    z-index: 50;
-    position: relative;
-    transform-style: preserve-3d;
-    transform: translate3d(0px, 0px, 0px);
-    .layer {
-      position: absolute; 
-      will-change: transform;
-      bottom: 0;
-      margin: auto;
-      background-size: contain; 
-      background-position: center center;
-      width: 100%;
-      height: 100%;
-      z-index: 500;
-    }
-    &.touchscreens {
-      .touchscreens-i3sixty {
-        transform: translateZ(1000px);
-      }
-      .touchscreens-pattern {
-        transform: translateZ(-2000px);
-      }
-      .touchscreens-ex {
-        transform: translateZ(-500px);
-      }
-    }
-  }
-
-  .btn {
-    transition: inherit !important;
-  }
-
 
   // .infoblock {
   //   overflow: visible !important;
@@ -59,15 +23,3 @@
   //   -webkit-transform-style: preserve-3d;
   // }
 
-
-  .animatedTexti3Dot {
-    div:last-child {
-      > div:last-child {
-        > div:last-child{
-          display: inline-block;
-          color:#ed6d05;
-          font-size: 150px;
-        }
-      }
-    }
-  }

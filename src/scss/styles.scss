@@ -36,14 +36,14 @@
 
 
 // POC
-@import "utilities/utilities.scss";
-@import "components/general-component-config.scss";
-@import "components/infoblock.scss";
-@import "components/page-loaders.scss";
-@import "components/sliderHero.scss";
+@import "components/config.scss";
+@import "components/c-infoblock.scss";
+@import "components/c-pageloaders.scss";
+@import "components/c-heroslider.scss";
+@import "components/c-navbar.scss";
+@import "components/c-footer.scss";
 @import "components/fullscreen-slider.scss";
-@import "components/navbar-fullscreen.scss";
-@import "components/footer.scss";
+@import "utilities/utilities.scss";
 
 @import "pages/master.scss";
 @import "pages/pages.scss";

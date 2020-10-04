@@ -1,81 +1,272 @@
+// .page-productOverview {
+//     .main-content {
+//         #touchscreens {
+//             min-height: 100vh;
+//             display: flex;
+//             flex: 1;
+//             flex-direction: row;
+//             align-items: center;
+//             justify-content: center;
+//         }
+//     }
+// }
 
-.page-productOverview {
+.page-home {
     .main-content {
-        #touchscreens {
-            min-height: 100vh;
-            display: flex;
-            flex: 1;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-        }
-    } 
-}
-
-.page-bookademo {
-    .main-content {
-        padding-top: calc(#{$navbarheight} + 48px);
-        background-color: $gray-white;
+        padding-top: 0 !important;
     }
+
     footer {
         display: none;
     }
 }
 
-.page-home {
+.page-bookademo {
+    #bookademo {
+        display: flex; 
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
+    }
+    .main-content {
+        padding-top: calc(#{$navbarheight} + 48px);
+        background-color: $gray-white;
+    }
 
+    footer {
+        display: none;
+    }
+}
+
+.page-home {}
+
+
+.imageStackAnimation {
+    transform: perspective(500px);
+    height: 600px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 50;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translate3d(0px, 0px, 0px);
+
+    @include media-breakpoint-down(xxl) {
+        height: 600px;
+        width: 600px;
+    }
+
+    @include media-breakpoint-down(xl) {
+        height: 500px;
+        width: 500px;
+    }
+
+    @include media-breakpoint-down(lg) {
+        height: 500px;
+        width: 500px;
+    }
+
+    @include media-breakpoint-down(md) {
+        height: 500px;
+        width: 500px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        height: 300px;
+        width: 300px;
+    }
+
+    @include media-breakpoint-down(xs) {
+        height: 200px;
+        width: 200px;
+    }
+
+    //Galaxy fold
+    @media (width: 280px) and (height: 653px) {
+        height: 200px;
+        width: 200px;
+    }
+
+    //Galaxy fold
+    @media (width: 320px) and (height: 568px) {
+        height: 264px;
+        width: 264px;
+    }
+
+    //Galaxy fold
+    @media (width: 280px) and (height: 653px) {
+        height: 200px;
+        width: 200px;
+    }
+
+    .layer {
+        position: absolute;
+        will-change: transform;
+        bottom: 0;
+        margin: auto;
+        background-size: contain;
+        background-position: center center;
+        width: 100%;
+        height: 100%;
+        z-index: 500;
+    }
+
+    &.touchscreens {
+        .touchscreens-i3sixty {
+            transform: translateZ(1000px);
+        }
+
+        .touchscreens-pattern {
+            transform: translateZ(-2000px);
+        }
+
+        .touchscreens-ex {
+            transform: translateZ(-500px);
+        }
+    }
 }
 
 
+.display-1.animatedTexti3Dot, .display-2.animatedTexti3Dot, .display-3.animatedTexti3Dot {
+    div:last-child {
+        >div:last-child {
+            >div:last-child {
+                display: inline-block;
+                color: $primary;
+                font-size: 5.5rem;
+            }
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        div:last-child {
+            >div:last-child {
+                >div:last-child {
+                    display: inline-block;
+                    color: $primary;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }    
+}
 
-
-.btn-text {
-    &:focus {
-    box-shadow: none;    
+h1.animatedTexti3Dot, h2.animatedTexti3Dot {
+    div:last-child {
+        >div:last-child {
+            >div:last-child {
+                display: inline-block;
+                color: $primary;
+                font-size: 4rem;
+            }
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        div:last-child {
+            >div:last-child {
+                >div:last-child {
+                    display: inline-block;
+                    color: $primary;
+                    font-size: 2.75rem;
+                }
+            }
+        }
     }
 }
 
 
 
-//DROPDOWN STYLING
-button, .btn {
-    &.dropdown-toggle {
-        &:focus {
-            box-shadow: none;
+
+//Button config tweaks
+//Create glow buttons based on bootstrap theme colors
+@each $color,
+$value in $theme-colors {
+    .btn-glow-#{$color} {
+        color: color-yiq($value);
+        box-shadow: 0 1px 30px 1px rgba($value, 1);
+
+        &:hover {
+            box-shadow: 0 1px 30px 1px rgba($value, 0);
         }
+
+        margin-top: 0.5rem;
+        @include button-variant($value, $value, $value, $value, $value);
+    }
+}
+
+//Create muted buttons based on bootstrap theme colors //WIp
+$mutedDesaturationValue: 70%;
+@each $color,
+$value in $theme-colors {
+    .btn-muted-#{$color} {
+        color: color-yiq($value);
+        margin-top: 0.5rem;
+        @include button-variant(desaturate($value, $mutedDesaturationValue), desaturate($value, $mutedDesaturationValue), desaturate($value, $mutedDesaturationValue), desaturate($value, $mutedDesaturationValue), desaturate($value, $mutedDesaturationValue));
+    }
+}
+
+
+
+.btn-text {
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+// .btn-secondary, 
+// .btn-tertiary, 
+// .btn-glow-tertiary, 
+// .btn-glow-secondary {
+//     color: white;
+// }
+
+.btn,
+button {
+    border-radius: 3rem;
+}
+
+.languageselector {
+    .flag-icon {
+        margin-right: 12px;
     }
 }
 
 .dropdown-menu {
     margin-bottom: 1rem;
     padding: 0.5rem 0;
-    background-color: rgba(255,255,255,0.75);
+    background-color: rgba(255, 255, 255, 0.75);
     -webkit-backdrop-filter: saturate(180%) blur(15px);
     backdrop-filter: saturate(180%) blur(15px);
     border: none;
     border-radius: 6px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.18), 0 12px 12px rgba(0,0,0,0.10);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18), 0 12px 12px rgba(0, 0, 0, 0.10);
 
     a {
         display: block;
         width: 100%;
     }
 
-    .dropdown-item{
+    .dropdown-item {
         text-transform: uppercase;
-        font-size: 14px;
-        color: $gray-light;        
+        font-size: 0.75rem;
+        color: $gray-light;
         padding: 0.50rem 1.5rem;
         transition: all cubic-bezier(0.165, 0.84, 0.44, 1);
-        &.active, &:active {
+
+        &.active,
+        &:active {
             background-color: $gray-lighter;
             font-weight: 600;
             color: $gray-dark;
-            &:hover, &:focus {
-            background-color: $gray-lighter;  
+
+            &:hover,
+            &:focus {
+                background-color: $gray-lighter;
             }
         }
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
             background-color: $gray-lightest;
             color: $gray;
             font-weight: 600;
@@ -132,11 +323,11 @@ button, .btn {
 
 .btn-link {
     color: $gray-light;
-    font-weight: regular;
-    font-family: 'karmillaregular', sans-serif;
+    font-weight: 300;
+    font-family: $font-regular;
+
     &:hover {
         text-decoration: none;
         color: $gray-darker;
     }
 }
-

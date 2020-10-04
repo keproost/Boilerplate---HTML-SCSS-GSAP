@@ -12,6 +12,7 @@ const textEffects = {
                 trigger: scrollTextEffect1Element,
                 start: 'top bottom',
                 end: '',
+                // immediateRender: false,
                 // onToggle: self => gsap.to(scrollTextEffect1Element, { opacity: self.isActive ? 1 : 0 }),
                 toggleActions: 'restart none none none',
                 // markers: true
@@ -24,6 +25,7 @@ const textEffects = {
                 opacity: 0,
                 y: 100,
                 stagger: { amount: 0.2 },
+                // immediateRender: false,
                 ease: 'back.out(1)',
                 overwrite: 'auto'
             });
@@ -38,6 +40,7 @@ const textEffects = {
                 onToggle: self => gsap.to(scrollTextEffect2Element, { opacity: self.isActive ? 1 : 0 }),
                 toggleActions: 'restart pause restart none',
                 ease: textEffectEase,
+                // immediateRender: false,
                 // markers: true
             },
             });
@@ -64,6 +67,7 @@ const textEffects = {
             const splitTimeline = gsap.timeline({ scrollTrigger: {
                 trigger: scrollTextEffect3Element,
                 start: 'top 80%',
+                // immediateRender: false,
                 end: 'bottom 50%',
                 onToggle: self => gsap.to(scrollTextEffect3Element, { opacity: self.isActive ? 1 : 0 }),
                 toggleActions: 'restart pause restart none',
@@ -75,6 +79,7 @@ const textEffects = {
             $('.scrollTextEffect3').css('persspective', '400');
             splitTimeline.from(splitTitle.lines, {
                 duration: 0.5,
+                // immediateRender: false,
                 opacity: 0,
                 rotationX: -120,
                 force3D: true,
@@ -91,6 +96,7 @@ const textEffects = {
                 trigger: scrollTextEffect4Element,
                 start: 'top 80%',
                 end: 'bottom 50%',
+                // immediateRender: false,
                 // markers: true
             }
             });
@@ -111,6 +117,7 @@ const textEffects = {
                 delay: 1.5,
                 opacity: 0,
                 scaleX: 0,
+                immediateRender: false,
                 y: 20,
                 transformOrigin: 'center center',
                 stagger: { amount: 0.8 },
@@ -130,6 +137,7 @@ const textEffects = {
                 trigger: scrollTextEffectWipeFromLeftElement,
                 start: 'top bottom',
                 end: '+=500',
+                // immediateRender: false,
                 scrub: true,
                 // markers: true
             }
@@ -138,6 +146,7 @@ const textEffects = {
             const splitTitle = new SplitText(scrollTextEffectWipeFromLeftElement);
             splitTimeline.from(splitTitle.chars, {
                 duration: 3,
+                // immediateRender: false,
                 opacity: 0,
                 stagger: 0.25,
                 x: -1000,
@@ -154,6 +163,7 @@ const textEffects = {
             const imageStackAnimation = gsap.timeline({ scrollTrigger: {
                 trigger: imageStackContainer,
                 start: 'top bottom',
+                // immediateRender: false,
                 end: 'bottom 80%',
                 scrub: true,
                 toggleActions: 'restart none none none',

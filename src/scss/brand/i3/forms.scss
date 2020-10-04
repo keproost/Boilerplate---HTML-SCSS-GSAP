@@ -2,6 +2,15 @@
     border-color: $gray-lighter;
     color: $gray;
     border-radius: 10px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+select.custom-select {
+    padding-left: 24px;
+    padding-right: 24px;
+    &.custom-select-lg {
+        min-height: 48px;
+    }
 }
 
 label {
@@ -19,6 +28,7 @@ label {
 $placeholder-color: $gray-lighter;
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: $gray-lighter; opacity: 1; /* Firefox */
+    font-size: 1rem;
   }
 ::-webkit-input-placeholder {color: $placeholder-color !important;}
 :-moz-placeholder {color: $placeholder-color !important; opacity: 1;}
@@ -32,7 +42,9 @@ $placeholder-color: $gray-lighter;
     border-radius: 10px;
     border-color: $gray-lighter;
    }
-select:invalid { color: $placeholder-color; }
+select:invalid { 
+    color: $placeholder-color; 
+}
 
 
 //Transform scale on buttons gives issues with borders not rendering well

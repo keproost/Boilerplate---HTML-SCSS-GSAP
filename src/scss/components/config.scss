@@ -1,0 +1,64 @@
+//Molecules
+.contentblock {
+    display: flex;
+    position: relative;
+    flex: 1;
+    padding: 1rem;
+    @include media-breakpoint-down(xl) {
+      padding: 3rem;
+      }
+    @include media-breakpoint-down(lg) {
+      padding: 2rem;
+      }
+    @include media-breakpoint-down(md) {
+      padding: 1.5rem;
+      }                  
+    @include media-breakpoint-down(xs) {
+      padding: 0rem;
+      }
+    // overflow: hidden;
+    .backgroundImage {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      &.lax {
+        transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+      }
+    } 
+
+    .backgroundVideo {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      > video {
+        object-fit: cover;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%; 
+        height: 100%;
+      }
+    }
+    .content {
+      display: flex;
+      flex: 1;
+      z-index: 50;
+    }
+    &.slickslider {
+      display: block; 
+      padding: 0px;
+      overflow: auto;
+    }
+  }
+  
+  

@@ -120,10 +120,10 @@ const scrollAnimations = {
         // console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
         if (driftUp) {
             driftUp.forEach((driftUpElement) => {
-                const driftUpAnimation = gsap.timeline({});
+                const driftUpAnimation = gsap.timeline({ ease: 'sine.easeInOut' });
                 driftUpAnimation
                     .from(driftUpElement, { y: 0 })
-                    .to(driftUpElement, { y: -200, ease: 'easeInOut' });
+                    .to(driftUpElement, { y: -200 });
 
                 ScrollTrigger.create({
                     trigger: driftUpElement,
@@ -141,9 +141,9 @@ const scrollAnimations = {
         // console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
         if (driftUp) {
             driftUp.forEach((driftUpElement) => {
-                const driftUpAnimation = gsap.timeline({});
+                const driftUpAnimation = gsap.timeline({ ease: 'sine.easeInOut' });
                 driftUpAnimation
-                    .from(driftUpElement, { y: 0, ease: 'Back.easeOut' })
+                    .from(driftUpElement, { y: 0 })
                     .to(driftUpElement, { y: -200 });
 
                 ScrollTrigger.create({
@@ -162,9 +162,9 @@ const scrollAnimations = {
         // console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
         if (driftUp) {
             driftUp.forEach((driftUpElement) => {
-                const driftUpAnimation = gsap.timeline({});
+                const driftUpAnimation = gsap.timeline({ ease: 'sine.easeInOut' });
                 driftUpAnimation
-                    .from(driftUpElement, { y: 0, ease: 'Back.easeOut' })
+                    .from(driftUpElement, { y: 0 })
                     .to(driftUpElement, { y: -400 });
 
                 ScrollTrigger.create({
@@ -183,17 +183,21 @@ const scrollAnimations = {
         // console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
         if (driftUp) {
             driftUp.forEach((driftUpElement) => {
-                const driftUpAnimation = gsap.timeline({});
+                const driftUpAnimation = gsap.timeline({ ease: 'power5.sine' });
                 driftUpAnimation
-                    .from(driftUpElement, { y: 0, ease: 'Circ.easeInOut', duration: 1.5 })
-                    .to(driftUpElement, { y: 200 });
-
+                    .from(driftUpElement, { x: 0 })
+                    .to(driftUpElement, { x: 500, opacity: 0 })
+                    .to(driftUpElement, { x: 0, opacity: 1 });
+                    // .to(driftUpElement, { x: 0, opacity: 1 });
                 ScrollTrigger.create({
                     trigger: driftUpElement,
                     animation: driftUpAnimation,
-                    start: 'top 50%',
-                    end: 'end top',
-                    scrub: 1,
+                    start: 'top -10%',
+                    end: 'bottom 110%',
+
+                    // yoyo: true,
+                    // yoyoEase: true,
+                    scrub: 3,
                     once: false,
                 });
             });
@@ -204,9 +208,9 @@ const scrollAnimations = {
         // console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
         if (driftUp) {
             driftUp.forEach((driftUpElement) => {
-                const driftUpAnimation = gsap.timeline({});
+                const driftUpAnimation = gsap.timeline({ ease: 'sine.easeInOut' });
                 driftUpAnimation
-                    .from(driftUpElement, { y: 0, ease: 'Circ.easeInOut' })
+                    .from(driftUpElement, { y: 0 })
                     .to(driftUpElement, { y: 300 });
 
                 ScrollTrigger.create({
@@ -225,9 +229,9 @@ const scrollAnimations = {
         // console.log('SCROLLANIMATION - DRIFTUPELEMENTS', driftUp);
         if (driftUp) {
             driftUp.forEach((driftUpElement) => {
-                const driftUpAnimation = gsap.timeline({});
+                const driftUpAnimation = gsap.timeline({ ease: 'sine.easeInOut' });
                 driftUpAnimation
-                    .from(driftUpElement, { y: 0, ease: 'Back.easeOut' })
+                    .from(driftUpElement, { y: 0 })
                     .to(driftUpElement, { y: 400 });
 
                 ScrollTrigger.create({

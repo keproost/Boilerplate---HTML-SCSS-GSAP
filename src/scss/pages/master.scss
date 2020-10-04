@@ -2,8 +2,7 @@
 
 html {
     //Remove scrollbar jump
-    width: 100vw;
-    overflow-x: hidden;
+    // margin-left: calc(100vw - 100%);
     // overflow: hidden;
     // scroll-behavior: smooth;
     // overflow: hidden;
@@ -28,7 +27,7 @@ html {
             flex: 1;
             flex-direction: column;
             #app {
-                display: flex; 
+                display: flex;
                 flex: 1;
                 #loaders {
                     z-index: 9999;

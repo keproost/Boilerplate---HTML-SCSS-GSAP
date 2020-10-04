@@ -1,0 +1,455 @@
+@mixin css3-prefix($property, $value) {
+    -webkit-#{$property}: #{$value};
+    -khtml-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -ms-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    #{$property}: #{$value};
+}
+
+// TRANSFORM
+@mixin transform($params) {
+    @include css3-prefix('transform', $params);
+}
+
+//CSS FILTERS
+@mixin filter($filter-type, $filter-amount) {
+    -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+    -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+    -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+    -o-filter: $filter-type+unquote('(#{$filter-amount})');
+    filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+// TRANSITION
+@mixin transition($what: all, $length: 1s, $easing: ease-in-out) {
+    @include css3-prefix('transition', $what $length $easing);
+}
+
+$arrow-color: $gray-light;
+
+.scrollbar-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 4px;
+}
+
+
+//VARIABLES
+//Black
+$black-100: rgba(0, 0, 0, 1);
+$black-90: rgba(0, 0, 0, 0.9);
+$black-80: rgba(0, 0, 0, 0.8);
+$black-70: rgba(0, 0, 0, 0.7);
+$black-60: rgba(0, 0, 0, 0.6);
+$black-50: rgba(0, 0, 0, 0.5);
+$black-40: rgba(0, 0, 0, 0.4);
+$black-30: rgba(0, 0, 0, 0.3);
+$black-20: rgba(0, 0, 0, 0.2);
+$black-10: rgba(0, 0, 0, 0.1);
+
+//White
+$white-100: rgba(255, 255, 255, 1);
+$white-90: rgba(255, 255, 255, 0.9);
+$white-80: rgba(255, 255, 255, 0.8);
+$white-70: rgba(255, 255, 255, 0.7);
+$white-60: rgba(255, 255, 255, 0.6);
+$white-50: rgba(255, 255, 255, 0.5);
+$white-40: rgba(255, 255, 255, 0.4);
+$white-30: rgba(255, 255, 255, 0.3);
+$white-20: rgba(255, 255, 255, 0.2);
+$white-10: rgba(255, 255, 255, 0.1);
+
+//Invisible
+$transparent: rgba(255, 255, 255, 0);
+
+$yellow: #fbdb45;
+
+//ANIMATIONS stuff
+$hover: all,
+0.2s,
+ease-in;
+$slide: all,
+0.3s,
+cubic-bezier(.55, 0, .1, 1);
+$slide-delay: all,
+0.4s 0.1s,
+cubic-bezier(.55, 0, .1, 1);
+$slide-slow: all,
+0.5s,
+cubic-bezier(.55, 0, .1, 1);
+$zoom: all,
+1s,
+cubic-bezier(.55, 0, .1, 1);
+$zoom-slow: all,
+2.4s,
+cubic-bezier(.55, 0, .1, 1);
+
+.sliderHero {
+    width: 100vw;
+    height: 80vh;
+    @include media-breakpoint-down(md) {
+        height: auto;
+    }
+    .slick-list {
+        overflow: visible;
+        @include media-breakpoint-down(md) {
+            overflow: hidden;
+        }
+        .slick-slide {
+            position: relative;
+            outline: none;
+            z-index: 1;
+            opacity: 0;
+            @include media-breakpoint-down(md) {
+                height: auto;
+            }
+            &.slick-current {
+                opacity: 1;
+            }
+            &.slick-current {
+                z-index: 2;
+            }
+            .sliderHero-slide {
+                width: 100vw;
+                height: 80vh;
+                //Needs to be checked if working on mobile, flex gives issues with slick
+                display: flex !important;
+
+                @include media-breakpoint-down(md) {
+                    height: auto;
+                }
+                background-repeat: no-repeat;
+                background-size: cover;
+                // display: flex !important;
+                // overflow: hidden;
+                position: relative;
+                // .slidercontainer, .sliderrow, .slidercol {
+                //     display: flex; 
+                //     flex: 1;
+                // }
+                .sliderBackground {
+                    background-color: $gray-lightest;
+                    position: absolute; 
+                    right: 0;
+                    top: 100;
+                    bottom: 0;
+                    width: 30vw;
+                    z-index: -1;
+                    border-radius: 50px;
+                    @include media-breakpoint-down(md) {
+                        display: none;
+                    }
+                }
+                .backgroundImage {
+                    position: absolute; 
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    z-index: -1;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center left;
+                    margin: auto; 
+                    height: 100%;
+                    width: 100%;
+                }
+                .content {
+                    display: flex; 
+                    align-items: center;
+                    flex: 1;
+                    @include media-breakpoint-down(md) {
+                        align-items: initial;
+                    }
+                    .row {
+                        @include media-breakpoint-down(md) {
+                            flex-flow: column-reverse;
+                        }
+                    }
+                    .caption {
+                        display: flex; 
+                        align-items: center;
+                        @include media-breakpoint-down(md) {
+                            padding: 1rem;
+                        }
+                        .slideTitle  {
+
+                        }
+                        .slideDescription {
+                            margin-bottom: 24px;
+                        }
+                        .slideSubtitle {
+                            font-size: 1.5rem;
+                            color: $gray;
+                        }
+                    }
+                }
+                .slideImage {
+                    position: relative;
+                    height: 100%;
+                    width: auto;
+                    @include media-breakpoint-down(md) {
+                        z-index: -1;
+                    }
+                    .imageStackSlider {
+
+                        // height: 500px;
+                        // @include media-breakpoint-down(lg) {
+                        //     height: 450px;
+                        // }
+                        // @include media-breakpoint-down(md) {
+                        //     height: 400px;
+                        // }
+                        // @include media-breakpoint-down(sm) {
+                        //     height: 300px;
+                        // }
+                        // @include media-breakpoint-down(xs) {
+                        //     height: 200px;
+                        // }                
+                        img, .slideLayer {
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            top: 0;
+                            bottom: 0;
+                            margin: auto;
+                        }
+                        img {
+                            z-index: 100;
+                            @include media-breakpoint-down(md) {
+                                position: relative;
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+                        .slideLayer {
+                            // display: none;
+                            &.blob-1 {
+                                padding-top: 34.37%;
+                                left: 18%;
+                                top: -10%;
+                                z-index: 10;
+                                width: 700px;
+                                // height: 700px;
+                            };
+                            &.blob-2 {
+                                // transform: scale(0.32) !important;
+                                padding-top: 34.37%;
+                                top: -130%;
+                                right: -150%;
+                                z-index: 20;
+                                width: 250px;
+                                // height: 250px;
+                            };
+                            &.blob-3 {
+                                // transform: scale(0.5) !important;
+                                padding-top: 34.37%;
+                                left: 78%;
+                                top: 160%;
+                                z-index: 150;
+                                width: 340px;
+                                // height: 340px;
+                            };
+                        }
+                    }
+                }
+        
+            }
+        
+        }
+    }    
+   .slick-arrow {
+        position: absolute;
+        width: 150px;
+        top: 0;
+        height: 100%;
+        border: none;
+        outline: none;
+        background-color: $transparent;
+        text-indent: -9999px;
+        z-index: 999;
+        transform: none;
+        cursor: pointer;
+        @include media-breakpoint-down(md) {
+            width: 40px;
+            &:before {
+                transform: scale(0.4) rotate(-45deg) !important;
+            }
+            &:after {
+                transform: scale(0.4) rotate(45deg) !important;
+            }
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 42px;
+            height: 42px;
+            top: 50%;
+            margin-top: -21px;
+            @include transition($slide);
+        }
+        //Extra dash for arrow
+        &:after {
+            // content: "";
+            // position: absolute;
+            // display: block;
+            // height: 2px;
+            // width: 160px;
+            // top: 50%;
+            // background-color: $arrow-color;
+            // @include transition($slide-delay);
+            // opacity: 0;
+        }
+
+        &.slick-prev {
+            left: 0;
+
+            &:before {
+                border-top: 2px solid $arrow-color;
+                border-left: 2px solid $arrow-color;
+                left: 50px;
+                @include media-breakpoint-down(md) {
+                    border-width: 4px !important;
+                    left: 0px
+                }
+
+                @include transform(rotate(-45 + deg));
+            }
+
+            &:after {
+                left: 300px;
+            }
+
+            &:hover {
+                &:before {
+                    left: 120px;
+                }
+
+                &:after {
+                    left: 113px;
+                    opacity: 1;
+                    width: 80px;
+                }
+            }
+        }
+
+        &.slick-next {
+            right: 0;
+
+            &:before {
+                border-bottom: 2px solid $arrow-color;
+                border-right: 2px solid $arrow-color;
+                right: 50px;
+                @include transform(rotate(-45 + deg));
+                @include media-breakpoint-down(md) {
+                    border-width: 4px !important;
+                    right: 0px;
+                }
+            }
+
+            &:after {
+                right: 300px;
+            }
+
+            &:hover {
+                &:before {
+                    right: 120px;
+                }
+
+                &:after {
+                    right: 113px;
+                    opacity: 1;
+                    width: 80px;
+                }
+            }
+        }
+    }
+    .slick-dots {
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+        //bottom config
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        bottom: 30px;
+        text-align: center;
+
+        //side config
+        // padding: 0;
+        // margin: 0;
+        // position: absolute;
+        // left: 30px;
+        // text-align: center;
+        // width: 40px;
+        // height: 100%;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 6px 6px;
+
+            &.slick-active {
+                button {
+                    background-color: $gray-lighter;
+                    height: 18px;
+                    width: 18px;
+
+                    &:hover {
+                        background-color: $gray-light;
+                    }
+                }
+            }
+
+            button {
+                outline: none;
+                display: block;
+                width: 18px;
+                height: 18px;
+                border: 1px solid $transparent;
+                background-color: $gray-lightest;
+                text-indent: -9999px;
+                border-radius: 100%;
+                cursor: pointer;
+                @include transition($hover);
+
+                &:hover {
+                    background-color: $gray-lighter;
+                }
+            }
+        }
+    }  
+    &.fullscreenSlider {
+        height: 100vh !important;
+        margin-bottom: 0px;
+        .slideDescription {
+            max-width: 500px;
+        }
+        @include media-breakpoint-down(md) {
+            height: auto!important;
+            .content {
+                flex-direction: column;
+            }
+            .backgroundImage {
+                position: relative !important;
+                height: 300px !important;
+                background-position: center right !important;
+            }
+        }
+        .sliderHero-slide {
+            height: 100vh !important;
+            @include media-breakpoint-down(md) {
+                height: auto !important;
+            }
+        }
+    }  
+}
+
