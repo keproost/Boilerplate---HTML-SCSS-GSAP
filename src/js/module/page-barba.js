@@ -75,8 +75,8 @@ window.addEventListener('DOMContentLoaded', function () {
         {
             namespace: 'bookademo',
             beforeEnter: () => {
-                customFormScripts.stepFormWizard();
-                // customFormScripts.formValidator();
+                // customFormScripts.stepFormWizard();
+                // custo;mFormScripts.formValidator();
                 // customFormScripts.formCheckboxHighlight();
             },
             afterEnter: () => {
@@ -132,7 +132,13 @@ window.addEventListener('DOMContentLoaded', function () {
         navbarFullscreen.navbarFullscreenInit();
         // setTimeout(function () { customSliders.slickSliderHero(); }, 250);
     });
+    barba.hooks.before(() => {
+        // window.addEventListener('load', function () {
+        //     // customSliders.slickSliderHero();
+        // });
+    });
     barba.hooks.afterEnter(() => {
+        customSliders.slickSliderHero();
         // setTimeout(function () { customSliders.slickSliderHero(); }, 250);
         // smoothScrolling.smoothAnchorScroller();
         videoAnimations.videoStartOnEnterRewindOnLeave();

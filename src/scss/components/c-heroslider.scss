@@ -26,7 +26,7 @@
     @include css3-prefix('transition', $what $length $easing);
 }
 
-$arrow-color: $gray-light;
+$arrow-color: $gray;
 
 .scrollbar-thumb {
     position: absolute;
@@ -96,7 +96,7 @@ cubic-bezier(.55, 0, .1, 1);
         height: auto;
     }
     .slick-list {
-        overflow: visible;
+        // overflow: hidden;
         @include media-breakpoint-down(md) {
             overflow: hidden;
         }
@@ -104,7 +104,7 @@ cubic-bezier(.55, 0, .1, 1);
             position: relative;
             outline: none;
             z-index: 1;
-            opacity: 0;
+            // opacity: 0;
             @include media-breakpoint-down(md) {
                 height: auto;
             }
@@ -140,7 +140,7 @@ cubic-bezier(.55, 0, .1, 1);
                     bottom: 0;
                     width: 30vw;
                     z-index: -1;
-                    border-radius: 50px;
+                    border-radius: 2rem;
                     @include media-breakpoint-down(md) {
                         display: none;
                     }
@@ -180,11 +180,19 @@ cubic-bezier(.55, 0, .1, 1);
 
                         }
                         .slideDescription {
-                            margin-bottom: 24px;
+                            margin-bottom: 1rem;
                         }
                         .slideSubtitle {
                             font-size: 1.5rem;
                             color: $gray;
+                        }
+                        .slideCtaWrapper {
+                            .btn {
+                                margin-right: 1rem;
+                                &:last-child {
+                                    margin-right: 0px;
+                                }
+                            }
                         }
                     }
                 }
@@ -430,6 +438,7 @@ cubic-bezier(.55, 0, .1, 1);
     &.fullscreenSlider {
         height: 100vh !important;
         margin-bottom: 0px;
+        overflow: hidden;
         .slideDescription {
             max-width: 500px;
         }
