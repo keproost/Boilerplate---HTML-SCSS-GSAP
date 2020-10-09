@@ -21,25 +21,25 @@ gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 // Fade in content set
-function init() {
-    const initAnimationBody = new TimelineLite({ repeat: 0 });
-    initAnimationBody
-        .from('body', { ease: 'linear', autoAlpha: 0 })
-        .to('body', { ease: 'linear', autoAlpha: 1 });
-    const initAnimationAppContent = new TimelineLite({ repeat: 0 });
-    initAnimationAppContent
-        .from('#app-content', { ease: 'linear', autoAlpha: 0 })
-        .to('#app-content', { ease: 'linear', autoAlpha: 1 });
-    // $('body').toggleClass('loaded');
-    // $('html').css({ 'overflow-x': 'hidden', 'overflow-y': 'auto' });
-}
+// function init() {
+//     const initAnimationBody = new TimelineLite({ repeat: 0 });
+//     initAnimationBody
+//         .from('body', { ease: 'linear', autoAlpha: 0 })
+//         .to('body', { ease: 'linear', autoAlpha: 1 });
+//     const initAnimationAppContent = new TimelineLite({ repeat: 0 });
+//     initAnimationAppContent
+//         .from('#app-content', { ease: 'linear', autoAlpha: 0 })
+//         .to('#app-content', { ease: 'linear', autoAlpha: 1 });
+//     // $('body').toggleClass('loaded');
+//     // $('html').css({ 'overflow-x': 'hidden', 'overflow-y': 'auto' });
+// }
 
-window.addEventListener('load', function () {
-    init();
-});
+// window.addEventListener('load', function () {
+//     init();
+// });
 
 
-window.addEventListener('DOMContentLoaded', function () {
+// window.addEventListener('DOMContentLoaded', function () {
     // init();
     // window.addEventListener('scroll', function () {
 
@@ -51,6 +51,7 @@ window.addEventListener('DOMContentLoaded', function () {
             beforeOnce: () => {
             },
             afterEnter: () => {
+                setTimeout(function () { customSliders.slickSliderHero(); }, 5000);
                 // pageLoaders.i3logoReveal();
             }
         },
@@ -138,7 +139,7 @@ window.addEventListener('DOMContentLoaded', function () {
         // });
     });
     barba.hooks.afterEnter(() => {
-        customSliders.slickSliderHero();
+        // customSliders.slickSliderHero();
         // setTimeout(function () { customSliders.slickSliderHero(); }, 250);
         // smoothScrolling.smoothAnchorScroller();
         videoAnimations.videoStartOnEnterRewindOnLeave();
@@ -162,7 +163,7 @@ window.addEventListener('DOMContentLoaded', function () {
         // filterEffects.filterEffect1();
         // pageLoaders.beforeOnceMaskFadeIn();
     });
-});
+// });
 
 // barba.hooks.beforeEnter(() => {
 //     navbarFullscreen.navbarFullscreenInit();

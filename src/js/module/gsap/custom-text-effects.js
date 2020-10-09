@@ -145,10 +145,10 @@ const textEffects = {
 
             const splitTitle = new SplitText(scrollTextEffectWipeFromLeftElement);
             splitTimeline.from(splitTitle.chars, {
-                duration: 3,
+                duration: 2.5,
                 // immediateRender: false,
                 opacity: 0,
-                stagger: 0.25,
+                stagger: 0.20,
                 x: -1000,
                 ease: 'easeIn.out(1)',
             });
