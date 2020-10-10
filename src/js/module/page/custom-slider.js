@@ -1,7 +1,7 @@
 
 import $ from 'jquery';
 import 'slick-carousel';
-import { gsap, GSDevTools, SplitText, Power1, TimelineMax, Power2, TweenMax, Quad } from 'gsap/all';
+import { gsap, GSDevTools, SplitText, Power1, TimelineMax, Power2 } from 'gsap/all';
 
 window.$ = $;
 window.jQuery = $;
@@ -13,9 +13,14 @@ const customSliders = {
         // const slickSliderElement = document.querySelectorAll('.sliderHero');
         // // // Set greensock design/dev tools visibility
         // GSDevTools.create();
+
+        // const slideTitle = $('.slick-active > slideTitle');
+        const activeSlide = $('.slick-active');
+        const slideTitle = $('.slideTitle').find(activeSlide);
+        // const slideTitle = $('.slick-active < .slideTitle');
         // const slideTitle = $('#slick-slide00').children('.slideTitle');
         // alert(slideTitle.length);
-        const slideTitle = document.querySelectorAll('.slideTitle');
+        // const slideTitle = document.querySelectorAll('.slideTitle');
         const slideTitleSplitText = new SplitText(slideTitle);
         const titleAnimation = gsap.timeline({ });
 
@@ -150,8 +155,8 @@ const customSliders = {
         sliderMasterTimeline
             .timeScale(1);
 
-        // const slider = $('.sliderHero').slick({
-        const slider = $('.sliderHero').not('.slick-initialized').slick({
+        const slider = $('.sliderHero').slick({
+        // const slider = $('.sliderHero').not('.slick-initialized').slick({
             dots: true,
             // autoplay: true,
             // autoplaySpeed: 10000,
@@ -160,24 +165,24 @@ const customSliders = {
             infinite: false,
             speed: 500,
             slidesToShow: 1,
-            touchMove: false,
+            // touchMove: false,
             // cssEase: 'linear',
             slidesToScroll: 1,
             // centerMode: true,
-            waitForAnimate: false,
-            useTransform: false,
-            draggable: true,
+            // waitForAnimate: false,
+            // useTransform: false,
+            // draggable: true,
             // variableWidth: true,
-            responsive: [{
-                breakpoint: 500,
-                settings: {
-                    dots: false,
-                    arrows: false,
-                    infinite: false,
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            }]
+            // responsive: [{
+            //     breakpoint: 500,
+            //     settings: {
+            //         dots: false,
+            //         arrows: false,
+            //         infinite: false,
+            //         slidesToShow: 2,
+            //         slidesToScroll: 2
+            //     }
+            // }]
         })
             // .on('init', function () {
             //     sliderMasterTimeline.pause();
@@ -191,7 +196,7 @@ const customSliders = {
             .on('beforeChange', function () {
                 sliderMasterTimeline.restart();
             });
-        slider[0].slick.cssTransitions = false;
+        // slider[0].slick.cssTransitions = false;
 
 
         // Slide on scrol

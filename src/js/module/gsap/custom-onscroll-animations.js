@@ -188,7 +188,7 @@ const scrollAnimations = {
                     .from(driftUpElement, { x: 0 })
                     .to(driftUpElement, { x: 500, opacity: 0 })
                     .to(driftUpElement, { x: 0, opacity: 1 });
-                    // .to(driftUpElement, { x: 0, opacity: 1 });
+                // .to(driftUpElement, { x: 0, opacity: 1 });
                 ScrollTrigger.create({
                     trigger: driftUpElement,
                     animation: driftUpAnimation,
