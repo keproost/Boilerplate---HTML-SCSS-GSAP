@@ -20,9 +20,9 @@ const scrollAnimations = {
                 ScrollTrigger.create({
                     trigger: fadeOutOnLeaveElement,
                     animation: fadeOutOnLeaveAnimation,
-                    start: 'top 15%',
+                    start: 'center top',
                     end: 'bottom 5%',
-                    scrub: 0,
+                    scrub: 1,
                     once: false,
                 });
             });

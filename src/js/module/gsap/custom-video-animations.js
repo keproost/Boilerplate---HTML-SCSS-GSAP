@@ -17,7 +17,7 @@ const videoAnimations = {
                 }
                 ScrollTrigger.create({
                     trigger: element,
-                    start: 'top 80%',
+                    start: 'top 70%',
                     end: 'bottom top',
                     scrub: 1,
                     onToggle: self => (self.isActive ? playVideo() : rewindVideo()),
