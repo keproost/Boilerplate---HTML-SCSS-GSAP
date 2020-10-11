@@ -128,63 +128,6 @@
 }
 
 
-.display-1.animatedTexti3Dot, .display-2.animatedTexti3Dot, .display-3.animatedTexti3Dot {
-    >div:last-child {
-        >div:last-child {
-            >div:last-child {
-                >div:last-child {
-                    display: inline-block;
-                    color: $primary;
-                    font-size: 5.5rem;
-                }
-            }
-        }
-    }
-    @include media-breakpoint-down(sm) {
-        div:last-child {
-            >div:last-child {
-                >div:last-child {
-                    >div:last-child {
-                        display: inline-block;
-                        color: $primary;
-                        font-size: 2rem;
-                    }
-                }
-            }
-        }
-    }    
-}
-
-h1.animatedTexti3Dot, h2.animatedTexti3Dot {
-    >div:last-child {
-        >div:last-child {
-            >div:last-child {
-                >div:last-child {
-                    display: inline-block;
-                    color: $primary;
-                    font-size: 4rem;
-                }
-            }
-        }
-    }
-    @include media-breakpoint-down(sm) {
-        div:last-child {
-            >div:last-child {
-                >div:last-child {
-                    >div:last-child {
-                        display: inline-block;
-                        color: $primary;
-                        font-size: 2.75rem;
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-
-
 //Button config tweaks
 //Create glow buttons based on bootstrap theme colors
 @each $color,

@@ -1,21 +1,27 @@
 //Typography
 //Brand fonts
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;700&display=swap');
 
-// @font-face {
-//     font-family: 'karmillaregular';
-//     src: url('../../assets/i3/fonts/karmilla-regular-webfont.eot');
-//     src: url('../../assets/i3/fonts/karmilla-regular-webfont.eot?#iefix') format('embedded-opentype'),
-//          url('../../assets/i3/fonts/karmilla-regular-webfont.woff2') format('woff2'),
-//          url('../../assets/i3/fonts/karmilla-regular-webfont.woff') format('woff'),
-//          url('../../assets/i3/fonts/karmilla-regular-webfont.ttf') format('truetype'),
-//          url('../../assets/i3/fonts/karmilla-regular-webfont.svg#karmillaregular') format('svg');
-//     font-weight: normal;
-//     font-style: normal;
+//Main brand - i3
+@font-face {
+    font-family: 'sansablack_regular';
+    src: url('sansa-black-webfont.woff2') format('woff2'),
+         url('sansa-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
-// }
+}
+
+@font-face {
+    font-family: 'sansabold';
+    src: url('../../assets/i3/fonts/sansa-black-webfont.woff2') format('woff2'),
+         url('../../assets/i3/fonts/sansa-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 // @font-face {
 //     font-family: 'karmillabold';
@@ -30,13 +36,19 @@
 
 // }
 
-.brand-wordmark {
+.brand-wordmark, .productTitle {
     font-family: $font-family-brand;
     font-weight: 800;
     letter-spacing: 0.2;
     text-transform: uppercase;
+    &:first-letter {
+        text-transform: lowercase;   
+
+    }
     // -webkit-text-stroke: 1px;
 }
+
+
 body {
     font-family: $font-regular;
     color: $gray-dark;
@@ -44,7 +56,32 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-title;
-    color: black !important;
+    color: $black !important;
+}
+
+.navbar-i3 {
+    .title {
+        font-family: $font-title;
+        font-weight: 700;
+        font-size: 30px;
+        margin-bottom: 24px;
+        color: $gray-lighter;
+        @include media-breakpoint-down(xxl) {
+            font-size: 26px;
+        }
+        @include media-breakpoint-down(xl) {
+            font-size: 24px;
+        }
+        @include media-breakpoint-down(lg) {
+            font-size: 22px;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: 20px;
+        }
+        @include media-breakpoint-down(sm) {
+            font-size: 18px;
+        }
+    }
 }
 
 
@@ -52,9 +89,8 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $font-title;
     font-weight: 700;
     font-size: 5.5rem;
-    margin-bottom: 0px !important;
     color: $black;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     @include media-breakpoint-down(xl) {
         font-size: 4.30rem;
         margin-bottom: 1rem;
@@ -73,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $font-title;
     font-weight: 100;
     font-size: 5.5rem;
-    margin-bottom: 0px;
+    margin-bottom: 1rem;
     color: $gray-black;
     @include media-breakpoint-down(xl) {
         font-size: 4.30rem;
@@ -90,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $font-title;
     font-weight: 100;
     font-size: 4.75rem;
-    margin-bottom: 0px;
+    margin-bottom: 1rem;
     color: $gray-black;
     @include media-breakpoint-down(xl) {
         font-size: 3.65rem;
@@ -183,10 +219,76 @@ h6 {
     }
 }
 
+//Dotted i3 headers
+
+.display-1.animatedTexti3Dot, .display-2.animatedTexti3Dot, .display-3.animatedTexti3Dot {
+   >div:last-child {
+        >div:last-child {
+            >div:last-child {
+                >div:last-child {
+                    display: inline-block;
+                    color: $primary;
+                    font-size: 5.5rem;
+                }              
+            }
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        >div:last-child {
+            >div:last-child {
+                >div:last-child {
+                    >div:last-child {
+                        display: inline-block;
+                        color: $primary;
+                        font-size: 2rem;
+                    } 
+                }
+            }
+        }
+    }    
+}
+
+h1.animatedTexti3Dot, h2.animatedTexti3Dot {
+    div:last-child {
+        >div:last-child {
+            >div:last-child {
+                display: inline-block;
+                color: $primary;
+                font-size: 4rem;
+                >div:last-child {
+                } 
+            }
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        div:last-child {
+            >div:last-child {
+                >div:last-child {
+                    display: inline-block;
+                    color: $primary;
+                    font-size: 2.75rem;
+                    >div:last-child {
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
 .btn {
-    font-family: $font-regular;
-    font-weight: 600;   
+    font-family: $font-title;
+    font-weight: 800;   
     letter-spacing: -0.02rem;
+    text-transform: uppercase;
+}
+
+.btn-lg  {
+    font-size: 1rem;
+    text-transform: uppercase;
+    // text-transform: uppercase;
 }
 
 //Froms
@@ -204,3 +306,5 @@ h6 {
       font-size: 0.85rem;
       color: $gray-dark;
   }
+
+  

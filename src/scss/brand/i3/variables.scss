@@ -208,9 +208,10 @@ $border-radius-sm:       .2rem !default;
 //Override with brand typo
 //Override bootstrap variables
 $font-family-sans-serif:    'Roboto', sans-serif !default;
-$font-family-brand:         'Open Sans', sans-serif;
+$font-family-brand:         'sansabold', sans-serif;
+$font-family-brand-products:'sansabold', sans-serif;
 $headings-font-family:      'Josefin Sans', sans-serif !default;
-$font-family-base:       $font-family-sans-serif !default;
+$font-family-base:           $font-family-sans-serif !default;
 
 //Reassign to typefriendlier names
 $font-regular: $font-family-sans-serif;
@@ -258,9 +259,9 @@ $lead-font-weight: 300 !default;
 
 $small-font-size: 80% !default;
 
-$text-muted: $gray-600 !default;
+$text-muted: $gray-light !default;
 
-$blockquote-small-color:  $gray-600 !default;
+$blockquote-small-color:  $gray-light !default;
 $blockquote-font-size:    ($font-size-base * 1.25) !default;
 
 $hr-border-color: rgba($black,.1) !default;
@@ -275,7 +276,7 @@ $nested-kbd-font-weight: $font-weight-bold !default;
 
 $list-inline-padding: 5px !default;
 
-$mark-bg: #fcf8e3 !default;
+$mark-bg: lighten($tertiary, 20%) !default;
 
 
 

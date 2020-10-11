@@ -96,7 +96,7 @@ cubic-bezier(.55, 0, .1, 1);
         height: auto;
     }
     .slick-list {
-        // overflow: hidden;
+        overflow: visible;
         @include media-breakpoint-down(md) {
             overflow: hidden;
         }
@@ -113,6 +113,14 @@ cubic-bezier(.55, 0, .1, 1);
             }
             &.slick-current {
                 z-index: 2;
+            }
+            .sliderHero-slide {
+                // overflow: hidden;
+            }
+            &.slick-active {
+                .sliderHero-slide {
+                    // overflow: visible;
+                }
             }
             .sliderHero-slide {
                 width: 100vw;
@@ -132,7 +140,9 @@ cubic-bezier(.55, 0, .1, 1);
                 //     display: flex; 
                 //     flex: 1;
                 // }
+                
                 .sliderBackground {
+                    display: none;
                     background-color: $gray-lightest;
                     position: absolute; 
                     right: 0;
@@ -141,6 +151,7 @@ cubic-bezier(.55, 0, .1, 1);
                     width: 30vw;
                     z-index: -1;
                     border-radius: 2rem;
+                    // opacity: 0;
                     @include media-breakpoint-down(md) {
                         display: none;
                     }
@@ -157,6 +168,7 @@ cubic-bezier(.55, 0, .1, 1);
                     margin: auto; 
                     height: 100%;
                     width: 100%;
+                    opacity: 0;
                 }
                 .content {
                     display: flex; 
@@ -176,17 +188,20 @@ cubic-bezier(.55, 0, .1, 1);
                         @include media-breakpoint-down(md) {
                             padding: 1rem;
                         }
-                        .slideTitle  {
-
-                        }
                         .slideDescription {
-                            margin-bottom: 1rem;
+                            margin-bottom: 1.5rem;
+                            font-size: 1.15rem;
+                            color: $gray-light;
+                            opacity: 0;
                         }
                         .slideSubtitle {
-                            font-size: 1.5rem;
+                            // font-size: 2rem;
+                            // font-family: $font-family-brand-products;
                             color: $gray;
+                            opacity: 0;
                         }
                         .slideCtaWrapper {
+                            opacity: 0;
                             .btn {
                                 margin-right: 1rem;
                                 &:last-child {
@@ -200,6 +215,7 @@ cubic-bezier(.55, 0, .1, 1);
                     position: relative;
                     height: 100%;
                     width: auto;
+                    opacity: 0;
                     @include media-breakpoint-down(md) {
                         z-index: -1;
                     }
@@ -225,6 +241,7 @@ cubic-bezier(.55, 0, .1, 1);
                             top: 0;
                             bottom: 0;
                             margin: auto;
+                            opacity: 0;
                         }
                         img {
                             z-index: 100;
@@ -247,8 +264,8 @@ cubic-bezier(.55, 0, .1, 1);
                             &.blob-2 {
                                 // transform: scale(0.32) !important;
                                 padding-top: 34.37%;
-                                top: -130%;
-                                right: -150%;
+                                top: -250%;
+                                right: -250%;
                                 z-index: 20;
                                 width: 250px;
                                 // height: 250px;

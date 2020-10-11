@@ -1,7 +1,8 @@
 
-import { gsap, TweenLite } from 'gsap/all';
+// import { gsap, TweenLite } from 'gsap/all';
+import { gsap } from 'gsap/all';
 // import $ from 'jquery';
-import Scrollbar from 'smooth-scrollbar';
+// import Scrollbar from 'smooth-scrollbar';
 
 const smoothScrolling = {
     smoothAnchorScroller() {
