@@ -46,4 +46,59 @@ gsapEffects.forEach((effect) => {
     });
 });
 
+gsap.registerEffect({
+    name: 'fadeOutOnLeave',
+    defaults: { duration: 2 }, // defaults get applied to the "config" object passed to the effect below
+    effect: (targets, config) => {
+        return gsap.from(targets, {
+            duration: config.duration,
+            opacity: 1,
+            ease: 'Back.easeInOut',
+            scrollTrigger: {
+                trigger: targets,
+                start: 'top 15%',
+                end: 'bottom 5%',
+                scrub: 0,
+                once: false,
+                // scrub, etc.
+            },
+        });
+    }
+});
+
+
+fadeOutOnLeave() {
+    gsap.registerPlugin(ScrollTrigger);
+    const fadeOutOnLeave = gsap.utils.toArray('.fadeOutOnLeave');
+    // console.log('SCROLLANIMATION - FADEOUTONLEAVEELEMENTS', fadeOutOnLeave);
+    if (fadeOutOnLeave) {
+        fadeOutOnLeave.forEach((fadeOutOnLeaveElement) => {
+            const fadeOutOnLeaveAnimation = gsap.timeline({});
+            fadeOutOnLeaveAnimation
+                .from(fadeOutOnLeaveElement, {
+                    opacity: 1,
+                    ease: 'Back.easeInOut',
+
+                })
+                .to(fadeOutOnLeaveElement, { opacity: 0 });
+
+            ScrollTrigger.create({
+                trigger: fadeOutOnLeaveElement,
+                animation: fadeOutOnLeaveAnimation,
+                start: 'top 15%',
+                end: 'bottom 5%',
+                scrub: 0,
+                once: false,
+            });
+        });
+    }
+
+
+
+
+
+document.querySelectorAll('.box').forEach(function (box) {
+    gsap.effects.fadeInView(box);
+});
+
 export default gsapEffects;
