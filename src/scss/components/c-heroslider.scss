@@ -115,11 +115,11 @@ cubic-bezier(.55, 0, .1, 1);
                 z-index: 2;
             }
             .sliderHero-slide {
-                overflow: hidden;
+                // overflow: hidden;
             }
             &.slick-active {
                 .sliderHero-slide {
-                    overflow: visible;
+                    // overflow: visible;
                 }
             }
             .sliderHero-slide {
@@ -151,6 +151,7 @@ cubic-bezier(.55, 0, .1, 1);
                     width: 30vw;
                     z-index: -1;
                     border-radius: 2rem;
+                    // opacity: 0;
                     @include media-breakpoint-down(md) {
                         display: none;
                     }
@@ -167,6 +168,7 @@ cubic-bezier(.55, 0, .1, 1);
                     margin: auto; 
                     height: 100%;
                     width: 100%;
+                    opacity: 0;
                 }
                 .content {
                     display: flex; 
@@ -190,13 +192,16 @@ cubic-bezier(.55, 0, .1, 1);
                             margin-bottom: 1.5rem;
                             font-size: 1.15rem;
                             color: $gray-light;
+                            opacity: 0;
                         }
                         .slideSubtitle {
                             // font-size: 2rem;
                             // font-family: $font-family-brand-products;
                             color: $gray;
+                            opacity: 0;
                         }
                         .slideCtaWrapper {
+                            opacity: 0;
                             .btn {
                                 margin-right: 1rem;
                                 &:last-child {
@@ -210,6 +215,7 @@ cubic-bezier(.55, 0, .1, 1);
                     position: relative;
                     height: 100%;
                     width: auto;
+                    opacity: 0;
                     @include media-breakpoint-down(md) {
                         z-index: -1;
                     }
@@ -235,6 +241,7 @@ cubic-bezier(.55, 0, .1, 1);
                             top: 0;
                             bottom: 0;
                             margin: auto;
+                            opacity: 0;
                         }
                         img {
                             z-index: 100;
