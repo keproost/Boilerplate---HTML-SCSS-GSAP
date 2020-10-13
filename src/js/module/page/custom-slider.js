@@ -143,14 +143,16 @@ const customSliders = {
 
             const stackItemTimeline = gsap.timeline({ paused: true });
             stackItemTimeline
-                .staggerFrom(animationItems.activeStackItem, 1, {
+                .from(animationItems.activeStackItem, {
                     y: '+=20px',
                     yoyo: true,
+                    duration: 1,
+                    stagger: { amount: 0.5 },
                     opacity: 1,
                     repeat: -1,
                     paused: true,
-                    ease: Power2.easeOut,
-                }, 0.5);
+                    ease: 'power2.easeOut',
+                });
 
             const slideBackgroundTimeline = gsap.timeline({ paused: true });
             slideBackgroundTimeline
@@ -177,16 +179,18 @@ const customSliders = {
 
             const slideLayerTimeline = gsap.timeline({ paused: true });
             slideLayerTimeline
-                .staggerFrom(animationItems.activeSlideLayers, 1, {
+                .from(animationItems.activeSlideLayers, {
                     // x: 500,
                     y: -500,
+                    duration: 1,
+                    stagger: { amount: 0.10 },
                     scaleX: 0,
                     scaleY: 0,
                     opacity: 1,
                     force3D: true,
                     ease: 'easeIn.out(2)',
                     // transformOrigin: 'center center'
-                }, 0.10);
+                });
 
             return {
                 titleTimeline,
@@ -225,7 +229,7 @@ const customSliders = {
                 // onComplete: leaveLoader
             });
             sliderMasterTimeline
-                .add(setSlideTimeline())
+                // .add(setSlideTimeline())
                 .add(animationTimelines.titleTimeline.play(), 0)
                 .add(animationTimelines.slideSubTitleTimeline.play(), 0.75)
                 .add(animationTimelines.slideBackgroundTimeline.play(), 0.75)
@@ -306,8 +310,8 @@ const customSliders = {
             masterTimeline.play();
         });
 
-        const slider = $('.sliderHero').slick({
-            // const slider = $('.sliderHero').not('.slick-initialized').slick({
+        // const slider = $('.sliderHero').slick({
+            const slider = $('.sliderHero').not('.slick-initialized').slick({
             dots: true,
             // autoplay: true,
             // autoplaySpeed: 10000,
