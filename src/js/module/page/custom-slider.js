@@ -24,7 +24,7 @@ const customSliders = {
             const slideSubTitle = document.querySelectorAll('.slideSubTitle');
             const slideImage = document.querySelectorAll('.slideImage');
             const stackItem = document.querySelectorAll('.stackItem');
-            const slideBackground = document.querySelectorAll('.sliderBackground');
+            const slideBackground = document.querySelectorAll('.backgroundImage');
             const slideCtaWrapper = document.querySelectorAll('.slideCtaWrapper');
             const slideImageStackContainer = document.querySelectorAll('.imageStackSlider');
             const slideLayers = document.querySelectorAll('.slideLayer');
@@ -51,7 +51,7 @@ const customSliders = {
             const activeSlideSubTitle = activeSlide.find('.slideSubTitle');
             const activeSlideImage = activeSlide.find('.slideImage');
             const activeStackItem = activeSlide.find('.stackItem');
-            const activeSlideBackground = activeSlide.find('.sliderBackground');
+            const activeSlideBackground = activeSlide.find('.backgroundImage');
             const activeSlideCtaWrapper = activeSlide.find('.slideCtaWrapper');
             const activeSlideImageStackContainer = activeSlide.find('.imageStackSlider');
             const activeSlideLayers = activeSlide.find('.slideLayer');
@@ -311,7 +311,7 @@ const customSliders = {
         });
 
         // const slider = $('.sliderHero').slick({
-            const slider = $('.sliderHero').not('.slick-initialized').slick({
+        const slider = $('.sliderHero').not('.slick-initialized').slick({
             dots: true,
             // autoplay: true,
             // autoplaySpeed: 10000,
