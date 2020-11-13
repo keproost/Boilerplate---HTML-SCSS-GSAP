@@ -8,3 +8,6 @@ $fa-font-path:        "../../assets/vendor/fontawesome/";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+
+@import "icons/variables.scss";
+@import "icons/style.scss";
