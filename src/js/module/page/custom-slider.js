@@ -10,17 +10,7 @@ gsap.registerPlugin(GSDevTools);
 
 const customSliders = {
     slickSliderHero() {
-        const getSlides = function(element, selector) {
-            const domElements = element.find(selector);
-            const elements = [];
-
-            for (let i = 0; i < domElements.length; i++) {
-                elements.push(domElements[i]);
-            }
-
-            return elements;
-        }
-
+        
         const createTimelines = function(slickSlideObjects) {
             const timelines = [];
             for (let i = 0; i < slickSlideObjects.length; i++) {
