@@ -15,6 +15,7 @@ import videoAnimations from './gsap/custom-video-animations';
 import customFormScripts from './page/custom-formscripts';
 import customSliders from './page/custom-slider';
 import navbarFullscreen from './page/custom-navbar-fullscreen';
+import LazyLoad from "vanilla-lazyload";
 
 // Barba
 // document.addEventListener('DOMContentLoaded', function () {
@@ -39,9 +40,14 @@ gsap.registerPlugin(ScrollTrigger);
 //     init();
 // });
 
+var lazyLoadInstance = new LazyLoad({
+    threshold: 0,
+    callback_loaded: (el) => el.play()
+});
 
 window.addEventListener('DOMContentLoaded', function () {
 // init();
+    lazyLoadInstance.update();
     barba.init({
         debug: true,
         views: [{
@@ -127,6 +133,7 @@ window.addEventListener('DOMContentLoaded', function () {
     barba.hooks.before(() => {
     });
     barba.hooks.afterEnter(() => {
+        lazyLoadInstance.update();
         customSliders.slickSliderHero();
         smoothScrolling.smoothAnchorScroller();
         videoAnimations.videoStartOnEnterRewindOnLeave();
