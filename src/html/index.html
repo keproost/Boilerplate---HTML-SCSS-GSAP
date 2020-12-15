@@ -1,6 +1,21 @@
 <html lang="pt">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65920615-2"></script>
+  <script>
+    if (document.location.hostname === "i3-technologies.com.br" || document.location.hostname === "www.i3-technologies.com.br") {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-65920615-2' , { 'anonymize_ip': true });
+    }
+    else {
+      console.log("Google Analytics disabled on dev environment")
+    }
+  </script>
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
   <meta name="author" content="">
